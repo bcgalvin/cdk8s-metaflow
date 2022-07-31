@@ -58,7 +58,7 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "cdk8s-plus-24": "2.0.0-rc.67"
+    "cdk8s-plus-22": "2.0.0-rc.67"
   },
   "keywords": [
     "cdk",

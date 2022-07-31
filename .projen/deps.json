@@ -117,7 +117,7 @@
       "type": "peer"
     },
     {
-      "name": "cdk8s-plus-24",
+      "name": "cdk8s-plus-22",
       "version": "2.0.0-rc.67",
       "type": "runtime"
     }
