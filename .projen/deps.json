@@ -26,7 +26,7 @@
     },
     {
       "name": "cdk8s",
-      "version": "2.3.67",
+      "version": "2.2.74",
       "type": "build"
     },
     {
@@ -107,8 +107,12 @@
       "type": "build"
     },
     {
+      "name": "cdk8s-plus-22",
+      "type": "bundled"
+    },
+    {
       "name": "cdk8s",
-      "version": "^2.3.67",
+      "version": "^2.2.74",
       "type": "peer"
     },
     {
@@ -118,7 +122,6 @@
     },
     {
       "name": "cdk8s-plus-22",
-      "version": "2.0.0-rc.67",
       "type": "runtime"
     }
   ],
