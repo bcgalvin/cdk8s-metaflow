@@ -1,15 +1,54 @@
 const { cdk8s } = require('projen');
-const project = new cdk8s.ConstructLibraryCdk8s({
-  author: 'Bryan Galvin',
-  authorAddress: 'bcgalvin@gmail.com',
-  cdk8sVersion: '1.4.10',
-  defaultReleaseBranch: 'main',
-  name: 'cdk8s-metaflow',
-  repositoryUrl: 'https://github.com/bcgalvin/cdk8s-metaflow.git',
+const commonIgnore = ['.idea', '.Rproj', '.vscode', 'cdk.context.json', '.DS_Store'];
+const cdk8sVersion = '2.3.67';
+const cdk8sPlusVersion = '2.0.0-rc.67';
+const constructsVersion = '10.0.5';
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+const project = new cdk8s.ConstructLibraryCdk8s({
+	author: 'Bryan Galvin',
+	authorAddress: 'bcgalvin@gmail.com',
+	name: 'cdk8s-metaflow',
+	keywords: ['cdk8s', 'cdk', 'metaflow'],
+	repositoryUrl: 'https://github.com/bcgalvin/cdk8s-metaflow.git', // Dependencies
+	cdk8sVersion: cdk8sVersion,
+	deps: [`cdk8s-plus-24@${cdk8sPlusVersion}`],
+	devDeps: ['eslint-config-prettier', 'eslint-plugin-prettier', 'prettier', '@types/cfn-response'],
+	peerDeps: [`constructs@${constructsVersion}`],
+	constructsVersion: constructsVersion, // Release
+	defaultReleaseBranch: 'main',
+	release: false,
+	releaseToNpm: false,
+	githubOptions: {
+		pullRequestLint: false,
+	},
+	depsUpgrade: false,
+	dependabot: false,
+	pullRequestTemplate: false,
+	clobber: false,
+	readme: true,
+	mergify: true, // Testing & Linting
+	codeCov: true,
+	eslint: true,
+	eslintOptions: {
+		prettier: true,
+	},
+	prettier: true,
+	prettierOptions: {
+		settings: {
+			printWidth: 120,
+			trailingComma: 'all',
+			arrowParens: 'always',
+			singleQuote: true,
+		},
+	},
+	eslintOptions: {
+		dirs: ['src'],
+		ignorePatterns: ['**/node_modules/**', '**/test/imports/**'],
+	},
+	gitignore: commonIgnore,
+	npmignore: commonIgnore,
 });
+
+project.testTask.prependExec(`cd ./test && cdk8s import k8s --language typescript`);
+
 project.synth();
