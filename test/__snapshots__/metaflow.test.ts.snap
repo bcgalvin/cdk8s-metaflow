@@ -52,5 +52,152 @@ Array [
       "type": "ClusterIP",
     },
   },
+  Object {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": Object {
+      "labels": Object {
+        "app.kubernetes.io/instance": "release-name",
+        "app.kubernetes.io/managed-by": "Helm",
+        "app.kubernetes.io/name": "metaflow-service",
+        "app.kubernetes.io/version": "2.2.4",
+        "helm.sh/chart": "metaflow-service-0.2.0",
+      },
+      "name": "release-name-metaflow-service",
+    },
+    "spec": Object {
+      "minReadySeconds": 0,
+      "progressDeadlineSeconds": 600,
+      "replicas": 1,
+      "selector": Object {
+        "matchLabels": Object {
+          "app.kubernetes.io/instance": "release-name",
+          "app.kubernetes.io/name": "metaflow-service",
+          "cdk8s.io/metadata.addr": "service-metaflow-deployment-c8ff66bb",
+        },
+      },
+      "strategy": Object {
+        "rollingUpdate": Object {
+          "maxSurge": "25%",
+          "maxUnavailable": "25%",
+        },
+        "type": "RollingUpdate",
+      },
+      "template": Object {
+        "metadata": Object {
+          "labels": Object {
+            "cdk8s.io/metadata.addr": "service-metaflow-deployment-c8ff66bb",
+          },
+        },
+        "spec": Object {
+          "automountServiceAccountToken": true,
+          "containers": Array [
+            Object {
+              "command": Array [
+                "/opt/latest/bin/python3",
+                "-m",
+                "services.metadata_service.server",
+              ],
+              "env": Array [
+                Object {
+                  "name": "MF_METADATA_DB_NAME",
+                  "value": "",
+                },
+                Object {
+                  "name": "MF_METADATA_DB_PORT",
+                  "value": "5432",
+                },
+                Object {
+                  "name": "MF_METADATA_DB_PSWD",
+                  "value": "",
+                },
+                Object {
+                  "name": "MF_METADATA_DB_USER",
+                  "value": "",
+                },
+                Object {
+                  "name": "MF_METADATA_DB_HOST",
+                  "value": "release-name-postgresql",
+                },
+              ],
+              "image": "public.ecr.aws/outerbounds/metaflow_metadata_service:2.2.4",
+              "imagePullPolicy": "IfNotPresent",
+              "livenessProbe": Object {
+                "failureThreshold": 3,
+                "httpGet": Object {
+                  "path": "/ping",
+                  "port": 8080,
+                },
+              },
+              "name": "metaflow-service",
+              "ports": Array [
+                Object {
+                  "containerPort": 8080,
+                },
+              ],
+              "readinessProbe": Object {
+                "failureThreshold": 3,
+                "httpGet": Object {
+                  "path": "/ping",
+                  "port": 8080,
+                },
+              },
+              "securityContext": Object {
+                "privileged": false,
+                "readOnlyRootFilesystem": false,
+                "runAsNonRoot": false,
+              },
+            },
+          ],
+          "dnsPolicy": "ClusterFirst",
+          "initContainers": Array [
+            Object {
+              "command": Array [
+                "/opt/latest/bin/python3",
+                "/root/run_goose.py",
+                "--only-if-empty-db",
+              ],
+              "env": Array [
+                Object {
+                  "name": "MF_METADATA_DB_NAME",
+                  "value": "",
+                },
+                Object {
+                  "name": "MF_METADATA_DB_PORT",
+                  "value": "5432",
+                },
+                Object {
+                  "name": "MF_METADATA_DB_PSWD",
+                  "value": "",
+                },
+                Object {
+                  "name": "MF_METADATA_DB_USER",
+                  "value": "",
+                },
+                Object {
+                  "name": "MF_METADATA_DB_HOST",
+                  "value": "release-name-postgresql",
+                },
+              ],
+              "image": "public.ecr.aws/outerbounds/metaflow_metadata_service:2.2.4",
+              "imagePullPolicy": "Always",
+              "name": "db-migrations",
+              "securityContext": Object {
+                "privileged": false,
+                "readOnlyRootFilesystem": false,
+                "runAsNonRoot": false,
+              },
+            },
+          ],
+          "securityContext": Object {
+            "fsGroupChangePolicy": "Always",
+            "runAsNonRoot": false,
+          },
+          "serviceAccountName": "release-name-metaflow-service",
+          "setHostnameAsFQDN": false,
+        },
+      },
+    },
+  },
 ]
 `;
