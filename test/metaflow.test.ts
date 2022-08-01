@@ -1,5 +1,6 @@
-import { Chart, Testing } from 'cdk8s';
 import { MetaflowService } from '../src';
+// @ts-ignore
+import { synth } from './util';
 
 const metadata = {
   'helm.sh/chart': 'metaflow-service-0.2.0',
@@ -10,26 +11,19 @@ const metadata = {
 };
 
 describe('metaflow service', () => {
-  test('defaults', () => {
+  test('defaults snapshot', () => {
     // GIVEN
-    const app = Testing.app();
-    const chart = new Chart(app, 'default');
-    // WHEN
-    new MetaflowService(chart, 'default-service');
+    const chart = synth(MetaflowService);
     // THEN
-    expect(Testing.synth(chart)).toMatchSnapshot();
+    expect(chart).toMatchSnapshot();
   });
 
   test('defaults can be overridden', () => {
     // GIVEN
-    const app = Testing.app();
-    const chart = new Chart(app, 'override');
-    // WHEN
-    new MetaflowService(chart, 'override-service', {
+    const resources = synth(MetaflowService, {
       serviceAccountName: 'override-sa',
     });
     // THEN
-    const resources = Testing.synth(chart);
     for (const sa of resources.filter((r) => r.kind === 'ServiceAccount')) {
       expect(sa.metadata.name).toEqual('override-sa');
     }
@@ -38,14 +32,10 @@ describe('metaflow service', () => {
     }
   });
 
-  test('metadata', () => {
+  test('default metadata is set properly', () => {
     // GIVEN
-    const app = Testing.app();
-    const chart = new Chart(app, 'metadata');
-    // WHEN
-    new MetaflowService(chart, 'metadata-service');
+    const resources = synth(MetaflowService);
     // THEN
-    const resources = Testing.synth(chart);
     for (const sa of resources.filter((r) => r.kind === 'ServiceAccount')) {
       expect(sa.metadata.labels).toEqual(metadata);
     }

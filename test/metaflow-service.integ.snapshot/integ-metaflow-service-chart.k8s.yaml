@@ -1,0 +1,165 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: metaflow-service
+    app.kubernetes.io/version: 2.2.4
+    helm.sh/chart: metaflow-service-0.2.0
+  name: release-name-metaflow-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: metaflow-service
+    app.kubernetes.io/version: 2.2.4
+    helm.sh/chart: metaflow-service-0.2.0
+  name: release-name-metaflow-service
+spec:
+  externalIPs: []
+  ports:
+    - name: metadata
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: upgrades
+      port: 8082
+      protocol: TCP
+      targetPort: 8082
+  selector:
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/name: metaflow-service
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: metaflow-service
+    app.kubernetes.io/version: 2.2.4
+    helm.sh/chart: metaflow-service-0.2.0
+  name: release-name-metaflow-service
+spec:
+  minReadySeconds: 0
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: release-name
+      app.kubernetes.io/name: metaflow-service
+      cdk8s.io/metadata.addr: integ-metaflow-se-metaflow-service-metaflow-deployment-c80a27fe
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        cdk8s.io/metadata.addr: integ-metaflow-se-metaflow-service-metaflow-deployment-c80a27fe
+    spec:
+      automountServiceAccountToken: true
+      containers:
+        - command:
+            - /opt/latest/bin/python3
+            - -m
+            - services.metadata_service.server
+          env:
+            - name: MF_METADATA_DB_NAME
+              value: ""
+            - name: MF_METADATA_DB_PORT
+              value: "5432"
+            - name: MF_METADATA_DB_PSWD
+              value: ""
+            - name: MF_METADATA_DB_USER
+              value: ""
+            - name: MF_METADATA_DB_HOST
+              value: release-name-postgresql
+          image: public.ecr.aws/outerbounds/metaflow_metadata_service:2.2.4
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /ping
+              port: 8080
+          name: metaflow-service
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /ping
+              port: 8080
+          securityContext:
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+      dnsPolicy: ClusterFirst
+      initContainers:
+        - command:
+            - /opt/latest/bin/python3
+            - /root/run_goose.py
+            - --only-if-empty-db
+          env:
+            - name: MF_METADATA_DB_NAME
+              value: ""
+            - name: MF_METADATA_DB_PORT
+              value: "5432"
+            - name: MF_METADATA_DB_PSWD
+              value: ""
+            - name: MF_METADATA_DB_USER
+              value: ""
+            - name: MF_METADATA_DB_HOST
+              value: release-name-postgresql
+          image: public.ecr.aws/outerbounds/metaflow_metadata_service:2.2.4
+          imagePullPolicy: Always
+          name: db-migrations
+          securityContext:
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+      securityContext:
+        fsGroupChangePolicy: Always
+        runAsNonRoot: false
+      serviceAccountName: release-name-metaflow-service
+      setHostnameAsFQDN: false
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    helm.sh/hook: test
+  labels:
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: metaflow-service
+    app.kubernetes.io/version: 2.2.4
+    cdk8s.io/metadata.addr: integ-metaflow-s-metaflow-service-metaflow-service-pod-c8399912
+    helm.sh/chart: metaflow-service-0.2.0
+  name: release-name-metaflow-service-test-connection
+spec:
+  automountServiceAccountToken: true
+  containers:
+    - args:
+        - release-name-metaflow-service:8080
+      command:
+        - wget
+      image: busybox
+      imagePullPolicy: Always
+      name: wget
+      securityContext:
+        privileged: false
+        readOnlyRootFilesystem: false
+        runAsNonRoot: false
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+  securityContext:
+    fsGroupChangePolicy: Always
+    runAsNonRoot: false
+  setHostnameAsFQDN: false

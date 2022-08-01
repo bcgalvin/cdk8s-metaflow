@@ -117,9 +117,21 @@ const metaflowServiceProps: MetaflowServiceProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#cdk8s-metaflow.MetaflowServiceProps.property.image">image</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowServiceProps.property.metadataServicePort">metadataServicePort</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowServiceProps.property.serviceAccountName">serviceAccountName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowServiceProps.property.serviceName">serviceName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowServiceProps.property.upgradesServicePort">upgradesServicePort</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `image`<sup>Optional</sup> <a name="image" id="cdk8s-metaflow.MetaflowServiceProps.property.image"></a>
+
+```typescript
+public readonly image: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -137,6 +149,16 @@ public readonly metadataServicePort: number;
 
 ```typescript
 public readonly serviceAccountName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `serviceName`<sup>Optional</sup> <a name="serviceName" id="cdk8s-metaflow.MetaflowServiceProps.property.serviceName"></a>
+
+```typescript
+public readonly serviceName: string;
 ```
 
 - *Type:* string

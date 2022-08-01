@@ -25,7 +25,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   pullRequestTemplate: false,
   clobber: false,
   readme: true,
-  mergify: true, // Testing & Linting
+  mergify: true,
   codeCov: true,
   eslint: true,
   eslintOptions: {
