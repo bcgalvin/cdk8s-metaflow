@@ -30,9 +30,7 @@ spec:
       port: 8082
       protocol: TCP
       targetPort: 8082
-  selector:
-    app.kubernetes.io/instance: release-name
-    app.kubernetes.io/name: metaflow-service
+  selector: {}
   type: ClusterIP
 ---
 apiVersion: apps/v1
@@ -51,8 +49,6 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: release-name
-      app.kubernetes.io/name: metaflow-service
       cdk8s.io/metadata.addr: integ-metaflow-se-metaflow-service-metaflow-deployment-c80a27fe
   strategy:
     rollingUpdate:

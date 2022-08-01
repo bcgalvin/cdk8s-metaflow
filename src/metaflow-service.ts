@@ -1,5 +1,5 @@
 import * as kplus from 'cdk8s-plus-22';
-import { LabelSelector, Protocol } from 'cdk8s-plus-22';
+import { Protocol } from 'cdk8s-plus-22';
 import { Construct } from 'constructs';
 import { KubeServiceAccount } from './imports/k8s';
 
@@ -60,15 +60,9 @@ export class MetaflowService extends Construct {
           targetPort: upgradesServicePort,
         },
       ],
-      selector: kplus.Pods.select(this, 'Selected', {
-        labels: {
-          'app.kubernetes.io/name': serviceName,
-          'app.kubernetes.io/instance': 'release-name',
-        },
-      }),
     });
 
-    const deployment = new kplus.Deployment(this, 'metaflow-deployment', {
+    new kplus.Deployment(this, 'metaflow-deployment', {
       replicas: 1,
       initContainers: [
         {
@@ -114,15 +108,6 @@ export class MetaflowService extends Construct {
       },
       serviceAccount,
     });
-
-    deployment.select(
-      LabelSelector.of({
-        labels: {
-          'app.kubernetes.io/name': 'metaflow-service',
-          'app.kubernetes.io/instance': 'release-name',
-        },
-      }),
-    );
 
     new kplus.Pod(this, 'metaflow-service-pod', {
       metadata: {

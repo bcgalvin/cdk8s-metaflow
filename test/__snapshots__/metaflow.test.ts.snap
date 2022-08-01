@@ -45,10 +45,7 @@ Array [
           "targetPort": 8082,
         },
       ],
-      "selector": Object {
-        "app.kubernetes.io/instance": "release-name",
-        "app.kubernetes.io/name": "metaflow-service",
-      },
+      "selector": Object {},
       "type": "ClusterIP",
     },
   },
@@ -71,8 +68,6 @@ Array [
       "replicas": 1,
       "selector": Object {
         "matchLabels": Object {
-          "app.kubernetes.io/instance": "release-name",
-          "app.kubernetes.io/name": "metaflow-service",
           "cdk8s.io/metadata.addr": "construct-metaflow-deployment-c89bf212",
         },
       },
