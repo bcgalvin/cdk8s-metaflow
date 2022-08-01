@@ -11,13 +11,6 @@ const metadata = {
 };
 
 describe('metaflow service', () => {
-  test('defaults snapshot', () => {
-    // GIVEN
-    const chart = synth(MetaflowService);
-    // THEN
-    expect(chart).toMatchSnapshot();
-  });
-
   test('defaults can be overridden', () => {
     // GIVEN
     const resources = synth(MetaflowService, {
