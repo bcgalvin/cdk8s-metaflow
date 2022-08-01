@@ -199,5 +199,51 @@ Array [
       },
     },
   },
+  Object {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": Object {
+      "annotations": Object {
+        "helm.sh/hook": "test",
+      },
+      "labels": Object {
+        "app.kubernetes.io/instance": "release-name",
+        "app.kubernetes.io/managed-by": "Helm",
+        "app.kubernetes.io/name": "metaflow-service",
+        "app.kubernetes.io/version": "2.2.4",
+        "cdk8s.io/metadata.addr": "service-metaflow-service-pod-c87884e7",
+        "helm.sh/chart": "metaflow-service-0.2.0",
+      },
+      "name": "release-name-metaflow-service-test-connection",
+    },
+    "spec": Object {
+      "automountServiceAccountToken": true,
+      "containers": Array [
+        Object {
+          "args": Array [
+            "release-name-metaflow-service:8080",
+          ],
+          "command": Array [
+            "wget",
+          ],
+          "image": "busybox",
+          "imagePullPolicy": "Always",
+          "name": "wget",
+          "securityContext": Object {
+            "privileged": false,
+            "readOnlyRootFilesystem": false,
+            "runAsNonRoot": false,
+          },
+        },
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "restartPolicy": "Never",
+      "securityContext": Object {
+        "fsGroupChangePolicy": "Always",
+        "runAsNonRoot": false,
+      },
+      "setHostnameAsFQDN": false,
+    },
+  },
 ]
 `;

@@ -123,5 +123,28 @@ export class MetaflowService extends Construct {
         },
       }),
     );
+
+    new kplus.Pod(this, 'metaflow-service-pod', {
+      metadata: {
+        name: 'release-name-metaflow-service-test-connection',
+        labels: {
+          'helm.sh/chart': 'metaflow-service-0.2.0',
+          'app.kubernetes.io/name': serviceName,
+          'app.kubernetes.io/instance': 'release-name',
+          'app.kubernetes.io/version': '2.2.4',
+          'app.kubernetes.io/managed-by': 'Helm',
+        },
+        annotations: { 'helm.sh/hook': 'test' },
+      },
+      containers: [
+        {
+          name: 'wget',
+          image: 'busybox',
+          command: ['wget'],
+          args: ['release-name-metaflow-service:8080'],
+        },
+      ],
+      restartPolicy: kplus.RestartPolicy.NEVER,
+    });
   }
 }
