@@ -5,6 +5,7 @@ import { KubeServiceAccount } from './imports/k8s';
 
 export interface MetaflowServiceProps {
   readonly serviceAccountName?: string;
+  readonly serviceName?: string;
   readonly metadataServicePort?: number;
   readonly upgradesServicePort?: number;
 }
@@ -16,13 +17,14 @@ export class MetaflowService extends Construct {
     const metadataServicePort = props?.metadataServicePort || 8080;
     const upgradesServicePort = props?.upgradesServicePort || 8082;
     const serviceAccountName = props?.serviceAccountName || 'release-name-metaflow-service';
+    const serviceName = props?.serviceName || 'metaflow-service';
 
     new KubeServiceAccount(this, 'metaflow-sa', {
       metadata: {
         name: serviceAccountName,
         labels: {
           'helm.sh/chart': 'metaflow-service-0.2.0',
-          'app.kubernetes.io/name': 'metaflow-service',
+          'app.kubernetes.io/name': serviceName,
           'app.kubernetes.io/instance': 'release-name',
           'app.kubernetes.io/version': '2.2.4',
           'app.kubernetes.io/managed-by': 'Helm',
@@ -35,7 +37,7 @@ export class MetaflowService extends Construct {
         name: serviceAccountName,
         labels: {
           'helm.sh/chart': 'metaflow-service-0.2.0',
-          'app.kubernetes.io/name': 'metaflow-service',
+          'app.kubernetes.io/name': serviceName,
           'app.kubernetes.io/instance': 'release-name',
           'app.kubernetes.io/version': '2.2.4',
           'app.kubernetes.io/managed-by': 'Helm',
@@ -56,6 +58,12 @@ export class MetaflowService extends Construct {
           targetPort: upgradesServicePort,
         },
       ],
+      selector: kplus.Pods.select(this, 'Selected', {
+        labels: {
+          'app.kubernetes.io/name': serviceName,
+          'app.kubernetes.io/instance': 'release-name',
+        },
+      }),
     });
   }
 }

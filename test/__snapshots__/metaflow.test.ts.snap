@@ -45,7 +45,10 @@ Array [
           "targetPort": 8082,
         },
       ],
-      "selector": Object {},
+      "selector": Object {
+        "app.kubernetes.io/instance": "release-name",
+        "app.kubernetes.io/name": "metaflow-service",
+      },
       "type": "ClusterIP",
     },
   },
