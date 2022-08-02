@@ -245,7 +245,7 @@ Array [
     "apiVersion": "v1",
     "data": Object {
       "password": "bWV0YWZsb3c=",
-      "postgres-password": "TjRlQVpJZnQzSA==",
+      "postgres-password": "SmVqODlGaDdLRg==",
     },
     "kind": "Secret",
     "metadata": Object {

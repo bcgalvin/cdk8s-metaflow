@@ -156,63 +156,12 @@
         }
       ]
     },
-    "integ:metaflow-service-postgres:assert": {
-      "name": "integ:metaflow-service-postgres:assert",
-      "description": "assert the snapshot of integration test 'metaflow-service-postgres'",
-      "steps": [
-        {
-          "exec": "[ -d \"test/metaflow-service-postgres.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'metaflow-service-postgres'. Run 'projen integ:metaflow-service-postgres:deploy' to capture.\" && exit 1)"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/metaflow-service-postgres.integ.ts\" -o test/.tmp/metaflow-service-postgres.integ/assert.cdk.out > /dev/null"
-        },
-        {
-          "exec": "diff test/metaflow-service-postgres.integ.snapshot/ test/.tmp/metaflow-service-postgres.integ/assert.cdk.out/"
-        }
-      ]
-    },
-    "integ:metaflow-service-postgres:deploy": {
-      "name": "integ:metaflow-service-postgres:deploy",
-      "description": "deploy integration test 'metaflow-service-postgres' and capture snapshot",
-      "steps": [
-        {
-          "exec": "rm -fr test/.tmp/metaflow-service-postgres.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/metaflow-service-postgres.integ.ts\" -o test/.tmp/metaflow-service-postgres.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "kubectl apply -f test/.tmp/metaflow-service-postgres.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "rm -fr test/metaflow-service-postgres.integ.snapshot"
-        },
-        {
-          "exec": "mv test/.tmp/metaflow-service-postgres.integ/deploy.cdk.out test/metaflow-service-postgres.integ.snapshot"
-        }
-      ]
-    },
-    "integ:metaflow-service-postgres:snapshot": {
-      "name": "integ:metaflow-service-postgres:snapshot",
-      "description": "update snapshot for integration test \"metaflow-service-postgres\"",
-      "steps": [
-        {
-          "exec": "rm -fr test/metaflow-service-postgres.integ.snapshot"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/metaflow-service-postgres.integ.ts\" -o test/metaflow-service-postgres.integ.snapshot"
-        }
-      ]
-    },
     "integ:snapshot-all": {
       "name": "integ:snapshot-all",
       "description": "update snapshot for all integration tests",
       "steps": [
         {
           "spawn": "integ:metaflow-service-default:snapshot"
-        },
-        {
-          "spawn": "integ:metaflow-service-postgres:snapshot"
         }
       ]
     },
@@ -324,13 +273,13 @@
           "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
         },
         {
-          "exec": "cd ./test && cdk8s import k8s --language typescript"
-        },
-        {
           "exec": "jest --passWithNoTests --all --updateSnapshot"
         },
         {
-          "exec": "eslint"
+          "spawn": "eslint"
+        },
+        {
+          "spawn": "integ:metaflow-service-default:assert"
         }
       ]
     },

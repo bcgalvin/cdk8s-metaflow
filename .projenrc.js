@@ -69,10 +69,6 @@ const project = new cdk8s.ConstructLibraryCdk8s({
 });
 
 project.deps.addDependency('cdk8s-plus-22', DependencyType.PEER);
-// remove integ assertions... postgres has dynamic objects that break things
-project.testTask.reset('jest --passWithNoTests --all --updateSnapshot');
-project.testTask.exec('eslint');
-project.testTask.prependExec('cd ./test && cdk8s import k8s --language typescript');
 project.testTask.prependExec('helm repo add bitnami https://charts.bitnami.com/bitnami');
 const installHelm = project.addTask('install-helm', {
   exec: 'curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash',

@@ -26,6 +26,5 @@ dist
 tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
-test/metaflow-service-default.integ.snapshot
 test/.tmp
-test/metaflow-service-postgres.integ.snapshot
+test/metaflow-service-default.integ.snapshot
