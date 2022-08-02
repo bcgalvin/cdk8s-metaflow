@@ -4,6 +4,7 @@ exports[`metaflow service postgres snapshot 1`] = `
 Array [
   Object {
     "apiVersion": "v1",
+    "automountServiceAccountToken": true,
     "kind": "ServiceAccount",
     "metadata": Object {
       "labels": Object {
@@ -14,39 +15,6 @@ Array [
         "helm.sh/chart": "metaflow-service-0.2.0",
       },
       "name": "release-name-metaflow-service",
-    },
-  },
-  Object {
-    "apiVersion": "v1",
-    "kind": "Service",
-    "metadata": Object {
-      "labels": Object {
-        "app.kubernetes.io/instance": "release-name",
-        "app.kubernetes.io/managed-by": "Helm",
-        "app.kubernetes.io/name": "metaflow-service",
-        "app.kubernetes.io/version": "2.2.4",
-        "helm.sh/chart": "metaflow-service-0.2.0",
-      },
-      "name": "release-name-metaflow-service",
-    },
-    "spec": Object {
-      "externalIPs": Array [],
-      "ports": Array [
-        Object {
-          "name": "metadata",
-          "port": 8080,
-          "protocol": "TCP",
-          "targetPort": 8080,
-        },
-        Object {
-          "name": "upgrades",
-          "port": 8082,
-          "protocol": "TCP",
-          "targetPort": 8082,
-        },
-      ],
-      "selector": Object {},
-      "type": "ClusterIP",
     },
   },
   Object {
@@ -196,6 +164,39 @@ Array [
   },
   Object {
     "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": Object {
+      "labels": Object {
+        "app.kubernetes.io/instance": "release-name",
+        "app.kubernetes.io/managed-by": "Helm",
+        "app.kubernetes.io/name": "metaflow-service",
+        "app.kubernetes.io/version": "2.2.4",
+        "helm.sh/chart": "metaflow-service-0.2.0",
+      },
+      "name": "release-name-metaflow-service",
+    },
+    "spec": Object {
+      "externalIPs": Array [],
+      "ports": Array [
+        Object {
+          "name": "metadata",
+          "port": 8080,
+          "protocol": "TCP",
+          "targetPort": 8080,
+        },
+        Object {
+          "name": "upgrades",
+          "port": 8082,
+          "protocol": "TCP",
+          "targetPort": 8082,
+        },
+      ],
+      "selector": Object {},
+      "type": "ClusterIP",
+    },
+  },
+  Object {
+    "apiVersion": "v1",
     "kind": "Pod",
     "metadata": Object {
       "annotations": Object {
@@ -232,7 +233,7 @@ Array [
         },
       ],
       "dnsPolicy": "ClusterFirst",
-      "restartPolicy": "Never",
+      "restartPolicy": "OnFailure",
       "securityContext": Object {
         "fsGroupChangePolicy": "Always",
         "runAsNonRoot": false,
@@ -244,7 +245,7 @@ Array [
     "apiVersion": "v1",
     "data": Object {
       "password": "bWV0YWZsb3c=",
-      "postgres-password": "OWVzZ3hldEwzVg==",
+      "postgres-password": "TUJNcENsZXU2Zw==",
     },
     "kind": "Secret",
     "metadata": Object {

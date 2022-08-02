@@ -40,6 +40,7 @@ junit.xml
 /coverage/
 !/.github/workflows/build.yml
 !/.mergify.yml
+!/.github/workflows/upgrade.yml
 !/.prettierignore
 !/.prettierrc.json
 !/test/

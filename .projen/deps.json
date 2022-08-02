@@ -26,16 +26,17 @@
     },
     {
       "name": "cdk8s-cli",
+      "version": "^2.0.70",
       "type": "build"
     },
     {
       "name": "cdk8s",
-      "version": "2.2.74",
+      "version": "2.3.73",
       "type": "build"
     },
     {
       "name": "constructs",
-      "version": "10.0.5",
+      "version": "10.1.64",
       "type": "build"
     },
     {
@@ -94,11 +95,17 @@
       "type": "build"
     },
     {
+      "name": "npm-check-updates",
+      "version": "^15",
+      "type": "build"
+    },
+    {
       "name": "prettier",
       "type": "build"
     },
     {
       "name": "projen",
+      "version": "v0.60.12",
       "type": "build"
     },
     {
@@ -116,20 +123,25 @@
     },
     {
       "name": "cdk8s-plus-22",
-      "type": "bundled"
+      "type": "peer"
     },
     {
       "name": "cdk8s",
-      "version": "^2.2.74",
+      "version": "^2.3.73",
       "type": "peer"
     },
     {
       "name": "constructs",
-      "version": "^10.0.5",
+      "version": "^10.1.64",
       "type": "peer"
     },
     {
       "name": "cdk8s-plus-22",
+      "type": "runtime"
+    },
+    {
+      "name": "cdk8s",
+      "version": "2.3.73",
       "type": "runtime"
     }
   ],

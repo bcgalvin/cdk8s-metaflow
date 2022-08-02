@@ -2,16 +2,15 @@ import { Helm } from 'cdk8s';
 import * as kplus from 'cdk8s-plus-22';
 import { HttpIngressPathType, Protocol } from 'cdk8s-plus-22';
 import { Construct } from 'constructs';
-import { KubeServiceAccount } from './imports/k8s';
 
 export interface PostgresOptions {
-  databaseName?: string;
-  databaseUser?: string;
-  databasePassword?: string;
+  readonly databaseName?: string;
+  readonly databaseUser?: string;
+  readonly databasePassword?: string;
 }
 
 export interface IngressOptions {
-  hostName?: string;
+  readonly hostName?: string;
 }
 
 export interface MetaflowServiceProps {
@@ -47,8 +46,7 @@ export class MetaflowService extends Construct {
       MF_METADATA_DB_PORT: kplus.EnvValue.fromValue('5432'),
       MF_METADATA_DB_HOST: kplus.EnvValue.fromValue('release-name-postgresql'),
     };
-
-    const serviceAccount = new KubeServiceAccount(this, 'metaflow-sa', {
+    const serviceAccount = new kplus.ServiceAccount(this, 'service-account', {
       metadata: {
         name: serviceAccountName,
         labels: {
@@ -59,34 +57,6 @@ export class MetaflowService extends Construct {
           'app.kubernetes.io/managed-by': 'Helm',
         },
       },
-    });
-
-    this.service = new kplus.Service(this, 'metaflow-service', {
-      metadata: {
-        name: serviceAccountName,
-        labels: {
-          'helm.sh/chart': 'metaflow-service-0.2.0',
-          'app.kubernetes.io/name': serviceName,
-          'app.kubernetes.io/instance': 'release-name',
-          'app.kubernetes.io/version': '2.2.4',
-          'app.kubernetes.io/managed-by': 'Helm',
-        },
-      },
-      type: kplus.ServiceType.CLUSTER_IP,
-      ports: [
-        {
-          name: 'metadata',
-          port: metadataServicePort,
-          protocol: Protocol.TCP,
-          targetPort: metadataServicePort,
-        },
-        {
-          name: 'upgrades',
-          port: upgradesServicePort,
-          protocol: Protocol.TCP,
-          targetPort: upgradesServicePort,
-        },
-      ],
     });
 
     this.deployment = new kplus.Deployment(this, 'metaflow-deployment', {
@@ -124,6 +94,34 @@ export class MetaflowService extends Construct {
       serviceAccount,
     });
 
+    this.service = new kplus.Service(this, 'metaflow-service', {
+      metadata: {
+        name: serviceAccountName,
+        labels: {
+          'helm.sh/chart': 'metaflow-service-0.2.0',
+          'app.kubernetes.io/name': serviceName,
+          'app.kubernetes.io/instance': 'release-name',
+          'app.kubernetes.io/version': '2.2.4',
+          'app.kubernetes.io/managed-by': 'Helm',
+        },
+      },
+      type: kplus.ServiceType.CLUSTER_IP,
+      ports: [
+        {
+          name: 'metadata',
+          port: metadataServicePort,
+          protocol: Protocol.TCP,
+          targetPort: metadataServicePort,
+        },
+        {
+          name: 'upgrades',
+          port: upgradesServicePort,
+          protocol: Protocol.TCP,
+          targetPort: upgradesServicePort,
+        },
+      ],
+    });
+
     new kplus.Pod(this, 'metaflow-service-pod', {
       metadata: {
         name: 'release-name-metaflow-service-test-connection',
@@ -144,7 +142,7 @@ export class MetaflowService extends Construct {
           args: ['release-name-metaflow-service:8080'],
         },
       ],
-      restartPolicy: kplus.RestartPolicy.NEVER,
+      restartPolicy: kplus.RestartPolicy.ON_FAILURE,
     });
 
     if (props?.postgresEnabled) {
