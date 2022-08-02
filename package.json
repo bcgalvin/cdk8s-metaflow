@@ -148,11 +148,6 @@
   "awscdkio": {
     "announce": false
   },
-  "workspaces": {
-    "packages": [
-      "examples/**/*"
-    ]
-  },
   "resolutions": {
     "@types/prettier": "2.6.0"
   },
