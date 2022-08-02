@@ -30,6 +30,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   releaseToNpm: true,
   publishToGo: {
     moduleName: 'github.com/bcgalvin/cdk8s-metaflow-go',
+    githubTokenSecret: 'PROJEN_GITHUB_TOKEN',
   },
   publishToPypi: {
     distName: 'cdk8s-metaflow',
