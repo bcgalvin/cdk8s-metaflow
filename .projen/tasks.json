@@ -98,6 +98,16 @@
         }
       ]
     },
+    "install-helm": {
+      "name": "install-helm",
+      "description": "Install helm3",
+      "steps": [
+        {
+          "exec": "curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash"
+        }
+      ],
+      "condition": "! (helm version | grep \"v3.\")"
+    },
     "integ:metaflow-service-default:assert": {
       "name": "integ:metaflow-service-default:assert",
       "description": "assert the snapshot of integration test 'metaflow-service-default'",
@@ -307,6 +317,12 @@
       "name": "test",
       "description": "Run tests",
       "steps": [
+        {
+          "spawn": "install-helm"
+        },
+        {
+          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
+        },
         {
           "exec": "cd ./test && cdk8s import k8s --language typescript"
         },

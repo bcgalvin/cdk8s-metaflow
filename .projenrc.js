@@ -73,5 +73,14 @@ project.deps.addDependency('cdk8s-plus-22', DependencyType.PEER);
 project.testTask.reset('jest --passWithNoTests --all --updateSnapshot');
 project.testTask.exec('eslint');
 project.testTask.prependExec('cd ./test && cdk8s import k8s --language typescript');
+project.testTask.prependExec('helm repo add bitnami https://charts.bitnami.com/bitnami');
+const installHelm = project.addTask('install-helm', {
+  exec: 'curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash',
+  description: 'Install helm3',
+
+  // will exit with non-zero if helm is not installed or has the wrong version
+  condition: '! (helm version | grep "v3.")',
+});
+project.testTask.prependSpawn(installHelm);
 project.upgradeWorkflow.postUpgradeTask.spawn(project.tasks.tryFind('integ:snapshot-all'));
 project.synth();

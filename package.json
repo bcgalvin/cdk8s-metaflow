@@ -13,6 +13,7 @@
     "docgen": "npx projen docgen",
     "eject": "npx projen eject",
     "eslint": "npx projen eslint",
+    "install-helm": "npx projen install-helm",
     "integ:metaflow-service-default:assert": "npx projen integ:metaflow-service-default:assert",
     "integ:metaflow-service-default:deploy": "npx projen integ:metaflow-service-default:deploy",
     "integ:metaflow-service-default:snapshot": "npx projen integ:metaflow-service-default:snapshot",
