@@ -1,6 +1,6 @@
 # cdk8s-metaflow
 
-Collection of cdk8s constructs for deploying metaflow on Kubernetes
+Collection of cdk8s constructs for deploying [Metaflow](https://metaflow.org) on Kubernetes.
 
 ### Imports
 
