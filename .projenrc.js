@@ -80,4 +80,9 @@ const installHelm = project.addTask('install-helm', {
 });
 project.testTask.prependSpawn(installHelm);
 project.upgradeWorkflow.postUpgradeTask.spawn(project.tasks.tryFind('integ:snapshot-all'));
+
+project.package.addField('workspaces', {
+  packages: ['examples/**/*'],
+});
+
 project.synth();
