@@ -173,7 +173,7 @@ metadata:
   namespace: default
 data:
   password: bWV0YWZsb3c=
-  postgres-password: cG4yOG1NV2wwag==
+  postgres-password: NXJPVjY2NERaRQ==
 type: Opaque
 ---
 apiVersion: v1

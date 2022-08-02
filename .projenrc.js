@@ -27,8 +27,14 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   depsUpgradeOptions: {
     ignoreProjen: false,
   },
-  release: false,
-  releaseToNpm: false,
+  releaseToNpm: true,
+  publishToGo: {
+    moduleName: 'github.com/bcgalvin/cdk8s-metaflow-go',
+  },
+  publishToPypi: {
+    distName: 'cdk8s-metaflow',
+    module: 'cdk8s_metaflow',
+  },
   catalog: { announce: false },
   githubOptions: {
     pullRequestLint: false,
@@ -57,9 +63,6 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   eslintOptions: {
     dirs: ['src'],
     ignorePatterns: ['**/node_modules/**', '**/test/imports/**'],
-  },
-  jestOptions: {
-    jestConfig: {},
   },
   gitignore: commonIgnore,
   npmignore: commonIgnore,

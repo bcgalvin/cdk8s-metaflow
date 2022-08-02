@@ -6,6 +6,7 @@
   },
   "scripts": {
     "build": "npx projen build",
+    "bump": "npx projen bump",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
     "default": "npx projen default",
@@ -21,12 +22,17 @@
     "integ:snapshot-all": "npx projen integ:snapshot-all",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:go": "npx projen package:go",
+    "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
+    "release": "npx projen release",
     "test": "npx projen test",
     "test:update": "npx projen test:update",
     "test:watch": "npx projen test:watch",
+    "unbump": "npx projen unbump",
     "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
     "projen": "npx projen"
@@ -61,6 +67,7 @@
     "npm-check-updates": "^15",
     "prettier": "^2.7.1",
     "projen": "v0.60.12",
+    "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
@@ -126,7 +133,15 @@
   "stability": "experimental",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "cdk8s-metaflow",
+        "module": "cdk8s_metaflow"
+      },
+      "go": {
+        "moduleName": "github.com/bcgalvin/cdk8s-metaflow-go"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
