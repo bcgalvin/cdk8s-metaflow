@@ -33,206 +33,6 @@ spec:
   selector: {}
   type: ClusterIP
 ---
-apiVersion: v1
-kind: Secret
-metadata:
-  labels:
-    app.kubernetes.io/instance: postgresql-10.13.4
-    app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: postgresql
-    helm.sh/chart: postgresql-11.6.21
-  name: postgresql-10.13.4
-  namespace: default
-data:
-  postgres-password: Tko0ajgzTFFKaA==
-type: Opaque
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app.kubernetes.io/component: primary
-    app.kubernetes.io/instance: postgresql-10.13.4
-    app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: postgresql
-    helm.sh/chart: postgresql-11.6.21
-    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
-  name: postgresql-10.13.4-hl
-  namespace: default
-spec:
-  clusterIP: None
-  ports:
-    - name: tcp-postgresql
-      port: 5432
-      targetPort: tcp-postgresql
-  publishNotReadyAddresses: true
-  selector:
-    app.kubernetes.io/component: primary
-    app.kubernetes.io/instance: postgresql-10.13.4
-    app.kubernetes.io/name: postgresql
-  type: ClusterIP
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app.kubernetes.io/component: primary
-    app.kubernetes.io/instance: postgresql-10.13.4
-    app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: postgresql
-    helm.sh/chart: postgresql-11.6.21
-  name: postgresql-10.13.4
-  namespace: default
-spec:
-  ports:
-    - name: tcp-postgresql
-      port: 5432
-      targetPort: tcp-postgresql
-  selector:
-    app.kubernetes.io/component: primary
-    app.kubernetes.io/instance: postgresql-10.13.4
-    app.kubernetes.io/name: postgresql
-  sessionAffinity: None
-  type: ClusterIP
----
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  labels:
-    app.kubernetes.io/component: primary
-    app.kubernetes.io/instance: postgresql-10.13.4
-    app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: postgresql
-    helm.sh/chart: postgresql-11.6.21
-  name: postgresql-10.13.4
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/component: primary
-      app.kubernetes.io/instance: postgresql-10.13.4
-      app.kubernetes.io/name: postgresql
-  serviceName: postgresql-10.13.4-hl
-  template:
-    metadata:
-      labels:
-        app.kubernetes.io/component: primary
-        app.kubernetes.io/instance: postgresql-10.13.4
-        app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/name: postgresql
-        helm.sh/chart: postgresql-11.6.21
-      name: postgresql-10.13.4
-    spec:
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-            - podAffinityTerm:
-                labelSelector:
-                  matchLabels:
-                    app.kubernetes.io/component: primary
-                    app.kubernetes.io/instance: postgresql-10.13.4
-                    app.kubernetes.io/name: postgresql
-                namespaces:
-                  - default
-                topologyKey: kubernetes.io/hostname
-              weight: 1
-      containers:
-        - env:
-            - name: BITNAMI_DEBUG
-              value: "false"
-            - name: POSTGRESQL_PORT_NUMBER
-              value: "5432"
-            - name: POSTGRESQL_VOLUME_DIR
-              value: /bitnami/postgresql
-            - name: PGDATA
-              value: /bitnami/postgresql/data
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: postgres-password
-                  name: postgresql-10.13.4
-            - name: POSTGRESQL_ENABLE_LDAP
-              value: "no"
-            - name: POSTGRESQL_ENABLE_TLS
-              value: "no"
-            - name: POSTGRESQL_LOG_HOSTNAME
-              value: "false"
-            - name: POSTGRESQL_LOG_CONNECTIONS
-              value: "false"
-            - name: POSTGRESQL_LOG_DISCONNECTIONS
-              value: "false"
-            - name: POSTGRESQL_PGAUDIT_LOG_CATALOG
-              value: "off"
-            - name: POSTGRESQL_CLIENT_MIN_MESSAGES
-              value: error
-            - name: POSTGRESQL_SHARED_PRELOAD_LIBRARIES
-              value: pgaudit
-          image: docker.io/bitnami/postgresql:14.4.0-debian-11-r19
-          imagePullPolicy: IfNotPresent
-          livenessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - exec pg_isready -U "postgres" -h 127.0.0.1 -p 5432
-            failureThreshold: 6
-            initialDelaySeconds: 30
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 5
-          name: postgresql
-          ports:
-            - containerPort: 5432
-              name: tcp-postgresql
-          readinessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - -e
-                - |
-                  exec pg_isready -U "postgres" -h 127.0.0.1 -p 5432
-                  [ -f /opt/bitnami/postgresql/tmp/.initialized ] || [ -f /bitnami/postgresql/.initialized ]
-            failureThreshold: 6
-            initialDelaySeconds: 5
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 5
-          resources:
-            limits: {}
-            requests:
-              cpu: 250m
-              memory: 256Mi
-          securityContext:
-            runAsUser: 1001
-          volumeMounts:
-            - mountPath: /dev/shm
-              name: dshm
-            - mountPath: /bitnami/postgresql
-              name: data
-      hostIPC: false
-      hostNetwork: false
-      securityContext:
-        fsGroup: 1001
-      serviceAccountName: default
-      volumes:
-        - emptyDir:
-            medium: Memory
-          name: dshm
-  updateStrategy:
-    rollingUpdate: {}
-    type: RollingUpdate
-  volumeClaimTemplates:
-    - metadata:
-        name: data
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 8Gi
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -359,3 +159,236 @@ spec:
     fsGroupChangePolicy: Always
     runAsNonRoot: false
   setHostnameAsFQDN: false
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app.kubernetes.io/instance: release-name-postgresql
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.6.21
+  name: release-name-postgresql
+  namespace: default
+data:
+  password: bWV0YWZsb3c=
+  postgres-password: Ym9MZ0t6cVF1Tw==
+type: Opaque
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: primary
+    app.kubernetes.io/instance: release-name-postgresql
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.6.21
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+  name: release-name-postgresql-hl
+  namespace: default
+spec:
+  clusterIP: None
+  ports:
+    - name: tcp-postgresql
+      port: 5432
+      targetPort: tcp-postgresql
+  publishNotReadyAddresses: true
+  selector:
+    app.kubernetes.io/component: primary
+    app.kubernetes.io/instance: release-name-postgresql
+    app.kubernetes.io/name: postgresql
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: primary
+    app.kubernetes.io/instance: release-name-postgresql
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.6.21
+  name: release-name-postgresql
+  namespace: default
+spec:
+  ports:
+    - name: tcp-postgresql
+      port: 5432
+      targetPort: tcp-postgresql
+  selector:
+    app.kubernetes.io/component: primary
+    app.kubernetes.io/instance: release-name-postgresql
+    app.kubernetes.io/name: postgresql
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app.kubernetes.io/component: primary
+    app.kubernetes.io/instance: release-name-postgresql
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.6.21
+  name: release-name-postgresql
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: primary
+      app.kubernetes.io/instance: release-name-postgresql
+      app.kubernetes.io/name: postgresql
+  serviceName: release-name-postgresql-hl
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: primary
+        app.kubernetes.io/instance: release-name-postgresql
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: postgresql
+        helm.sh/chart: postgresql-11.6.21
+      name: release-name-postgresql
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/component: primary
+                    app.kubernetes.io/instance: release-name-postgresql
+                    app.kubernetes.io/name: postgresql
+                namespaces:
+                  - default
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+      containers:
+        - env:
+            - name: BITNAMI_DEBUG
+              value: "false"
+            - name: POSTGRESQL_PORT_NUMBER
+              value: "5432"
+            - name: POSTGRESQL_VOLUME_DIR
+              value: /bitnami/postgresql
+            - name: PGDATA
+              value: /bitnami/postgresql/data
+            - name: POSTGRES_USER
+              value: metaflow
+            - name: POSTGRES_POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: postgres-password
+                  name: release-name-postgresql
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: release-name-postgresql
+            - name: POSTGRES_DB
+              value: metaflow
+            - name: POSTGRESQL_ENABLE_LDAP
+              value: "no"
+            - name: POSTGRESQL_ENABLE_TLS
+              value: "no"
+            - name: POSTGRESQL_LOG_HOSTNAME
+              value: "false"
+            - name: POSTGRESQL_LOG_CONNECTIONS
+              value: "false"
+            - name: POSTGRESQL_LOG_DISCONNECTIONS
+              value: "false"
+            - name: POSTGRESQL_PGAUDIT_LOG_CATALOG
+              value: "off"
+            - name: POSTGRESQL_CLIENT_MIN_MESSAGES
+              value: error
+            - name: POSTGRESQL_SHARED_PRELOAD_LIBRARIES
+              value: pgaudit
+          image: docker.io/bitnami/postgresql:14.4.0-debian-11-r19
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - exec pg_isready -U "metaflow" -d "dbname=metaflow" -h 127.0.0.1 -p 5432
+            failureThreshold: 6
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+          name: postgresql
+          ports:
+            - containerPort: 5432
+              name: tcp-postgresql
+          readinessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - -e
+                - |
+                  exec pg_isready -U "metaflow" -d "dbname=metaflow" -h 127.0.0.1 -p 5432
+                  [ -f /opt/bitnami/postgresql/tmp/.initialized ] || [ -f /bitnami/postgresql/.initialized ]
+            failureThreshold: 6
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+          resources:
+            limits: {}
+            requests:
+              cpu: 250m
+              memory: 256Mi
+          securityContext:
+            runAsUser: 1001
+          volumeMounts:
+            - mountPath: /dev/shm
+              name: dshm
+            - mountPath: /bitnami/postgresql
+              name: data
+      hostIPC: false
+      hostNetwork: false
+      securityContext:
+        fsGroup: 1001
+      serviceAccountName: release-name-metaflow-service
+      volumes:
+        - emptyDir:
+            medium: Memory
+          name: dshm
+  updateStrategy:
+    rollingUpdate: {}
+    type: RollingUpdate
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 8Gi
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: metaflow-service
+    app.kubernetes.io/version: 2.2.4
+    helm.sh/chart: metaflow-service-0.2.0
+  name: release-name-metaflow-service
+spec:
+  rules:
+    - host: metaflow-service.local
+      http:
+        paths:
+          - backend:
+              service:
+                name: release-name-metaflow-service
+                port:
+                  number: 8080
+            path: /
+            pathType: ImplementationSpecific

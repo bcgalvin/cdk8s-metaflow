@@ -1,6 +1,6 @@
 import { Helm } from 'cdk8s';
 import * as kplus from 'cdk8s-plus-22';
-import { Protocol } from 'cdk8s-plus-22';
+import { HttpIngressPathType, Protocol } from 'cdk8s-plus-22';
 import { Construct } from 'constructs';
 import { KubeServiceAccount } from './imports/k8s';
 
@@ -10,18 +10,26 @@ export interface PostgresOptions {
   databasePassword?: string;
 }
 
+export interface IngressOptions {
+  hostName?: string;
+}
+
 export interface MetaflowServiceProps {
   readonly serviceAccountName?: string;
   readonly serviceName?: string;
   readonly image?: string;
   readonly metadataServicePort?: number;
   readonly upgradesServicePort?: number;
-  readonly ingressEnabled?: boolean;
   readonly postgresEnabled?: boolean;
   readonly postgresOptions?: PostgresOptions;
+  readonly ingressEnabled?: boolean;
+  readonly ingressOptions?: IngressOptions;
 }
 
 export class MetaflowService extends Construct {
+  public readonly deployment: kplus.Deployment;
+  public readonly service: kplus.Service;
+
   constructor(scope: Construct, id: string, props?: MetaflowServiceProps) {
     super(scope, id);
 
@@ -30,6 +38,7 @@ export class MetaflowService extends Construct {
     const image = props?.image || 'public.ecr.aws/outerbounds/metaflow_metadata_service:2.2.4';
     const metadataServicePort = props?.metadataServicePort || 8080;
     const upgradesServicePort = props?.upgradesServicePort || 8082;
+    const ingressHostName = props?.ingressOptions?.hostName || 'metaflow-service.local';
 
     const dbEnvVals: { [p: string]: kplus.EnvValue } = {
       MF_METADATA_DB_NAME: kplus.EnvValue.fromValue(props?.postgresOptions?.databaseName || 'metaflow'),
@@ -52,7 +61,7 @@ export class MetaflowService extends Construct {
       },
     });
 
-    new kplus.Service(this, 'metaflow-service', {
+    this.service = new kplus.Service(this, 'metaflow-service', {
       metadata: {
         name: serviceAccountName,
         labels: {
@@ -80,20 +89,7 @@ export class MetaflowService extends Construct {
       ],
     });
 
-    if (props?.postgresEnabled) {
-      new Helm(this, 'postgres', {
-        chart: 'bitnami/postgresql',
-        releaseName: 'release-name-postgresql',
-        values: {
-          enabled: true,
-          postgresqlDatabase: props?.postgresOptions?.databaseName || 'metaflow',
-          postgresqlUsername: props?.postgresOptions?.databaseUser || 'metaflow',
-          postgresqlPassword: props?.postgresOptions?.databasePassword || 'metaflow',
-        },
-      });
-    }
-
-    new kplus.Deployment(this, 'metaflow-deployment', {
+    this.deployment = new kplus.Deployment(this, 'metaflow-deployment', {
       replicas: 1,
       initContainers: [
         {
@@ -150,5 +146,44 @@ export class MetaflowService extends Construct {
       ],
       restartPolicy: kplus.RestartPolicy.NEVER,
     });
+
+    if (props?.postgresEnabled) {
+      new Helm(this, 'postgres', {
+        chart: 'bitnami/postgresql',
+        releaseName: 'release-name-postgresql',
+        values: {
+          enabled: true,
+          serviceAccount: {
+            name: serviceAccountName,
+          },
+          auth: {
+            database: props?.postgresOptions?.databaseName ?? 'metaflow',
+            username: props?.postgresOptions?.databaseUser ?? 'metaflow',
+            password: props?.postgresOptions?.databasePassword ?? 'metaflow',
+          },
+        },
+      });
+    }
+
+    if (props?.ingressEnabled) {
+      const ingress = new kplus.Ingress(this, 'ingress', {
+        metadata: {
+          name: serviceAccountName,
+          labels: {
+            'helm.sh/chart': 'metaflow-service-0.2.0',
+            'app.kubernetes.io/name': serviceName,
+            'app.kubernetes.io/instance': 'release-name',
+            'app.kubernetes.io/version': '2.2.4',
+            'app.kubernetes.io/managed-by': 'Helm',
+          },
+        },
+      });
+      ingress.addHostRule(
+        ingressHostName,
+        '/',
+        kplus.IngressBackend.fromService(this.service, { port: metadataServicePort }),
+        HttpIngressPathType.IMPLEMENTATION_SPECIFIC,
+      );
+    }
   }
 }
