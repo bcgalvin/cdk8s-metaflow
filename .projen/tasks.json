@@ -108,51 +108,51 @@
       ],
       "condition": "! (helm version | grep \"v3.\")"
     },
-    "integ:metaflow-default:assert": {
-      "name": "integ:metaflow-default:assert",
-      "description": "assert the snapshot of integration test 'metaflow-default'",
+    "integ:metaflow-service-default:assert": {
+      "name": "integ:metaflow-service-default:assert",
+      "description": "assert the snapshot of integration test 'metaflow-service-default'",
       "steps": [
         {
-          "exec": "[ -d \"test/metaflow-default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'metaflow-default'. Run 'projen integ:metaflow-default:deploy' to capture.\" && exit 1)"
+          "exec": "[ -d \"test/integ/metaflow-service-default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'metaflow-service-default'. Run 'projen integ:metaflow-service-default:deploy' to capture.\" && exit 1)"
         },
         {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/metaflow-default.integ.ts\" -o test/.tmp/metaflow-default.integ/assert.cdk.out > /dev/null"
+          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-service-default.integ.ts\" -o test/integ/.tmp/metaflow-service-default.integ/assert.cdk.out > /dev/null"
         },
         {
-          "exec": "diff test/metaflow-default.integ.snapshot/ test/.tmp/metaflow-default.integ/assert.cdk.out/"
+          "exec": "diff test/integ/metaflow-service-default.integ.snapshot/ test/integ/.tmp/metaflow-service-default.integ/assert.cdk.out/"
         }
       ]
     },
-    "integ:metaflow-default:deploy": {
-      "name": "integ:metaflow-default:deploy",
-      "description": "deploy integration test 'metaflow-default' and capture snapshot",
+    "integ:metaflow-service-default:deploy": {
+      "name": "integ:metaflow-service-default:deploy",
+      "description": "deploy integration test 'metaflow-service-default' and capture snapshot",
       "steps": [
         {
-          "exec": "rm -fr test/.tmp/metaflow-default.integ/deploy.cdk.out"
+          "exec": "rm -fr test/integ/.tmp/metaflow-service-default.integ/deploy.cdk.out"
         },
         {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/metaflow-default.integ.ts\" -o test/.tmp/metaflow-default.integ/deploy.cdk.out"
+          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-service-default.integ.ts\" -o test/integ/.tmp/metaflow-service-default.integ/deploy.cdk.out"
         },
         {
-          "exec": "kubectl apply -f test/.tmp/metaflow-default.integ/deploy.cdk.out"
+          "exec": "kubectl apply -f test/integ/.tmp/metaflow-service-default.integ/deploy.cdk.out"
         },
         {
-          "exec": "rm -fr test/metaflow-default.integ.snapshot"
+          "exec": "rm -fr test/integ/metaflow-service-default.integ.snapshot"
         },
         {
-          "exec": "mv test/.tmp/metaflow-default.integ/deploy.cdk.out test/metaflow-default.integ.snapshot"
+          "exec": "mv test/integ/.tmp/metaflow-service-default.integ/deploy.cdk.out test/integ/metaflow-service-default.integ.snapshot"
         }
       ]
     },
-    "integ:metaflow-default:snapshot": {
-      "name": "integ:metaflow-default:snapshot",
-      "description": "update snapshot for integration test \"metaflow-default\"",
+    "integ:metaflow-service-default:snapshot": {
+      "name": "integ:metaflow-service-default:snapshot",
+      "description": "update snapshot for integration test \"metaflow-service-default\"",
       "steps": [
         {
-          "exec": "rm -fr test/metaflow-default.integ.snapshot"
+          "exec": "rm -fr test/integ/metaflow-service-default.integ.snapshot"
         },
         {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/metaflow-default.integ.ts\" -o test/metaflow-default.integ.snapshot"
+          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-service-default.integ.ts\" -o test/integ/metaflow-service-default.integ.snapshot"
         }
       ]
     },
@@ -161,7 +161,7 @@
       "description": "update snapshot for all integration tests",
       "steps": [
         {
-          "spawn": "integ:metaflow-default:snapshot"
+          "spawn": "integ:metaflow-service-default:snapshot"
         }
       ]
     },
@@ -270,7 +270,7 @@
           "spawn": "install-helm"
         },
         {
-          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
+          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add metaflow https://bcgalvin.github.io/metaflow-charts"
         },
         {
           "exec": "jest --passWithNoTests --all --updateSnapshot"
@@ -279,7 +279,7 @@
           "spawn": "eslint"
         },
         {
-          "spawn": "integ:metaflow-default:assert"
+          "spawn": "integ:metaflow-service-default:assert"
         }
       ]
     },

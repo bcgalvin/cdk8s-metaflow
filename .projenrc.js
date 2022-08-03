@@ -14,13 +14,13 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   defaultReleaseBranch: 'main',
   cdk8sVersion: cdk8sVersion,
   constructsVersion: constructsVersion,
-  deps: [`cdk8s@${cdk8sVersion}`, 'cdk8s-plus-22'],
   devDeps: [
     `cdk8s@${cdk8sVersion}`,
     'cdk8s-cli@^2.0.70',
     'eslint-config-prettier',
     'eslint-plugin-prettier',
     'prettier',
+    '@types/jest',
     '@types/cfn-response',
   ],
   projenVersion: projenVersion,
@@ -50,6 +50,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   eslintOptions: {
     prettier: true,
   },
+  jestOptions: {},
   docgen: true,
   docsDirectory: 'docs',
   prettier: true,
@@ -69,8 +70,9 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   npmignore: commonIgnore,
 });
 
-project.deps.addDependency('cdk8s-plus-22', DependencyType.PEER);
-project.testTask.prependExec('helm repo add bitnami https://charts.bitnami.com/bitnami');
+project.testTask.prependExec(
+  'helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add metaflow https://bcgalvin.github.io/metaflow-charts',
+);
 const installHelm = project.addTask('install-helm', {
   exec: 'curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash',
   description: 'Install helm3',

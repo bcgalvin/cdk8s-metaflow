@@ -14,9 +14,9 @@
     "eject": "npx projen eject",
     "eslint": "npx projen eslint",
     "install-helm": "npx projen install-helm",
-    "integ:metaflow-default:assert": "npx projen integ:metaflow-default:assert",
-    "integ:metaflow-default:deploy": "npx projen integ:metaflow-default:deploy",
-    "integ:metaflow-default:snapshot": "npx projen integ:metaflow-default:snapshot",
+    "integ:metaflow-service-default:assert": "npx projen integ:metaflow-service-default:assert",
+    "integ:metaflow-service-default:deploy": "npx projen integ:metaflow-service-default:deploy",
+    "integ:metaflow-service-default:snapshot": "npx projen integ:metaflow-service-default:snapshot",
     "integ:snapshot-all": "npx projen integ:snapshot-all",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
@@ -72,12 +72,7 @@
   },
   "peerDependencies": {
     "cdk8s": "^2.3.73",
-    "cdk8s-plus-22": "^2.0.0-rc.70",
     "constructs": "^10.1.64"
-  },
-  "dependencies": {
-    "cdk8s": "2.3.73",
-    "cdk8s-plus-22": "2.0.0-rc.70"
   },
   "keywords": [
     "cdk",
