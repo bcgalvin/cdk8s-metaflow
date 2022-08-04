@@ -1,39 +1,56 @@
-import { MetaflowService } from '../src';
+// @ts-ignore
+import { Chart, Testing } from 'cdk8s';
+import { ImagePullPolicy, MetaflowService } from '../src';
 // @ts-ignore
 import { synth } from './util';
 
-const metadata = {
-  'helm.sh/chart': 'metaflow-service-0.2.0',
-  'app.kubernetes.io/name': 'metaflow-service',
-  'app.kubernetes.io/instance': 'release-name',
-  'app.kubernetes.io/version': '2.2.4',
-  'app.kubernetes.io/managed-by': 'Helm',
-};
-
-describe('metaflow service', () => {
-  test('defaults can be overridden', () => {
+describe('helm', () => {
+  test('setting version flag works', () => {
     // GIVEN
-    const resources = synth(MetaflowService, {
-      serviceAccountName: 'override-sa',
-    });
+    const app = Testing.app();
+    const chart = new Chart(app, 'default');
+    new MetaflowService(chart, 'metaflow-service', { chartVersion: '0.1.2' });
+    const resources = Testing.synth(chart);
     // THEN
-    for (const sa of resources.filter((r) => r.kind === 'ServiceAccount')) {
-      expect(sa.metadata.name).toEqual('override-sa');
-    }
-    for (const svc of resources.filter((r) => r.kind === 'Service')) {
-      expect(svc.metadata.name).toEqual('override-sa');
-    }
+    const deployment = resources.find((obj) => obj.kind === 'Deployment');
+    expect(deployment.metadata.labels['helm.sh/chart']).toEqual('metaflow-service-0.1.2');
   });
 
-  test('default metadata is set properly', () => {
+  test('setting chart values at root level works', () => {
     // GIVEN
-    const resources = synth(MetaflowService);
+    const app = Testing.app();
+    const chart = new Chart(app, 'default');
+    new MetaflowService(chart, 'metaflow-service', {
+      chartVersion: '0.1.2',
+      chartValues: {
+        replicaCount: 2,
+        nameOverride: 'metaflow-service-2',
+      },
+    });
+    const resources = Testing.synth(chart);
     // THEN
-    for (const sa of resources.filter((r) => r.kind === 'ServiceAccount')) {
-      expect(sa.metadata.labels).toEqual(metadata);
-    }
-    for (const svc of resources.filter((r) => r.kind === 'Service')) {
-      expect(svc.metadata.labels).toEqual(metadata);
-    }
+    const deployment = resources.find((obj) => obj.kind === 'Deployment');
+    expect(deployment.spec.replicas).toEqual(2);
+    expect(deployment.metadata.labels['app.kubernetes.io/name']).toEqual('metaflow-service-2');
+  });
+
+  test('setting interface chart values works', () => {
+    // GIVEN
+    const app = Testing.app();
+    const chart = new Chart(app, 'default');
+    new MetaflowService(chart, 'metaflow-service', {
+      chartVersion: '0.1.2',
+      chartValues: {
+        image: {
+          repository: 'nginx',
+          tag: 'test-tag',
+          pullPolicy: ImagePullPolicy.IF_NOT_PRESENT,
+        },
+      },
+    });
+    const resources = Testing.synth(chart);
+    // THEN
+    const deployment = resources.find((obj) => obj.kind === 'Deployment');
+    expect(deployment.spec.template.spec.containers[0].image).toEqual('nginx:test-tag');
   });
 });

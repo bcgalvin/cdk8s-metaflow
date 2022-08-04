@@ -55,4 +55,4 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
-test/.tmp
+test/integ/.tmp
