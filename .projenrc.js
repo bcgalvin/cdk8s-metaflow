@@ -1,4 +1,4 @@
-const { cdk8s, DependencyType } = require('projen');
+const { cdk8s } = require('projen');
 const commonIgnore = ['.idea', '.Rproj', '.vscode', 'cdk.context.json', '.DS_Store'];
 const cdk8sVersion = '2.3.73';
 const constructsVersion = '10.1.64';
@@ -15,7 +15,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   cdk8sVersion: cdk8sVersion,
   constructsVersion: constructsVersion,
   devDeps: [
-    `cdk8s@${cdk8sVersion}`,
+    `cdk8s@^${cdk8sVersion}`,
     'cdk8s-cli@^2.0.70',
     'eslint-config-prettier',
     'eslint-plugin-prettier',
@@ -47,9 +47,6 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   mergify: true,
   codeCov: true,
   eslint: true,
-  eslintOptions: {
-    prettier: true,
-  },
   jestOptions: {},
   docgen: true,
   docsDirectory: 'docs',
@@ -71,7 +68,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
 });
 
 project.testTask.prependExec(
-  'helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add metaflow https://bcgalvin.github.io/metaflow-charts',
+  'helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add metaflow https://bcgalvin.github.io/metaflow-charts && helm repo update metaflow',
 );
 const installHelm = project.addTask('install-helm', {
   exec: 'curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash',

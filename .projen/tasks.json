@@ -156,12 +156,63 @@
         }
       ]
     },
+    "integ:metaflow-ui-default:assert": {
+      "name": "integ:metaflow-ui-default:assert",
+      "description": "assert the snapshot of integration test 'metaflow-ui-default'",
+      "steps": [
+        {
+          "exec": "[ -d \"test/integ/metaflow-ui-default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'metaflow-ui-default'. Run 'projen integ:metaflow-ui-default:deploy' to capture.\" && exit 1)"
+        },
+        {
+          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-ui-default.integ.ts\" -o test/integ/.tmp/metaflow-ui-default.integ/assert.cdk.out > /dev/null"
+        },
+        {
+          "exec": "diff test/integ/metaflow-ui-default.integ.snapshot/ test/integ/.tmp/metaflow-ui-default.integ/assert.cdk.out/"
+        }
+      ]
+    },
+    "integ:metaflow-ui-default:deploy": {
+      "name": "integ:metaflow-ui-default:deploy",
+      "description": "deploy integration test 'metaflow-ui-default' and capture snapshot",
+      "steps": [
+        {
+          "exec": "rm -fr test/integ/.tmp/metaflow-ui-default.integ/deploy.cdk.out"
+        },
+        {
+          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-ui-default.integ.ts\" -o test/integ/.tmp/metaflow-ui-default.integ/deploy.cdk.out"
+        },
+        {
+          "exec": "kubectl apply -f test/integ/.tmp/metaflow-ui-default.integ/deploy.cdk.out"
+        },
+        {
+          "exec": "rm -fr test/integ/metaflow-ui-default.integ.snapshot"
+        },
+        {
+          "exec": "mv test/integ/.tmp/metaflow-ui-default.integ/deploy.cdk.out test/integ/metaflow-ui-default.integ.snapshot"
+        }
+      ]
+    },
+    "integ:metaflow-ui-default:snapshot": {
+      "name": "integ:metaflow-ui-default:snapshot",
+      "description": "update snapshot for integration test \"metaflow-ui-default\"",
+      "steps": [
+        {
+          "exec": "rm -fr test/integ/metaflow-ui-default.integ.snapshot"
+        },
+        {
+          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-ui-default.integ.ts\" -o test/integ/metaflow-ui-default.integ.snapshot"
+        }
+      ]
+    },
     "integ:snapshot-all": {
       "name": "integ:snapshot-all",
       "description": "update snapshot for all integration tests",
       "steps": [
         {
           "spawn": "integ:metaflow-service-default:snapshot"
+        },
+        {
+          "spawn": "integ:metaflow-ui-default:snapshot"
         }
       ]
     },
@@ -270,7 +321,7 @@
           "spawn": "install-helm"
         },
         {
-          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add metaflow https://bcgalvin.github.io/metaflow-charts"
+          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add metaflow https://bcgalvin.github.io/metaflow-charts && helm repo update metaflow"
         },
         {
           "exec": "jest --passWithNoTests --all --updateSnapshot"
@@ -280,6 +331,9 @@
         },
         {
           "spawn": "integ:metaflow-service-default:assert"
+        },
+        {
+          "spawn": "integ:metaflow-ui-default:assert"
         }
       ]
     },
