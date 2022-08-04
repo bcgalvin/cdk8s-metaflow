@@ -72,12 +72,12 @@
   },
   "peerDependencies": {
     "cdk8s": "^2.3.73",
-    "cdk8s-plus-22": "^2.0.0-rc.70",
+    "cdk8s-plus-22": "^2.0.0-rc.71",
     "constructs": "^10.1.64"
   },
   "dependencies": {
     "cdk8s": "2.3.73",
-    "cdk8s-plus-22": "2.0.0-rc.70"
+    "cdk8s-plus-22": "2.0.0-rc.71"
   },
   "keywords": [
     "cdk",
