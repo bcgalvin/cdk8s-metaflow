@@ -4,6 +4,7 @@
 .vscode
 cdk.context.json
 .DS_Store
+examples
 /.projen/
 /test-reports/
 junit.xml

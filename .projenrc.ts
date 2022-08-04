@@ -1,8 +1,11 @@
-const { cdk8s } = require('projen');
+import { cdk8s, TextFile } from 'projen';
+import { ArrowParens, TrailingComma } from 'projen/lib/javascript/prettier';
+
 const commonIgnore = ['.idea', '.Rproj', '.vscode', 'cdk.context.json', '.DS_Store'];
 const cdk8sVersion = '2.3.73';
 const constructsVersion = '10.1.64';
 const projenVersion = 'v0.60.12';
+const nodejsVersion = 'v16.7.0';
 
 const project = new cdk8s.ConstructLibraryCdk8s({
   author: 'Bryan Galvin',
@@ -15,18 +18,15 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   cdk8sVersion: cdk8sVersion,
   constructsVersion: constructsVersion,
   devDeps: [
+    '@types/jest',
+    '@types/node',
     `cdk8s@^${cdk8sVersion}`,
-    'cdk8s-cli@^2.0.70',
     'eslint-config-prettier',
     'eslint-plugin-prettier',
     'prettier',
-    '@types/jest',
-    '@types/cfn-response',
   ],
   projenVersion: projenVersion,
-  depsUpgradeOptions: {
-    ignoreProjen: false,
-  },
+  projenrcTs: true,
   releaseToNpm: true,
   publishToGo: {
     moduleName: 'github.com/bcgalvin/cdk8s-metaflow-go',
@@ -43,28 +43,40 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   dependabot: false,
   pullRequestTemplate: false,
   clobber: false,
-  readme: true,
   mergify: true,
   codeCov: true,
   eslint: true,
-  jestOptions: {},
+  jestOptions: {
+    jestConfig: {
+      testPathIgnorePatterns: ['<rootDir>/test/mappedTransformer'],
+    },
+  },
+
   docgen: true,
   docsDirectory: 'docs',
   prettier: true,
   prettierOptions: {
     settings: {
       printWidth: 120,
-      trailingComma: 'all',
-      arrowParens: 'always',
+      trailingComma: TrailingComma.ALL,
+      arrowParens: ArrowParens.ALWAYS,
       singleQuote: true,
     },
   },
   eslintOptions: {
     dirs: ['src'],
-    ignorePatterns: ['**/node_modules/**', '**/test/imports/**'],
+    ignorePatterns: ['**/node_modules/**', '**/test/imports/**', '**/examples/**'],
   },
-  gitignore: commonIgnore,
-  npmignore: commonIgnore,
+  tsconfig: {
+    exclude: ['examples'],
+    compilerOptions: {},
+  },
+  gitignore: [...commonIgnore, '**/examples/**/imports'],
+  npmignore: [...commonIgnore, 'examples'],
+});
+
+new TextFile(project, '.nvmrc', {
+  lines: [nodejsVersion],
 });
 
 project.testTask.prependExec(
@@ -78,6 +90,4 @@ const installHelm = project.addTask('install-helm', {
   condition: '! (helm version | grep "v3.")',
 });
 project.testTask.prependSpawn(installHelm);
-project.upgradeWorkflow.postUpgradeTask.spawn(project.tasks.tryFind('integ:snapshot-all'));
-
 project.synth();

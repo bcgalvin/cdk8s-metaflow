@@ -44,13 +44,12 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/cfn-response": "^1.0.5",
     "@types/jest": "^27",
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "cdk8s": "2.3.73",
-    "cdk8s-cli": "^2.0.70",
+    "cdk8s-cli": "^2.0.73",
     "constructs": "10.1.64",
     "eslint": "^8",
     "eslint-config-prettier": "^8.5.0",
@@ -86,6 +85,9 @@
   "license": "Apache-2.0",
   "version": "0.0.0",
   "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/test/mappedTransformer"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
       "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)"
@@ -101,10 +103,7 @@
     ],
     "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/"
+      "<rootDir>/test/mappedTransformer"
     ],
     "watchPathIgnorePatterns": [
       "/node_modules/"

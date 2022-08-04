@@ -34,6 +34,7 @@ jspm_packages/
 .vscode
 cdk.context.json
 .DS_Store
+**/examples/**/imports
 !/.projenrc.js
 /test-reports/
 junit.xml
@@ -56,3 +57,4 @@ junit.xml
 tsconfig.json
 !/API.md
 test/integ/.tmp
+!/.nvmrc

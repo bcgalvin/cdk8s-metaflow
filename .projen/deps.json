@@ -1,10 +1,6 @@
 {
   "dependencies": [
     {
-      "name": "@types/cfn-response",
-      "type": "build"
-    },
-    {
       "name": "@types/jest",
       "version": "^27",
       "type": "build"
@@ -26,7 +22,6 @@
     },
     {
       "name": "cdk8s-cli",
-      "version": "^2.0.70",
       "type": "build"
     },
     {
