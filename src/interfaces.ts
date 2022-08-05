@@ -91,7 +91,7 @@ export interface MetaflowUIOptions {
   readonly imagePullSecrets?: string[];
   readonly nameOverride?: string;
   readonly fullnameOverride?: string;
-  readonly env: Record<string, string>;
+  readonly env?: Record<string, string>;
   readonly serviceAccount?: ServiceAccountOptions;
   readonly podAnnotations?: Record<string, string>;
   readonly podSecurityContext?: Record<string, string>;
