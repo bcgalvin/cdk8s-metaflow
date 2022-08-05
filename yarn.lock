@@ -816,9 +816,9 @@
     "@babel/types" "^7.0.0"
 
 "@types/babel__traverse@*", "@types/babel__traverse@^7.0.4", "@types/babel__traverse@^7.0.6":
-  version "7.17.1"
-  resolved "https://registry.yarnpkg.com/@types/babel__traverse/-/babel__traverse-7.17.1.tgz#1a0e73e8c28c7e832656db372b779bfd2ef37314"
-  integrity sha512-kVzjari1s2YVi77D3w1yuvohV2idweYXMCDzqBiVNN63TcDWrIlTVOYpqVrvbbyOE/IyzBoTKF0fdnLPEORFxA==
+  version "7.18.0"
+  resolved "https://registry.yarnpkg.com/@types/babel__traverse/-/babel__traverse-7.18.0.tgz#8134fd78cb39567465be65b9fdc16d378095f41f"
+  integrity sha512-v4Vwdko+pgymgS+A2UIaJru93zQd85vIGWObM5ekZNdXCKtDYqATlEYnWgfo86Q6I1Lh0oXnksDnMU1cwmlPDw==
   dependencies:
     "@babel/types" "^7.3.0"
 
@@ -912,9 +912,9 @@
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/node@*":
-  version "18.6.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.3.tgz#4e4a95b6fe44014563ceb514b2598b3e623d1c98"
-  integrity sha512-6qKpDtoaYLM+5+AFChLhHermMQxc3TOEFIDzrZLPRGHPrLEwqFkkT5Kx3ju05g6X7uDPazz3jHbKPX0KzCjntg==
+  version "18.6.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.4.tgz#fd26723a8a3f8f46729812a7f9b4fc2d1608ed39"
+  integrity sha512-I4BD3L+6AWiUobfxZ49DlU43gtI+FTHSv9pE2Zekg6KjMpre4ByusaljW3vYSLJrvQ1ck1hUaeVu8HVlY3vzHg==
 
 "@types/node@^12":
   version "12.20.55"
@@ -1509,30 +1509,30 @@ case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdk8s-cli@^2.0.73:
-  version "2.0.73"
-  resolved "https://registry.yarnpkg.com/cdk8s-cli/-/cdk8s-cli-2.0.73.tgz#00a23602bbf3bfa9cca97d2bb26d6c2d903dad12"
-  integrity sha512-BtXUCJaXegW6wodWd9MaAJUAWl6pmIFnYAFZgQ1YuX7EE9jC0phKCObdWBnl0iKJmLmsVbVDZu0yTmJcmHDFTg==
+cdk8s-cli@^2.0.74:
+  version "2.0.74"
+  resolved "https://registry.yarnpkg.com/cdk8s-cli/-/cdk8s-cli-2.0.74.tgz#69a611d83ba54ee4fcedae9cbc3ebc81bb614e4b"
+  integrity sha512-h3GvNhMlQCInR4aK2bwHPDKATMhwK6U+PdgViwlbkMl9dveYSE2Gdj/m8OxmV69psUrIQrCQ+lZ0AeldoabojQ==
   dependencies:
     "@types/node" "^12"
     ajv "^8.11.0"
-    cdk8s "^2.3.74"
-    cdk8s-plus-22 "^2.0.0-rc.71"
+    cdk8s "^2.3.75"
+    cdk8s-plus-22 "^2.0.0-rc.72"
     codemaker "^1.63.2"
     colors "1.4.0"
-    constructs "^10.1.66"
+    constructs "^10.1.67"
     fs-extra "^8"
     jsii-pacmak "^1.63.2"
-    jsii-srcmak "^0.1.637"
-    json2jsii "^0.3.86"
+    jsii-srcmak "^0.1.638"
+    json2jsii "^0.3.87"
     sscaff "^1.2.274"
     yaml "2.0.0-11"
     yargs "^15"
 
-cdk8s-plus-22@^2.0.0-rc.71:
-  version "2.0.0-rc.72"
-  resolved "https://registry.yarnpkg.com/cdk8s-plus-22/-/cdk8s-plus-22-2.0.0-rc.72.tgz#6921ca4a803517facd2b2b27387fed3892c701e1"
-  integrity sha512-CErc8EcrOpqVyBkylUNDLjLjCHFKbzZC4ow10IYvVBkp7mtGtx04A8TOk9O3ZbsAuBiADhcsltwxH6E4a13F6A==
+cdk8s-plus-22@^2.0.0-rc.72:
+  version "2.0.0-rc.73"
+  resolved "https://registry.yarnpkg.com/cdk8s-plus-22/-/cdk8s-plus-22-2.0.0-rc.73.tgz#f966c713759a7f56324c3dd34e09b3b4a8b13e74"
+  integrity sha512-9BAW42ft/10Z+G4K3fj2G4aWI3XjidP7+NKZ0i6ISkR8P288tCfGzsJUArmIfazJSIGufWBvcju5C9SO5mr5cw==
   dependencies:
     minimatch "^3.1.2"
 
@@ -1545,10 +1545,10 @@ cdk8s@2.3.73:
     follow-redirects "^1.15.1"
     yaml "2.0.0-7"
 
-cdk8s@^2.3.74:
-  version "2.3.74"
-  resolved "https://registry.yarnpkg.com/cdk8s/-/cdk8s-2.3.74.tgz#4166ccd5be22747f03e0960107d624aec2576f95"
-  integrity sha512-mlODV+rIIoxuywZYsxtPbpi8xzCEQ6v4nJkGIsSzMYiv0tXGuPCkzn309I8Q3vFH18VRxXPLrKkXcXnSe0+OEw==
+cdk8s@^2.3.75:
+  version "2.3.75"
+  resolved "https://registry.yarnpkg.com/cdk8s/-/cdk8s-2.3.75.tgz#ea5d029ebf214e732d305be7aded90defd77780b"
+  integrity sha512-TuseHL/kLvakOtxXB/ltSY8siaA+0MlOQaKRpmbhIShaEuPnLZRzjcTBFrgKajV+iU+mXNXrZpG8J0qyQwd7PA==
   dependencies:
     fast-json-patch "^3.1.1"
     follow-redirects "^1.15.1"
@@ -1783,10 +1783,10 @@ constructs@10.1.64:
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.64.tgz#f2dd258556257928cf41a58e171254ef5dc0bae5"
   integrity sha512-GXyNny+46Qetc91zWR69j871pEv+P0SS2SGCfN+B5WvB8nXjl2rPtQ9rPgeU9+wIiwDEzFZ1lURFxne30Oo7mA==
 
-constructs@^10.1.66:
-  version "10.1.66"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.66.tgz#95e0931dc2586e9b9749301240102937015c4234"
-  integrity sha512-7HVFV3mQumsQrKEFpRDPWsjlPjKZpkvYwIOWEX1tNAUP4bW6Q/AJak5SEgqVHnO4xhT/XekXZa2m9kXv00A7Ng==
+constructs@^10.1.67:
+  version "10.1.67"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.67.tgz#8a8e1a30228c0cc9c2af20c777d92f1f28323564"
+  integrity sha512-KhzH9QQmlgRRqwL5/+Arg/e9Nk7XAwYV4kBHNYf9cpRluACdaDSTJV2JPICwioWHSdkHoq8ChtQAgIq5KcNEnA==
 
 conventional-changelog-angular@^5.0.12:
   version "5.0.13"
@@ -4091,10 +4091,10 @@ jsii-rosetta@^1.63.2:
     workerpool "^6.2.1"
     yargs "^16.2.0"
 
-jsii-srcmak@^0.1.637:
-  version "0.1.637"
-  resolved "https://registry.yarnpkg.com/jsii-srcmak/-/jsii-srcmak-0.1.637.tgz#13653149755ccd627068d316d5fd1917d7729e89"
-  integrity sha512-KcCBjFEHu7MZQasQH81ULcLrUd9QsbdtOYRyotmY1Jx4xUsh1hB33kDJuqHnMDwdjR9KYr1mwg7CQaIqka29Sw==
+jsii-srcmak@^0.1.638:
+  version "0.1.638"
+  resolved "https://registry.yarnpkg.com/jsii-srcmak/-/jsii-srcmak-0.1.638.tgz#92ff0fe3b9f1f70a1ffad015b89c42bbe74e4661"
+  integrity sha512-KUBDOBaJqXcAG6GMtaxINt5SODvBiAlbAvckd+sG2xT28zUnYRQvoRBjaKI3lZjOOsXmhlhpLN/R61v2GCi/tA==
   dependencies:
     fs-extra "^9.1.0"
     jsii "^1.63.2"
@@ -4168,10 +4168,10 @@ json-stringify-safe@^5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==
 
-json2jsii@^0.3.86:
-  version "0.3.86"
-  resolved "https://registry.yarnpkg.com/json2jsii/-/json2jsii-0.3.86.tgz#26d4389605e97d22f4ac53c92da57b28c06ba004"
-  integrity sha512-x+ZVcvJoYJKkFTzBBposg27YNXQT3fIlF37TPkT4Mhxu1kxzjyo+sJVHOm8Hd77+vP/kMQeAQlElB60LnCUezg==
+json2jsii@^0.3.87:
+  version "0.3.87"
+  resolved "https://registry.yarnpkg.com/json2jsii/-/json2jsii-0.3.87.tgz#f2ffa531bb8333d9cb7c79042f0fb11bcf1c0903"
+  integrity sha512-hX/AZdvrl6oJ8SK3AJF1XK1keX3S4+0SxZROPCmPz1hz1UflHyY/vNN/JABpkLbDWnMCJG5l7Z2U9aFy2hhfIQ==
   dependencies:
     camelcase "^6.3.0"
     json-schema "^0.4.0"

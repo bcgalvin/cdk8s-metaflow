@@ -55,7 +55,7 @@ export interface IApiResource {
   readonly resourceName?: string;
 }
 
-export interface MetadataDatabaseOptions {
+export interface MetadataDatabaseEnvOptions {
   readonly port?: number;
   readonly password?: string;
   readonly host?: string;
@@ -81,7 +81,7 @@ export interface MetaflowServiceOptions {
   readonly tolerations?: Toleration[];
   readonly affinity?: Affinity;
   readonly envFrom?: EnvFromSource[];
-  readonly metadatadb?: MetadataDatabaseOptions;
+  readonly metadatadb?: MetadataDatabaseEnvOptions;
 }
 
 export interface MetaflowUIOptions {
@@ -105,7 +105,7 @@ export interface MetaflowUIOptions {
   readonly tolerations?: Toleration[];
   readonly affinity?: Affinity;
   readonly envFrom?: EnvFromSource[];
-  readonly metadatadb?: MetadataDatabaseOptions;
+  readonly metadatadb?: MetadataDatabaseEnvOptions;
   readonly metaflowDatastoreSysrootS3: string;
 }
 
