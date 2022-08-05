@@ -106,7 +106,7 @@ export interface MetaflowUIOptions {
   readonly affinity?: Affinity;
   readonly envFrom?: EnvFromSource[];
   readonly metadatadb?: MetadataDatabaseEnvOptions;
-  readonly metaflowDatastoreSysrootS3: string;
+  readonly metaflowDatastoreSysrootS3?: string;
 }
 
 export interface DatabaseAuthOptions {
