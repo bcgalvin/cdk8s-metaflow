@@ -5,9 +5,10 @@ metadata:
     app.kubernetes.io/instance: release-name-metaflow-service
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: metaflow-service
-    app.kubernetes.io/version: 2.2.4
-    helm.sh/chart: metaflow-service-0.1.2
+    app.kubernetes.io/version: 2.3.0
+    helm.sh/chart: metaflow-service-0.1.5
   name: release-name-metaflow-service
+  namespace: default
 ---
 apiVersion: v1
 kind: Service
@@ -16,9 +17,10 @@ metadata:
     app.kubernetes.io/instance: release-name-metaflow-service
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: metaflow-service
-    app.kubernetes.io/version: 2.2.4
-    helm.sh/chart: metaflow-service-0.1.2
+    app.kubernetes.io/version: 2.3.0
+    helm.sh/chart: metaflow-service-0.1.5
   name: release-name-metaflow-service
+  namespace: default
 spec:
   ports:
     - name: metadata
@@ -41,9 +43,10 @@ metadata:
     app.kubernetes.io/instance: release-name-metaflow-service
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: metaflow-service
-    app.kubernetes.io/version: 2.2.4
-    helm.sh/chart: metaflow-service-0.1.2
+    app.kubernetes.io/version: 2.3.0
+    helm.sh/chart: metaflow-service-0.1.5
   name: release-name-metaflow-service
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -63,16 +66,16 @@ spec:
             - services.metadata_service.server
           env:
             - name: MF_METADATA_DB_NAME
-              value: metaflow
+              value: "metaflow"
             - name: MF_METADATA_DB_PORT
               value: "5432"
             - name: MF_METADATA_DB_PSWD
-              value: metaflow
+              value: "metaflow"
             - name: MF_METADATA_DB_USER
-              value: metaflow
+              value: "metaflow"
             - name: MF_METADATA_DB_HOST
-              value: release-name-metaflow-service-postgresql
-          image: public.ecr.aws/outerbounds/metaflow_metadata_service:2.2.4
+              value: "192.168.65.2"
+          image: public.ecr.aws/outerbounds/metaflow_metadata_service:v2.3.0
           imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:
@@ -96,16 +99,16 @@ spec:
             - --only-if-empty-db
           env:
             - name: MF_METADATA_DB_NAME
-              value: metaflow
+              value: "metaflow"
             - name: MF_METADATA_DB_PORT
               value: "5432"
             - name: MF_METADATA_DB_PSWD
-              value: metaflow
+              value: "metaflow"
             - name: MF_METADATA_DB_USER
-              value: metaflow
+              value: "metaflow"
             - name: MF_METADATA_DB_HOST
-              value: release-name-metaflow-service-postgresql
-          image: public.ecr.aws/outerbounds/metaflow_metadata_service:2.2.4
+              value: "192.168.65.2"
+          image: public.ecr.aws/outerbounds/metaflow_metadata_service:v2.3.0
           name: db-migrations
       securityContext: {}
       serviceAccountName: release-name-metaflow-service
@@ -115,13 +118,15 @@ kind: Pod
 metadata:
   annotations:
     helm.sh/hook: test
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
     app.kubernetes.io/instance: release-name-metaflow-service
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: metaflow-service
-    app.kubernetes.io/version: 2.2.4
-    helm.sh/chart: metaflow-service-0.1.2
+    app.kubernetes.io/version: 2.3.0
+    helm.sh/chart: metaflow-service-0.1.5
   name: release-name-metaflow-service-test-connection
+  namespace: default
 spec:
   containers:
     - args:
@@ -129,5 +134,35 @@ spec:
       command:
         - wget
       image: busybox
-      name: wget
+      name: release-name-metaflow-service-test-connection
   restartPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/name: postgresql
+  name: release-name-postgresql
+spec:
+  clusterIP: None
+  ports:
+    - name: postgresql
+      port: 5432
+      protocol: TCP
+      targetPort: postgresql
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  labels:
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/name: postgresql
+  name: release-name-postgresql
+subsets:
+  - addresses:
+      - ip: 192.168.65.2
+    ports:
+      - name: postgresql
+        port: 5432
+        protocol: TCP
