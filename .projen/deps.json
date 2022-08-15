@@ -25,6 +25,11 @@
       "type": "build"
     },
     {
+      "name": "cdk8s-plus-22",
+      "version": "2.0.0-rc.83",
+      "type": "build"
+    },
+    {
       "name": "cdk8s",
       "version": "2.3.84",
       "type": "build"
@@ -120,6 +125,11 @@
     {
       "name": "typescript",
       "type": "build"
+    },
+    {
+      "name": "cdk8s-plus-22",
+      "version": "^2.0.0-rc.83",
+      "type": "peer"
     },
     {
       "name": "cdk8s",

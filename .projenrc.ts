@@ -19,10 +19,12 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   cdk8sVersion: cdk8sVersion,
   constructsVersion: constructsVersion,
   deps: [`cdk8s-plus-22@^${cdk8sPlusVersion}`],
+  peerDeps: [`cdk8s-plus-22@^${cdk8sPlusVersion}`],
   devDeps: [
     '@types/jest',
     '@types/node',
     `cdk8s@^${cdk8sVersion}`,
+    `cdk8s-plus-22@${cdk8sPlusVersion}`,
     'eslint-config-prettier',
     'eslint-plugin-prettier',
     'prettier',
@@ -48,12 +50,6 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   mergify: true,
   codeCov: true,
   eslint: true,
-  jestOptions: {
-    jestConfig: {
-      testPathIgnorePatterns: ['<rootDir>/test/mappedTransformer'],
-    },
-  },
-
   docgen: true,
   docsDirectory: 'docs',
   prettier: true,
@@ -65,16 +61,8 @@ const project = new cdk8s.ConstructLibraryCdk8s({
       singleQuote: true,
     },
   },
-  eslintOptions: {
-    dirs: ['src'],
-    ignorePatterns: ['**/node_modules/**', '**/test/imports/**', '**/examples/**'],
-  },
-  tsconfig: {
-    exclude: ['examples'],
-    compilerOptions: {},
-  },
-  gitignore: [...commonIgnore, '**/examples/**/imports'],
-  npmignore: [...commonIgnore, 'examples'],
+  gitignore: [...commonIgnore],
+  npmignore: [...commonIgnore],
 });
 
 new TextFile(project, '.nvmrc', {
