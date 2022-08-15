@@ -71,7 +71,9 @@ new TextFile(project, '.nvmrc', {
 project.addTask('d', {
   exec: 'npx ts-node test/main.ts && kubectl apply -f dist/',
 });
-project.testTask.prependExec('helm repo add bitnami https://charts.bitnami.com/bitnami');
+project.testTask.prependExec(
+  'helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add argo https://argoproj.github.io/argo-helm',
+);
 const installHelm = project.addTask('install-helm', {
   exec: 'curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash',
   description: 'Install helm3',

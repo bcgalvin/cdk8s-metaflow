@@ -375,7 +375,7 @@
           "spawn": "install-helm"
         },
         {
-          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
+          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add argo https://argoproj.github.io/argo-helm"
         },
         {
           "exec": "jest --passWithNoTests --all --updateSnapshot"
