@@ -18,7 +18,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   defaultReleaseBranch: 'main',
   cdk8sVersion: cdk8sVersion,
   constructsVersion: constructsVersion,
-  deps: [`cdk8s-plus-22@^${cdk8sPlusVersion}`],
+  deps: [`cdk8s-plus-22@${cdk8sPlusVersion}`],
   peerDeps: [`cdk8s-plus-22@^${cdk8sPlusVersion}`],
   devDeps: [
     '@types/jest',
