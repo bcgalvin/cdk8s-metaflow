@@ -7,7 +7,7 @@ import { Construct } from 'constructs';
  *
  * @schema io.k8s.api.admissionregistration.v1.MutatingWebhookConfiguration
  */
-export class MutatingWebhookConfiguration extends ApiObject {
+export class KubeMutatingWebhookConfiguration extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.admissionregistration.v1.MutatingWebhookConfiguration"
    */
@@ -23,10 +23,10 @@ export class MutatingWebhookConfiguration extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: MutatingWebhookConfigurationProps = {}): any {
+  public static manifest(props: KubeMutatingWebhookConfigurationProps = {}): any {
     return {
-      ...MutatingWebhookConfiguration.GVK,
-      ...toJson_MutatingWebhookConfigurationProps(props),
+      ...KubeMutatingWebhookConfiguration.GVK,
+      ...toJson_KubeMutatingWebhookConfigurationProps(props),
     };
   }
 
@@ -36,9 +36,9 @@ export class MutatingWebhookConfiguration extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: MutatingWebhookConfigurationProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeMutatingWebhookConfigurationProps = {}) {
     super(scope, id, {
-      ...MutatingWebhookConfiguration.GVK,
+      ...KubeMutatingWebhookConfiguration.GVK,
       ...props,
     });
   }
@@ -50,8 +50,8 @@ export class MutatingWebhookConfiguration extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...MutatingWebhookConfiguration.GVK,
-      ...toJson_MutatingWebhookConfigurationProps(resolved),
+      ...KubeMutatingWebhookConfiguration.GVK,
+      ...toJson_KubeMutatingWebhookConfigurationProps(resolved),
     };
   }
 }
@@ -61,7 +61,7 @@ export class MutatingWebhookConfiguration extends ApiObject {
  *
  * @schema io.k8s.api.admissionregistration.v1.MutatingWebhookConfigurationList
  */
-export class MutatingWebhookConfigurationList extends ApiObject {
+export class KubeMutatingWebhookConfigurationList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.admissionregistration.v1.MutatingWebhookConfigurationList"
    */
@@ -77,10 +77,10 @@ export class MutatingWebhookConfigurationList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: MutatingWebhookConfigurationListProps): any {
+  public static manifest(props: KubeMutatingWebhookConfigurationListProps): any {
     return {
-      ...MutatingWebhookConfigurationList.GVK,
-      ...toJson_MutatingWebhookConfigurationListProps(props),
+      ...KubeMutatingWebhookConfigurationList.GVK,
+      ...toJson_KubeMutatingWebhookConfigurationListProps(props),
     };
   }
 
@@ -90,9 +90,9 @@ export class MutatingWebhookConfigurationList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: MutatingWebhookConfigurationListProps) {
+  public constructor(scope: Construct, id: string, props: KubeMutatingWebhookConfigurationListProps) {
     super(scope, id, {
-      ...MutatingWebhookConfigurationList.GVK,
+      ...KubeMutatingWebhookConfigurationList.GVK,
       ...props,
     });
   }
@@ -104,8 +104,8 @@ export class MutatingWebhookConfigurationList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...MutatingWebhookConfigurationList.GVK,
-      ...toJson_MutatingWebhookConfigurationListProps(resolved),
+      ...KubeMutatingWebhookConfigurationList.GVK,
+      ...toJson_KubeMutatingWebhookConfigurationListProps(resolved),
     };
   }
 }
@@ -115,7 +115,7 @@ export class MutatingWebhookConfigurationList extends ApiObject {
  *
  * @schema io.k8s.api.admissionregistration.v1.ValidatingWebhookConfiguration
  */
-export class ValidatingWebhookConfiguration extends ApiObject {
+export class KubeValidatingWebhookConfiguration extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.admissionregistration.v1.ValidatingWebhookConfiguration"
    */
@@ -131,10 +131,10 @@ export class ValidatingWebhookConfiguration extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ValidatingWebhookConfigurationProps = {}): any {
+  public static manifest(props: KubeValidatingWebhookConfigurationProps = {}): any {
     return {
-      ...ValidatingWebhookConfiguration.GVK,
-      ...toJson_ValidatingWebhookConfigurationProps(props),
+      ...KubeValidatingWebhookConfiguration.GVK,
+      ...toJson_KubeValidatingWebhookConfigurationProps(props),
     };
   }
 
@@ -144,9 +144,9 @@ export class ValidatingWebhookConfiguration extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ValidatingWebhookConfigurationProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeValidatingWebhookConfigurationProps = {}) {
     super(scope, id, {
-      ...ValidatingWebhookConfiguration.GVK,
+      ...KubeValidatingWebhookConfiguration.GVK,
       ...props,
     });
   }
@@ -158,8 +158,8 @@ export class ValidatingWebhookConfiguration extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ValidatingWebhookConfiguration.GVK,
-      ...toJson_ValidatingWebhookConfigurationProps(resolved),
+      ...KubeValidatingWebhookConfiguration.GVK,
+      ...toJson_KubeValidatingWebhookConfigurationProps(resolved),
     };
   }
 }
@@ -169,7 +169,7 @@ export class ValidatingWebhookConfiguration extends ApiObject {
  *
  * @schema io.k8s.api.admissionregistration.v1.ValidatingWebhookConfigurationList
  */
-export class ValidatingWebhookConfigurationList extends ApiObject {
+export class KubeValidatingWebhookConfigurationList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.admissionregistration.v1.ValidatingWebhookConfigurationList"
    */
@@ -185,10 +185,10 @@ export class ValidatingWebhookConfigurationList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ValidatingWebhookConfigurationListProps): any {
+  public static manifest(props: KubeValidatingWebhookConfigurationListProps): any {
     return {
-      ...ValidatingWebhookConfigurationList.GVK,
-      ...toJson_ValidatingWebhookConfigurationListProps(props),
+      ...KubeValidatingWebhookConfigurationList.GVK,
+      ...toJson_KubeValidatingWebhookConfigurationListProps(props),
     };
   }
 
@@ -198,9 +198,9 @@ export class ValidatingWebhookConfigurationList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ValidatingWebhookConfigurationListProps) {
+  public constructor(scope: Construct, id: string, props: KubeValidatingWebhookConfigurationListProps) {
     super(scope, id, {
-      ...ValidatingWebhookConfigurationList.GVK,
+      ...KubeValidatingWebhookConfigurationList.GVK,
       ...props,
     });
   }
@@ -212,8 +212,8 @@ export class ValidatingWebhookConfigurationList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ValidatingWebhookConfigurationList.GVK,
-      ...toJson_ValidatingWebhookConfigurationListProps(resolved),
+      ...KubeValidatingWebhookConfigurationList.GVK,
+      ...toJson_KubeValidatingWebhookConfigurationListProps(resolved),
     };
   }
 }
@@ -224,7 +224,7 @@ export class ValidatingWebhookConfigurationList extends ApiObject {
  *
  * @schema io.k8s.api.apiserverinternal.v1alpha1.StorageVersion
  */
-export class StorageVersionV1Alpha1 extends ApiObject {
+export class KubeStorageVersionV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apiserverinternal.v1alpha1.StorageVersion"
    */
@@ -240,10 +240,10 @@ export class StorageVersionV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: StorageVersionV1Alpha1Props): any {
+  public static manifest(props: KubeStorageVersionV1Alpha1Props): any {
     return {
-      ...StorageVersionV1Alpha1.GVK,
-      ...toJson_StorageVersionV1Alpha1Props(props),
+      ...KubeStorageVersionV1Alpha1.GVK,
+      ...toJson_KubeStorageVersionV1Alpha1Props(props),
     };
   }
 
@@ -253,9 +253,9 @@ export class StorageVersionV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: StorageVersionV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeStorageVersionV1Alpha1Props) {
     super(scope, id, {
-      ...StorageVersionV1Alpha1.GVK,
+      ...KubeStorageVersionV1Alpha1.GVK,
       ...props,
     });
   }
@@ -267,8 +267,8 @@ export class StorageVersionV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...StorageVersionV1Alpha1.GVK,
-      ...toJson_StorageVersionV1Alpha1Props(resolved),
+      ...KubeStorageVersionV1Alpha1.GVK,
+      ...toJson_KubeStorageVersionV1Alpha1Props(resolved),
     };
   }
 }
@@ -278,7 +278,7 @@ export class StorageVersionV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.apiserverinternal.v1alpha1.StorageVersionList
  */
-export class StorageVersionListV1Alpha1 extends ApiObject {
+export class KubeStorageVersionListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionList"
    */
@@ -294,10 +294,10 @@ export class StorageVersionListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: StorageVersionListV1Alpha1Props): any {
+  public static manifest(props: KubeStorageVersionListV1Alpha1Props): any {
     return {
-      ...StorageVersionListV1Alpha1.GVK,
-      ...toJson_StorageVersionListV1Alpha1Props(props),
+      ...KubeStorageVersionListV1Alpha1.GVK,
+      ...toJson_KubeStorageVersionListV1Alpha1Props(props),
     };
   }
 
@@ -307,9 +307,9 @@ export class StorageVersionListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: StorageVersionListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeStorageVersionListV1Alpha1Props) {
     super(scope, id, {
-      ...StorageVersionListV1Alpha1.GVK,
+      ...KubeStorageVersionListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -321,8 +321,8 @@ export class StorageVersionListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...StorageVersionListV1Alpha1.GVK,
-      ...toJson_StorageVersionListV1Alpha1Props(resolved),
+      ...KubeStorageVersionListV1Alpha1.GVK,
+      ...toJson_KubeStorageVersionListV1Alpha1Props(resolved),
     };
   }
 }
@@ -332,7 +332,7 @@ export class StorageVersionListV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.ControllerRevision
  */
-export class ControllerRevision extends ApiObject {
+export class KubeControllerRevision extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.ControllerRevision"
    */
@@ -348,10 +348,10 @@ export class ControllerRevision extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ControllerRevisionProps): any {
+  public static manifest(props: KubeControllerRevisionProps): any {
     return {
-      ...ControllerRevision.GVK,
-      ...toJson_ControllerRevisionProps(props),
+      ...KubeControllerRevision.GVK,
+      ...toJson_KubeControllerRevisionProps(props),
     };
   }
 
@@ -361,9 +361,9 @@ export class ControllerRevision extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ControllerRevisionProps) {
+  public constructor(scope: Construct, id: string, props: KubeControllerRevisionProps) {
     super(scope, id, {
-      ...ControllerRevision.GVK,
+      ...KubeControllerRevision.GVK,
       ...props,
     });
   }
@@ -375,8 +375,8 @@ export class ControllerRevision extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ControllerRevision.GVK,
-      ...toJson_ControllerRevisionProps(resolved),
+      ...KubeControllerRevision.GVK,
+      ...toJson_KubeControllerRevisionProps(resolved),
     };
   }
 }
@@ -386,7 +386,7 @@ export class ControllerRevision extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.ControllerRevisionList
  */
-export class ControllerRevisionList extends ApiObject {
+export class KubeControllerRevisionList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.ControllerRevisionList"
    */
@@ -402,10 +402,10 @@ export class ControllerRevisionList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ControllerRevisionListProps): any {
+  public static manifest(props: KubeControllerRevisionListProps): any {
     return {
-      ...ControllerRevisionList.GVK,
-      ...toJson_ControllerRevisionListProps(props),
+      ...KubeControllerRevisionList.GVK,
+      ...toJson_KubeControllerRevisionListProps(props),
     };
   }
 
@@ -415,9 +415,9 @@ export class ControllerRevisionList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ControllerRevisionListProps) {
+  public constructor(scope: Construct, id: string, props: KubeControllerRevisionListProps) {
     super(scope, id, {
-      ...ControllerRevisionList.GVK,
+      ...KubeControllerRevisionList.GVK,
       ...props,
     });
   }
@@ -429,8 +429,8 @@ export class ControllerRevisionList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ControllerRevisionList.GVK,
-      ...toJson_ControllerRevisionListProps(resolved),
+      ...KubeControllerRevisionList.GVK,
+      ...toJson_KubeControllerRevisionListProps(resolved),
     };
   }
 }
@@ -440,7 +440,7 @@ export class ControllerRevisionList extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.DaemonSet
  */
-export class DaemonSet extends ApiObject {
+export class KubeDaemonSet extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.DaemonSet"
    */
@@ -456,10 +456,10 @@ export class DaemonSet extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: DaemonSetProps = {}): any {
+  public static manifest(props: KubeDaemonSetProps = {}): any {
     return {
-      ...DaemonSet.GVK,
-      ...toJson_DaemonSetProps(props),
+      ...KubeDaemonSet.GVK,
+      ...toJson_KubeDaemonSetProps(props),
     };
   }
 
@@ -469,9 +469,9 @@ export class DaemonSet extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: DaemonSetProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeDaemonSetProps = {}) {
     super(scope, id, {
-      ...DaemonSet.GVK,
+      ...KubeDaemonSet.GVK,
       ...props,
     });
   }
@@ -483,8 +483,8 @@ export class DaemonSet extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...DaemonSet.GVK,
-      ...toJson_DaemonSetProps(resolved),
+      ...KubeDaemonSet.GVK,
+      ...toJson_KubeDaemonSetProps(resolved),
     };
   }
 }
@@ -494,7 +494,7 @@ export class DaemonSet extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.DaemonSetList
  */
-export class DaemonSetList extends ApiObject {
+export class KubeDaemonSetList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.DaemonSetList"
    */
@@ -510,10 +510,10 @@ export class DaemonSetList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: DaemonSetListProps): any {
+  public static manifest(props: KubeDaemonSetListProps): any {
     return {
-      ...DaemonSetList.GVK,
-      ...toJson_DaemonSetListProps(props),
+      ...KubeDaemonSetList.GVK,
+      ...toJson_KubeDaemonSetListProps(props),
     };
   }
 
@@ -523,9 +523,9 @@ export class DaemonSetList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: DaemonSetListProps) {
+  public constructor(scope: Construct, id: string, props: KubeDaemonSetListProps) {
     super(scope, id, {
-      ...DaemonSetList.GVK,
+      ...KubeDaemonSetList.GVK,
       ...props,
     });
   }
@@ -537,8 +537,8 @@ export class DaemonSetList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...DaemonSetList.GVK,
-      ...toJson_DaemonSetListProps(resolved),
+      ...KubeDaemonSetList.GVK,
+      ...toJson_KubeDaemonSetListProps(resolved),
     };
   }
 }
@@ -548,7 +548,7 @@ export class DaemonSetList extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.Deployment
  */
-export class Deployment extends ApiObject {
+export class KubeDeployment extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.Deployment"
    */
@@ -564,10 +564,10 @@ export class Deployment extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: DeploymentProps = {}): any {
+  public static manifest(props: KubeDeploymentProps = {}): any {
     return {
-      ...Deployment.GVK,
-      ...toJson_DeploymentProps(props),
+      ...KubeDeployment.GVK,
+      ...toJson_KubeDeploymentProps(props),
     };
   }
 
@@ -577,9 +577,9 @@ export class Deployment extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: DeploymentProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeDeploymentProps = {}) {
     super(scope, id, {
-      ...Deployment.GVK,
+      ...KubeDeployment.GVK,
       ...props,
     });
   }
@@ -591,8 +591,8 @@ export class Deployment extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Deployment.GVK,
-      ...toJson_DeploymentProps(resolved),
+      ...KubeDeployment.GVK,
+      ...toJson_KubeDeploymentProps(resolved),
     };
   }
 }
@@ -602,7 +602,7 @@ export class Deployment extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.DeploymentList
  */
-export class DeploymentList extends ApiObject {
+export class KubeDeploymentList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.DeploymentList"
    */
@@ -618,10 +618,10 @@ export class DeploymentList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: DeploymentListProps): any {
+  public static manifest(props: KubeDeploymentListProps): any {
     return {
-      ...DeploymentList.GVK,
-      ...toJson_DeploymentListProps(props),
+      ...KubeDeploymentList.GVK,
+      ...toJson_KubeDeploymentListProps(props),
     };
   }
 
@@ -631,9 +631,9 @@ export class DeploymentList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: DeploymentListProps) {
+  public constructor(scope: Construct, id: string, props: KubeDeploymentListProps) {
     super(scope, id, {
-      ...DeploymentList.GVK,
+      ...KubeDeploymentList.GVK,
       ...props,
     });
   }
@@ -645,8 +645,8 @@ export class DeploymentList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...DeploymentList.GVK,
-      ...toJson_DeploymentListProps(resolved),
+      ...KubeDeploymentList.GVK,
+      ...toJson_KubeDeploymentListProps(resolved),
     };
   }
 }
@@ -656,7 +656,7 @@ export class DeploymentList extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.ReplicaSet
  */
-export class ReplicaSet extends ApiObject {
+export class KubeReplicaSet extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.ReplicaSet"
    */
@@ -672,10 +672,10 @@ export class ReplicaSet extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ReplicaSetProps = {}): any {
+  public static manifest(props: KubeReplicaSetProps = {}): any {
     return {
-      ...ReplicaSet.GVK,
-      ...toJson_ReplicaSetProps(props),
+      ...KubeReplicaSet.GVK,
+      ...toJson_KubeReplicaSetProps(props),
     };
   }
 
@@ -685,9 +685,9 @@ export class ReplicaSet extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ReplicaSetProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeReplicaSetProps = {}) {
     super(scope, id, {
-      ...ReplicaSet.GVK,
+      ...KubeReplicaSet.GVK,
       ...props,
     });
   }
@@ -699,8 +699,8 @@ export class ReplicaSet extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ReplicaSet.GVK,
-      ...toJson_ReplicaSetProps(resolved),
+      ...KubeReplicaSet.GVK,
+      ...toJson_KubeReplicaSetProps(resolved),
     };
   }
 }
@@ -710,7 +710,7 @@ export class ReplicaSet extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.ReplicaSetList
  */
-export class ReplicaSetList extends ApiObject {
+export class KubeReplicaSetList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.ReplicaSetList"
    */
@@ -726,10 +726,10 @@ export class ReplicaSetList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ReplicaSetListProps): any {
+  public static manifest(props: KubeReplicaSetListProps): any {
     return {
-      ...ReplicaSetList.GVK,
-      ...toJson_ReplicaSetListProps(props),
+      ...KubeReplicaSetList.GVK,
+      ...toJson_KubeReplicaSetListProps(props),
     };
   }
 
@@ -739,9 +739,9 @@ export class ReplicaSetList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ReplicaSetListProps) {
+  public constructor(scope: Construct, id: string, props: KubeReplicaSetListProps) {
     super(scope, id, {
-      ...ReplicaSetList.GVK,
+      ...KubeReplicaSetList.GVK,
       ...props,
     });
   }
@@ -753,8 +753,8 @@ export class ReplicaSetList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ReplicaSetList.GVK,
-      ...toJson_ReplicaSetListProps(resolved),
+      ...KubeReplicaSetList.GVK,
+      ...toJson_KubeReplicaSetListProps(resolved),
     };
   }
 }
@@ -767,7 +767,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
  *
  * @schema io.k8s.api.apps.v1.StatefulSet
  */
-export class StatefulSet extends ApiObject {
+export class KubeStatefulSet extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.StatefulSet"
    */
@@ -783,10 +783,10 @@ export class StatefulSet extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: StatefulSetProps = {}): any {
+  public static manifest(props: KubeStatefulSetProps = {}): any {
     return {
-      ...StatefulSet.GVK,
-      ...toJson_StatefulSetProps(props),
+      ...KubeStatefulSet.GVK,
+      ...toJson_KubeStatefulSetProps(props),
     };
   }
 
@@ -796,9 +796,9 @@ export class StatefulSet extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: StatefulSetProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeStatefulSetProps = {}) {
     super(scope, id, {
-      ...StatefulSet.GVK,
+      ...KubeStatefulSet.GVK,
       ...props,
     });
   }
@@ -810,8 +810,8 @@ export class StatefulSet extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...StatefulSet.GVK,
-      ...toJson_StatefulSetProps(resolved),
+      ...KubeStatefulSet.GVK,
+      ...toJson_KubeStatefulSetProps(resolved),
     };
   }
 }
@@ -821,7 +821,7 @@ export class StatefulSet extends ApiObject {
  *
  * @schema io.k8s.api.apps.v1.StatefulSetList
  */
-export class StatefulSetList extends ApiObject {
+export class KubeStatefulSetList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.apps.v1.StatefulSetList"
    */
@@ -837,10 +837,10 @@ export class StatefulSetList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: StatefulSetListProps): any {
+  public static manifest(props: KubeStatefulSetListProps): any {
     return {
-      ...StatefulSetList.GVK,
-      ...toJson_StatefulSetListProps(props),
+      ...KubeStatefulSetList.GVK,
+      ...toJson_KubeStatefulSetListProps(props),
     };
   }
 
@@ -850,9 +850,9 @@ export class StatefulSetList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: StatefulSetListProps) {
+  public constructor(scope: Construct, id: string, props: KubeStatefulSetListProps) {
     super(scope, id, {
-      ...StatefulSetList.GVK,
+      ...KubeStatefulSetList.GVK,
       ...props,
     });
   }
@@ -864,8 +864,8 @@ export class StatefulSetList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...StatefulSetList.GVK,
-      ...toJson_StatefulSetListProps(resolved),
+      ...KubeStatefulSetList.GVK,
+      ...toJson_KubeStatefulSetListProps(resolved),
     };
   }
 }
@@ -875,7 +875,7 @@ export class StatefulSetList extends ApiObject {
  *
  * @schema io.k8s.api.authentication.v1.TokenRequest
  */
-export class TokenRequest extends ApiObject {
+export class KubeTokenRequest extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.authentication.v1.TokenRequest"
    */
@@ -891,10 +891,10 @@ export class TokenRequest extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: TokenRequestProps): any {
+  public static manifest(props: KubeTokenRequestProps): any {
     return {
-      ...TokenRequest.GVK,
-      ...toJson_TokenRequestProps(props),
+      ...KubeTokenRequest.GVK,
+      ...toJson_KubeTokenRequestProps(props),
     };
   }
 
@@ -904,9 +904,9 @@ export class TokenRequest extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: TokenRequestProps) {
+  public constructor(scope: Construct, id: string, props: KubeTokenRequestProps) {
     super(scope, id, {
-      ...TokenRequest.GVK,
+      ...KubeTokenRequest.GVK,
       ...props,
     });
   }
@@ -918,8 +918,8 @@ export class TokenRequest extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...TokenRequest.GVK,
-      ...toJson_TokenRequestProps(resolved),
+      ...KubeTokenRequest.GVK,
+      ...toJson_KubeTokenRequestProps(resolved),
     };
   }
 }
@@ -929,7 +929,7 @@ export class TokenRequest extends ApiObject {
  *
  * @schema io.k8s.api.authentication.v1.TokenReview
  */
-export class TokenReview extends ApiObject {
+export class KubeTokenReview extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.authentication.v1.TokenReview"
    */
@@ -945,10 +945,10 @@ export class TokenReview extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: TokenReviewProps): any {
+  public static manifest(props: KubeTokenReviewProps): any {
     return {
-      ...TokenReview.GVK,
-      ...toJson_TokenReviewProps(props),
+      ...KubeTokenReview.GVK,
+      ...toJson_KubeTokenReviewProps(props),
     };
   }
 
@@ -958,9 +958,9 @@ export class TokenReview extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: TokenReviewProps) {
+  public constructor(scope: Construct, id: string, props: KubeTokenReviewProps) {
     super(scope, id, {
-      ...TokenReview.GVK,
+      ...KubeTokenReview.GVK,
       ...props,
     });
   }
@@ -972,8 +972,8 @@ export class TokenReview extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...TokenReview.GVK,
-      ...toJson_TokenReviewProps(resolved),
+      ...KubeTokenReview.GVK,
+      ...toJson_KubeTokenReviewProps(resolved),
     };
   }
 }
@@ -983,7 +983,7 @@ export class TokenReview extends ApiObject {
  *
  * @schema io.k8s.api.authorization.v1.LocalSubjectAccessReview
  */
-export class LocalSubjectAccessReview extends ApiObject {
+export class KubeLocalSubjectAccessReview extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.authorization.v1.LocalSubjectAccessReview"
    */
@@ -999,10 +999,10 @@ export class LocalSubjectAccessReview extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: LocalSubjectAccessReviewProps): any {
+  public static manifest(props: KubeLocalSubjectAccessReviewProps): any {
     return {
-      ...LocalSubjectAccessReview.GVK,
-      ...toJson_LocalSubjectAccessReviewProps(props),
+      ...KubeLocalSubjectAccessReview.GVK,
+      ...toJson_KubeLocalSubjectAccessReviewProps(props),
     };
   }
 
@@ -1012,9 +1012,9 @@ export class LocalSubjectAccessReview extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: LocalSubjectAccessReviewProps) {
+  public constructor(scope: Construct, id: string, props: KubeLocalSubjectAccessReviewProps) {
     super(scope, id, {
-      ...LocalSubjectAccessReview.GVK,
+      ...KubeLocalSubjectAccessReview.GVK,
       ...props,
     });
   }
@@ -1026,8 +1026,8 @@ export class LocalSubjectAccessReview extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...LocalSubjectAccessReview.GVK,
-      ...toJson_LocalSubjectAccessReviewProps(resolved),
+      ...KubeLocalSubjectAccessReview.GVK,
+      ...toJson_KubeLocalSubjectAccessReviewProps(resolved),
     };
   }
 }
@@ -1037,7 +1037,7 @@ export class LocalSubjectAccessReview extends ApiObject {
  *
  * @schema io.k8s.api.authorization.v1.SelfSubjectAccessReview
  */
-export class SelfSubjectAccessReview extends ApiObject {
+export class KubeSelfSubjectAccessReview extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.authorization.v1.SelfSubjectAccessReview"
    */
@@ -1053,10 +1053,10 @@ export class SelfSubjectAccessReview extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: SelfSubjectAccessReviewProps): any {
+  public static manifest(props: KubeSelfSubjectAccessReviewProps): any {
     return {
-      ...SelfSubjectAccessReview.GVK,
-      ...toJson_SelfSubjectAccessReviewProps(props),
+      ...KubeSelfSubjectAccessReview.GVK,
+      ...toJson_KubeSelfSubjectAccessReviewProps(props),
     };
   }
 
@@ -1066,9 +1066,9 @@ export class SelfSubjectAccessReview extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: SelfSubjectAccessReviewProps) {
+  public constructor(scope: Construct, id: string, props: KubeSelfSubjectAccessReviewProps) {
     super(scope, id, {
-      ...SelfSubjectAccessReview.GVK,
+      ...KubeSelfSubjectAccessReview.GVK,
       ...props,
     });
   }
@@ -1080,8 +1080,8 @@ export class SelfSubjectAccessReview extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...SelfSubjectAccessReview.GVK,
-      ...toJson_SelfSubjectAccessReviewProps(resolved),
+      ...KubeSelfSubjectAccessReview.GVK,
+      ...toJson_KubeSelfSubjectAccessReviewProps(resolved),
     };
   }
 }
@@ -1091,7 +1091,7 @@ export class SelfSubjectAccessReview extends ApiObject {
  *
  * @schema io.k8s.api.authorization.v1.SelfSubjectRulesReview
  */
-export class SelfSubjectRulesReview extends ApiObject {
+export class KubeSelfSubjectRulesReview extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.authorization.v1.SelfSubjectRulesReview"
    */
@@ -1107,10 +1107,10 @@ export class SelfSubjectRulesReview extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: SelfSubjectRulesReviewProps): any {
+  public static manifest(props: KubeSelfSubjectRulesReviewProps): any {
     return {
-      ...SelfSubjectRulesReview.GVK,
-      ...toJson_SelfSubjectRulesReviewProps(props),
+      ...KubeSelfSubjectRulesReview.GVK,
+      ...toJson_KubeSelfSubjectRulesReviewProps(props),
     };
   }
 
@@ -1120,9 +1120,9 @@ export class SelfSubjectRulesReview extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: SelfSubjectRulesReviewProps) {
+  public constructor(scope: Construct, id: string, props: KubeSelfSubjectRulesReviewProps) {
     super(scope, id, {
-      ...SelfSubjectRulesReview.GVK,
+      ...KubeSelfSubjectRulesReview.GVK,
       ...props,
     });
   }
@@ -1134,8 +1134,8 @@ export class SelfSubjectRulesReview extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...SelfSubjectRulesReview.GVK,
-      ...toJson_SelfSubjectRulesReviewProps(resolved),
+      ...KubeSelfSubjectRulesReview.GVK,
+      ...toJson_KubeSelfSubjectRulesReviewProps(resolved),
     };
   }
 }
@@ -1145,7 +1145,7 @@ export class SelfSubjectRulesReview extends ApiObject {
  *
  * @schema io.k8s.api.authorization.v1.SubjectAccessReview
  */
-export class SubjectAccessReview extends ApiObject {
+export class KubeSubjectAccessReview extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.authorization.v1.SubjectAccessReview"
    */
@@ -1161,10 +1161,10 @@ export class SubjectAccessReview extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: SubjectAccessReviewProps): any {
+  public static manifest(props: KubeSubjectAccessReviewProps): any {
     return {
-      ...SubjectAccessReview.GVK,
-      ...toJson_SubjectAccessReviewProps(props),
+      ...KubeSubjectAccessReview.GVK,
+      ...toJson_KubeSubjectAccessReviewProps(props),
     };
   }
 
@@ -1174,9 +1174,9 @@ export class SubjectAccessReview extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: SubjectAccessReviewProps) {
+  public constructor(scope: Construct, id: string, props: KubeSubjectAccessReviewProps) {
     super(scope, id, {
-      ...SubjectAccessReview.GVK,
+      ...KubeSubjectAccessReview.GVK,
       ...props,
     });
   }
@@ -1188,8 +1188,8 @@ export class SubjectAccessReview extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...SubjectAccessReview.GVK,
-      ...toJson_SubjectAccessReviewProps(resolved),
+      ...KubeSubjectAccessReview.GVK,
+      ...toJson_KubeSubjectAccessReviewProps(resolved),
     };
   }
 }
@@ -1199,7 +1199,7 @@ export class SubjectAccessReview extends ApiObject {
  *
  * @schema io.k8s.api.autoscaling.v1.HorizontalPodAutoscaler
  */
-export class HorizontalPodAutoscaler extends ApiObject {
+export class KubeHorizontalPodAutoscaler extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.autoscaling.v1.HorizontalPodAutoscaler"
    */
@@ -1215,10 +1215,10 @@ export class HorizontalPodAutoscaler extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: HorizontalPodAutoscalerProps = {}): any {
+  public static manifest(props: KubeHorizontalPodAutoscalerProps = {}): any {
     return {
-      ...HorizontalPodAutoscaler.GVK,
-      ...toJson_HorizontalPodAutoscalerProps(props),
+      ...KubeHorizontalPodAutoscaler.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerProps(props),
     };
   }
 
@@ -1228,9 +1228,9 @@ export class HorizontalPodAutoscaler extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: HorizontalPodAutoscalerProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeHorizontalPodAutoscalerProps = {}) {
     super(scope, id, {
-      ...HorizontalPodAutoscaler.GVK,
+      ...KubeHorizontalPodAutoscaler.GVK,
       ...props,
     });
   }
@@ -1242,8 +1242,8 @@ export class HorizontalPodAutoscaler extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...HorizontalPodAutoscaler.GVK,
-      ...toJson_HorizontalPodAutoscalerProps(resolved),
+      ...KubeHorizontalPodAutoscaler.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerProps(resolved),
     };
   }
 }
@@ -1253,7 +1253,7 @@ export class HorizontalPodAutoscaler extends ApiObject {
  *
  * @schema io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList
  */
-export class HorizontalPodAutoscalerList extends ApiObject {
+export class KubeHorizontalPodAutoscalerList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList"
    */
@@ -1269,10 +1269,10 @@ export class HorizontalPodAutoscalerList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: HorizontalPodAutoscalerListProps): any {
+  public static manifest(props: KubeHorizontalPodAutoscalerListProps): any {
     return {
-      ...HorizontalPodAutoscalerList.GVK,
-      ...toJson_HorizontalPodAutoscalerListProps(props),
+      ...KubeHorizontalPodAutoscalerList.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerListProps(props),
     };
   }
 
@@ -1282,9 +1282,9 @@ export class HorizontalPodAutoscalerList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: HorizontalPodAutoscalerListProps) {
+  public constructor(scope: Construct, id: string, props: KubeHorizontalPodAutoscalerListProps) {
     super(scope, id, {
-      ...HorizontalPodAutoscalerList.GVK,
+      ...KubeHorizontalPodAutoscalerList.GVK,
       ...props,
     });
   }
@@ -1296,8 +1296,8 @@ export class HorizontalPodAutoscalerList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...HorizontalPodAutoscalerList.GVK,
-      ...toJson_HorizontalPodAutoscalerListProps(resolved),
+      ...KubeHorizontalPodAutoscalerList.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerListProps(resolved),
     };
   }
 }
@@ -1307,7 +1307,7 @@ export class HorizontalPodAutoscalerList extends ApiObject {
  *
  * @schema io.k8s.api.autoscaling.v1.Scale
  */
-export class Scale extends ApiObject {
+export class KubeScale extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.autoscaling.v1.Scale"
    */
@@ -1323,10 +1323,10 @@ export class Scale extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ScaleProps = {}): any {
+  public static manifest(props: KubeScaleProps = {}): any {
     return {
-      ...Scale.GVK,
-      ...toJson_ScaleProps(props),
+      ...KubeScale.GVK,
+      ...toJson_KubeScaleProps(props),
     };
   }
 
@@ -1336,9 +1336,9 @@ export class Scale extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ScaleProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeScaleProps = {}) {
     super(scope, id, {
-      ...Scale.GVK,
+      ...KubeScale.GVK,
       ...props,
     });
   }
@@ -1350,8 +1350,8 @@ export class Scale extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Scale.GVK,
-      ...toJson_ScaleProps(resolved),
+      ...KubeScale.GVK,
+      ...toJson_KubeScaleProps(resolved),
     };
   }
 }
@@ -1361,7 +1361,7 @@ export class Scale extends ApiObject {
  *
  * @schema io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscaler
  */
-export class HorizontalPodAutoscalerV2Beta1 extends ApiObject {
+export class KubeHorizontalPodAutoscalerV2Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscaler"
    */
@@ -1377,10 +1377,10 @@ export class HorizontalPodAutoscalerV2Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: HorizontalPodAutoscalerV2Beta1Props = {}): any {
+  public static manifest(props: KubeHorizontalPodAutoscalerV2Beta1Props = {}): any {
     return {
-      ...HorizontalPodAutoscalerV2Beta1.GVK,
-      ...toJson_HorizontalPodAutoscalerV2Beta1Props(props),
+      ...KubeHorizontalPodAutoscalerV2Beta1.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerV2Beta1Props(props),
     };
   }
 
@@ -1390,9 +1390,9 @@ export class HorizontalPodAutoscalerV2Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: HorizontalPodAutoscalerV2Beta1Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubeHorizontalPodAutoscalerV2Beta1Props = {}) {
     super(scope, id, {
-      ...HorizontalPodAutoscalerV2Beta1.GVK,
+      ...KubeHorizontalPodAutoscalerV2Beta1.GVK,
       ...props,
     });
   }
@@ -1404,8 +1404,8 @@ export class HorizontalPodAutoscalerV2Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...HorizontalPodAutoscalerV2Beta1.GVK,
-      ...toJson_HorizontalPodAutoscalerV2Beta1Props(resolved),
+      ...KubeHorizontalPodAutoscalerV2Beta1.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerV2Beta1Props(resolved),
     };
   }
 }
@@ -1415,7 +1415,7 @@ export class HorizontalPodAutoscalerV2Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList
  */
-export class HorizontalPodAutoscalerListV2Beta1 extends ApiObject {
+export class KubeHorizontalPodAutoscalerListV2Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList"
    */
@@ -1431,10 +1431,10 @@ export class HorizontalPodAutoscalerListV2Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: HorizontalPodAutoscalerListV2Beta1Props): any {
+  public static manifest(props: KubeHorizontalPodAutoscalerListV2Beta1Props): any {
     return {
-      ...HorizontalPodAutoscalerListV2Beta1.GVK,
-      ...toJson_HorizontalPodAutoscalerListV2Beta1Props(props),
+      ...KubeHorizontalPodAutoscalerListV2Beta1.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerListV2Beta1Props(props),
     };
   }
 
@@ -1444,9 +1444,9 @@ export class HorizontalPodAutoscalerListV2Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: HorizontalPodAutoscalerListV2Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeHorizontalPodAutoscalerListV2Beta1Props) {
     super(scope, id, {
-      ...HorizontalPodAutoscalerListV2Beta1.GVK,
+      ...KubeHorizontalPodAutoscalerListV2Beta1.GVK,
       ...props,
     });
   }
@@ -1458,8 +1458,8 @@ export class HorizontalPodAutoscalerListV2Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...HorizontalPodAutoscalerListV2Beta1.GVK,
-      ...toJson_HorizontalPodAutoscalerListV2Beta1Props(resolved),
+      ...KubeHorizontalPodAutoscalerListV2Beta1.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerListV2Beta1Props(resolved),
     };
   }
 }
@@ -1469,7 +1469,7 @@ export class HorizontalPodAutoscalerListV2Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscaler
  */
-export class HorizontalPodAutoscalerV2Beta2 extends ApiObject {
+export class KubeHorizontalPodAutoscalerV2Beta2 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscaler"
    */
@@ -1485,10 +1485,10 @@ export class HorizontalPodAutoscalerV2Beta2 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: HorizontalPodAutoscalerV2Beta2Props = {}): any {
+  public static manifest(props: KubeHorizontalPodAutoscalerV2Beta2Props = {}): any {
     return {
-      ...HorizontalPodAutoscalerV2Beta2.GVK,
-      ...toJson_HorizontalPodAutoscalerV2Beta2Props(props),
+      ...KubeHorizontalPodAutoscalerV2Beta2.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerV2Beta2Props(props),
     };
   }
 
@@ -1498,9 +1498,9 @@ export class HorizontalPodAutoscalerV2Beta2 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: HorizontalPodAutoscalerV2Beta2Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubeHorizontalPodAutoscalerV2Beta2Props = {}) {
     super(scope, id, {
-      ...HorizontalPodAutoscalerV2Beta2.GVK,
+      ...KubeHorizontalPodAutoscalerV2Beta2.GVK,
       ...props,
     });
   }
@@ -1512,8 +1512,8 @@ export class HorizontalPodAutoscalerV2Beta2 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...HorizontalPodAutoscalerV2Beta2.GVK,
-      ...toJson_HorizontalPodAutoscalerV2Beta2Props(resolved),
+      ...KubeHorizontalPodAutoscalerV2Beta2.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerV2Beta2Props(resolved),
     };
   }
 }
@@ -1523,7 +1523,7 @@ export class HorizontalPodAutoscalerV2Beta2 extends ApiObject {
  *
  * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerList
  */
-export class HorizontalPodAutoscalerListV2Beta2 extends ApiObject {
+export class KubeHorizontalPodAutoscalerListV2Beta2 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerList"
    */
@@ -1539,10 +1539,10 @@ export class HorizontalPodAutoscalerListV2Beta2 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: HorizontalPodAutoscalerListV2Beta2Props): any {
+  public static manifest(props: KubeHorizontalPodAutoscalerListV2Beta2Props): any {
     return {
-      ...HorizontalPodAutoscalerListV2Beta2.GVK,
-      ...toJson_HorizontalPodAutoscalerListV2Beta2Props(props),
+      ...KubeHorizontalPodAutoscalerListV2Beta2.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerListV2Beta2Props(props),
     };
   }
 
@@ -1552,9 +1552,9 @@ export class HorizontalPodAutoscalerListV2Beta2 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: HorizontalPodAutoscalerListV2Beta2Props) {
+  public constructor(scope: Construct, id: string, props: KubeHorizontalPodAutoscalerListV2Beta2Props) {
     super(scope, id, {
-      ...HorizontalPodAutoscalerListV2Beta2.GVK,
+      ...KubeHorizontalPodAutoscalerListV2Beta2.GVK,
       ...props,
     });
   }
@@ -1566,8 +1566,8 @@ export class HorizontalPodAutoscalerListV2Beta2 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...HorizontalPodAutoscalerListV2Beta2.GVK,
-      ...toJson_HorizontalPodAutoscalerListV2Beta2Props(resolved),
+      ...KubeHorizontalPodAutoscalerListV2Beta2.GVK,
+      ...toJson_KubeHorizontalPodAutoscalerListV2Beta2Props(resolved),
     };
   }
 }
@@ -1577,7 +1577,7 @@ export class HorizontalPodAutoscalerListV2Beta2 extends ApiObject {
  *
  * @schema io.k8s.api.batch.v1.CronJob
  */
-export class CronJob extends ApiObject {
+export class KubeCronJob extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.batch.v1.CronJob"
    */
@@ -1593,10 +1593,10 @@ export class CronJob extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CronJobProps = {}): any {
+  public static manifest(props: KubeCronJobProps = {}): any {
     return {
-      ...CronJob.GVK,
-      ...toJson_CronJobProps(props),
+      ...KubeCronJob.GVK,
+      ...toJson_KubeCronJobProps(props),
     };
   }
 
@@ -1606,9 +1606,9 @@ export class CronJob extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CronJobProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeCronJobProps = {}) {
     super(scope, id, {
-      ...CronJob.GVK,
+      ...KubeCronJob.GVK,
       ...props,
     });
   }
@@ -1620,8 +1620,8 @@ export class CronJob extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CronJob.GVK,
-      ...toJson_CronJobProps(resolved),
+      ...KubeCronJob.GVK,
+      ...toJson_KubeCronJobProps(resolved),
     };
   }
 }
@@ -1631,7 +1631,7 @@ export class CronJob extends ApiObject {
  *
  * @schema io.k8s.api.batch.v1.CronJobList
  */
-export class CronJobList extends ApiObject {
+export class KubeCronJobList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.batch.v1.CronJobList"
    */
@@ -1647,10 +1647,10 @@ export class CronJobList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CronJobListProps): any {
+  public static manifest(props: KubeCronJobListProps): any {
     return {
-      ...CronJobList.GVK,
-      ...toJson_CronJobListProps(props),
+      ...KubeCronJobList.GVK,
+      ...toJson_KubeCronJobListProps(props),
     };
   }
 
@@ -1660,9 +1660,9 @@ export class CronJobList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CronJobListProps) {
+  public constructor(scope: Construct, id: string, props: KubeCronJobListProps) {
     super(scope, id, {
-      ...CronJobList.GVK,
+      ...KubeCronJobList.GVK,
       ...props,
     });
   }
@@ -1674,8 +1674,8 @@ export class CronJobList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CronJobList.GVK,
-      ...toJson_CronJobListProps(resolved),
+      ...KubeCronJobList.GVK,
+      ...toJson_KubeCronJobListProps(resolved),
     };
   }
 }
@@ -1685,7 +1685,7 @@ export class CronJobList extends ApiObject {
  *
  * @schema io.k8s.api.batch.v1.Job
  */
-export class Job extends ApiObject {
+export class KubeJob extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.batch.v1.Job"
    */
@@ -1701,10 +1701,10 @@ export class Job extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: JobProps = {}): any {
+  public static manifest(props: KubeJobProps = {}): any {
     return {
-      ...Job.GVK,
-      ...toJson_JobProps(props),
+      ...KubeJob.GVK,
+      ...toJson_KubeJobProps(props),
     };
   }
 
@@ -1714,9 +1714,9 @@ export class Job extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: JobProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeJobProps = {}) {
     super(scope, id, {
-      ...Job.GVK,
+      ...KubeJob.GVK,
       ...props,
     });
   }
@@ -1728,8 +1728,8 @@ export class Job extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Job.GVK,
-      ...toJson_JobProps(resolved),
+      ...KubeJob.GVK,
+      ...toJson_KubeJobProps(resolved),
     };
   }
 }
@@ -1739,7 +1739,7 @@ export class Job extends ApiObject {
  *
  * @schema io.k8s.api.batch.v1.JobList
  */
-export class JobList extends ApiObject {
+export class KubeJobList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.batch.v1.JobList"
    */
@@ -1755,10 +1755,10 @@ export class JobList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: JobListProps): any {
+  public static manifest(props: KubeJobListProps): any {
     return {
-      ...JobList.GVK,
-      ...toJson_JobListProps(props),
+      ...KubeJobList.GVK,
+      ...toJson_KubeJobListProps(props),
     };
   }
 
@@ -1768,9 +1768,9 @@ export class JobList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: JobListProps) {
+  public constructor(scope: Construct, id: string, props: KubeJobListProps) {
     super(scope, id, {
-      ...JobList.GVK,
+      ...KubeJobList.GVK,
       ...props,
     });
   }
@@ -1782,8 +1782,8 @@ export class JobList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...JobList.GVK,
-      ...toJson_JobListProps(resolved),
+      ...KubeJobList.GVK,
+      ...toJson_KubeJobListProps(resolved),
     };
   }
 }
@@ -1793,7 +1793,7 @@ export class JobList extends ApiObject {
  *
  * @schema io.k8s.api.batch.v1beta1.CronJob
  */
-export class CronJobV1Beta1 extends ApiObject {
+export class KubeCronJobV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.batch.v1beta1.CronJob"
    */
@@ -1809,10 +1809,10 @@ export class CronJobV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CronJobV1Beta1Props = {}): any {
+  public static manifest(props: KubeCronJobV1Beta1Props = {}): any {
     return {
-      ...CronJobV1Beta1.GVK,
-      ...toJson_CronJobV1Beta1Props(props),
+      ...KubeCronJobV1Beta1.GVK,
+      ...toJson_KubeCronJobV1Beta1Props(props),
     };
   }
 
@@ -1822,9 +1822,9 @@ export class CronJobV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CronJobV1Beta1Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubeCronJobV1Beta1Props = {}) {
     super(scope, id, {
-      ...CronJobV1Beta1.GVK,
+      ...KubeCronJobV1Beta1.GVK,
       ...props,
     });
   }
@@ -1836,8 +1836,8 @@ export class CronJobV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CronJobV1Beta1.GVK,
-      ...toJson_CronJobV1Beta1Props(resolved),
+      ...KubeCronJobV1Beta1.GVK,
+      ...toJson_KubeCronJobV1Beta1Props(resolved),
     };
   }
 }
@@ -1847,7 +1847,7 @@ export class CronJobV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.batch.v1beta1.CronJobList
  */
-export class CronJobListV1Beta1 extends ApiObject {
+export class KubeCronJobListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.batch.v1beta1.CronJobList"
    */
@@ -1863,10 +1863,10 @@ export class CronJobListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CronJobListV1Beta1Props): any {
+  public static manifest(props: KubeCronJobListV1Beta1Props): any {
     return {
-      ...CronJobListV1Beta1.GVK,
-      ...toJson_CronJobListV1Beta1Props(props),
+      ...KubeCronJobListV1Beta1.GVK,
+      ...toJson_KubeCronJobListV1Beta1Props(props),
     };
   }
 
@@ -1876,9 +1876,9 @@ export class CronJobListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CronJobListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeCronJobListV1Beta1Props) {
     super(scope, id, {
-      ...CronJobListV1Beta1.GVK,
+      ...KubeCronJobListV1Beta1.GVK,
       ...props,
     });
   }
@@ -1890,8 +1890,8 @@ export class CronJobListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CronJobListV1Beta1.GVK,
-      ...toJson_CronJobListV1Beta1Props(resolved),
+      ...KubeCronJobListV1Beta1.GVK,
+      ...toJson_KubeCronJobListV1Beta1Props(resolved),
     };
   }
 }
@@ -1907,7 +1907,7 @@ This API can be used to request client certificates to authenticate to kube-apis
  *
  * @schema io.k8s.api.certificates.v1.CertificateSigningRequest
  */
-export class CertificateSigningRequest extends ApiObject {
+export class KubeCertificateSigningRequest extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.certificates.v1.CertificateSigningRequest"
    */
@@ -1923,10 +1923,10 @@ export class CertificateSigningRequest extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CertificateSigningRequestProps): any {
+  public static manifest(props: KubeCertificateSigningRequestProps): any {
     return {
-      ...CertificateSigningRequest.GVK,
-      ...toJson_CertificateSigningRequestProps(props),
+      ...KubeCertificateSigningRequest.GVK,
+      ...toJson_KubeCertificateSigningRequestProps(props),
     };
   }
 
@@ -1936,9 +1936,9 @@ export class CertificateSigningRequest extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CertificateSigningRequestProps) {
+  public constructor(scope: Construct, id: string, props: KubeCertificateSigningRequestProps) {
     super(scope, id, {
-      ...CertificateSigningRequest.GVK,
+      ...KubeCertificateSigningRequest.GVK,
       ...props,
     });
   }
@@ -1950,8 +1950,8 @@ export class CertificateSigningRequest extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CertificateSigningRequest.GVK,
-      ...toJson_CertificateSigningRequestProps(resolved),
+      ...KubeCertificateSigningRequest.GVK,
+      ...toJson_KubeCertificateSigningRequestProps(resolved),
     };
   }
 }
@@ -1961,7 +1961,7 @@ export class CertificateSigningRequest extends ApiObject {
  *
  * @schema io.k8s.api.certificates.v1.CertificateSigningRequestList
  */
-export class CertificateSigningRequestList extends ApiObject {
+export class KubeCertificateSigningRequestList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.certificates.v1.CertificateSigningRequestList"
    */
@@ -1977,10 +1977,10 @@ export class CertificateSigningRequestList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CertificateSigningRequestListProps): any {
+  public static manifest(props: KubeCertificateSigningRequestListProps): any {
     return {
-      ...CertificateSigningRequestList.GVK,
-      ...toJson_CertificateSigningRequestListProps(props),
+      ...KubeCertificateSigningRequestList.GVK,
+      ...toJson_KubeCertificateSigningRequestListProps(props),
     };
   }
 
@@ -1990,9 +1990,9 @@ export class CertificateSigningRequestList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CertificateSigningRequestListProps) {
+  public constructor(scope: Construct, id: string, props: KubeCertificateSigningRequestListProps) {
     super(scope, id, {
-      ...CertificateSigningRequestList.GVK,
+      ...KubeCertificateSigningRequestList.GVK,
       ...props,
     });
   }
@@ -2004,8 +2004,8 @@ export class CertificateSigningRequestList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CertificateSigningRequestList.GVK,
-      ...toJson_CertificateSigningRequestListProps(resolved),
+      ...KubeCertificateSigningRequestList.GVK,
+      ...toJson_KubeCertificateSigningRequestListProps(resolved),
     };
   }
 }
@@ -2015,7 +2015,7 @@ export class CertificateSigningRequestList extends ApiObject {
  *
  * @schema io.k8s.api.coordination.v1.Lease
  */
-export class Lease extends ApiObject {
+export class KubeLease extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.coordination.v1.Lease"
    */
@@ -2031,10 +2031,10 @@ export class Lease extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: LeaseProps = {}): any {
+  public static manifest(props: KubeLeaseProps = {}): any {
     return {
-      ...Lease.GVK,
-      ...toJson_LeaseProps(props),
+      ...KubeLease.GVK,
+      ...toJson_KubeLeaseProps(props),
     };
   }
 
@@ -2044,9 +2044,9 @@ export class Lease extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: LeaseProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeLeaseProps = {}) {
     super(scope, id, {
-      ...Lease.GVK,
+      ...KubeLease.GVK,
       ...props,
     });
   }
@@ -2058,8 +2058,8 @@ export class Lease extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Lease.GVK,
-      ...toJson_LeaseProps(resolved),
+      ...KubeLease.GVK,
+      ...toJson_KubeLeaseProps(resolved),
     };
   }
 }
@@ -2069,7 +2069,7 @@ export class Lease extends ApiObject {
  *
  * @schema io.k8s.api.coordination.v1.LeaseList
  */
-export class LeaseList extends ApiObject {
+export class KubeLeaseList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.coordination.v1.LeaseList"
    */
@@ -2085,10 +2085,10 @@ export class LeaseList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: LeaseListProps): any {
+  public static manifest(props: KubeLeaseListProps): any {
     return {
-      ...LeaseList.GVK,
-      ...toJson_LeaseListProps(props),
+      ...KubeLeaseList.GVK,
+      ...toJson_KubeLeaseListProps(props),
     };
   }
 
@@ -2098,9 +2098,9 @@ export class LeaseList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: LeaseListProps) {
+  public constructor(scope: Construct, id: string, props: KubeLeaseListProps) {
     super(scope, id, {
-      ...LeaseList.GVK,
+      ...KubeLeaseList.GVK,
       ...props,
     });
   }
@@ -2112,8 +2112,8 @@ export class LeaseList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...LeaseList.GVK,
-      ...toJson_LeaseListProps(resolved),
+      ...KubeLeaseList.GVK,
+      ...toJson_KubeLeaseListProps(resolved),
     };
   }
 }
@@ -2123,7 +2123,7 @@ export class LeaseList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.Binding
  */
-export class Binding extends ApiObject {
+export class KubeBinding extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.Binding"
    */
@@ -2139,10 +2139,10 @@ export class Binding extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: BindingProps): any {
+  public static manifest(props: KubeBindingProps): any {
     return {
-      ...Binding.GVK,
-      ...toJson_BindingProps(props),
+      ...KubeBinding.GVK,
+      ...toJson_KubeBindingProps(props),
     };
   }
 
@@ -2152,9 +2152,9 @@ export class Binding extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: BindingProps) {
+  public constructor(scope: Construct, id: string, props: KubeBindingProps) {
     super(scope, id, {
-      ...Binding.GVK,
+      ...KubeBinding.GVK,
       ...props,
     });
   }
@@ -2166,8 +2166,8 @@ export class Binding extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Binding.GVK,
-      ...toJson_BindingProps(resolved),
+      ...KubeBinding.GVK,
+      ...toJson_KubeBindingProps(resolved),
     };
   }
 }
@@ -2177,7 +2177,7 @@ export class Binding extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ComponentStatus
  */
-export class ComponentStatus extends ApiObject {
+export class KubeComponentStatus extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ComponentStatus"
    */
@@ -2193,10 +2193,10 @@ export class ComponentStatus extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ComponentStatusProps = {}): any {
+  public static manifest(props: KubeComponentStatusProps = {}): any {
     return {
-      ...ComponentStatus.GVK,
-      ...toJson_ComponentStatusProps(props),
+      ...KubeComponentStatus.GVK,
+      ...toJson_KubeComponentStatusProps(props),
     };
   }
 
@@ -2206,9 +2206,9 @@ export class ComponentStatus extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ComponentStatusProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeComponentStatusProps = {}) {
     super(scope, id, {
-      ...ComponentStatus.GVK,
+      ...KubeComponentStatus.GVK,
       ...props,
     });
   }
@@ -2220,8 +2220,8 @@ export class ComponentStatus extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ComponentStatus.GVK,
-      ...toJson_ComponentStatusProps(resolved),
+      ...KubeComponentStatus.GVK,
+      ...toJson_KubeComponentStatusProps(resolved),
     };
   }
 }
@@ -2231,7 +2231,7 @@ export class ComponentStatus extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ComponentStatusList
  */
-export class ComponentStatusList extends ApiObject {
+export class KubeComponentStatusList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ComponentStatusList"
    */
@@ -2247,10 +2247,10 @@ export class ComponentStatusList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ComponentStatusListProps): any {
+  public static manifest(props: KubeComponentStatusListProps): any {
     return {
-      ...ComponentStatusList.GVK,
-      ...toJson_ComponentStatusListProps(props),
+      ...KubeComponentStatusList.GVK,
+      ...toJson_KubeComponentStatusListProps(props),
     };
   }
 
@@ -2260,9 +2260,9 @@ export class ComponentStatusList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ComponentStatusListProps) {
+  public constructor(scope: Construct, id: string, props: KubeComponentStatusListProps) {
     super(scope, id, {
-      ...ComponentStatusList.GVK,
+      ...KubeComponentStatusList.GVK,
       ...props,
     });
   }
@@ -2274,8 +2274,8 @@ export class ComponentStatusList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ComponentStatusList.GVK,
-      ...toJson_ComponentStatusListProps(resolved),
+      ...KubeComponentStatusList.GVK,
+      ...toJson_KubeComponentStatusListProps(resolved),
     };
   }
 }
@@ -2285,7 +2285,7 @@ export class ComponentStatusList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ConfigMap
  */
-export class ConfigMap extends ApiObject {
+export class KubeConfigMap extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ConfigMap"
    */
@@ -2301,10 +2301,10 @@ export class ConfigMap extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ConfigMapProps = {}): any {
+  public static manifest(props: KubeConfigMapProps = {}): any {
     return {
-      ...ConfigMap.GVK,
-      ...toJson_ConfigMapProps(props),
+      ...KubeConfigMap.GVK,
+      ...toJson_KubeConfigMapProps(props),
     };
   }
 
@@ -2314,9 +2314,9 @@ export class ConfigMap extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ConfigMapProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeConfigMapProps = {}) {
     super(scope, id, {
-      ...ConfigMap.GVK,
+      ...KubeConfigMap.GVK,
       ...props,
     });
   }
@@ -2328,8 +2328,8 @@ export class ConfigMap extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ConfigMap.GVK,
-      ...toJson_ConfigMapProps(resolved),
+      ...KubeConfigMap.GVK,
+      ...toJson_KubeConfigMapProps(resolved),
     };
   }
 }
@@ -2339,7 +2339,7 @@ export class ConfigMap extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ConfigMapList
  */
-export class ConfigMapList extends ApiObject {
+export class KubeConfigMapList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ConfigMapList"
    */
@@ -2355,10 +2355,10 @@ export class ConfigMapList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ConfigMapListProps): any {
+  public static manifest(props: KubeConfigMapListProps): any {
     return {
-      ...ConfigMapList.GVK,
-      ...toJson_ConfigMapListProps(props),
+      ...KubeConfigMapList.GVK,
+      ...toJson_KubeConfigMapListProps(props),
     };
   }
 
@@ -2368,9 +2368,9 @@ export class ConfigMapList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ConfigMapListProps) {
+  public constructor(scope: Construct, id: string, props: KubeConfigMapListProps) {
     super(scope, id, {
-      ...ConfigMapList.GVK,
+      ...KubeConfigMapList.GVK,
       ...props,
     });
   }
@@ -2382,8 +2382,8 @@ export class ConfigMapList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ConfigMapList.GVK,
-      ...toJson_ConfigMapListProps(resolved),
+      ...KubeConfigMapList.GVK,
+      ...toJson_KubeConfigMapListProps(resolved),
     };
   }
 }
@@ -2404,7 +2404,7 @@ export class ConfigMapList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.Endpoints
  */
-export class Endpoints extends ApiObject {
+export class KubeEndpoints extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.Endpoints"
    */
@@ -2420,10 +2420,10 @@ export class Endpoints extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EndpointsProps = {}): any {
+  public static manifest(props: KubeEndpointsProps = {}): any {
     return {
-      ...Endpoints.GVK,
-      ...toJson_EndpointsProps(props),
+      ...KubeEndpoints.GVK,
+      ...toJson_KubeEndpointsProps(props),
     };
   }
 
@@ -2433,9 +2433,9 @@ export class Endpoints extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EndpointsProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeEndpointsProps = {}) {
     super(scope, id, {
-      ...Endpoints.GVK,
+      ...KubeEndpoints.GVK,
       ...props,
     });
   }
@@ -2447,8 +2447,8 @@ export class Endpoints extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Endpoints.GVK,
-      ...toJson_EndpointsProps(resolved),
+      ...KubeEndpoints.GVK,
+      ...toJson_KubeEndpointsProps(resolved),
     };
   }
 }
@@ -2458,7 +2458,7 @@ export class Endpoints extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.EndpointsList
  */
-export class EndpointsList extends ApiObject {
+export class KubeEndpointsList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.EndpointsList"
    */
@@ -2474,10 +2474,10 @@ export class EndpointsList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EndpointsListProps): any {
+  public static manifest(props: KubeEndpointsListProps): any {
     return {
-      ...EndpointsList.GVK,
-      ...toJson_EndpointsListProps(props),
+      ...KubeEndpointsList.GVK,
+      ...toJson_KubeEndpointsListProps(props),
     };
   }
 
@@ -2487,9 +2487,9 @@ export class EndpointsList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EndpointsListProps) {
+  public constructor(scope: Construct, id: string, props: KubeEndpointsListProps) {
     super(scope, id, {
-      ...EndpointsList.GVK,
+      ...KubeEndpointsList.GVK,
       ...props,
     });
   }
@@ -2501,8 +2501,8 @@ export class EndpointsList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...EndpointsList.GVK,
-      ...toJson_EndpointsListProps(resolved),
+      ...KubeEndpointsList.GVK,
+      ...toJson_KubeEndpointsListProps(resolved),
     };
   }
 }
@@ -2512,7 +2512,7 @@ export class EndpointsList extends ApiObject {
  *
  * @schema io.k8s.api.events.v1.Event
  */
-export class Event extends ApiObject {
+export class KubeEvent extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.events.v1.Event"
    */
@@ -2528,10 +2528,10 @@ export class Event extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EventProps): any {
+  public static manifest(props: KubeEventProps): any {
     return {
-      ...Event.GVK,
-      ...toJson_EventProps(props),
+      ...KubeEvent.GVK,
+      ...toJson_KubeEventProps(props),
     };
   }
 
@@ -2541,9 +2541,9 @@ export class Event extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EventProps) {
+  public constructor(scope: Construct, id: string, props: KubeEventProps) {
     super(scope, id, {
-      ...Event.GVK,
+      ...KubeEvent.GVK,
       ...props,
     });
   }
@@ -2555,8 +2555,8 @@ export class Event extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Event.GVK,
-      ...toJson_EventProps(resolved),
+      ...KubeEvent.GVK,
+      ...toJson_KubeEventProps(resolved),
     };
   }
 }
@@ -2566,7 +2566,7 @@ export class Event extends ApiObject {
  *
  * @schema io.k8s.api.events.v1.EventList
  */
-export class EventList extends ApiObject {
+export class KubeEventList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.events.v1.EventList"
    */
@@ -2582,10 +2582,10 @@ export class EventList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EventListProps): any {
+  public static manifest(props: KubeEventListProps): any {
     return {
-      ...EventList.GVK,
-      ...toJson_EventListProps(props),
+      ...KubeEventList.GVK,
+      ...toJson_KubeEventListProps(props),
     };
   }
 
@@ -2595,9 +2595,9 @@ export class EventList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EventListProps) {
+  public constructor(scope: Construct, id: string, props: KubeEventListProps) {
     super(scope, id, {
-      ...EventList.GVK,
+      ...KubeEventList.GVK,
       ...props,
     });
   }
@@ -2609,8 +2609,8 @@ export class EventList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...EventList.GVK,
-      ...toJson_EventListProps(resolved),
+      ...KubeEventList.GVK,
+      ...toJson_KubeEventListProps(resolved),
     };
   }
 }
@@ -2620,7 +2620,7 @@ export class EventList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.LimitRange
  */
-export class LimitRange extends ApiObject {
+export class KubeLimitRange extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.LimitRange"
    */
@@ -2636,10 +2636,10 @@ export class LimitRange extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: LimitRangeProps = {}): any {
+  public static manifest(props: KubeLimitRangeProps = {}): any {
     return {
-      ...LimitRange.GVK,
-      ...toJson_LimitRangeProps(props),
+      ...KubeLimitRange.GVK,
+      ...toJson_KubeLimitRangeProps(props),
     };
   }
 
@@ -2649,9 +2649,9 @@ export class LimitRange extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: LimitRangeProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeLimitRangeProps = {}) {
     super(scope, id, {
-      ...LimitRange.GVK,
+      ...KubeLimitRange.GVK,
       ...props,
     });
   }
@@ -2663,8 +2663,8 @@ export class LimitRange extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...LimitRange.GVK,
-      ...toJson_LimitRangeProps(resolved),
+      ...KubeLimitRange.GVK,
+      ...toJson_KubeLimitRangeProps(resolved),
     };
   }
 }
@@ -2674,7 +2674,7 @@ export class LimitRange extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.LimitRangeList
  */
-export class LimitRangeList extends ApiObject {
+export class KubeLimitRangeList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.LimitRangeList"
    */
@@ -2690,10 +2690,10 @@ export class LimitRangeList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: LimitRangeListProps): any {
+  public static manifest(props: KubeLimitRangeListProps): any {
     return {
-      ...LimitRangeList.GVK,
-      ...toJson_LimitRangeListProps(props),
+      ...KubeLimitRangeList.GVK,
+      ...toJson_KubeLimitRangeListProps(props),
     };
   }
 
@@ -2703,9 +2703,9 @@ export class LimitRangeList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: LimitRangeListProps) {
+  public constructor(scope: Construct, id: string, props: KubeLimitRangeListProps) {
     super(scope, id, {
-      ...LimitRangeList.GVK,
+      ...KubeLimitRangeList.GVK,
       ...props,
     });
   }
@@ -2717,8 +2717,8 @@ export class LimitRangeList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...LimitRangeList.GVK,
-      ...toJson_LimitRangeListProps(resolved),
+      ...KubeLimitRangeList.GVK,
+      ...toJson_KubeLimitRangeListProps(resolved),
     };
   }
 }
@@ -2728,7 +2728,7 @@ export class LimitRangeList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.Namespace
  */
-export class Namespace extends ApiObject {
+export class KubeNamespace extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.Namespace"
    */
@@ -2744,10 +2744,10 @@ export class Namespace extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: NamespaceProps = {}): any {
+  public static manifest(props: KubeNamespaceProps = {}): any {
     return {
-      ...Namespace.GVK,
-      ...toJson_NamespaceProps(props),
+      ...KubeNamespace.GVK,
+      ...toJson_KubeNamespaceProps(props),
     };
   }
 
@@ -2757,9 +2757,9 @@ export class Namespace extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: NamespaceProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeNamespaceProps = {}) {
     super(scope, id, {
-      ...Namespace.GVK,
+      ...KubeNamespace.GVK,
       ...props,
     });
   }
@@ -2771,8 +2771,8 @@ export class Namespace extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Namespace.GVK,
-      ...toJson_NamespaceProps(resolved),
+      ...KubeNamespace.GVK,
+      ...toJson_KubeNamespaceProps(resolved),
     };
   }
 }
@@ -2782,7 +2782,7 @@ export class Namespace extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.NamespaceList
  */
-export class NamespaceList extends ApiObject {
+export class KubeNamespaceList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.NamespaceList"
    */
@@ -2798,10 +2798,10 @@ export class NamespaceList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: NamespaceListProps): any {
+  public static manifest(props: KubeNamespaceListProps): any {
     return {
-      ...NamespaceList.GVK,
-      ...toJson_NamespaceListProps(props),
+      ...KubeNamespaceList.GVK,
+      ...toJson_KubeNamespaceListProps(props),
     };
   }
 
@@ -2811,9 +2811,9 @@ export class NamespaceList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: NamespaceListProps) {
+  public constructor(scope: Construct, id: string, props: KubeNamespaceListProps) {
     super(scope, id, {
-      ...NamespaceList.GVK,
+      ...KubeNamespaceList.GVK,
       ...props,
     });
   }
@@ -2825,8 +2825,8 @@ export class NamespaceList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...NamespaceList.GVK,
-      ...toJson_NamespaceListProps(resolved),
+      ...KubeNamespaceList.GVK,
+      ...toJson_KubeNamespaceListProps(resolved),
     };
   }
 }
@@ -2836,7 +2836,7 @@ export class NamespaceList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.Node
  */
-export class Node extends ApiObject {
+export class KubeNode extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.Node"
    */
@@ -2852,10 +2852,10 @@ export class Node extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: NodeProps = {}): any {
+  public static manifest(props: KubeNodeProps = {}): any {
     return {
-      ...Node.GVK,
-      ...toJson_NodeProps(props),
+      ...KubeNode.GVK,
+      ...toJson_KubeNodeProps(props),
     };
   }
 
@@ -2865,9 +2865,9 @@ export class Node extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: NodeProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeNodeProps = {}) {
     super(scope, id, {
-      ...Node.GVK,
+      ...KubeNode.GVK,
       ...props,
     });
   }
@@ -2879,8 +2879,8 @@ export class Node extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Node.GVK,
-      ...toJson_NodeProps(resolved),
+      ...KubeNode.GVK,
+      ...toJson_KubeNodeProps(resolved),
     };
   }
 }
@@ -2890,7 +2890,7 @@ export class Node extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.NodeList
  */
-export class NodeList extends ApiObject {
+export class KubeNodeList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.NodeList"
    */
@@ -2906,10 +2906,10 @@ export class NodeList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: NodeListProps): any {
+  public static manifest(props: KubeNodeListProps): any {
     return {
-      ...NodeList.GVK,
-      ...toJson_NodeListProps(props),
+      ...KubeNodeList.GVK,
+      ...toJson_KubeNodeListProps(props),
     };
   }
 
@@ -2919,9 +2919,9 @@ export class NodeList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: NodeListProps) {
+  public constructor(scope: Construct, id: string, props: KubeNodeListProps) {
     super(scope, id, {
-      ...NodeList.GVK,
+      ...KubeNodeList.GVK,
       ...props,
     });
   }
@@ -2933,8 +2933,8 @@ export class NodeList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...NodeList.GVK,
-      ...toJson_NodeListProps(resolved),
+      ...KubeNodeList.GVK,
+      ...toJson_KubeNodeListProps(resolved),
     };
   }
 }
@@ -2944,7 +2944,7 @@ export class NodeList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.PersistentVolume
  */
-export class PersistentVolume extends ApiObject {
+export class KubePersistentVolume extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.PersistentVolume"
    */
@@ -2960,10 +2960,10 @@ export class PersistentVolume extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PersistentVolumeProps = {}): any {
+  public static manifest(props: KubePersistentVolumeProps = {}): any {
     return {
-      ...PersistentVolume.GVK,
-      ...toJson_PersistentVolumeProps(props),
+      ...KubePersistentVolume.GVK,
+      ...toJson_KubePersistentVolumeProps(props),
     };
   }
 
@@ -2973,9 +2973,9 @@ export class PersistentVolume extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PersistentVolumeProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubePersistentVolumeProps = {}) {
     super(scope, id, {
-      ...PersistentVolume.GVK,
+      ...KubePersistentVolume.GVK,
       ...props,
     });
   }
@@ -2987,8 +2987,8 @@ export class PersistentVolume extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PersistentVolume.GVK,
-      ...toJson_PersistentVolumeProps(resolved),
+      ...KubePersistentVolume.GVK,
+      ...toJson_KubePersistentVolumeProps(resolved),
     };
   }
 }
@@ -2998,7 +2998,7 @@ export class PersistentVolume extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.PersistentVolumeClaim
  */
-export class PersistentVolumeClaim extends ApiObject {
+export class KubePersistentVolumeClaim extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.PersistentVolumeClaim"
    */
@@ -3014,10 +3014,10 @@ export class PersistentVolumeClaim extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PersistentVolumeClaimProps = {}): any {
+  public static manifest(props: KubePersistentVolumeClaimProps = {}): any {
     return {
-      ...PersistentVolumeClaim.GVK,
-      ...toJson_PersistentVolumeClaimProps(props),
+      ...KubePersistentVolumeClaim.GVK,
+      ...toJson_KubePersistentVolumeClaimProps(props),
     };
   }
 
@@ -3027,9 +3027,9 @@ export class PersistentVolumeClaim extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PersistentVolumeClaimProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubePersistentVolumeClaimProps = {}) {
     super(scope, id, {
-      ...PersistentVolumeClaim.GVK,
+      ...KubePersistentVolumeClaim.GVK,
       ...props,
     });
   }
@@ -3041,8 +3041,8 @@ export class PersistentVolumeClaim extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PersistentVolumeClaim.GVK,
-      ...toJson_PersistentVolumeClaimProps(resolved),
+      ...KubePersistentVolumeClaim.GVK,
+      ...toJson_KubePersistentVolumeClaimProps(resolved),
     };
   }
 }
@@ -3052,7 +3052,7 @@ export class PersistentVolumeClaim extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.PersistentVolumeClaimList
  */
-export class PersistentVolumeClaimList extends ApiObject {
+export class KubePersistentVolumeClaimList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.PersistentVolumeClaimList"
    */
@@ -3068,10 +3068,10 @@ export class PersistentVolumeClaimList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PersistentVolumeClaimListProps): any {
+  public static manifest(props: KubePersistentVolumeClaimListProps): any {
     return {
-      ...PersistentVolumeClaimList.GVK,
-      ...toJson_PersistentVolumeClaimListProps(props),
+      ...KubePersistentVolumeClaimList.GVK,
+      ...toJson_KubePersistentVolumeClaimListProps(props),
     };
   }
 
@@ -3081,9 +3081,9 @@ export class PersistentVolumeClaimList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PersistentVolumeClaimListProps) {
+  public constructor(scope: Construct, id: string, props: KubePersistentVolumeClaimListProps) {
     super(scope, id, {
-      ...PersistentVolumeClaimList.GVK,
+      ...KubePersistentVolumeClaimList.GVK,
       ...props,
     });
   }
@@ -3095,8 +3095,8 @@ export class PersistentVolumeClaimList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PersistentVolumeClaimList.GVK,
-      ...toJson_PersistentVolumeClaimListProps(resolved),
+      ...KubePersistentVolumeClaimList.GVK,
+      ...toJson_KubePersistentVolumeClaimListProps(resolved),
     };
   }
 }
@@ -3106,7 +3106,7 @@ export class PersistentVolumeClaimList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.PersistentVolumeList
  */
-export class PersistentVolumeList extends ApiObject {
+export class KubePersistentVolumeList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.PersistentVolumeList"
    */
@@ -3122,10 +3122,10 @@ export class PersistentVolumeList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PersistentVolumeListProps): any {
+  public static manifest(props: KubePersistentVolumeListProps): any {
     return {
-      ...PersistentVolumeList.GVK,
-      ...toJson_PersistentVolumeListProps(props),
+      ...KubePersistentVolumeList.GVK,
+      ...toJson_KubePersistentVolumeListProps(props),
     };
   }
 
@@ -3135,9 +3135,9 @@ export class PersistentVolumeList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PersistentVolumeListProps) {
+  public constructor(scope: Construct, id: string, props: KubePersistentVolumeListProps) {
     super(scope, id, {
-      ...PersistentVolumeList.GVK,
+      ...KubePersistentVolumeList.GVK,
       ...props,
     });
   }
@@ -3149,8 +3149,8 @@ export class PersistentVolumeList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PersistentVolumeList.GVK,
-      ...toJson_PersistentVolumeListProps(resolved),
+      ...KubePersistentVolumeList.GVK,
+      ...toJson_KubePersistentVolumeListProps(resolved),
     };
   }
 }
@@ -3160,7 +3160,7 @@ export class PersistentVolumeList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.Pod
  */
-export class Pod extends ApiObject {
+export class KubePod extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.Pod"
    */
@@ -3176,10 +3176,10 @@ export class Pod extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodProps = {}): any {
+  public static manifest(props: KubePodProps = {}): any {
     return {
-      ...Pod.GVK,
-      ...toJson_PodProps(props),
+      ...KubePod.GVK,
+      ...toJson_KubePodProps(props),
     };
   }
 
@@ -3189,9 +3189,9 @@ export class Pod extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubePodProps = {}) {
     super(scope, id, {
-      ...Pod.GVK,
+      ...KubePod.GVK,
       ...props,
     });
   }
@@ -3203,8 +3203,8 @@ export class Pod extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Pod.GVK,
-      ...toJson_PodProps(resolved),
+      ...KubePod.GVK,
+      ...toJson_KubePodProps(resolved),
     };
   }
 }
@@ -3214,7 +3214,7 @@ export class Pod extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.PodList
  */
-export class PodList extends ApiObject {
+export class KubePodList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.PodList"
    */
@@ -3230,10 +3230,10 @@ export class PodList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodListProps): any {
+  public static manifest(props: KubePodListProps): any {
     return {
-      ...PodList.GVK,
-      ...toJson_PodListProps(props),
+      ...KubePodList.GVK,
+      ...toJson_KubePodListProps(props),
     };
   }
 
@@ -3243,9 +3243,9 @@ export class PodList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodListProps) {
+  public constructor(scope: Construct, id: string, props: KubePodListProps) {
     super(scope, id, {
-      ...PodList.GVK,
+      ...KubePodList.GVK,
       ...props,
     });
   }
@@ -3257,8 +3257,8 @@ export class PodList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodList.GVK,
-      ...toJson_PodListProps(resolved),
+      ...KubePodList.GVK,
+      ...toJson_KubePodListProps(resolved),
     };
   }
 }
@@ -3268,7 +3268,7 @@ export class PodList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.PodTemplate
  */
-export class PodTemplate extends ApiObject {
+export class KubePodTemplate extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.PodTemplate"
    */
@@ -3284,10 +3284,10 @@ export class PodTemplate extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodTemplateProps = {}): any {
+  public static manifest(props: KubePodTemplateProps = {}): any {
     return {
-      ...PodTemplate.GVK,
-      ...toJson_PodTemplateProps(props),
+      ...KubePodTemplate.GVK,
+      ...toJson_KubePodTemplateProps(props),
     };
   }
 
@@ -3297,9 +3297,9 @@ export class PodTemplate extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodTemplateProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubePodTemplateProps = {}) {
     super(scope, id, {
-      ...PodTemplate.GVK,
+      ...KubePodTemplate.GVK,
       ...props,
     });
   }
@@ -3311,8 +3311,8 @@ export class PodTemplate extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodTemplate.GVK,
-      ...toJson_PodTemplateProps(resolved),
+      ...KubePodTemplate.GVK,
+      ...toJson_KubePodTemplateProps(resolved),
     };
   }
 }
@@ -3322,7 +3322,7 @@ export class PodTemplate extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.PodTemplateList
  */
-export class PodTemplateList extends ApiObject {
+export class KubePodTemplateList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.PodTemplateList"
    */
@@ -3338,10 +3338,10 @@ export class PodTemplateList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodTemplateListProps): any {
+  public static manifest(props: KubePodTemplateListProps): any {
     return {
-      ...PodTemplateList.GVK,
-      ...toJson_PodTemplateListProps(props),
+      ...KubePodTemplateList.GVK,
+      ...toJson_KubePodTemplateListProps(props),
     };
   }
 
@@ -3351,9 +3351,9 @@ export class PodTemplateList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodTemplateListProps) {
+  public constructor(scope: Construct, id: string, props: KubePodTemplateListProps) {
     super(scope, id, {
-      ...PodTemplateList.GVK,
+      ...KubePodTemplateList.GVK,
       ...props,
     });
   }
@@ -3365,8 +3365,8 @@ export class PodTemplateList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodTemplateList.GVK,
-      ...toJson_PodTemplateListProps(resolved),
+      ...KubePodTemplateList.GVK,
+      ...toJson_KubePodTemplateListProps(resolved),
     };
   }
 }
@@ -3376,7 +3376,7 @@ export class PodTemplateList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ReplicationController
  */
-export class ReplicationController extends ApiObject {
+export class KubeReplicationController extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ReplicationController"
    */
@@ -3392,10 +3392,10 @@ export class ReplicationController extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ReplicationControllerProps = {}): any {
+  public static manifest(props: KubeReplicationControllerProps = {}): any {
     return {
-      ...ReplicationController.GVK,
-      ...toJson_ReplicationControllerProps(props),
+      ...KubeReplicationController.GVK,
+      ...toJson_KubeReplicationControllerProps(props),
     };
   }
 
@@ -3405,9 +3405,9 @@ export class ReplicationController extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ReplicationControllerProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeReplicationControllerProps = {}) {
     super(scope, id, {
-      ...ReplicationController.GVK,
+      ...KubeReplicationController.GVK,
       ...props,
     });
   }
@@ -3419,8 +3419,8 @@ export class ReplicationController extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ReplicationController.GVK,
-      ...toJson_ReplicationControllerProps(resolved),
+      ...KubeReplicationController.GVK,
+      ...toJson_KubeReplicationControllerProps(resolved),
     };
   }
 }
@@ -3430,7 +3430,7 @@ export class ReplicationController extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ReplicationControllerList
  */
-export class ReplicationControllerList extends ApiObject {
+export class KubeReplicationControllerList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ReplicationControllerList"
    */
@@ -3446,10 +3446,10 @@ export class ReplicationControllerList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ReplicationControllerListProps): any {
+  public static manifest(props: KubeReplicationControllerListProps): any {
     return {
-      ...ReplicationControllerList.GVK,
-      ...toJson_ReplicationControllerListProps(props),
+      ...KubeReplicationControllerList.GVK,
+      ...toJson_KubeReplicationControllerListProps(props),
     };
   }
 
@@ -3459,9 +3459,9 @@ export class ReplicationControllerList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ReplicationControllerListProps) {
+  public constructor(scope: Construct, id: string, props: KubeReplicationControllerListProps) {
     super(scope, id, {
-      ...ReplicationControllerList.GVK,
+      ...KubeReplicationControllerList.GVK,
       ...props,
     });
   }
@@ -3473,8 +3473,8 @@ export class ReplicationControllerList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ReplicationControllerList.GVK,
-      ...toJson_ReplicationControllerListProps(resolved),
+      ...KubeReplicationControllerList.GVK,
+      ...toJson_KubeReplicationControllerListProps(resolved),
     };
   }
 }
@@ -3484,7 +3484,7 @@ export class ReplicationControllerList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ResourceQuota
  */
-export class ResourceQuota extends ApiObject {
+export class KubeResourceQuota extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ResourceQuota"
    */
@@ -3500,10 +3500,10 @@ export class ResourceQuota extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ResourceQuotaProps = {}): any {
+  public static manifest(props: KubeResourceQuotaProps = {}): any {
     return {
-      ...ResourceQuota.GVK,
-      ...toJson_ResourceQuotaProps(props),
+      ...KubeResourceQuota.GVK,
+      ...toJson_KubeResourceQuotaProps(props),
     };
   }
 
@@ -3513,9 +3513,9 @@ export class ResourceQuota extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ResourceQuotaProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeResourceQuotaProps = {}) {
     super(scope, id, {
-      ...ResourceQuota.GVK,
+      ...KubeResourceQuota.GVK,
       ...props,
     });
   }
@@ -3527,8 +3527,8 @@ export class ResourceQuota extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ResourceQuota.GVK,
-      ...toJson_ResourceQuotaProps(resolved),
+      ...KubeResourceQuota.GVK,
+      ...toJson_KubeResourceQuotaProps(resolved),
     };
   }
 }
@@ -3538,7 +3538,7 @@ export class ResourceQuota extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ResourceQuotaList
  */
-export class ResourceQuotaList extends ApiObject {
+export class KubeResourceQuotaList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ResourceQuotaList"
    */
@@ -3554,10 +3554,10 @@ export class ResourceQuotaList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ResourceQuotaListProps): any {
+  public static manifest(props: KubeResourceQuotaListProps): any {
     return {
-      ...ResourceQuotaList.GVK,
-      ...toJson_ResourceQuotaListProps(props),
+      ...KubeResourceQuotaList.GVK,
+      ...toJson_KubeResourceQuotaListProps(props),
     };
   }
 
@@ -3567,9 +3567,9 @@ export class ResourceQuotaList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ResourceQuotaListProps) {
+  public constructor(scope: Construct, id: string, props: KubeResourceQuotaListProps) {
     super(scope, id, {
-      ...ResourceQuotaList.GVK,
+      ...KubeResourceQuotaList.GVK,
       ...props,
     });
   }
@@ -3581,8 +3581,8 @@ export class ResourceQuotaList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ResourceQuotaList.GVK,
-      ...toJson_ResourceQuotaListProps(resolved),
+      ...KubeResourceQuotaList.GVK,
+      ...toJson_KubeResourceQuotaListProps(resolved),
     };
   }
 }
@@ -3592,7 +3592,7 @@ export class ResourceQuotaList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.Secret
  */
-export class Secret extends ApiObject {
+export class KubeSecret extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.Secret"
    */
@@ -3608,10 +3608,10 @@ export class Secret extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: SecretProps = {}): any {
+  public static manifest(props: KubeSecretProps = {}): any {
     return {
-      ...Secret.GVK,
-      ...toJson_SecretProps(props),
+      ...KubeSecret.GVK,
+      ...toJson_KubeSecretProps(props),
     };
   }
 
@@ -3621,9 +3621,9 @@ export class Secret extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: SecretProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeSecretProps = {}) {
     super(scope, id, {
-      ...Secret.GVK,
+      ...KubeSecret.GVK,
       ...props,
     });
   }
@@ -3635,8 +3635,8 @@ export class Secret extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Secret.GVK,
-      ...toJson_SecretProps(resolved),
+      ...KubeSecret.GVK,
+      ...toJson_KubeSecretProps(resolved),
     };
   }
 }
@@ -3646,7 +3646,7 @@ export class Secret extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.SecretList
  */
-export class SecretList extends ApiObject {
+export class KubeSecretList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.SecretList"
    */
@@ -3662,10 +3662,10 @@ export class SecretList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: SecretListProps): any {
+  public static manifest(props: KubeSecretListProps): any {
     return {
-      ...SecretList.GVK,
-      ...toJson_SecretListProps(props),
+      ...KubeSecretList.GVK,
+      ...toJson_KubeSecretListProps(props),
     };
   }
 
@@ -3675,9 +3675,9 @@ export class SecretList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: SecretListProps) {
+  public constructor(scope: Construct, id: string, props: KubeSecretListProps) {
     super(scope, id, {
-      ...SecretList.GVK,
+      ...KubeSecretList.GVK,
       ...props,
     });
   }
@@ -3689,8 +3689,8 @@ export class SecretList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...SecretList.GVK,
-      ...toJson_SecretListProps(resolved),
+      ...KubeSecretList.GVK,
+      ...toJson_KubeSecretListProps(resolved),
     };
   }
 }
@@ -3700,7 +3700,7 @@ export class SecretList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.Service
  */
-export class Service extends ApiObject {
+export class KubeService extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.Service"
    */
@@ -3716,10 +3716,10 @@ export class Service extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ServiceProps = {}): any {
+  public static manifest(props: KubeServiceProps = {}): any {
     return {
-      ...Service.GVK,
-      ...toJson_ServiceProps(props),
+      ...KubeService.GVK,
+      ...toJson_KubeServiceProps(props),
     };
   }
 
@@ -3729,9 +3729,9 @@ export class Service extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ServiceProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeServiceProps = {}) {
     super(scope, id, {
-      ...Service.GVK,
+      ...KubeService.GVK,
       ...props,
     });
   }
@@ -3743,8 +3743,8 @@ export class Service extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Service.GVK,
-      ...toJson_ServiceProps(resolved),
+      ...KubeService.GVK,
+      ...toJson_KubeServiceProps(resolved),
     };
   }
 }
@@ -3754,7 +3754,7 @@ export class Service extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ServiceAccount
  */
-export class ServiceAccount extends ApiObject {
+export class KubeServiceAccount extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ServiceAccount"
    */
@@ -3770,10 +3770,10 @@ export class ServiceAccount extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ServiceAccountProps = {}): any {
+  public static manifest(props: KubeServiceAccountProps = {}): any {
     return {
-      ...ServiceAccount.GVK,
-      ...toJson_ServiceAccountProps(props),
+      ...KubeServiceAccount.GVK,
+      ...toJson_KubeServiceAccountProps(props),
     };
   }
 
@@ -3783,9 +3783,9 @@ export class ServiceAccount extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ServiceAccountProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeServiceAccountProps = {}) {
     super(scope, id, {
-      ...ServiceAccount.GVK,
+      ...KubeServiceAccount.GVK,
       ...props,
     });
   }
@@ -3797,8 +3797,8 @@ export class ServiceAccount extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ServiceAccount.GVK,
-      ...toJson_ServiceAccountProps(resolved),
+      ...KubeServiceAccount.GVK,
+      ...toJson_KubeServiceAccountProps(resolved),
     };
   }
 }
@@ -3808,7 +3808,7 @@ export class ServiceAccount extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ServiceAccountList
  */
-export class ServiceAccountList extends ApiObject {
+export class KubeServiceAccountList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ServiceAccountList"
    */
@@ -3824,10 +3824,10 @@ export class ServiceAccountList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ServiceAccountListProps): any {
+  public static manifest(props: KubeServiceAccountListProps): any {
     return {
-      ...ServiceAccountList.GVK,
-      ...toJson_ServiceAccountListProps(props),
+      ...KubeServiceAccountList.GVK,
+      ...toJson_KubeServiceAccountListProps(props),
     };
   }
 
@@ -3837,9 +3837,9 @@ export class ServiceAccountList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ServiceAccountListProps) {
+  public constructor(scope: Construct, id: string, props: KubeServiceAccountListProps) {
     super(scope, id, {
-      ...ServiceAccountList.GVK,
+      ...KubeServiceAccountList.GVK,
       ...props,
     });
   }
@@ -3851,8 +3851,8 @@ export class ServiceAccountList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ServiceAccountList.GVK,
-      ...toJson_ServiceAccountListProps(resolved),
+      ...KubeServiceAccountList.GVK,
+      ...toJson_KubeServiceAccountListProps(resolved),
     };
   }
 }
@@ -3862,7 +3862,7 @@ export class ServiceAccountList extends ApiObject {
  *
  * @schema io.k8s.api.core.v1.ServiceList
  */
-export class ServiceList extends ApiObject {
+export class KubeServiceList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.core.v1.ServiceList"
    */
@@ -3878,10 +3878,10 @@ export class ServiceList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ServiceListProps): any {
+  public static manifest(props: KubeServiceListProps): any {
     return {
-      ...ServiceList.GVK,
-      ...toJson_ServiceListProps(props),
+      ...KubeServiceList.GVK,
+      ...toJson_KubeServiceListProps(props),
     };
   }
 
@@ -3891,9 +3891,9 @@ export class ServiceList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ServiceListProps) {
+  public constructor(scope: Construct, id: string, props: KubeServiceListProps) {
     super(scope, id, {
-      ...ServiceList.GVK,
+      ...KubeServiceList.GVK,
       ...props,
     });
   }
@@ -3905,8 +3905,8 @@ export class ServiceList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ServiceList.GVK,
-      ...toJson_ServiceListProps(resolved),
+      ...KubeServiceList.GVK,
+      ...toJson_KubeServiceListProps(resolved),
     };
   }
 }
@@ -3916,7 +3916,7 @@ export class ServiceList extends ApiObject {
  *
  * @schema io.k8s.api.discovery.v1.EndpointSlice
  */
-export class EndpointSlice extends ApiObject {
+export class KubeEndpointSlice extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.discovery.v1.EndpointSlice"
    */
@@ -3932,10 +3932,10 @@ export class EndpointSlice extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EndpointSliceProps): any {
+  public static manifest(props: KubeEndpointSliceProps): any {
     return {
-      ...EndpointSlice.GVK,
-      ...toJson_EndpointSliceProps(props),
+      ...KubeEndpointSlice.GVK,
+      ...toJson_KubeEndpointSliceProps(props),
     };
   }
 
@@ -3945,9 +3945,9 @@ export class EndpointSlice extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EndpointSliceProps) {
+  public constructor(scope: Construct, id: string, props: KubeEndpointSliceProps) {
     super(scope, id, {
-      ...EndpointSlice.GVK,
+      ...KubeEndpointSlice.GVK,
       ...props,
     });
   }
@@ -3959,8 +3959,8 @@ export class EndpointSlice extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...EndpointSlice.GVK,
-      ...toJson_EndpointSliceProps(resolved),
+      ...KubeEndpointSlice.GVK,
+      ...toJson_KubeEndpointSliceProps(resolved),
     };
   }
 }
@@ -3970,7 +3970,7 @@ export class EndpointSlice extends ApiObject {
  *
  * @schema io.k8s.api.discovery.v1.EndpointSliceList
  */
-export class EndpointSliceList extends ApiObject {
+export class KubeEndpointSliceList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.discovery.v1.EndpointSliceList"
    */
@@ -3986,10 +3986,10 @@ export class EndpointSliceList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EndpointSliceListProps): any {
+  public static manifest(props: KubeEndpointSliceListProps): any {
     return {
-      ...EndpointSliceList.GVK,
-      ...toJson_EndpointSliceListProps(props),
+      ...KubeEndpointSliceList.GVK,
+      ...toJson_KubeEndpointSliceListProps(props),
     };
   }
 
@@ -3999,9 +3999,9 @@ export class EndpointSliceList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EndpointSliceListProps) {
+  public constructor(scope: Construct, id: string, props: KubeEndpointSliceListProps) {
     super(scope, id, {
-      ...EndpointSliceList.GVK,
+      ...KubeEndpointSliceList.GVK,
       ...props,
     });
   }
@@ -4013,8 +4013,8 @@ export class EndpointSliceList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...EndpointSliceList.GVK,
-      ...toJson_EndpointSliceListProps(resolved),
+      ...KubeEndpointSliceList.GVK,
+      ...toJson_KubeEndpointSliceListProps(resolved),
     };
   }
 }
@@ -4024,7 +4024,7 @@ export class EndpointSliceList extends ApiObject {
  *
  * @schema io.k8s.api.discovery.v1beta1.EndpointSlice
  */
-export class EndpointSliceV1Beta1 extends ApiObject {
+export class KubeEndpointSliceV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.discovery.v1beta1.EndpointSlice"
    */
@@ -4040,10 +4040,10 @@ export class EndpointSliceV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EndpointSliceV1Beta1Props): any {
+  public static manifest(props: KubeEndpointSliceV1Beta1Props): any {
     return {
-      ...EndpointSliceV1Beta1.GVK,
-      ...toJson_EndpointSliceV1Beta1Props(props),
+      ...KubeEndpointSliceV1Beta1.GVK,
+      ...toJson_KubeEndpointSliceV1Beta1Props(props),
     };
   }
 
@@ -4053,9 +4053,9 @@ export class EndpointSliceV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EndpointSliceV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeEndpointSliceV1Beta1Props) {
     super(scope, id, {
-      ...EndpointSliceV1Beta1.GVK,
+      ...KubeEndpointSliceV1Beta1.GVK,
       ...props,
     });
   }
@@ -4067,8 +4067,8 @@ export class EndpointSliceV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...EndpointSliceV1Beta1.GVK,
-      ...toJson_EndpointSliceV1Beta1Props(resolved),
+      ...KubeEndpointSliceV1Beta1.GVK,
+      ...toJson_KubeEndpointSliceV1Beta1Props(resolved),
     };
   }
 }
@@ -4078,7 +4078,7 @@ export class EndpointSliceV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.discovery.v1beta1.EndpointSliceList
  */
-export class EndpointSliceListV1Beta1 extends ApiObject {
+export class KubeEndpointSliceListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.discovery.v1beta1.EndpointSliceList"
    */
@@ -4094,10 +4094,10 @@ export class EndpointSliceListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EndpointSliceListV1Beta1Props): any {
+  public static manifest(props: KubeEndpointSliceListV1Beta1Props): any {
     return {
-      ...EndpointSliceListV1Beta1.GVK,
-      ...toJson_EndpointSliceListV1Beta1Props(props),
+      ...KubeEndpointSliceListV1Beta1.GVK,
+      ...toJson_KubeEndpointSliceListV1Beta1Props(props),
     };
   }
 
@@ -4107,9 +4107,9 @@ export class EndpointSliceListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EndpointSliceListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeEndpointSliceListV1Beta1Props) {
     super(scope, id, {
-      ...EndpointSliceListV1Beta1.GVK,
+      ...KubeEndpointSliceListV1Beta1.GVK,
       ...props,
     });
   }
@@ -4121,8 +4121,8 @@ export class EndpointSliceListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...EndpointSliceListV1Beta1.GVK,
-      ...toJson_EndpointSliceListV1Beta1Props(resolved),
+      ...KubeEndpointSliceListV1Beta1.GVK,
+      ...toJson_KubeEndpointSliceListV1Beta1Props(resolved),
     };
   }
 }
@@ -4132,7 +4132,7 @@ export class EndpointSliceListV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.events.v1beta1.Event
  */
-export class EventV1Beta1 extends ApiObject {
+export class KubeEventV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.events.v1beta1.Event"
    */
@@ -4148,10 +4148,10 @@ export class EventV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EventV1Beta1Props): any {
+  public static manifest(props: KubeEventV1Beta1Props): any {
     return {
-      ...EventV1Beta1.GVK,
-      ...toJson_EventV1Beta1Props(props),
+      ...KubeEventV1Beta1.GVK,
+      ...toJson_KubeEventV1Beta1Props(props),
     };
   }
 
@@ -4161,9 +4161,9 @@ export class EventV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EventV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeEventV1Beta1Props) {
     super(scope, id, {
-      ...EventV1Beta1.GVK,
+      ...KubeEventV1Beta1.GVK,
       ...props,
     });
   }
@@ -4175,8 +4175,8 @@ export class EventV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...EventV1Beta1.GVK,
-      ...toJson_EventV1Beta1Props(resolved),
+      ...KubeEventV1Beta1.GVK,
+      ...toJson_KubeEventV1Beta1Props(resolved),
     };
   }
 }
@@ -4186,7 +4186,7 @@ export class EventV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.events.v1beta1.EventList
  */
-export class EventListV1Beta1 extends ApiObject {
+export class KubeEventListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.events.v1beta1.EventList"
    */
@@ -4202,10 +4202,10 @@ export class EventListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EventListV1Beta1Props): any {
+  public static manifest(props: KubeEventListV1Beta1Props): any {
     return {
-      ...EventListV1Beta1.GVK,
-      ...toJson_EventListV1Beta1Props(props),
+      ...KubeEventListV1Beta1.GVK,
+      ...toJson_KubeEventListV1Beta1Props(props),
     };
   }
 
@@ -4215,9 +4215,9 @@ export class EventListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EventListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeEventListV1Beta1Props) {
     super(scope, id, {
-      ...EventListV1Beta1.GVK,
+      ...KubeEventListV1Beta1.GVK,
       ...props,
     });
   }
@@ -4229,8 +4229,8 @@ export class EventListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...EventListV1Beta1.GVK,
-      ...toJson_EventListV1Beta1Props(resolved),
+      ...KubeEventListV1Beta1.GVK,
+      ...toJson_KubeEventListV1Beta1Props(resolved),
     };
   }
 }
@@ -4240,7 +4240,7 @@ export class EventListV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.flowcontrol.v1beta1.FlowSchema
  */
-export class FlowSchemaV1Beta1 extends ApiObject {
+export class KubeFlowSchemaV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.flowcontrol.v1beta1.FlowSchema"
    */
@@ -4256,10 +4256,10 @@ export class FlowSchemaV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: FlowSchemaV1Beta1Props = {}): any {
+  public static manifest(props: KubeFlowSchemaV1Beta1Props = {}): any {
     return {
-      ...FlowSchemaV1Beta1.GVK,
-      ...toJson_FlowSchemaV1Beta1Props(props),
+      ...KubeFlowSchemaV1Beta1.GVK,
+      ...toJson_KubeFlowSchemaV1Beta1Props(props),
     };
   }
 
@@ -4269,9 +4269,9 @@ export class FlowSchemaV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: FlowSchemaV1Beta1Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubeFlowSchemaV1Beta1Props = {}) {
     super(scope, id, {
-      ...FlowSchemaV1Beta1.GVK,
+      ...KubeFlowSchemaV1Beta1.GVK,
       ...props,
     });
   }
@@ -4283,8 +4283,8 @@ export class FlowSchemaV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...FlowSchemaV1Beta1.GVK,
-      ...toJson_FlowSchemaV1Beta1Props(resolved),
+      ...KubeFlowSchemaV1Beta1.GVK,
+      ...toJson_KubeFlowSchemaV1Beta1Props(resolved),
     };
   }
 }
@@ -4294,7 +4294,7 @@ export class FlowSchemaV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.flowcontrol.v1beta1.FlowSchemaList
  */
-export class FlowSchemaListV1Beta1 extends ApiObject {
+export class KubeFlowSchemaListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.flowcontrol.v1beta1.FlowSchemaList"
    */
@@ -4310,10 +4310,10 @@ export class FlowSchemaListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: FlowSchemaListV1Beta1Props): any {
+  public static manifest(props: KubeFlowSchemaListV1Beta1Props): any {
     return {
-      ...FlowSchemaListV1Beta1.GVK,
-      ...toJson_FlowSchemaListV1Beta1Props(props),
+      ...KubeFlowSchemaListV1Beta1.GVK,
+      ...toJson_KubeFlowSchemaListV1Beta1Props(props),
     };
   }
 
@@ -4323,9 +4323,9 @@ export class FlowSchemaListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: FlowSchemaListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeFlowSchemaListV1Beta1Props) {
     super(scope, id, {
-      ...FlowSchemaListV1Beta1.GVK,
+      ...KubeFlowSchemaListV1Beta1.GVK,
       ...props,
     });
   }
@@ -4337,8 +4337,8 @@ export class FlowSchemaListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...FlowSchemaListV1Beta1.GVK,
-      ...toJson_FlowSchemaListV1Beta1Props(resolved),
+      ...KubeFlowSchemaListV1Beta1.GVK,
+      ...toJson_KubeFlowSchemaListV1Beta1Props(resolved),
     };
   }
 }
@@ -4348,7 +4348,7 @@ export class FlowSchemaListV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfiguration
  */
-export class PriorityLevelConfigurationV1Beta1 extends ApiObject {
+export class KubePriorityLevelConfigurationV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfiguration"
    */
@@ -4364,10 +4364,10 @@ export class PriorityLevelConfigurationV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PriorityLevelConfigurationV1Beta1Props = {}): any {
+  public static manifest(props: KubePriorityLevelConfigurationV1Beta1Props = {}): any {
     return {
-      ...PriorityLevelConfigurationV1Beta1.GVK,
-      ...toJson_PriorityLevelConfigurationV1Beta1Props(props),
+      ...KubePriorityLevelConfigurationV1Beta1.GVK,
+      ...toJson_KubePriorityLevelConfigurationV1Beta1Props(props),
     };
   }
 
@@ -4377,9 +4377,9 @@ export class PriorityLevelConfigurationV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PriorityLevelConfigurationV1Beta1Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubePriorityLevelConfigurationV1Beta1Props = {}) {
     super(scope, id, {
-      ...PriorityLevelConfigurationV1Beta1.GVK,
+      ...KubePriorityLevelConfigurationV1Beta1.GVK,
       ...props,
     });
   }
@@ -4391,8 +4391,8 @@ export class PriorityLevelConfigurationV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PriorityLevelConfigurationV1Beta1.GVK,
-      ...toJson_PriorityLevelConfigurationV1Beta1Props(resolved),
+      ...KubePriorityLevelConfigurationV1Beta1.GVK,
+      ...toJson_KubePriorityLevelConfigurationV1Beta1Props(resolved),
     };
   }
 }
@@ -4402,7 +4402,7 @@ export class PriorityLevelConfigurationV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationList
  */
-export class PriorityLevelConfigurationListV1Beta1 extends ApiObject {
+export class KubePriorityLevelConfigurationListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationList"
    */
@@ -4418,10 +4418,10 @@ export class PriorityLevelConfigurationListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PriorityLevelConfigurationListV1Beta1Props): any {
+  public static manifest(props: KubePriorityLevelConfigurationListV1Beta1Props): any {
     return {
-      ...PriorityLevelConfigurationListV1Beta1.GVK,
-      ...toJson_PriorityLevelConfigurationListV1Beta1Props(props),
+      ...KubePriorityLevelConfigurationListV1Beta1.GVK,
+      ...toJson_KubePriorityLevelConfigurationListV1Beta1Props(props),
     };
   }
 
@@ -4431,9 +4431,9 @@ export class PriorityLevelConfigurationListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PriorityLevelConfigurationListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubePriorityLevelConfigurationListV1Beta1Props) {
     super(scope, id, {
-      ...PriorityLevelConfigurationListV1Beta1.GVK,
+      ...KubePriorityLevelConfigurationListV1Beta1.GVK,
       ...props,
     });
   }
@@ -4445,8 +4445,8 @@ export class PriorityLevelConfigurationListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PriorityLevelConfigurationListV1Beta1.GVK,
-      ...toJson_PriorityLevelConfigurationListV1Beta1Props(resolved),
+      ...KubePriorityLevelConfigurationListV1Beta1.GVK,
+      ...toJson_KubePriorityLevelConfigurationListV1Beta1Props(resolved),
     };
   }
 }
@@ -4456,7 +4456,7 @@ export class PriorityLevelConfigurationListV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.networking.v1.Ingress
  */
-export class Ingress extends ApiObject {
+export class KubeIngress extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.networking.v1.Ingress"
    */
@@ -4472,10 +4472,10 @@ export class Ingress extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: IngressProps = {}): any {
+  public static manifest(props: KubeIngressProps = {}): any {
     return {
-      ...Ingress.GVK,
-      ...toJson_IngressProps(props),
+      ...KubeIngress.GVK,
+      ...toJson_KubeIngressProps(props),
     };
   }
 
@@ -4485,9 +4485,9 @@ export class Ingress extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: IngressProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeIngressProps = {}) {
     super(scope, id, {
-      ...Ingress.GVK,
+      ...KubeIngress.GVK,
       ...props,
     });
   }
@@ -4499,8 +4499,8 @@ export class Ingress extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Ingress.GVK,
-      ...toJson_IngressProps(resolved),
+      ...KubeIngress.GVK,
+      ...toJson_KubeIngressProps(resolved),
     };
   }
 }
@@ -4510,7 +4510,7 @@ export class Ingress extends ApiObject {
  *
  * @schema io.k8s.api.networking.v1.IngressClass
  */
-export class IngressClass extends ApiObject {
+export class KubeIngressClass extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.networking.v1.IngressClass"
    */
@@ -4526,10 +4526,10 @@ export class IngressClass extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: IngressClassProps = {}): any {
+  public static manifest(props: KubeIngressClassProps = {}): any {
     return {
-      ...IngressClass.GVK,
-      ...toJson_IngressClassProps(props),
+      ...KubeIngressClass.GVK,
+      ...toJson_KubeIngressClassProps(props),
     };
   }
 
@@ -4539,9 +4539,9 @@ export class IngressClass extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: IngressClassProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeIngressClassProps = {}) {
     super(scope, id, {
-      ...IngressClass.GVK,
+      ...KubeIngressClass.GVK,
       ...props,
     });
   }
@@ -4553,8 +4553,8 @@ export class IngressClass extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...IngressClass.GVK,
-      ...toJson_IngressClassProps(resolved),
+      ...KubeIngressClass.GVK,
+      ...toJson_KubeIngressClassProps(resolved),
     };
   }
 }
@@ -4564,7 +4564,7 @@ export class IngressClass extends ApiObject {
  *
  * @schema io.k8s.api.networking.v1.IngressClassList
  */
-export class IngressClassList extends ApiObject {
+export class KubeIngressClassList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.networking.v1.IngressClassList"
    */
@@ -4580,10 +4580,10 @@ export class IngressClassList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: IngressClassListProps): any {
+  public static manifest(props: KubeIngressClassListProps): any {
     return {
-      ...IngressClassList.GVK,
-      ...toJson_IngressClassListProps(props),
+      ...KubeIngressClassList.GVK,
+      ...toJson_KubeIngressClassListProps(props),
     };
   }
 
@@ -4593,9 +4593,9 @@ export class IngressClassList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: IngressClassListProps) {
+  public constructor(scope: Construct, id: string, props: KubeIngressClassListProps) {
     super(scope, id, {
-      ...IngressClassList.GVK,
+      ...KubeIngressClassList.GVK,
       ...props,
     });
   }
@@ -4607,8 +4607,8 @@ export class IngressClassList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...IngressClassList.GVK,
-      ...toJson_IngressClassListProps(resolved),
+      ...KubeIngressClassList.GVK,
+      ...toJson_KubeIngressClassListProps(resolved),
     };
   }
 }
@@ -4618,7 +4618,7 @@ export class IngressClassList extends ApiObject {
  *
  * @schema io.k8s.api.networking.v1.IngressList
  */
-export class IngressList extends ApiObject {
+export class KubeIngressList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.networking.v1.IngressList"
    */
@@ -4634,10 +4634,10 @@ export class IngressList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: IngressListProps): any {
+  public static manifest(props: KubeIngressListProps): any {
     return {
-      ...IngressList.GVK,
-      ...toJson_IngressListProps(props),
+      ...KubeIngressList.GVK,
+      ...toJson_KubeIngressListProps(props),
     };
   }
 
@@ -4647,9 +4647,9 @@ export class IngressList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: IngressListProps) {
+  public constructor(scope: Construct, id: string, props: KubeIngressListProps) {
     super(scope, id, {
-      ...IngressList.GVK,
+      ...KubeIngressList.GVK,
       ...props,
     });
   }
@@ -4661,8 +4661,8 @@ export class IngressList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...IngressList.GVK,
-      ...toJson_IngressListProps(resolved),
+      ...KubeIngressList.GVK,
+      ...toJson_KubeIngressListProps(resolved),
     };
   }
 }
@@ -4672,7 +4672,7 @@ export class IngressList extends ApiObject {
  *
  * @schema io.k8s.api.networking.v1.NetworkPolicy
  */
-export class NetworkPolicy extends ApiObject {
+export class KubeNetworkPolicy extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.networking.v1.NetworkPolicy"
    */
@@ -4688,10 +4688,10 @@ export class NetworkPolicy extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: NetworkPolicyProps = {}): any {
+  public static manifest(props: KubeNetworkPolicyProps = {}): any {
     return {
-      ...NetworkPolicy.GVK,
-      ...toJson_NetworkPolicyProps(props),
+      ...KubeNetworkPolicy.GVK,
+      ...toJson_KubeNetworkPolicyProps(props),
     };
   }
 
@@ -4701,9 +4701,9 @@ export class NetworkPolicy extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: NetworkPolicyProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeNetworkPolicyProps = {}) {
     super(scope, id, {
-      ...NetworkPolicy.GVK,
+      ...KubeNetworkPolicy.GVK,
       ...props,
     });
   }
@@ -4715,8 +4715,8 @@ export class NetworkPolicy extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...NetworkPolicy.GVK,
-      ...toJson_NetworkPolicyProps(resolved),
+      ...KubeNetworkPolicy.GVK,
+      ...toJson_KubeNetworkPolicyProps(resolved),
     };
   }
 }
@@ -4726,7 +4726,7 @@ export class NetworkPolicy extends ApiObject {
  *
  * @schema io.k8s.api.networking.v1.NetworkPolicyList
  */
-export class NetworkPolicyList extends ApiObject {
+export class KubeNetworkPolicyList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.networking.v1.NetworkPolicyList"
    */
@@ -4742,10 +4742,10 @@ export class NetworkPolicyList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: NetworkPolicyListProps): any {
+  public static manifest(props: KubeNetworkPolicyListProps): any {
     return {
-      ...NetworkPolicyList.GVK,
-      ...toJson_NetworkPolicyListProps(props),
+      ...KubeNetworkPolicyList.GVK,
+      ...toJson_KubeNetworkPolicyListProps(props),
     };
   }
 
@@ -4755,9 +4755,9 @@ export class NetworkPolicyList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: NetworkPolicyListProps) {
+  public constructor(scope: Construct, id: string, props: KubeNetworkPolicyListProps) {
     super(scope, id, {
-      ...NetworkPolicyList.GVK,
+      ...KubeNetworkPolicyList.GVK,
       ...props,
     });
   }
@@ -4769,8 +4769,8 @@ export class NetworkPolicyList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...NetworkPolicyList.GVK,
-      ...toJson_NetworkPolicyListProps(resolved),
+      ...KubeNetworkPolicyList.GVK,
+      ...toJson_KubeNetworkPolicyListProps(resolved),
     };
   }
 }
@@ -4780,7 +4780,7 @@ export class NetworkPolicyList extends ApiObject {
  *
  * @schema io.k8s.api.node.v1.RuntimeClass
  */
-export class RuntimeClass extends ApiObject {
+export class KubeRuntimeClass extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.node.v1.RuntimeClass"
    */
@@ -4796,10 +4796,10 @@ export class RuntimeClass extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RuntimeClassProps): any {
+  public static manifest(props: KubeRuntimeClassProps): any {
     return {
-      ...RuntimeClass.GVK,
-      ...toJson_RuntimeClassProps(props),
+      ...KubeRuntimeClass.GVK,
+      ...toJson_KubeRuntimeClassProps(props),
     };
   }
 
@@ -4809,9 +4809,9 @@ export class RuntimeClass extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RuntimeClassProps) {
+  public constructor(scope: Construct, id: string, props: KubeRuntimeClassProps) {
     super(scope, id, {
-      ...RuntimeClass.GVK,
+      ...KubeRuntimeClass.GVK,
       ...props,
     });
   }
@@ -4823,8 +4823,8 @@ export class RuntimeClass extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RuntimeClass.GVK,
-      ...toJson_RuntimeClassProps(resolved),
+      ...KubeRuntimeClass.GVK,
+      ...toJson_KubeRuntimeClassProps(resolved),
     };
   }
 }
@@ -4834,7 +4834,7 @@ export class RuntimeClass extends ApiObject {
  *
  * @schema io.k8s.api.node.v1.RuntimeClassList
  */
-export class RuntimeClassList extends ApiObject {
+export class KubeRuntimeClassList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.node.v1.RuntimeClassList"
    */
@@ -4850,10 +4850,10 @@ export class RuntimeClassList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RuntimeClassListProps): any {
+  public static manifest(props: KubeRuntimeClassListProps): any {
     return {
-      ...RuntimeClassList.GVK,
-      ...toJson_RuntimeClassListProps(props),
+      ...KubeRuntimeClassList.GVK,
+      ...toJson_KubeRuntimeClassListProps(props),
     };
   }
 
@@ -4863,9 +4863,9 @@ export class RuntimeClassList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RuntimeClassListProps) {
+  public constructor(scope: Construct, id: string, props: KubeRuntimeClassListProps) {
     super(scope, id, {
-      ...RuntimeClassList.GVK,
+      ...KubeRuntimeClassList.GVK,
       ...props,
     });
   }
@@ -4877,8 +4877,8 @@ export class RuntimeClassList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RuntimeClassList.GVK,
-      ...toJson_RuntimeClassListProps(resolved),
+      ...KubeRuntimeClassList.GVK,
+      ...toJson_KubeRuntimeClassListProps(resolved),
     };
   }
 }
@@ -4888,7 +4888,7 @@ export class RuntimeClassList extends ApiObject {
  *
  * @schema io.k8s.api.node.v1alpha1.RuntimeClass
  */
-export class RuntimeClassV1Alpha1 extends ApiObject {
+export class KubeRuntimeClassV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.node.v1alpha1.RuntimeClass"
    */
@@ -4904,10 +4904,10 @@ export class RuntimeClassV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RuntimeClassV1Alpha1Props): any {
+  public static manifest(props: KubeRuntimeClassV1Alpha1Props): any {
     return {
-      ...RuntimeClassV1Alpha1.GVK,
-      ...toJson_RuntimeClassV1Alpha1Props(props),
+      ...KubeRuntimeClassV1Alpha1.GVK,
+      ...toJson_KubeRuntimeClassV1Alpha1Props(props),
     };
   }
 
@@ -4917,9 +4917,9 @@ export class RuntimeClassV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RuntimeClassV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeRuntimeClassV1Alpha1Props) {
     super(scope, id, {
-      ...RuntimeClassV1Alpha1.GVK,
+      ...KubeRuntimeClassV1Alpha1.GVK,
       ...props,
     });
   }
@@ -4931,8 +4931,8 @@ export class RuntimeClassV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RuntimeClassV1Alpha1.GVK,
-      ...toJson_RuntimeClassV1Alpha1Props(resolved),
+      ...KubeRuntimeClassV1Alpha1.GVK,
+      ...toJson_KubeRuntimeClassV1Alpha1Props(resolved),
     };
   }
 }
@@ -4942,7 +4942,7 @@ export class RuntimeClassV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.node.v1alpha1.RuntimeClassList
  */
-export class RuntimeClassListV1Alpha1 extends ApiObject {
+export class KubeRuntimeClassListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.node.v1alpha1.RuntimeClassList"
    */
@@ -4958,10 +4958,10 @@ export class RuntimeClassListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RuntimeClassListV1Alpha1Props): any {
+  public static manifest(props: KubeRuntimeClassListV1Alpha1Props): any {
     return {
-      ...RuntimeClassListV1Alpha1.GVK,
-      ...toJson_RuntimeClassListV1Alpha1Props(props),
+      ...KubeRuntimeClassListV1Alpha1.GVK,
+      ...toJson_KubeRuntimeClassListV1Alpha1Props(props),
     };
   }
 
@@ -4971,9 +4971,9 @@ export class RuntimeClassListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RuntimeClassListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeRuntimeClassListV1Alpha1Props) {
     super(scope, id, {
-      ...RuntimeClassListV1Alpha1.GVK,
+      ...KubeRuntimeClassListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -4985,8 +4985,8 @@ export class RuntimeClassListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RuntimeClassListV1Alpha1.GVK,
-      ...toJson_RuntimeClassListV1Alpha1Props(resolved),
+      ...KubeRuntimeClassListV1Alpha1.GVK,
+      ...toJson_KubeRuntimeClassListV1Alpha1Props(resolved),
     };
   }
 }
@@ -4996,7 +4996,7 @@ export class RuntimeClassListV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.node.v1beta1.RuntimeClass
  */
-export class RuntimeClassV1Beta1 extends ApiObject {
+export class KubeRuntimeClassV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.node.v1beta1.RuntimeClass"
    */
@@ -5012,10 +5012,10 @@ export class RuntimeClassV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RuntimeClassV1Beta1Props): any {
+  public static manifest(props: KubeRuntimeClassV1Beta1Props): any {
     return {
-      ...RuntimeClassV1Beta1.GVK,
-      ...toJson_RuntimeClassV1Beta1Props(props),
+      ...KubeRuntimeClassV1Beta1.GVK,
+      ...toJson_KubeRuntimeClassV1Beta1Props(props),
     };
   }
 
@@ -5025,9 +5025,9 @@ export class RuntimeClassV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RuntimeClassV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeRuntimeClassV1Beta1Props) {
     super(scope, id, {
-      ...RuntimeClassV1Beta1.GVK,
+      ...KubeRuntimeClassV1Beta1.GVK,
       ...props,
     });
   }
@@ -5039,8 +5039,8 @@ export class RuntimeClassV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RuntimeClassV1Beta1.GVK,
-      ...toJson_RuntimeClassV1Beta1Props(resolved),
+      ...KubeRuntimeClassV1Beta1.GVK,
+      ...toJson_KubeRuntimeClassV1Beta1Props(resolved),
     };
   }
 }
@@ -5050,7 +5050,7 @@ export class RuntimeClassV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.node.v1beta1.RuntimeClassList
  */
-export class RuntimeClassListV1Beta1 extends ApiObject {
+export class KubeRuntimeClassListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.node.v1beta1.RuntimeClassList"
    */
@@ -5066,10 +5066,10 @@ export class RuntimeClassListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RuntimeClassListV1Beta1Props): any {
+  public static manifest(props: KubeRuntimeClassListV1Beta1Props): any {
     return {
-      ...RuntimeClassListV1Beta1.GVK,
-      ...toJson_RuntimeClassListV1Beta1Props(props),
+      ...KubeRuntimeClassListV1Beta1.GVK,
+      ...toJson_KubeRuntimeClassListV1Beta1Props(props),
     };
   }
 
@@ -5079,9 +5079,9 @@ export class RuntimeClassListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RuntimeClassListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeRuntimeClassListV1Beta1Props) {
     super(scope, id, {
-      ...RuntimeClassListV1Beta1.GVK,
+      ...KubeRuntimeClassListV1Beta1.GVK,
       ...props,
     });
   }
@@ -5093,8 +5093,8 @@ export class RuntimeClassListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RuntimeClassListV1Beta1.GVK,
-      ...toJson_RuntimeClassListV1Beta1Props(resolved),
+      ...KubeRuntimeClassListV1Beta1.GVK,
+      ...toJson_KubeRuntimeClassListV1Beta1Props(resolved),
     };
   }
 }
@@ -5104,7 +5104,7 @@ export class RuntimeClassListV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.policy.v1.Eviction
  */
-export class Eviction extends ApiObject {
+export class KubeEviction extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.policy.v1.Eviction"
    */
@@ -5120,10 +5120,10 @@ export class Eviction extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: EvictionProps = {}): any {
+  public static manifest(props: KubeEvictionProps = {}): any {
     return {
-      ...Eviction.GVK,
-      ...toJson_EvictionProps(props),
+      ...KubeEviction.GVK,
+      ...toJson_KubeEvictionProps(props),
     };
   }
 
@@ -5133,9 +5133,9 @@ export class Eviction extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: EvictionProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeEvictionProps = {}) {
     super(scope, id, {
-      ...Eviction.GVK,
+      ...KubeEviction.GVK,
       ...props,
     });
   }
@@ -5147,8 +5147,8 @@ export class Eviction extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Eviction.GVK,
-      ...toJson_EvictionProps(resolved),
+      ...KubeEviction.GVK,
+      ...toJson_KubeEvictionProps(resolved),
     };
   }
 }
@@ -5158,7 +5158,7 @@ export class Eviction extends ApiObject {
  *
  * @schema io.k8s.api.policy.v1.PodDisruptionBudget
  */
-export class PodDisruptionBudget extends ApiObject {
+export class KubePodDisruptionBudget extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.policy.v1.PodDisruptionBudget"
    */
@@ -5174,10 +5174,10 @@ export class PodDisruptionBudget extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodDisruptionBudgetProps = {}): any {
+  public static manifest(props: KubePodDisruptionBudgetProps = {}): any {
     return {
-      ...PodDisruptionBudget.GVK,
-      ...toJson_PodDisruptionBudgetProps(props),
+      ...KubePodDisruptionBudget.GVK,
+      ...toJson_KubePodDisruptionBudgetProps(props),
     };
   }
 
@@ -5187,9 +5187,9 @@ export class PodDisruptionBudget extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodDisruptionBudgetProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubePodDisruptionBudgetProps = {}) {
     super(scope, id, {
-      ...PodDisruptionBudget.GVK,
+      ...KubePodDisruptionBudget.GVK,
       ...props,
     });
   }
@@ -5201,8 +5201,8 @@ export class PodDisruptionBudget extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodDisruptionBudget.GVK,
-      ...toJson_PodDisruptionBudgetProps(resolved),
+      ...KubePodDisruptionBudget.GVK,
+      ...toJson_KubePodDisruptionBudgetProps(resolved),
     };
   }
 }
@@ -5212,7 +5212,7 @@ export class PodDisruptionBudget extends ApiObject {
  *
  * @schema io.k8s.api.policy.v1.PodDisruptionBudgetList
  */
-export class PodDisruptionBudgetList extends ApiObject {
+export class KubePodDisruptionBudgetList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.policy.v1.PodDisruptionBudgetList"
    */
@@ -5228,10 +5228,10 @@ export class PodDisruptionBudgetList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodDisruptionBudgetListProps): any {
+  public static manifest(props: KubePodDisruptionBudgetListProps): any {
     return {
-      ...PodDisruptionBudgetList.GVK,
-      ...toJson_PodDisruptionBudgetListProps(props),
+      ...KubePodDisruptionBudgetList.GVK,
+      ...toJson_KubePodDisruptionBudgetListProps(props),
     };
   }
 
@@ -5241,9 +5241,9 @@ export class PodDisruptionBudgetList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodDisruptionBudgetListProps) {
+  public constructor(scope: Construct, id: string, props: KubePodDisruptionBudgetListProps) {
     super(scope, id, {
-      ...PodDisruptionBudgetList.GVK,
+      ...KubePodDisruptionBudgetList.GVK,
       ...props,
     });
   }
@@ -5255,8 +5255,8 @@ export class PodDisruptionBudgetList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodDisruptionBudgetList.GVK,
-      ...toJson_PodDisruptionBudgetListProps(resolved),
+      ...KubePodDisruptionBudgetList.GVK,
+      ...toJson_KubePodDisruptionBudgetListProps(resolved),
     };
   }
 }
@@ -5266,7 +5266,7 @@ export class PodDisruptionBudgetList extends ApiObject {
  *
  * @schema io.k8s.api.policy.v1beta1.PodDisruptionBudget
  */
-export class PodDisruptionBudgetV1Beta1 extends ApiObject {
+export class KubePodDisruptionBudgetV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.policy.v1beta1.PodDisruptionBudget"
    */
@@ -5282,10 +5282,10 @@ export class PodDisruptionBudgetV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodDisruptionBudgetV1Beta1Props = {}): any {
+  public static manifest(props: KubePodDisruptionBudgetV1Beta1Props = {}): any {
     return {
-      ...PodDisruptionBudgetV1Beta1.GVK,
-      ...toJson_PodDisruptionBudgetV1Beta1Props(props),
+      ...KubePodDisruptionBudgetV1Beta1.GVK,
+      ...toJson_KubePodDisruptionBudgetV1Beta1Props(props),
     };
   }
 
@@ -5295,9 +5295,9 @@ export class PodDisruptionBudgetV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodDisruptionBudgetV1Beta1Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubePodDisruptionBudgetV1Beta1Props = {}) {
     super(scope, id, {
-      ...PodDisruptionBudgetV1Beta1.GVK,
+      ...KubePodDisruptionBudgetV1Beta1.GVK,
       ...props,
     });
   }
@@ -5309,8 +5309,8 @@ export class PodDisruptionBudgetV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodDisruptionBudgetV1Beta1.GVK,
-      ...toJson_PodDisruptionBudgetV1Beta1Props(resolved),
+      ...KubePodDisruptionBudgetV1Beta1.GVK,
+      ...toJson_KubePodDisruptionBudgetV1Beta1Props(resolved),
     };
   }
 }
@@ -5320,7 +5320,7 @@ export class PodDisruptionBudgetV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.policy.v1beta1.PodDisruptionBudgetList
  */
-export class PodDisruptionBudgetListV1Beta1 extends ApiObject {
+export class KubePodDisruptionBudgetListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.policy.v1beta1.PodDisruptionBudgetList"
    */
@@ -5336,10 +5336,10 @@ export class PodDisruptionBudgetListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodDisruptionBudgetListV1Beta1Props): any {
+  public static manifest(props: KubePodDisruptionBudgetListV1Beta1Props): any {
     return {
-      ...PodDisruptionBudgetListV1Beta1.GVK,
-      ...toJson_PodDisruptionBudgetListV1Beta1Props(props),
+      ...KubePodDisruptionBudgetListV1Beta1.GVK,
+      ...toJson_KubePodDisruptionBudgetListV1Beta1Props(props),
     };
   }
 
@@ -5349,9 +5349,9 @@ export class PodDisruptionBudgetListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodDisruptionBudgetListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubePodDisruptionBudgetListV1Beta1Props) {
     super(scope, id, {
-      ...PodDisruptionBudgetListV1Beta1.GVK,
+      ...KubePodDisruptionBudgetListV1Beta1.GVK,
       ...props,
     });
   }
@@ -5363,8 +5363,8 @@ export class PodDisruptionBudgetListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodDisruptionBudgetListV1Beta1.GVK,
-      ...toJson_PodDisruptionBudgetListV1Beta1Props(resolved),
+      ...KubePodDisruptionBudgetListV1Beta1.GVK,
+      ...toJson_KubePodDisruptionBudgetListV1Beta1Props(resolved),
     };
   }
 }
@@ -5374,7 +5374,7 @@ export class PodDisruptionBudgetListV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.policy.v1beta1.PodSecurityPolicy
  */
-export class PodSecurityPolicyV1Beta1 extends ApiObject {
+export class KubePodSecurityPolicyV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.policy.v1beta1.PodSecurityPolicy"
    */
@@ -5390,10 +5390,10 @@ export class PodSecurityPolicyV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodSecurityPolicyV1Beta1Props = {}): any {
+  public static manifest(props: KubePodSecurityPolicyV1Beta1Props = {}): any {
     return {
-      ...PodSecurityPolicyV1Beta1.GVK,
-      ...toJson_PodSecurityPolicyV1Beta1Props(props),
+      ...KubePodSecurityPolicyV1Beta1.GVK,
+      ...toJson_KubePodSecurityPolicyV1Beta1Props(props),
     };
   }
 
@@ -5403,9 +5403,9 @@ export class PodSecurityPolicyV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodSecurityPolicyV1Beta1Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubePodSecurityPolicyV1Beta1Props = {}) {
     super(scope, id, {
-      ...PodSecurityPolicyV1Beta1.GVK,
+      ...KubePodSecurityPolicyV1Beta1.GVK,
       ...props,
     });
   }
@@ -5417,8 +5417,8 @@ export class PodSecurityPolicyV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodSecurityPolicyV1Beta1.GVK,
-      ...toJson_PodSecurityPolicyV1Beta1Props(resolved),
+      ...KubePodSecurityPolicyV1Beta1.GVK,
+      ...toJson_KubePodSecurityPolicyV1Beta1Props(resolved),
     };
   }
 }
@@ -5428,7 +5428,7 @@ export class PodSecurityPolicyV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.policy.v1beta1.PodSecurityPolicyList
  */
-export class PodSecurityPolicyListV1Beta1 extends ApiObject {
+export class KubePodSecurityPolicyListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.policy.v1beta1.PodSecurityPolicyList"
    */
@@ -5444,10 +5444,10 @@ export class PodSecurityPolicyListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PodSecurityPolicyListV1Beta1Props): any {
+  public static manifest(props: KubePodSecurityPolicyListV1Beta1Props): any {
     return {
-      ...PodSecurityPolicyListV1Beta1.GVK,
-      ...toJson_PodSecurityPolicyListV1Beta1Props(props),
+      ...KubePodSecurityPolicyListV1Beta1.GVK,
+      ...toJson_KubePodSecurityPolicyListV1Beta1Props(props),
     };
   }
 
@@ -5457,9 +5457,9 @@ export class PodSecurityPolicyListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PodSecurityPolicyListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubePodSecurityPolicyListV1Beta1Props) {
     super(scope, id, {
-      ...PodSecurityPolicyListV1Beta1.GVK,
+      ...KubePodSecurityPolicyListV1Beta1.GVK,
       ...props,
     });
   }
@@ -5471,8 +5471,8 @@ export class PodSecurityPolicyListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PodSecurityPolicyListV1Beta1.GVK,
-      ...toJson_PodSecurityPolicyListV1Beta1Props(resolved),
+      ...KubePodSecurityPolicyListV1Beta1.GVK,
+      ...toJson_KubePodSecurityPolicyListV1Beta1Props(resolved),
     };
   }
 }
@@ -5482,7 +5482,7 @@ export class PodSecurityPolicyListV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1.ClusterRole
  */
-export class ClusterRole extends ApiObject {
+export class KubeClusterRole extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1.ClusterRole"
    */
@@ -5498,10 +5498,10 @@ export class ClusterRole extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ClusterRoleProps = {}): any {
+  public static manifest(props: KubeClusterRoleProps = {}): any {
     return {
-      ...ClusterRole.GVK,
-      ...toJson_ClusterRoleProps(props),
+      ...KubeClusterRole.GVK,
+      ...toJson_KubeClusterRoleProps(props),
     };
   }
 
@@ -5511,9 +5511,9 @@ export class ClusterRole extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ClusterRoleProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeClusterRoleProps = {}) {
     super(scope, id, {
-      ...ClusterRole.GVK,
+      ...KubeClusterRole.GVK,
       ...props,
     });
   }
@@ -5525,8 +5525,8 @@ export class ClusterRole extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ClusterRole.GVK,
-      ...toJson_ClusterRoleProps(resolved),
+      ...KubeClusterRole.GVK,
+      ...toJson_KubeClusterRoleProps(resolved),
     };
   }
 }
@@ -5536,7 +5536,7 @@ export class ClusterRole extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1.ClusterRoleBinding
  */
-export class ClusterRoleBinding extends ApiObject {
+export class KubeClusterRoleBinding extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1.ClusterRoleBinding"
    */
@@ -5552,10 +5552,10 @@ export class ClusterRoleBinding extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ClusterRoleBindingProps): any {
+  public static manifest(props: KubeClusterRoleBindingProps): any {
     return {
-      ...ClusterRoleBinding.GVK,
-      ...toJson_ClusterRoleBindingProps(props),
+      ...KubeClusterRoleBinding.GVK,
+      ...toJson_KubeClusterRoleBindingProps(props),
     };
   }
 
@@ -5565,9 +5565,9 @@ export class ClusterRoleBinding extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ClusterRoleBindingProps) {
+  public constructor(scope: Construct, id: string, props: KubeClusterRoleBindingProps) {
     super(scope, id, {
-      ...ClusterRoleBinding.GVK,
+      ...KubeClusterRoleBinding.GVK,
       ...props,
     });
   }
@@ -5579,8 +5579,8 @@ export class ClusterRoleBinding extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ClusterRoleBinding.GVK,
-      ...toJson_ClusterRoleBindingProps(resolved),
+      ...KubeClusterRoleBinding.GVK,
+      ...toJson_KubeClusterRoleBindingProps(resolved),
     };
   }
 }
@@ -5590,7 +5590,7 @@ export class ClusterRoleBinding extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1.ClusterRoleBindingList
  */
-export class ClusterRoleBindingList extends ApiObject {
+export class KubeClusterRoleBindingList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1.ClusterRoleBindingList"
    */
@@ -5606,10 +5606,10 @@ export class ClusterRoleBindingList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ClusterRoleBindingListProps): any {
+  public static manifest(props: KubeClusterRoleBindingListProps): any {
     return {
-      ...ClusterRoleBindingList.GVK,
-      ...toJson_ClusterRoleBindingListProps(props),
+      ...KubeClusterRoleBindingList.GVK,
+      ...toJson_KubeClusterRoleBindingListProps(props),
     };
   }
 
@@ -5619,9 +5619,9 @@ export class ClusterRoleBindingList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ClusterRoleBindingListProps) {
+  public constructor(scope: Construct, id: string, props: KubeClusterRoleBindingListProps) {
     super(scope, id, {
-      ...ClusterRoleBindingList.GVK,
+      ...KubeClusterRoleBindingList.GVK,
       ...props,
     });
   }
@@ -5633,8 +5633,8 @@ export class ClusterRoleBindingList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ClusterRoleBindingList.GVK,
-      ...toJson_ClusterRoleBindingListProps(resolved),
+      ...KubeClusterRoleBindingList.GVK,
+      ...toJson_KubeClusterRoleBindingListProps(resolved),
     };
   }
 }
@@ -5644,7 +5644,7 @@ export class ClusterRoleBindingList extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1.ClusterRoleList
  */
-export class ClusterRoleList extends ApiObject {
+export class KubeClusterRoleList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1.ClusterRoleList"
    */
@@ -5660,10 +5660,10 @@ export class ClusterRoleList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ClusterRoleListProps): any {
+  public static manifest(props: KubeClusterRoleListProps): any {
     return {
-      ...ClusterRoleList.GVK,
-      ...toJson_ClusterRoleListProps(props),
+      ...KubeClusterRoleList.GVK,
+      ...toJson_KubeClusterRoleListProps(props),
     };
   }
 
@@ -5673,9 +5673,9 @@ export class ClusterRoleList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ClusterRoleListProps) {
+  public constructor(scope: Construct, id: string, props: KubeClusterRoleListProps) {
     super(scope, id, {
-      ...ClusterRoleList.GVK,
+      ...KubeClusterRoleList.GVK,
       ...props,
     });
   }
@@ -5687,8 +5687,8 @@ export class ClusterRoleList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ClusterRoleList.GVK,
-      ...toJson_ClusterRoleListProps(resolved),
+      ...KubeClusterRoleList.GVK,
+      ...toJson_KubeClusterRoleListProps(resolved),
     };
   }
 }
@@ -5698,7 +5698,7 @@ export class ClusterRoleList extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1.Role
  */
-export class Role extends ApiObject {
+export class KubeRole extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1.Role"
    */
@@ -5714,10 +5714,10 @@ export class Role extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RoleProps = {}): any {
+  public static manifest(props: KubeRoleProps = {}): any {
     return {
-      ...Role.GVK,
-      ...toJson_RoleProps(props),
+      ...KubeRole.GVK,
+      ...toJson_KubeRoleProps(props),
     };
   }
 
@@ -5727,9 +5727,9 @@ export class Role extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RoleProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeRoleProps = {}) {
     super(scope, id, {
-      ...Role.GVK,
+      ...KubeRole.GVK,
       ...props,
     });
   }
@@ -5741,8 +5741,8 @@ export class Role extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Role.GVK,
-      ...toJson_RoleProps(resolved),
+      ...KubeRole.GVK,
+      ...toJson_KubeRoleProps(resolved),
     };
   }
 }
@@ -5752,7 +5752,7 @@ export class Role extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1.RoleBinding
  */
-export class RoleBinding extends ApiObject {
+export class KubeRoleBinding extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1.RoleBinding"
    */
@@ -5768,10 +5768,10 @@ export class RoleBinding extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RoleBindingProps): any {
+  public static manifest(props: KubeRoleBindingProps): any {
     return {
-      ...RoleBinding.GVK,
-      ...toJson_RoleBindingProps(props),
+      ...KubeRoleBinding.GVK,
+      ...toJson_KubeRoleBindingProps(props),
     };
   }
 
@@ -5781,9 +5781,9 @@ export class RoleBinding extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RoleBindingProps) {
+  public constructor(scope: Construct, id: string, props: KubeRoleBindingProps) {
     super(scope, id, {
-      ...RoleBinding.GVK,
+      ...KubeRoleBinding.GVK,
       ...props,
     });
   }
@@ -5795,8 +5795,8 @@ export class RoleBinding extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RoleBinding.GVK,
-      ...toJson_RoleBindingProps(resolved),
+      ...KubeRoleBinding.GVK,
+      ...toJson_KubeRoleBindingProps(resolved),
     };
   }
 }
@@ -5806,7 +5806,7 @@ export class RoleBinding extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1.RoleBindingList
  */
-export class RoleBindingList extends ApiObject {
+export class KubeRoleBindingList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1.RoleBindingList"
    */
@@ -5822,10 +5822,10 @@ export class RoleBindingList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RoleBindingListProps): any {
+  public static manifest(props: KubeRoleBindingListProps): any {
     return {
-      ...RoleBindingList.GVK,
-      ...toJson_RoleBindingListProps(props),
+      ...KubeRoleBindingList.GVK,
+      ...toJson_KubeRoleBindingListProps(props),
     };
   }
 
@@ -5835,9 +5835,9 @@ export class RoleBindingList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RoleBindingListProps) {
+  public constructor(scope: Construct, id: string, props: KubeRoleBindingListProps) {
     super(scope, id, {
-      ...RoleBindingList.GVK,
+      ...KubeRoleBindingList.GVK,
       ...props,
     });
   }
@@ -5849,8 +5849,8 @@ export class RoleBindingList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RoleBindingList.GVK,
-      ...toJson_RoleBindingListProps(resolved),
+      ...KubeRoleBindingList.GVK,
+      ...toJson_KubeRoleBindingListProps(resolved),
     };
   }
 }
@@ -5860,7 +5860,7 @@ export class RoleBindingList extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1.RoleList
  */
-export class RoleList extends ApiObject {
+export class KubeRoleList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1.RoleList"
    */
@@ -5876,10 +5876,10 @@ export class RoleList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RoleListProps): any {
+  public static manifest(props: KubeRoleListProps): any {
     return {
-      ...RoleList.GVK,
-      ...toJson_RoleListProps(props),
+      ...KubeRoleList.GVK,
+      ...toJson_KubeRoleListProps(props),
     };
   }
 
@@ -5889,9 +5889,9 @@ export class RoleList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RoleListProps) {
+  public constructor(scope: Construct, id: string, props: KubeRoleListProps) {
     super(scope, id, {
-      ...RoleList.GVK,
+      ...KubeRoleList.GVK,
       ...props,
     });
   }
@@ -5903,8 +5903,8 @@ export class RoleList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RoleList.GVK,
-      ...toJson_RoleListProps(resolved),
+      ...KubeRoleList.GVK,
+      ...toJson_KubeRoleListProps(resolved),
     };
   }
 }
@@ -5914,7 +5914,7 @@ export class RoleList extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1alpha1.ClusterRole
  */
-export class ClusterRoleV1Alpha1 extends ApiObject {
+export class KubeClusterRoleV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1alpha1.ClusterRole"
    */
@@ -5930,10 +5930,10 @@ export class ClusterRoleV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ClusterRoleV1Alpha1Props = {}): any {
+  public static manifest(props: KubeClusterRoleV1Alpha1Props = {}): any {
     return {
-      ...ClusterRoleV1Alpha1.GVK,
-      ...toJson_ClusterRoleV1Alpha1Props(props),
+      ...KubeClusterRoleV1Alpha1.GVK,
+      ...toJson_KubeClusterRoleV1Alpha1Props(props),
     };
   }
 
@@ -5943,9 +5943,9 @@ export class ClusterRoleV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ClusterRoleV1Alpha1Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubeClusterRoleV1Alpha1Props = {}) {
     super(scope, id, {
-      ...ClusterRoleV1Alpha1.GVK,
+      ...KubeClusterRoleV1Alpha1.GVK,
       ...props,
     });
   }
@@ -5957,8 +5957,8 @@ export class ClusterRoleV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ClusterRoleV1Alpha1.GVK,
-      ...toJson_ClusterRoleV1Alpha1Props(resolved),
+      ...KubeClusterRoleV1Alpha1.GVK,
+      ...toJson_KubeClusterRoleV1Alpha1Props(resolved),
     };
   }
 }
@@ -5968,7 +5968,7 @@ export class ClusterRoleV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1alpha1.ClusterRoleBinding
  */
-export class ClusterRoleBindingV1Alpha1 extends ApiObject {
+export class KubeClusterRoleBindingV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1alpha1.ClusterRoleBinding"
    */
@@ -5984,10 +5984,10 @@ export class ClusterRoleBindingV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ClusterRoleBindingV1Alpha1Props): any {
+  public static manifest(props: KubeClusterRoleBindingV1Alpha1Props): any {
     return {
-      ...ClusterRoleBindingV1Alpha1.GVK,
-      ...toJson_ClusterRoleBindingV1Alpha1Props(props),
+      ...KubeClusterRoleBindingV1Alpha1.GVK,
+      ...toJson_KubeClusterRoleBindingV1Alpha1Props(props),
     };
   }
 
@@ -5997,9 +5997,9 @@ export class ClusterRoleBindingV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ClusterRoleBindingV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeClusterRoleBindingV1Alpha1Props) {
     super(scope, id, {
-      ...ClusterRoleBindingV1Alpha1.GVK,
+      ...KubeClusterRoleBindingV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6011,8 +6011,8 @@ export class ClusterRoleBindingV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ClusterRoleBindingV1Alpha1.GVK,
-      ...toJson_ClusterRoleBindingV1Alpha1Props(resolved),
+      ...KubeClusterRoleBindingV1Alpha1.GVK,
+      ...toJson_KubeClusterRoleBindingV1Alpha1Props(resolved),
     };
   }
 }
@@ -6022,7 +6022,7 @@ export class ClusterRoleBindingV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1alpha1.ClusterRoleBindingList
  */
-export class ClusterRoleBindingListV1Alpha1 extends ApiObject {
+export class KubeClusterRoleBindingListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1alpha1.ClusterRoleBindingList"
    */
@@ -6038,10 +6038,10 @@ export class ClusterRoleBindingListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ClusterRoleBindingListV1Alpha1Props): any {
+  public static manifest(props: KubeClusterRoleBindingListV1Alpha1Props): any {
     return {
-      ...ClusterRoleBindingListV1Alpha1.GVK,
-      ...toJson_ClusterRoleBindingListV1Alpha1Props(props),
+      ...KubeClusterRoleBindingListV1Alpha1.GVK,
+      ...toJson_KubeClusterRoleBindingListV1Alpha1Props(props),
     };
   }
 
@@ -6051,9 +6051,9 @@ export class ClusterRoleBindingListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ClusterRoleBindingListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeClusterRoleBindingListV1Alpha1Props) {
     super(scope, id, {
-      ...ClusterRoleBindingListV1Alpha1.GVK,
+      ...KubeClusterRoleBindingListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6065,8 +6065,8 @@ export class ClusterRoleBindingListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ClusterRoleBindingListV1Alpha1.GVK,
-      ...toJson_ClusterRoleBindingListV1Alpha1Props(resolved),
+      ...KubeClusterRoleBindingListV1Alpha1.GVK,
+      ...toJson_KubeClusterRoleBindingListV1Alpha1Props(resolved),
     };
   }
 }
@@ -6076,7 +6076,7 @@ export class ClusterRoleBindingListV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1alpha1.ClusterRoleList
  */
-export class ClusterRoleListV1Alpha1 extends ApiObject {
+export class KubeClusterRoleListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1alpha1.ClusterRoleList"
    */
@@ -6092,10 +6092,10 @@ export class ClusterRoleListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ClusterRoleListV1Alpha1Props): any {
+  public static manifest(props: KubeClusterRoleListV1Alpha1Props): any {
     return {
-      ...ClusterRoleListV1Alpha1.GVK,
-      ...toJson_ClusterRoleListV1Alpha1Props(props),
+      ...KubeClusterRoleListV1Alpha1.GVK,
+      ...toJson_KubeClusterRoleListV1Alpha1Props(props),
     };
   }
 
@@ -6105,9 +6105,9 @@ export class ClusterRoleListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ClusterRoleListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeClusterRoleListV1Alpha1Props) {
     super(scope, id, {
-      ...ClusterRoleListV1Alpha1.GVK,
+      ...KubeClusterRoleListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6119,8 +6119,8 @@ export class ClusterRoleListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ClusterRoleListV1Alpha1.GVK,
-      ...toJson_ClusterRoleListV1Alpha1Props(resolved),
+      ...KubeClusterRoleListV1Alpha1.GVK,
+      ...toJson_KubeClusterRoleListV1Alpha1Props(resolved),
     };
   }
 }
@@ -6130,7 +6130,7 @@ export class ClusterRoleListV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1alpha1.Role
  */
-export class RoleV1Alpha1 extends ApiObject {
+export class KubeRoleV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1alpha1.Role"
    */
@@ -6146,10 +6146,10 @@ export class RoleV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RoleV1Alpha1Props = {}): any {
+  public static manifest(props: KubeRoleV1Alpha1Props = {}): any {
     return {
-      ...RoleV1Alpha1.GVK,
-      ...toJson_RoleV1Alpha1Props(props),
+      ...KubeRoleV1Alpha1.GVK,
+      ...toJson_KubeRoleV1Alpha1Props(props),
     };
   }
 
@@ -6159,9 +6159,9 @@ export class RoleV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RoleV1Alpha1Props = {}) {
+  public constructor(scope: Construct, id: string, props: KubeRoleV1Alpha1Props = {}) {
     super(scope, id, {
-      ...RoleV1Alpha1.GVK,
+      ...KubeRoleV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6173,8 +6173,8 @@ export class RoleV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RoleV1Alpha1.GVK,
-      ...toJson_RoleV1Alpha1Props(resolved),
+      ...KubeRoleV1Alpha1.GVK,
+      ...toJson_KubeRoleV1Alpha1Props(resolved),
     };
   }
 }
@@ -6184,7 +6184,7 @@ export class RoleV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1alpha1.RoleBinding
  */
-export class RoleBindingV1Alpha1 extends ApiObject {
+export class KubeRoleBindingV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1alpha1.RoleBinding"
    */
@@ -6200,10 +6200,10 @@ export class RoleBindingV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RoleBindingV1Alpha1Props): any {
+  public static manifest(props: KubeRoleBindingV1Alpha1Props): any {
     return {
-      ...RoleBindingV1Alpha1.GVK,
-      ...toJson_RoleBindingV1Alpha1Props(props),
+      ...KubeRoleBindingV1Alpha1.GVK,
+      ...toJson_KubeRoleBindingV1Alpha1Props(props),
     };
   }
 
@@ -6213,9 +6213,9 @@ export class RoleBindingV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RoleBindingV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeRoleBindingV1Alpha1Props) {
     super(scope, id, {
-      ...RoleBindingV1Alpha1.GVK,
+      ...KubeRoleBindingV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6227,8 +6227,8 @@ export class RoleBindingV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RoleBindingV1Alpha1.GVK,
-      ...toJson_RoleBindingV1Alpha1Props(resolved),
+      ...KubeRoleBindingV1Alpha1.GVK,
+      ...toJson_KubeRoleBindingV1Alpha1Props(resolved),
     };
   }
 }
@@ -6238,7 +6238,7 @@ export class RoleBindingV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1alpha1.RoleBindingList
  */
-export class RoleBindingListV1Alpha1 extends ApiObject {
+export class KubeRoleBindingListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1alpha1.RoleBindingList"
    */
@@ -6254,10 +6254,10 @@ export class RoleBindingListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RoleBindingListV1Alpha1Props): any {
+  public static manifest(props: KubeRoleBindingListV1Alpha1Props): any {
     return {
-      ...RoleBindingListV1Alpha1.GVK,
-      ...toJson_RoleBindingListV1Alpha1Props(props),
+      ...KubeRoleBindingListV1Alpha1.GVK,
+      ...toJson_KubeRoleBindingListV1Alpha1Props(props),
     };
   }
 
@@ -6267,9 +6267,9 @@ export class RoleBindingListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RoleBindingListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeRoleBindingListV1Alpha1Props) {
     super(scope, id, {
-      ...RoleBindingListV1Alpha1.GVK,
+      ...KubeRoleBindingListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6281,8 +6281,8 @@ export class RoleBindingListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RoleBindingListV1Alpha1.GVK,
-      ...toJson_RoleBindingListV1Alpha1Props(resolved),
+      ...KubeRoleBindingListV1Alpha1.GVK,
+      ...toJson_KubeRoleBindingListV1Alpha1Props(resolved),
     };
   }
 }
@@ -6292,7 +6292,7 @@ export class RoleBindingListV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.rbac.v1alpha1.RoleList
  */
-export class RoleListV1Alpha1 extends ApiObject {
+export class KubeRoleListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.rbac.v1alpha1.RoleList"
    */
@@ -6308,10 +6308,10 @@ export class RoleListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: RoleListV1Alpha1Props): any {
+  public static manifest(props: KubeRoleListV1Alpha1Props): any {
     return {
-      ...RoleListV1Alpha1.GVK,
-      ...toJson_RoleListV1Alpha1Props(props),
+      ...KubeRoleListV1Alpha1.GVK,
+      ...toJson_KubeRoleListV1Alpha1Props(props),
     };
   }
 
@@ -6321,9 +6321,9 @@ export class RoleListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: RoleListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeRoleListV1Alpha1Props) {
     super(scope, id, {
-      ...RoleListV1Alpha1.GVK,
+      ...KubeRoleListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6335,8 +6335,8 @@ export class RoleListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...RoleListV1Alpha1.GVK,
-      ...toJson_RoleListV1Alpha1Props(resolved),
+      ...KubeRoleListV1Alpha1.GVK,
+      ...toJson_KubeRoleListV1Alpha1Props(resolved),
     };
   }
 }
@@ -6346,7 +6346,7 @@ export class RoleListV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.scheduling.v1.PriorityClass
  */
-export class PriorityClass extends ApiObject {
+export class KubePriorityClass extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.scheduling.v1.PriorityClass"
    */
@@ -6362,10 +6362,10 @@ export class PriorityClass extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PriorityClassProps): any {
+  public static manifest(props: KubePriorityClassProps): any {
     return {
-      ...PriorityClass.GVK,
-      ...toJson_PriorityClassProps(props),
+      ...KubePriorityClass.GVK,
+      ...toJson_KubePriorityClassProps(props),
     };
   }
 
@@ -6375,9 +6375,9 @@ export class PriorityClass extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PriorityClassProps) {
+  public constructor(scope: Construct, id: string, props: KubePriorityClassProps) {
     super(scope, id, {
-      ...PriorityClass.GVK,
+      ...KubePriorityClass.GVK,
       ...props,
     });
   }
@@ -6389,8 +6389,8 @@ export class PriorityClass extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PriorityClass.GVK,
-      ...toJson_PriorityClassProps(resolved),
+      ...KubePriorityClass.GVK,
+      ...toJson_KubePriorityClassProps(resolved),
     };
   }
 }
@@ -6400,7 +6400,7 @@ export class PriorityClass extends ApiObject {
  *
  * @schema io.k8s.api.scheduling.v1.PriorityClassList
  */
-export class PriorityClassList extends ApiObject {
+export class KubePriorityClassList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.scheduling.v1.PriorityClassList"
    */
@@ -6416,10 +6416,10 @@ export class PriorityClassList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PriorityClassListProps): any {
+  public static manifest(props: KubePriorityClassListProps): any {
     return {
-      ...PriorityClassList.GVK,
-      ...toJson_PriorityClassListProps(props),
+      ...KubePriorityClassList.GVK,
+      ...toJson_KubePriorityClassListProps(props),
     };
   }
 
@@ -6429,9 +6429,9 @@ export class PriorityClassList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PriorityClassListProps) {
+  public constructor(scope: Construct, id: string, props: KubePriorityClassListProps) {
     super(scope, id, {
-      ...PriorityClassList.GVK,
+      ...KubePriorityClassList.GVK,
       ...props,
     });
   }
@@ -6443,8 +6443,8 @@ export class PriorityClassList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PriorityClassList.GVK,
-      ...toJson_PriorityClassListProps(resolved),
+      ...KubePriorityClassList.GVK,
+      ...toJson_KubePriorityClassListProps(resolved),
     };
   }
 }
@@ -6454,7 +6454,7 @@ export class PriorityClassList extends ApiObject {
  *
  * @schema io.k8s.api.scheduling.v1alpha1.PriorityClass
  */
-export class PriorityClassV1Alpha1 extends ApiObject {
+export class KubePriorityClassV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.scheduling.v1alpha1.PriorityClass"
    */
@@ -6470,10 +6470,10 @@ export class PriorityClassV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PriorityClassV1Alpha1Props): any {
+  public static manifest(props: KubePriorityClassV1Alpha1Props): any {
     return {
-      ...PriorityClassV1Alpha1.GVK,
-      ...toJson_PriorityClassV1Alpha1Props(props),
+      ...KubePriorityClassV1Alpha1.GVK,
+      ...toJson_KubePriorityClassV1Alpha1Props(props),
     };
   }
 
@@ -6483,9 +6483,9 @@ export class PriorityClassV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PriorityClassV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubePriorityClassV1Alpha1Props) {
     super(scope, id, {
-      ...PriorityClassV1Alpha1.GVK,
+      ...KubePriorityClassV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6497,8 +6497,8 @@ export class PriorityClassV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PriorityClassV1Alpha1.GVK,
-      ...toJson_PriorityClassV1Alpha1Props(resolved),
+      ...KubePriorityClassV1Alpha1.GVK,
+      ...toJson_KubePriorityClassV1Alpha1Props(resolved),
     };
   }
 }
@@ -6508,7 +6508,7 @@ export class PriorityClassV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.scheduling.v1alpha1.PriorityClassList
  */
-export class PriorityClassListV1Alpha1 extends ApiObject {
+export class KubePriorityClassListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.scheduling.v1alpha1.PriorityClassList"
    */
@@ -6524,10 +6524,10 @@ export class PriorityClassListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: PriorityClassListV1Alpha1Props): any {
+  public static manifest(props: KubePriorityClassListV1Alpha1Props): any {
     return {
-      ...PriorityClassListV1Alpha1.GVK,
-      ...toJson_PriorityClassListV1Alpha1Props(props),
+      ...KubePriorityClassListV1Alpha1.GVK,
+      ...toJson_KubePriorityClassListV1Alpha1Props(props),
     };
   }
 
@@ -6537,9 +6537,9 @@ export class PriorityClassListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: PriorityClassListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubePriorityClassListV1Alpha1Props) {
     super(scope, id, {
-      ...PriorityClassListV1Alpha1.GVK,
+      ...KubePriorityClassListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -6551,8 +6551,8 @@ export class PriorityClassListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...PriorityClassListV1Alpha1.GVK,
-      ...toJson_PriorityClassListV1Alpha1Props(resolved),
+      ...KubePriorityClassListV1Alpha1.GVK,
+      ...toJson_KubePriorityClassListV1Alpha1Props(resolved),
     };
   }
 }
@@ -6562,7 +6562,7 @@ export class PriorityClassListV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1.CSIDriver
  */
-export class CsiDriver extends ApiObject {
+export class KubeCsiDriver extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1.CSIDriver"
    */
@@ -6578,10 +6578,10 @@ export class CsiDriver extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CsiDriverProps): any {
+  public static manifest(props: KubeCsiDriverProps): any {
     return {
-      ...CsiDriver.GVK,
-      ...toJson_CsiDriverProps(props),
+      ...KubeCsiDriver.GVK,
+      ...toJson_KubeCsiDriverProps(props),
     };
   }
 
@@ -6591,9 +6591,9 @@ export class CsiDriver extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CsiDriverProps) {
+  public constructor(scope: Construct, id: string, props: KubeCsiDriverProps) {
     super(scope, id, {
-      ...CsiDriver.GVK,
+      ...KubeCsiDriver.GVK,
       ...props,
     });
   }
@@ -6605,8 +6605,8 @@ export class CsiDriver extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CsiDriver.GVK,
-      ...toJson_CsiDriverProps(resolved),
+      ...KubeCsiDriver.GVK,
+      ...toJson_KubeCsiDriverProps(resolved),
     };
   }
 }
@@ -6616,7 +6616,7 @@ export class CsiDriver extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1.CSIDriverList
  */
-export class CsiDriverList extends ApiObject {
+export class KubeCsiDriverList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1.CSIDriverList"
    */
@@ -6632,10 +6632,10 @@ export class CsiDriverList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CsiDriverListProps): any {
+  public static manifest(props: KubeCsiDriverListProps): any {
     return {
-      ...CsiDriverList.GVK,
-      ...toJson_CsiDriverListProps(props),
+      ...KubeCsiDriverList.GVK,
+      ...toJson_KubeCsiDriverListProps(props),
     };
   }
 
@@ -6645,9 +6645,9 @@ export class CsiDriverList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CsiDriverListProps) {
+  public constructor(scope: Construct, id: string, props: KubeCsiDriverListProps) {
     super(scope, id, {
-      ...CsiDriverList.GVK,
+      ...KubeCsiDriverList.GVK,
       ...props,
     });
   }
@@ -6659,8 +6659,8 @@ export class CsiDriverList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CsiDriverList.GVK,
-      ...toJson_CsiDriverListProps(resolved),
+      ...KubeCsiDriverList.GVK,
+      ...toJson_KubeCsiDriverListProps(resolved),
     };
   }
 }
@@ -6670,7 +6670,7 @@ export class CsiDriverList extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1.CSINode
  */
-export class CsiNode extends ApiObject {
+export class KubeCsiNode extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1.CSINode"
    */
@@ -6686,10 +6686,10 @@ export class CsiNode extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CsiNodeProps): any {
+  public static manifest(props: KubeCsiNodeProps): any {
     return {
-      ...CsiNode.GVK,
-      ...toJson_CsiNodeProps(props),
+      ...KubeCsiNode.GVK,
+      ...toJson_KubeCsiNodeProps(props),
     };
   }
 
@@ -6699,9 +6699,9 @@ export class CsiNode extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CsiNodeProps) {
+  public constructor(scope: Construct, id: string, props: KubeCsiNodeProps) {
     super(scope, id, {
-      ...CsiNode.GVK,
+      ...KubeCsiNode.GVK,
       ...props,
     });
   }
@@ -6713,8 +6713,8 @@ export class CsiNode extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CsiNode.GVK,
-      ...toJson_CsiNodeProps(resolved),
+      ...KubeCsiNode.GVK,
+      ...toJson_KubeCsiNodeProps(resolved),
     };
   }
 }
@@ -6724,7 +6724,7 @@ export class CsiNode extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1.CSINodeList
  */
-export class CsiNodeList extends ApiObject {
+export class KubeCsiNodeList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1.CSINodeList"
    */
@@ -6740,10 +6740,10 @@ export class CsiNodeList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CsiNodeListProps): any {
+  public static manifest(props: KubeCsiNodeListProps): any {
     return {
-      ...CsiNodeList.GVK,
-      ...toJson_CsiNodeListProps(props),
+      ...KubeCsiNodeList.GVK,
+      ...toJson_KubeCsiNodeListProps(props),
     };
   }
 
@@ -6753,9 +6753,9 @@ export class CsiNodeList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CsiNodeListProps) {
+  public constructor(scope: Construct, id: string, props: KubeCsiNodeListProps) {
     super(scope, id, {
-      ...CsiNodeList.GVK,
+      ...KubeCsiNodeList.GVK,
       ...props,
     });
   }
@@ -6767,8 +6767,8 @@ export class CsiNodeList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CsiNodeList.GVK,
-      ...toJson_CsiNodeListProps(resolved),
+      ...KubeCsiNodeList.GVK,
+      ...toJson_KubeCsiNodeListProps(resolved),
     };
   }
 }
@@ -6780,7 +6780,7 @@ StorageClasses are non-namespaced; the name of the storage class according to et
  *
  * @schema io.k8s.api.storage.v1.StorageClass
  */
-export class StorageClass extends ApiObject {
+export class KubeStorageClass extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1.StorageClass"
    */
@@ -6796,10 +6796,10 @@ export class StorageClass extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: StorageClassProps): any {
+  public static manifest(props: KubeStorageClassProps): any {
     return {
-      ...StorageClass.GVK,
-      ...toJson_StorageClassProps(props),
+      ...KubeStorageClass.GVK,
+      ...toJson_KubeStorageClassProps(props),
     };
   }
 
@@ -6809,9 +6809,9 @@ export class StorageClass extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: StorageClassProps) {
+  public constructor(scope: Construct, id: string, props: KubeStorageClassProps) {
     super(scope, id, {
-      ...StorageClass.GVK,
+      ...KubeStorageClass.GVK,
       ...props,
     });
   }
@@ -6823,8 +6823,8 @@ export class StorageClass extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...StorageClass.GVK,
-      ...toJson_StorageClassProps(resolved),
+      ...KubeStorageClass.GVK,
+      ...toJson_KubeStorageClassProps(resolved),
     };
   }
 }
@@ -6834,7 +6834,7 @@ export class StorageClass extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1.StorageClassList
  */
-export class StorageClassList extends ApiObject {
+export class KubeStorageClassList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1.StorageClassList"
    */
@@ -6850,10 +6850,10 @@ export class StorageClassList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: StorageClassListProps): any {
+  public static manifest(props: KubeStorageClassListProps): any {
     return {
-      ...StorageClassList.GVK,
-      ...toJson_StorageClassListProps(props),
+      ...KubeStorageClassList.GVK,
+      ...toJson_KubeStorageClassListProps(props),
     };
   }
 
@@ -6863,9 +6863,9 @@ export class StorageClassList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: StorageClassListProps) {
+  public constructor(scope: Construct, id: string, props: KubeStorageClassListProps) {
     super(scope, id, {
-      ...StorageClassList.GVK,
+      ...KubeStorageClassList.GVK,
       ...props,
     });
   }
@@ -6877,8 +6877,8 @@ export class StorageClassList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...StorageClassList.GVK,
-      ...toJson_StorageClassListProps(resolved),
+      ...KubeStorageClassList.GVK,
+      ...toJson_KubeStorageClassListProps(resolved),
     };
   }
 }
@@ -6890,7 +6890,7 @@ VolumeAttachment objects are non-namespaced.
  *
  * @schema io.k8s.api.storage.v1.VolumeAttachment
  */
-export class VolumeAttachment extends ApiObject {
+export class KubeVolumeAttachment extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1.VolumeAttachment"
    */
@@ -6906,10 +6906,10 @@ export class VolumeAttachment extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: VolumeAttachmentProps): any {
+  public static manifest(props: KubeVolumeAttachmentProps): any {
     return {
-      ...VolumeAttachment.GVK,
-      ...toJson_VolumeAttachmentProps(props),
+      ...KubeVolumeAttachment.GVK,
+      ...toJson_KubeVolumeAttachmentProps(props),
     };
   }
 
@@ -6919,9 +6919,9 @@ export class VolumeAttachment extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: VolumeAttachmentProps) {
+  public constructor(scope: Construct, id: string, props: KubeVolumeAttachmentProps) {
     super(scope, id, {
-      ...VolumeAttachment.GVK,
+      ...KubeVolumeAttachment.GVK,
       ...props,
     });
   }
@@ -6933,8 +6933,8 @@ export class VolumeAttachment extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...VolumeAttachment.GVK,
-      ...toJson_VolumeAttachmentProps(resolved),
+      ...KubeVolumeAttachment.GVK,
+      ...toJson_KubeVolumeAttachmentProps(resolved),
     };
   }
 }
@@ -6944,7 +6944,7 @@ export class VolumeAttachment extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1.VolumeAttachmentList
  */
-export class VolumeAttachmentList extends ApiObject {
+export class KubeVolumeAttachmentList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1.VolumeAttachmentList"
    */
@@ -6960,10 +6960,10 @@ export class VolumeAttachmentList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: VolumeAttachmentListProps): any {
+  public static manifest(props: KubeVolumeAttachmentListProps): any {
     return {
-      ...VolumeAttachmentList.GVK,
-      ...toJson_VolumeAttachmentListProps(props),
+      ...KubeVolumeAttachmentList.GVK,
+      ...toJson_KubeVolumeAttachmentListProps(props),
     };
   }
 
@@ -6973,9 +6973,9 @@ export class VolumeAttachmentList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: VolumeAttachmentListProps) {
+  public constructor(scope: Construct, id: string, props: KubeVolumeAttachmentListProps) {
     super(scope, id, {
-      ...VolumeAttachmentList.GVK,
+      ...KubeVolumeAttachmentList.GVK,
       ...props,
     });
   }
@@ -6987,8 +6987,8 @@ export class VolumeAttachmentList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...VolumeAttachmentList.GVK,
-      ...toJson_VolumeAttachmentListProps(resolved),
+      ...KubeVolumeAttachmentList.GVK,
+      ...toJson_KubeVolumeAttachmentListProps(resolved),
     };
   }
 }
@@ -7006,7 +7006,7 @@ They are consumed by the kube-scheduler if the CSIStorageCapacity beta feature g
  *
  * @schema io.k8s.api.storage.v1alpha1.CSIStorageCapacity
  */
-export class CsiStorageCapacityV1Alpha1 extends ApiObject {
+export class KubeCsiStorageCapacityV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1alpha1.CSIStorageCapacity"
    */
@@ -7022,10 +7022,10 @@ export class CsiStorageCapacityV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CsiStorageCapacityV1Alpha1Props): any {
+  public static manifest(props: KubeCsiStorageCapacityV1Alpha1Props): any {
     return {
-      ...CsiStorageCapacityV1Alpha1.GVK,
-      ...toJson_CsiStorageCapacityV1Alpha1Props(props),
+      ...KubeCsiStorageCapacityV1Alpha1.GVK,
+      ...toJson_KubeCsiStorageCapacityV1Alpha1Props(props),
     };
   }
 
@@ -7035,9 +7035,9 @@ export class CsiStorageCapacityV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CsiStorageCapacityV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeCsiStorageCapacityV1Alpha1Props) {
     super(scope, id, {
-      ...CsiStorageCapacityV1Alpha1.GVK,
+      ...KubeCsiStorageCapacityV1Alpha1.GVK,
       ...props,
     });
   }
@@ -7049,8 +7049,8 @@ export class CsiStorageCapacityV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CsiStorageCapacityV1Alpha1.GVK,
-      ...toJson_CsiStorageCapacityV1Alpha1Props(resolved),
+      ...KubeCsiStorageCapacityV1Alpha1.GVK,
+      ...toJson_KubeCsiStorageCapacityV1Alpha1Props(resolved),
     };
   }
 }
@@ -7060,7 +7060,7 @@ export class CsiStorageCapacityV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1alpha1.CSIStorageCapacityList
  */
-export class CsiStorageCapacityListV1Alpha1 extends ApiObject {
+export class KubeCsiStorageCapacityListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1alpha1.CSIStorageCapacityList"
    */
@@ -7076,10 +7076,10 @@ export class CsiStorageCapacityListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CsiStorageCapacityListV1Alpha1Props): any {
+  public static manifest(props: KubeCsiStorageCapacityListV1Alpha1Props): any {
     return {
-      ...CsiStorageCapacityListV1Alpha1.GVK,
-      ...toJson_CsiStorageCapacityListV1Alpha1Props(props),
+      ...KubeCsiStorageCapacityListV1Alpha1.GVK,
+      ...toJson_KubeCsiStorageCapacityListV1Alpha1Props(props),
     };
   }
 
@@ -7089,9 +7089,9 @@ export class CsiStorageCapacityListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CsiStorageCapacityListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeCsiStorageCapacityListV1Alpha1Props) {
     super(scope, id, {
-      ...CsiStorageCapacityListV1Alpha1.GVK,
+      ...KubeCsiStorageCapacityListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -7103,8 +7103,8 @@ export class CsiStorageCapacityListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CsiStorageCapacityListV1Alpha1.GVK,
-      ...toJson_CsiStorageCapacityListV1Alpha1Props(resolved),
+      ...KubeCsiStorageCapacityListV1Alpha1.GVK,
+      ...toJson_KubeCsiStorageCapacityListV1Alpha1Props(resolved),
     };
   }
 }
@@ -7116,7 +7116,7 @@ VolumeAttachment objects are non-namespaced.
  *
  * @schema io.k8s.api.storage.v1alpha1.VolumeAttachment
  */
-export class VolumeAttachmentV1Alpha1 extends ApiObject {
+export class KubeVolumeAttachmentV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1alpha1.VolumeAttachment"
    */
@@ -7132,10 +7132,10 @@ export class VolumeAttachmentV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: VolumeAttachmentV1Alpha1Props): any {
+  public static manifest(props: KubeVolumeAttachmentV1Alpha1Props): any {
     return {
-      ...VolumeAttachmentV1Alpha1.GVK,
-      ...toJson_VolumeAttachmentV1Alpha1Props(props),
+      ...KubeVolumeAttachmentV1Alpha1.GVK,
+      ...toJson_KubeVolumeAttachmentV1Alpha1Props(props),
     };
   }
 
@@ -7145,9 +7145,9 @@ export class VolumeAttachmentV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: VolumeAttachmentV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeVolumeAttachmentV1Alpha1Props) {
     super(scope, id, {
-      ...VolumeAttachmentV1Alpha1.GVK,
+      ...KubeVolumeAttachmentV1Alpha1.GVK,
       ...props,
     });
   }
@@ -7159,8 +7159,8 @@ export class VolumeAttachmentV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...VolumeAttachmentV1Alpha1.GVK,
-      ...toJson_VolumeAttachmentV1Alpha1Props(resolved),
+      ...KubeVolumeAttachmentV1Alpha1.GVK,
+      ...toJson_KubeVolumeAttachmentV1Alpha1Props(resolved),
     };
   }
 }
@@ -7170,7 +7170,7 @@ export class VolumeAttachmentV1Alpha1 extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1alpha1.VolumeAttachmentList
  */
-export class VolumeAttachmentListV1Alpha1 extends ApiObject {
+export class KubeVolumeAttachmentListV1Alpha1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1alpha1.VolumeAttachmentList"
    */
@@ -7186,10 +7186,10 @@ export class VolumeAttachmentListV1Alpha1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: VolumeAttachmentListV1Alpha1Props): any {
+  public static manifest(props: KubeVolumeAttachmentListV1Alpha1Props): any {
     return {
-      ...VolumeAttachmentListV1Alpha1.GVK,
-      ...toJson_VolumeAttachmentListV1Alpha1Props(props),
+      ...KubeVolumeAttachmentListV1Alpha1.GVK,
+      ...toJson_KubeVolumeAttachmentListV1Alpha1Props(props),
     };
   }
 
@@ -7199,9 +7199,9 @@ export class VolumeAttachmentListV1Alpha1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: VolumeAttachmentListV1Alpha1Props) {
+  public constructor(scope: Construct, id: string, props: KubeVolumeAttachmentListV1Alpha1Props) {
     super(scope, id, {
-      ...VolumeAttachmentListV1Alpha1.GVK,
+      ...KubeVolumeAttachmentListV1Alpha1.GVK,
       ...props,
     });
   }
@@ -7213,8 +7213,8 @@ export class VolumeAttachmentListV1Alpha1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...VolumeAttachmentListV1Alpha1.GVK,
-      ...toJson_VolumeAttachmentListV1Alpha1Props(resolved),
+      ...KubeVolumeAttachmentListV1Alpha1.GVK,
+      ...toJson_KubeVolumeAttachmentListV1Alpha1Props(resolved),
     };
   }
 }
@@ -7232,7 +7232,7 @@ They are consumed by the kube-scheduler if the CSIStorageCapacity beta feature g
  *
  * @schema io.k8s.api.storage.v1beta1.CSIStorageCapacity
  */
-export class CsiStorageCapacityV1Beta1 extends ApiObject {
+export class KubeCsiStorageCapacityV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1beta1.CSIStorageCapacity"
    */
@@ -7248,10 +7248,10 @@ export class CsiStorageCapacityV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CsiStorageCapacityV1Beta1Props): any {
+  public static manifest(props: KubeCsiStorageCapacityV1Beta1Props): any {
     return {
-      ...CsiStorageCapacityV1Beta1.GVK,
-      ...toJson_CsiStorageCapacityV1Beta1Props(props),
+      ...KubeCsiStorageCapacityV1Beta1.GVK,
+      ...toJson_KubeCsiStorageCapacityV1Beta1Props(props),
     };
   }
 
@@ -7261,9 +7261,9 @@ export class CsiStorageCapacityV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CsiStorageCapacityV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeCsiStorageCapacityV1Beta1Props) {
     super(scope, id, {
-      ...CsiStorageCapacityV1Beta1.GVK,
+      ...KubeCsiStorageCapacityV1Beta1.GVK,
       ...props,
     });
   }
@@ -7275,8 +7275,8 @@ export class CsiStorageCapacityV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CsiStorageCapacityV1Beta1.GVK,
-      ...toJson_CsiStorageCapacityV1Beta1Props(resolved),
+      ...KubeCsiStorageCapacityV1Beta1.GVK,
+      ...toJson_KubeCsiStorageCapacityV1Beta1Props(resolved),
     };
   }
 }
@@ -7286,7 +7286,7 @@ export class CsiStorageCapacityV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.api.storage.v1beta1.CSIStorageCapacityList
  */
-export class CsiStorageCapacityListV1Beta1 extends ApiObject {
+export class KubeCsiStorageCapacityListV1Beta1 extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.api.storage.v1beta1.CSIStorageCapacityList"
    */
@@ -7302,10 +7302,10 @@ export class CsiStorageCapacityListV1Beta1 extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CsiStorageCapacityListV1Beta1Props): any {
+  public static manifest(props: KubeCsiStorageCapacityListV1Beta1Props): any {
     return {
-      ...CsiStorageCapacityListV1Beta1.GVK,
-      ...toJson_CsiStorageCapacityListV1Beta1Props(props),
+      ...KubeCsiStorageCapacityListV1Beta1.GVK,
+      ...toJson_KubeCsiStorageCapacityListV1Beta1Props(props),
     };
   }
 
@@ -7315,9 +7315,9 @@ export class CsiStorageCapacityListV1Beta1 extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CsiStorageCapacityListV1Beta1Props) {
+  public constructor(scope: Construct, id: string, props: KubeCsiStorageCapacityListV1Beta1Props) {
     super(scope, id, {
-      ...CsiStorageCapacityListV1Beta1.GVK,
+      ...KubeCsiStorageCapacityListV1Beta1.GVK,
       ...props,
     });
   }
@@ -7329,8 +7329,8 @@ export class CsiStorageCapacityListV1Beta1 extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CsiStorageCapacityListV1Beta1.GVK,
-      ...toJson_CsiStorageCapacityListV1Beta1Props(resolved),
+      ...KubeCsiStorageCapacityListV1Beta1.GVK,
+      ...toJson_KubeCsiStorageCapacityListV1Beta1Props(resolved),
     };
   }
 }
@@ -7340,7 +7340,7 @@ export class CsiStorageCapacityListV1Beta1 extends ApiObject {
  *
  * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinition
  */
-export class CustomResourceDefinition extends ApiObject {
+export class KubeCustomResourceDefinition extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinition"
    */
@@ -7356,10 +7356,10 @@ export class CustomResourceDefinition extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CustomResourceDefinitionProps): any {
+  public static manifest(props: KubeCustomResourceDefinitionProps): any {
     return {
-      ...CustomResourceDefinition.GVK,
-      ...toJson_CustomResourceDefinitionProps(props),
+      ...KubeCustomResourceDefinition.GVK,
+      ...toJson_KubeCustomResourceDefinitionProps(props),
     };
   }
 
@@ -7369,9 +7369,9 @@ export class CustomResourceDefinition extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CustomResourceDefinitionProps) {
+  public constructor(scope: Construct, id: string, props: KubeCustomResourceDefinitionProps) {
     super(scope, id, {
-      ...CustomResourceDefinition.GVK,
+      ...KubeCustomResourceDefinition.GVK,
       ...props,
     });
   }
@@ -7383,8 +7383,8 @@ export class CustomResourceDefinition extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CustomResourceDefinition.GVK,
-      ...toJson_CustomResourceDefinitionProps(resolved),
+      ...KubeCustomResourceDefinition.GVK,
+      ...toJson_KubeCustomResourceDefinitionProps(resolved),
     };
   }
 }
@@ -7394,7 +7394,7 @@ export class CustomResourceDefinition extends ApiObject {
  *
  * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionList
  */
-export class CustomResourceDefinitionList extends ApiObject {
+export class KubeCustomResourceDefinitionList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionList"
    */
@@ -7410,10 +7410,10 @@ export class CustomResourceDefinitionList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: CustomResourceDefinitionListProps): any {
+  public static manifest(props: KubeCustomResourceDefinitionListProps): any {
     return {
-      ...CustomResourceDefinitionList.GVK,
-      ...toJson_CustomResourceDefinitionListProps(props),
+      ...KubeCustomResourceDefinitionList.GVK,
+      ...toJson_KubeCustomResourceDefinitionListProps(props),
     };
   }
 
@@ -7423,9 +7423,9 @@ export class CustomResourceDefinitionList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: CustomResourceDefinitionListProps) {
+  public constructor(scope: Construct, id: string, props: KubeCustomResourceDefinitionListProps) {
     super(scope, id, {
-      ...CustomResourceDefinitionList.GVK,
+      ...KubeCustomResourceDefinitionList.GVK,
       ...props,
     });
   }
@@ -7437,8 +7437,8 @@ export class CustomResourceDefinitionList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...CustomResourceDefinitionList.GVK,
-      ...toJson_CustomResourceDefinitionListProps(resolved),
+      ...KubeCustomResourceDefinitionList.GVK,
+      ...toJson_KubeCustomResourceDefinitionListProps(resolved),
     };
   }
 }
@@ -7448,7 +7448,7 @@ export class CustomResourceDefinitionList extends ApiObject {
  *
  * @schema io.k8s.apimachinery.pkg.apis.meta.v1.Status
  */
-export class Status extends ApiObject {
+export class KubeStatus extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.apimachinery.pkg.apis.meta.v1.Status"
    */
@@ -7464,10 +7464,10 @@ export class Status extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: StatusProps = {}): any {
+  public static manifest(props: KubeStatusProps = {}): any {
     return {
-      ...Status.GVK,
-      ...toJson_StatusProps(props),
+      ...KubeStatus.GVK,
+      ...toJson_KubeStatusProps(props),
     };
   }
 
@@ -7477,9 +7477,9 @@ export class Status extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: StatusProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeStatusProps = {}) {
     super(scope, id, {
-      ...Status.GVK,
+      ...KubeStatus.GVK,
       ...props,
     });
   }
@@ -7491,8 +7491,8 @@ export class Status extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...Status.GVK,
-      ...toJson_StatusProps(resolved),
+      ...KubeStatus.GVK,
+      ...toJson_KubeStatusProps(resolved),
     };
   }
 }
@@ -7502,7 +7502,7 @@ export class Status extends ApiObject {
  *
  * @schema io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIService
  */
-export class ApiService extends ApiObject {
+export class KubeApiService extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIService"
    */
@@ -7518,10 +7518,10 @@ export class ApiService extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ApiServiceProps = {}): any {
+  public static manifest(props: KubeApiServiceProps = {}): any {
     return {
-      ...ApiService.GVK,
-      ...toJson_ApiServiceProps(props),
+      ...KubeApiService.GVK,
+      ...toJson_KubeApiServiceProps(props),
     };
   }
 
@@ -7531,9 +7531,9 @@ export class ApiService extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ApiServiceProps = {}) {
+  public constructor(scope: Construct, id: string, props: KubeApiServiceProps = {}) {
     super(scope, id, {
-      ...ApiService.GVK,
+      ...KubeApiService.GVK,
       ...props,
     });
   }
@@ -7545,8 +7545,8 @@ export class ApiService extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ApiService.GVK,
-      ...toJson_ApiServiceProps(resolved),
+      ...KubeApiService.GVK,
+      ...toJson_KubeApiServiceProps(resolved),
     };
   }
 }
@@ -7556,7 +7556,7 @@ export class ApiService extends ApiObject {
  *
  * @schema io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceList
  */
-export class ApiServiceList extends ApiObject {
+export class KubeApiServiceList extends ApiObject {
   /**
    * Returns the apiVersion and kind for "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceList"
    */
@@ -7572,10 +7572,10 @@ export class ApiServiceList extends ApiObject {
    *
    * @param props initialization props
    */
-  public static manifest(props: ApiServiceListProps): any {
+  public static manifest(props: KubeApiServiceListProps): any {
     return {
-      ...ApiServiceList.GVK,
-      ...toJson_ApiServiceListProps(props),
+      ...KubeApiServiceList.GVK,
+      ...toJson_KubeApiServiceListProps(props),
     };
   }
 
@@ -7585,9 +7585,9 @@ export class ApiServiceList extends ApiObject {
    * @param id a scope-local name for the object
    * @param props initialization props
    */
-  public constructor(scope: Construct, id: string, props: ApiServiceListProps) {
+  public constructor(scope: Construct, id: string, props: KubeApiServiceListProps) {
     super(scope, id, {
-      ...ApiServiceList.GVK,
+      ...KubeApiServiceList.GVK,
       ...props,
     });
   }
@@ -7599,8 +7599,8 @@ export class ApiServiceList extends ApiObject {
     const resolved = super.toJson();
 
     return {
-      ...ApiServiceList.GVK,
-      ...toJson_ApiServiceListProps(resolved),
+      ...KubeApiServiceList.GVK,
+      ...toJson_KubeApiServiceListProps(resolved),
     };
   }
 }
@@ -7610,7 +7610,7 @@ export class ApiServiceList extends ApiObject {
  *
  * @schema io.k8s.api.admissionregistration.v1.MutatingWebhookConfiguration
  */
-export interface MutatingWebhookConfigurationProps {
+export interface KubeMutatingWebhookConfigurationProps {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.
    *
@@ -7627,11 +7627,11 @@ export interface MutatingWebhookConfigurationProps {
 }
 
 /**
- * Converts an object of type 'MutatingWebhookConfigurationProps' to JSON representation.
+ * Converts an object of type 'KubeMutatingWebhookConfigurationProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_MutatingWebhookConfigurationProps(
-  obj: MutatingWebhookConfigurationProps | undefined,
+export function toJson_KubeMutatingWebhookConfigurationProps(
+  obj: KubeMutatingWebhookConfigurationProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -7650,13 +7650,13 @@ export function toJson_MutatingWebhookConfigurationProps(
  *
  * @schema io.k8s.api.admissionregistration.v1.MutatingWebhookConfigurationList
  */
-export interface MutatingWebhookConfigurationListProps {
+export interface KubeMutatingWebhookConfigurationListProps {
   /**
    * List of MutatingWebhookConfiguration.
    *
    * @schema io.k8s.api.admissionregistration.v1.MutatingWebhookConfigurationList#items
    */
-  readonly items: MutatingWebhookConfiguration[];
+  readonly items: KubeMutatingWebhookConfigurationProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -7667,17 +7667,17 @@ export interface MutatingWebhookConfigurationListProps {
 }
 
 /**
- * Converts an object of type 'MutatingWebhookConfigurationListProps' to JSON representation.
+ * Converts an object of type 'KubeMutatingWebhookConfigurationListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_MutatingWebhookConfigurationListProps(
-  obj: MutatingWebhookConfigurationListProps | undefined,
+export function toJson_KubeMutatingWebhookConfigurationListProps(
+  obj: KubeMutatingWebhookConfigurationListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeMutatingWebhookConfigurationProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -7690,7 +7690,7 @@ export function toJson_MutatingWebhookConfigurationListProps(
  *
  * @schema io.k8s.api.admissionregistration.v1.ValidatingWebhookConfiguration
  */
-export interface ValidatingWebhookConfigurationProps {
+export interface KubeValidatingWebhookConfigurationProps {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.
    *
@@ -7707,11 +7707,11 @@ export interface ValidatingWebhookConfigurationProps {
 }
 
 /**
- * Converts an object of type 'ValidatingWebhookConfigurationProps' to JSON representation.
+ * Converts an object of type 'KubeValidatingWebhookConfigurationProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ValidatingWebhookConfigurationProps(
-  obj: ValidatingWebhookConfigurationProps | undefined,
+export function toJson_KubeValidatingWebhookConfigurationProps(
+  obj: KubeValidatingWebhookConfigurationProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -7730,13 +7730,13 @@ export function toJson_ValidatingWebhookConfigurationProps(
  *
  * @schema io.k8s.api.admissionregistration.v1.ValidatingWebhookConfigurationList
  */
-export interface ValidatingWebhookConfigurationListProps {
+export interface KubeValidatingWebhookConfigurationListProps {
   /**
    * List of ValidatingWebhookConfiguration.
    *
    * @schema io.k8s.api.admissionregistration.v1.ValidatingWebhookConfigurationList#items
    */
-  readonly items: ValidatingWebhookConfiguration[];
+  readonly items: KubeValidatingWebhookConfigurationProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -7747,17 +7747,17 @@ export interface ValidatingWebhookConfigurationListProps {
 }
 
 /**
- * Converts an object of type 'ValidatingWebhookConfigurationListProps' to JSON representation.
+ * Converts an object of type 'KubeValidatingWebhookConfigurationListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ValidatingWebhookConfigurationListProps(
-  obj: ValidatingWebhookConfigurationListProps | undefined,
+export function toJson_KubeValidatingWebhookConfigurationListProps(
+  obj: KubeValidatingWebhookConfigurationListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeValidatingWebhookConfigurationProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -7771,7 +7771,7 @@ export function toJson_ValidatingWebhookConfigurationListProps(
  *
  * @schema io.k8s.api.apiserverinternal.v1alpha1.StorageVersion
  */
-export interface StorageVersionV1Alpha1Props {
+export interface KubeStorageVersionV1Alpha1Props {
   /**
    * The name is <group>.<resource>.
    *
@@ -7788,11 +7788,11 @@ export interface StorageVersionV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'StorageVersionV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeStorageVersionV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_StorageVersionV1Alpha1Props(
-  obj: StorageVersionV1Alpha1Props | undefined,
+export function toJson_KubeStorageVersionV1Alpha1Props(
+  obj: KubeStorageVersionV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -7811,13 +7811,13 @@ export function toJson_StorageVersionV1Alpha1Props(
  *
  * @schema io.k8s.api.apiserverinternal.v1alpha1.StorageVersionList
  */
-export interface StorageVersionListV1Alpha1Props {
+export interface KubeStorageVersionListV1Alpha1Props {
   /**
    * Items holds a list of StorageVersion
    *
    * @schema io.k8s.api.apiserverinternal.v1alpha1.StorageVersionList#items
    */
-  readonly items: StorageVersionV1Alpha1[];
+  readonly items: KubeStorageVersionV1Alpha1Props[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -7828,17 +7828,17 @@ export interface StorageVersionListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'StorageVersionListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeStorageVersionListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_StorageVersionListV1Alpha1Props(
-  obj: StorageVersionListV1Alpha1Props | undefined,
+export function toJson_KubeStorageVersionListV1Alpha1Props(
+  obj: KubeStorageVersionListV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeStorageVersionV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -7851,7 +7851,7 @@ export function toJson_StorageVersionListV1Alpha1Props(
  *
  * @schema io.k8s.api.apps.v1.ControllerRevision
  */
-export interface ControllerRevisionProps {
+export interface KubeControllerRevisionProps {
   /**
    * Data is the serialized representation of the state.
    *
@@ -7875,11 +7875,11 @@ export interface ControllerRevisionProps {
 }
 
 /**
- * Converts an object of type 'ControllerRevisionProps' to JSON representation.
+ * Converts an object of type 'KubeControllerRevisionProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ControllerRevisionProps(
-  obj: ControllerRevisionProps | undefined,
+export function toJson_KubeControllerRevisionProps(
+  obj: KubeControllerRevisionProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -7899,13 +7899,13 @@ export function toJson_ControllerRevisionProps(
  *
  * @schema io.k8s.api.apps.v1.ControllerRevisionList
  */
-export interface ControllerRevisionListProps {
+export interface KubeControllerRevisionListProps {
   /**
    * Items is the list of ControllerRevisions
    *
    * @schema io.k8s.api.apps.v1.ControllerRevisionList#items
    */
-  readonly items: ControllerRevision[];
+  readonly items: KubeControllerRevisionProps[];
 
   /**
    * More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -7916,17 +7916,17 @@ export interface ControllerRevisionListProps {
 }
 
 /**
- * Converts an object of type 'ControllerRevisionListProps' to JSON representation.
+ * Converts an object of type 'KubeControllerRevisionListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ControllerRevisionListProps(
-  obj: ControllerRevisionListProps | undefined,
+export function toJson_KubeControllerRevisionListProps(
+  obj: KubeControllerRevisionListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeControllerRevisionProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -7939,7 +7939,7 @@ export function toJson_ControllerRevisionListProps(
  *
  * @schema io.k8s.api.apps.v1.DaemonSet
  */
-export interface DaemonSetProps {
+export interface KubeDaemonSetProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -7956,10 +7956,10 @@ export interface DaemonSetProps {
 }
 
 /**
- * Converts an object of type 'DaemonSetProps' to JSON representation.
+ * Converts an object of type 'KubeDaemonSetProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_DaemonSetProps(obj: DaemonSetProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeDaemonSetProps(obj: KubeDaemonSetProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -7977,13 +7977,13 @@ export function toJson_DaemonSetProps(obj: DaemonSetProps | undefined): Record<s
  *
  * @schema io.k8s.api.apps.v1.DaemonSetList
  */
-export interface DaemonSetListProps {
+export interface KubeDaemonSetListProps {
   /**
    * A list of daemon sets.
    *
    * @schema io.k8s.api.apps.v1.DaemonSetList#items
    */
-  readonly items: DaemonSet[];
+  readonly items: KubeDaemonSetProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -7994,15 +7994,17 @@ export interface DaemonSetListProps {
 }
 
 /**
- * Converts an object of type 'DaemonSetListProps' to JSON representation.
+ * Converts an object of type 'KubeDaemonSetListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_DaemonSetListProps(obj: DaemonSetListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeDaemonSetListProps(
+  obj: KubeDaemonSetListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeDaemonSetProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8015,7 +8017,7 @@ export function toJson_DaemonSetListProps(obj: DaemonSetListProps | undefined): 
  *
  * @schema io.k8s.api.apps.v1.Deployment
  */
-export interface DeploymentProps {
+export interface KubeDeploymentProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8032,10 +8034,10 @@ export interface DeploymentProps {
 }
 
 /**
- * Converts an object of type 'DeploymentProps' to JSON representation.
+ * Converts an object of type 'KubeDeploymentProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_DeploymentProps(obj: DeploymentProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeDeploymentProps(obj: KubeDeploymentProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8053,13 +8055,13 @@ export function toJson_DeploymentProps(obj: DeploymentProps | undefined): Record
  *
  * @schema io.k8s.api.apps.v1.DeploymentList
  */
-export interface DeploymentListProps {
+export interface KubeDeploymentListProps {
   /**
    * Items is the list of Deployments.
    *
    * @schema io.k8s.api.apps.v1.DeploymentList#items
    */
-  readonly items: Deployment[];
+  readonly items: KubeDeploymentProps[];
 
   /**
    * Standard list metadata.
@@ -8070,15 +8072,17 @@ export interface DeploymentListProps {
 }
 
 /**
- * Converts an object of type 'DeploymentListProps' to JSON representation.
+ * Converts an object of type 'KubeDeploymentListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_DeploymentListProps(obj: DeploymentListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeDeploymentListProps(
+  obj: KubeDeploymentListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeDeploymentProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8091,7 +8095,7 @@ export function toJson_DeploymentListProps(obj: DeploymentListProps | undefined)
  *
  * @schema io.k8s.api.apps.v1.ReplicaSet
  */
-export interface ReplicaSetProps {
+export interface KubeReplicaSetProps {
   /**
    * If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8108,10 +8112,10 @@ export interface ReplicaSetProps {
 }
 
 /**
- * Converts an object of type 'ReplicaSetProps' to JSON representation.
+ * Converts an object of type 'KubeReplicaSetProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ReplicaSetProps(obj: ReplicaSetProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeReplicaSetProps(obj: KubeReplicaSetProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8129,13 +8133,13 @@ export function toJson_ReplicaSetProps(obj: ReplicaSetProps | undefined): Record
  *
  * @schema io.k8s.api.apps.v1.ReplicaSetList
  */
-export interface ReplicaSetListProps {
+export interface KubeReplicaSetListProps {
   /**
    * List of ReplicaSets. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    *
    * @schema io.k8s.api.apps.v1.ReplicaSetList#items
    */
-  readonly items: ReplicaSet[];
+  readonly items: KubeReplicaSetProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -8146,15 +8150,17 @@ export interface ReplicaSetListProps {
 }
 
 /**
- * Converts an object of type 'ReplicaSetListProps' to JSON representation.
+ * Converts an object of type 'KubeReplicaSetListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ReplicaSetListProps(obj: ReplicaSetListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeReplicaSetListProps(
+  obj: KubeReplicaSetListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeReplicaSetProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8170,7 +8176,7 @@ export function toJson_ReplicaSetListProps(obj: ReplicaSetListProps | undefined)
  *
  * @schema io.k8s.api.apps.v1.StatefulSet
  */
-export interface StatefulSetProps {
+export interface KubeStatefulSetProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8187,10 +8193,10 @@ export interface StatefulSetProps {
 }
 
 /**
- * Converts an object of type 'StatefulSetProps' to JSON representation.
+ * Converts an object of type 'KubeStatefulSetProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_StatefulSetProps(obj: StatefulSetProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeStatefulSetProps(obj: KubeStatefulSetProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8208,13 +8214,13 @@ export function toJson_StatefulSetProps(obj: StatefulSetProps | undefined): Reco
  *
  * @schema io.k8s.api.apps.v1.StatefulSetList
  */
-export interface StatefulSetListProps {
+export interface KubeStatefulSetListProps {
   /**
    * Items is the list of stateful sets.
    *
    * @schema io.k8s.api.apps.v1.StatefulSetList#items
    */
-  readonly items: StatefulSet[];
+  readonly items: KubeStatefulSetProps[];
 
   /**
    * Standard list's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -8225,15 +8231,17 @@ export interface StatefulSetListProps {
 }
 
 /**
- * Converts an object of type 'StatefulSetListProps' to JSON representation.
+ * Converts an object of type 'KubeStatefulSetListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_StatefulSetListProps(obj: StatefulSetListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeStatefulSetListProps(
+  obj: KubeStatefulSetListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeStatefulSetProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8246,7 +8254,7 @@ export function toJson_StatefulSetListProps(obj: StatefulSetListProps | undefine
  *
  * @schema io.k8s.api.authentication.v1.TokenRequest
  */
-export interface TokenRequestProps {
+export interface KubeTokenRequestProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8263,10 +8271,10 @@ export interface TokenRequestProps {
 }
 
 /**
- * Converts an object of type 'TokenRequestProps' to JSON representation.
+ * Converts an object of type 'KubeTokenRequestProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_TokenRequestProps(obj: TokenRequestProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeTokenRequestProps(obj: KubeTokenRequestProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8284,7 +8292,7 @@ export function toJson_TokenRequestProps(obj: TokenRequestProps | undefined): Re
  *
  * @schema io.k8s.api.authentication.v1.TokenReview
  */
-export interface TokenReviewProps {
+export interface KubeTokenReviewProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8301,10 +8309,10 @@ export interface TokenReviewProps {
 }
 
 /**
- * Converts an object of type 'TokenReviewProps' to JSON representation.
+ * Converts an object of type 'KubeTokenReviewProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_TokenReviewProps(obj: TokenReviewProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeTokenReviewProps(obj: KubeTokenReviewProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8322,7 +8330,7 @@ export function toJson_TokenReviewProps(obj: TokenReviewProps | undefined): Reco
  *
  * @schema io.k8s.api.authorization.v1.LocalSubjectAccessReview
  */
-export interface LocalSubjectAccessReviewProps {
+export interface KubeLocalSubjectAccessReviewProps {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8339,11 +8347,11 @@ export interface LocalSubjectAccessReviewProps {
 }
 
 /**
- * Converts an object of type 'LocalSubjectAccessReviewProps' to JSON representation.
+ * Converts an object of type 'KubeLocalSubjectAccessReviewProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_LocalSubjectAccessReviewProps(
-  obj: LocalSubjectAccessReviewProps | undefined,
+export function toJson_KubeLocalSubjectAccessReviewProps(
+  obj: KubeLocalSubjectAccessReviewProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -8362,7 +8370,7 @@ export function toJson_LocalSubjectAccessReviewProps(
  *
  * @schema io.k8s.api.authorization.v1.SelfSubjectAccessReview
  */
-export interface SelfSubjectAccessReviewProps {
+export interface KubeSelfSubjectAccessReviewProps {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8379,11 +8387,11 @@ export interface SelfSubjectAccessReviewProps {
 }
 
 /**
- * Converts an object of type 'SelfSubjectAccessReviewProps' to JSON representation.
+ * Converts an object of type 'KubeSelfSubjectAccessReviewProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_SelfSubjectAccessReviewProps(
-  obj: SelfSubjectAccessReviewProps | undefined,
+export function toJson_KubeSelfSubjectAccessReviewProps(
+  obj: KubeSelfSubjectAccessReviewProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -8402,7 +8410,7 @@ export function toJson_SelfSubjectAccessReviewProps(
  *
  * @schema io.k8s.api.authorization.v1.SelfSubjectRulesReview
  */
-export interface SelfSubjectRulesReviewProps {
+export interface KubeSelfSubjectRulesReviewProps {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8419,11 +8427,11 @@ export interface SelfSubjectRulesReviewProps {
 }
 
 /**
- * Converts an object of type 'SelfSubjectRulesReviewProps' to JSON representation.
+ * Converts an object of type 'KubeSelfSubjectRulesReviewProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_SelfSubjectRulesReviewProps(
-  obj: SelfSubjectRulesReviewProps | undefined,
+export function toJson_KubeSelfSubjectRulesReviewProps(
+  obj: KubeSelfSubjectRulesReviewProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -8442,7 +8450,7 @@ export function toJson_SelfSubjectRulesReviewProps(
  *
  * @schema io.k8s.api.authorization.v1.SubjectAccessReview
  */
-export interface SubjectAccessReviewProps {
+export interface KubeSubjectAccessReviewProps {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8459,11 +8467,11 @@ export interface SubjectAccessReviewProps {
 }
 
 /**
- * Converts an object of type 'SubjectAccessReviewProps' to JSON representation.
+ * Converts an object of type 'KubeSubjectAccessReviewProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_SubjectAccessReviewProps(
-  obj: SubjectAccessReviewProps | undefined,
+export function toJson_KubeSubjectAccessReviewProps(
+  obj: KubeSubjectAccessReviewProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -8482,7 +8490,7 @@ export function toJson_SubjectAccessReviewProps(
  *
  * @schema io.k8s.api.autoscaling.v1.HorizontalPodAutoscaler
  */
-export interface HorizontalPodAutoscalerProps {
+export interface KubeHorizontalPodAutoscalerProps {
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8499,11 +8507,11 @@ export interface HorizontalPodAutoscalerProps {
 }
 
 /**
- * Converts an object of type 'HorizontalPodAutoscalerProps' to JSON representation.
+ * Converts an object of type 'KubeHorizontalPodAutoscalerProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_HorizontalPodAutoscalerProps(
-  obj: HorizontalPodAutoscalerProps | undefined,
+export function toJson_KubeHorizontalPodAutoscalerProps(
+  obj: KubeHorizontalPodAutoscalerProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -8522,13 +8530,13 @@ export function toJson_HorizontalPodAutoscalerProps(
  *
  * @schema io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList
  */
-export interface HorizontalPodAutoscalerListProps {
+export interface KubeHorizontalPodAutoscalerListProps {
   /**
    * list of horizontal pod autoscaler objects.
    *
    * @schema io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList#items
    */
-  readonly items: HorizontalPodAutoscaler[];
+  readonly items: KubeHorizontalPodAutoscalerProps[];
 
   /**
    * Standard list metadata.
@@ -8539,17 +8547,17 @@ export interface HorizontalPodAutoscalerListProps {
 }
 
 /**
- * Converts an object of type 'HorizontalPodAutoscalerListProps' to JSON representation.
+ * Converts an object of type 'KubeHorizontalPodAutoscalerListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_HorizontalPodAutoscalerListProps(
-  obj: HorizontalPodAutoscalerListProps | undefined,
+export function toJson_KubeHorizontalPodAutoscalerListProps(
+  obj: KubeHorizontalPodAutoscalerListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeHorizontalPodAutoscalerProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8562,7 +8570,7 @@ export function toJson_HorizontalPodAutoscalerListProps(
  *
  * @schema io.k8s.api.autoscaling.v1.Scale
  */
-export interface ScaleProps {
+export interface KubeScaleProps {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.
    *
@@ -8579,10 +8587,10 @@ export interface ScaleProps {
 }
 
 /**
- * Converts an object of type 'ScaleProps' to JSON representation.
+ * Converts an object of type 'KubeScaleProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ScaleProps(obj: ScaleProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeScaleProps(obj: KubeScaleProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8600,7 +8608,7 @@ export function toJson_ScaleProps(obj: ScaleProps | undefined): Record<string, a
  *
  * @schema io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscaler
  */
-export interface HorizontalPodAutoscalerV2Beta1Props {
+export interface KubeHorizontalPodAutoscalerV2Beta1Props {
   /**
    * metadata is the standard object metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8617,11 +8625,11 @@ export interface HorizontalPodAutoscalerV2Beta1Props {
 }
 
 /**
- * Converts an object of type 'HorizontalPodAutoscalerV2Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeHorizontalPodAutoscalerV2Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_HorizontalPodAutoscalerV2Beta1Props(
-  obj: HorizontalPodAutoscalerV2Beta1Props | undefined,
+export function toJson_KubeHorizontalPodAutoscalerV2Beta1Props(
+  obj: KubeHorizontalPodAutoscalerV2Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -8640,13 +8648,13 @@ export function toJson_HorizontalPodAutoscalerV2Beta1Props(
  *
  * @schema io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList
  */
-export interface HorizontalPodAutoscalerListV2Beta1Props {
+export interface KubeHorizontalPodAutoscalerListV2Beta1Props {
   /**
    * items is the list of horizontal pod autoscaler objects.
    *
    * @schema io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList#items
    */
-  readonly items: HorizontalPodAutoscalerV2Beta1[];
+  readonly items: KubeHorizontalPodAutoscalerV2Beta1Props[];
 
   /**
    * metadata is the standard list metadata.
@@ -8657,17 +8665,17 @@ export interface HorizontalPodAutoscalerListV2Beta1Props {
 }
 
 /**
- * Converts an object of type 'HorizontalPodAutoscalerListV2Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeHorizontalPodAutoscalerListV2Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_HorizontalPodAutoscalerListV2Beta1Props(
-  obj: HorizontalPodAutoscalerListV2Beta1Props | undefined,
+export function toJson_KubeHorizontalPodAutoscalerListV2Beta1Props(
+  obj: KubeHorizontalPodAutoscalerListV2Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeHorizontalPodAutoscalerV2Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8680,7 +8688,7 @@ export function toJson_HorizontalPodAutoscalerListV2Beta1Props(
  *
  * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscaler
  */
-export interface HorizontalPodAutoscalerV2Beta2Props {
+export interface KubeHorizontalPodAutoscalerV2Beta2Props {
   /**
    * metadata is the standard object metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8697,11 +8705,11 @@ export interface HorizontalPodAutoscalerV2Beta2Props {
 }
 
 /**
- * Converts an object of type 'HorizontalPodAutoscalerV2Beta2Props' to JSON representation.
+ * Converts an object of type 'KubeHorizontalPodAutoscalerV2Beta2Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_HorizontalPodAutoscalerV2Beta2Props(
-  obj: HorizontalPodAutoscalerV2Beta2Props | undefined,
+export function toJson_KubeHorizontalPodAutoscalerV2Beta2Props(
+  obj: KubeHorizontalPodAutoscalerV2Beta2Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -8720,13 +8728,13 @@ export function toJson_HorizontalPodAutoscalerV2Beta2Props(
  *
  * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerList
  */
-export interface HorizontalPodAutoscalerListV2Beta2Props {
+export interface KubeHorizontalPodAutoscalerListV2Beta2Props {
   /**
    * items is the list of horizontal pod autoscaler objects.
    *
    * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerList#items
    */
-  readonly items: HorizontalPodAutoscalerV2Beta2[];
+  readonly items: KubeHorizontalPodAutoscalerV2Beta2Props[];
 
   /**
    * metadata is the standard list metadata.
@@ -8737,17 +8745,17 @@ export interface HorizontalPodAutoscalerListV2Beta2Props {
 }
 
 /**
- * Converts an object of type 'HorizontalPodAutoscalerListV2Beta2Props' to JSON representation.
+ * Converts an object of type 'KubeHorizontalPodAutoscalerListV2Beta2Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_HorizontalPodAutoscalerListV2Beta2Props(
-  obj: HorizontalPodAutoscalerListV2Beta2Props | undefined,
+export function toJson_KubeHorizontalPodAutoscalerListV2Beta2Props(
+  obj: KubeHorizontalPodAutoscalerListV2Beta2Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeHorizontalPodAutoscalerV2Beta2Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8760,7 +8768,7 @@ export function toJson_HorizontalPodAutoscalerListV2Beta2Props(
  *
  * @schema io.k8s.api.batch.v1.CronJob
  */
-export interface CronJobProps {
+export interface KubeCronJobProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8777,10 +8785,10 @@ export interface CronJobProps {
 }
 
 /**
- * Converts an object of type 'CronJobProps' to JSON representation.
+ * Converts an object of type 'KubeCronJobProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CronJobProps(obj: CronJobProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeCronJobProps(obj: KubeCronJobProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8798,13 +8806,13 @@ export function toJson_CronJobProps(obj: CronJobProps | undefined): Record<strin
  *
  * @schema io.k8s.api.batch.v1.CronJobList
  */
-export interface CronJobListProps {
+export interface KubeCronJobListProps {
   /**
    * items is the list of CronJobs.
    *
    * @schema io.k8s.api.batch.v1.CronJobList#items
    */
-  readonly items: CronJob[];
+  readonly items: KubeCronJobProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -8815,15 +8823,15 @@ export interface CronJobListProps {
 }
 
 /**
- * Converts an object of type 'CronJobListProps' to JSON representation.
+ * Converts an object of type 'KubeCronJobListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CronJobListProps(obj: CronJobListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeCronJobListProps(obj: KubeCronJobListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeCronJobProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8836,7 +8844,7 @@ export function toJson_CronJobListProps(obj: CronJobListProps | undefined): Reco
  *
  * @schema io.k8s.api.batch.v1.Job
  */
-export interface JobProps {
+export interface KubeJobProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8853,10 +8861,10 @@ export interface JobProps {
 }
 
 /**
- * Converts an object of type 'JobProps' to JSON representation.
+ * Converts an object of type 'KubeJobProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_JobProps(obj: JobProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeJobProps(obj: KubeJobProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8874,13 +8882,13 @@ export function toJson_JobProps(obj: JobProps | undefined): Record<string, any> 
  *
  * @schema io.k8s.api.batch.v1.JobList
  */
-export interface JobListProps {
+export interface KubeJobListProps {
   /**
    * items is the list of Jobs.
    *
    * @schema io.k8s.api.batch.v1.JobList#items
    */
-  readonly items: Job[];
+  readonly items: KubeJobProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -8891,15 +8899,15 @@ export interface JobListProps {
 }
 
 /**
- * Converts an object of type 'JobListProps' to JSON representation.
+ * Converts an object of type 'KubeJobListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_JobListProps(obj: JobListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeJobListProps(obj: KubeJobListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeJobProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8912,7 +8920,7 @@ export function toJson_JobListProps(obj: JobListProps | undefined): Record<strin
  *
  * @schema io.k8s.api.batch.v1beta1.CronJob
  */
-export interface CronJobV1Beta1Props {
+export interface KubeCronJobV1Beta1Props {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -8929,10 +8937,12 @@ export interface CronJobV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'CronJobV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeCronJobV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CronJobV1Beta1Props(obj: CronJobV1Beta1Props | undefined): Record<string, any> | undefined {
+export function toJson_KubeCronJobV1Beta1Props(
+  obj: KubeCronJobV1Beta1Props | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -8950,13 +8960,13 @@ export function toJson_CronJobV1Beta1Props(obj: CronJobV1Beta1Props | undefined)
  *
  * @schema io.k8s.api.batch.v1beta1.CronJobList
  */
-export interface CronJobListV1Beta1Props {
+export interface KubeCronJobListV1Beta1Props {
   /**
    * items is the list of CronJobs.
    *
    * @schema io.k8s.api.batch.v1beta1.CronJobList#items
    */
-  readonly items: CronJobV1Beta1[];
+  readonly items: KubeCronJobV1Beta1Props[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -8967,17 +8977,17 @@ export interface CronJobListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'CronJobListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeCronJobListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CronJobListV1Beta1Props(
-  obj: CronJobListV1Beta1Props | undefined,
+export function toJson_KubeCronJobListV1Beta1Props(
+  obj: KubeCronJobListV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeCronJobV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -8996,7 +9006,7 @@ export function toJson_CronJobListV1Beta1Props(
  *
  * @schema io.k8s.api.certificates.v1.CertificateSigningRequest
  */
-export interface CertificateSigningRequestProps {
+export interface KubeCertificateSigningRequestProps {
   /**
    * @schema io.k8s.api.certificates.v1.CertificateSigningRequest#metadata
    */
@@ -9011,11 +9021,11 @@ export interface CertificateSigningRequestProps {
 }
 
 /**
- * Converts an object of type 'CertificateSigningRequestProps' to JSON representation.
+ * Converts an object of type 'KubeCertificateSigningRequestProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CertificateSigningRequestProps(
-  obj: CertificateSigningRequestProps | undefined,
+export function toJson_KubeCertificateSigningRequestProps(
+  obj: KubeCertificateSigningRequestProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -9034,13 +9044,13 @@ export function toJson_CertificateSigningRequestProps(
  *
  * @schema io.k8s.api.certificates.v1.CertificateSigningRequestList
  */
-export interface CertificateSigningRequestListProps {
+export interface KubeCertificateSigningRequestListProps {
   /**
    * items is a collection of CertificateSigningRequest objects
    *
    * @schema io.k8s.api.certificates.v1.CertificateSigningRequestList#items
    */
-  readonly items: CertificateSigningRequest[];
+  readonly items: KubeCertificateSigningRequestProps[];
 
   /**
    * @schema io.k8s.api.certificates.v1.CertificateSigningRequestList#metadata
@@ -9049,17 +9059,17 @@ export interface CertificateSigningRequestListProps {
 }
 
 /**
- * Converts an object of type 'CertificateSigningRequestListProps' to JSON representation.
+ * Converts an object of type 'KubeCertificateSigningRequestListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CertificateSigningRequestListProps(
-  obj: CertificateSigningRequestListProps | undefined,
+export function toJson_KubeCertificateSigningRequestListProps(
+  obj: KubeCertificateSigningRequestListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeCertificateSigningRequestProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9072,7 +9082,7 @@ export function toJson_CertificateSigningRequestListProps(
  *
  * @schema io.k8s.api.coordination.v1.Lease
  */
-export interface LeaseProps {
+export interface KubeLeaseProps {
   /**
    * More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -9089,10 +9099,10 @@ export interface LeaseProps {
 }
 
 /**
- * Converts an object of type 'LeaseProps' to JSON representation.
+ * Converts an object of type 'KubeLeaseProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_LeaseProps(obj: LeaseProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeLeaseProps(obj: KubeLeaseProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9110,13 +9120,13 @@ export function toJson_LeaseProps(obj: LeaseProps | undefined): Record<string, a
  *
  * @schema io.k8s.api.coordination.v1.LeaseList
  */
-export interface LeaseListProps {
+export interface KubeLeaseListProps {
   /**
    * Items is a list of schema objects.
    *
    * @schema io.k8s.api.coordination.v1.LeaseList#items
    */
-  readonly items: Lease[];
+  readonly items: KubeLeaseProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -9127,15 +9137,15 @@ export interface LeaseListProps {
 }
 
 /**
- * Converts an object of type 'LeaseListProps' to JSON representation.
+ * Converts an object of type 'KubeLeaseListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_LeaseListProps(obj: LeaseListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeLeaseListProps(obj: KubeLeaseListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeLeaseProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9148,7 +9158,7 @@ export function toJson_LeaseListProps(obj: LeaseListProps | undefined): Record<s
  *
  * @schema io.k8s.api.core.v1.Binding
  */
-export interface BindingProps {
+export interface KubeBindingProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -9165,10 +9175,10 @@ export interface BindingProps {
 }
 
 /**
- * Converts an object of type 'BindingProps' to JSON representation.
+ * Converts an object of type 'KubeBindingProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_BindingProps(obj: BindingProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeBindingProps(obj: KubeBindingProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9186,7 +9196,7 @@ export function toJson_BindingProps(obj: BindingProps | undefined): Record<strin
  *
  * @schema io.k8s.api.core.v1.ComponentStatus
  */
-export interface ComponentStatusProps {
+export interface KubeComponentStatusProps {
   /**
    * List of component conditions observed
    *
@@ -9203,10 +9213,12 @@ export interface ComponentStatusProps {
 }
 
 /**
- * Converts an object of type 'ComponentStatusProps' to JSON representation.
+ * Converts an object of type 'KubeComponentStatusProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ComponentStatusProps(obj: ComponentStatusProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeComponentStatusProps(
+  obj: KubeComponentStatusProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9224,13 +9236,13 @@ export function toJson_ComponentStatusProps(obj: ComponentStatusProps | undefine
  *
  * @schema io.k8s.api.core.v1.ComponentStatusList
  */
-export interface ComponentStatusListProps {
+export interface KubeComponentStatusListProps {
   /**
    * List of ComponentStatus objects.
    *
    * @schema io.k8s.api.core.v1.ComponentStatusList#items
    */
-  readonly items: ComponentStatus[];
+  readonly items: KubeComponentStatusProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -9241,17 +9253,17 @@ export interface ComponentStatusListProps {
 }
 
 /**
- * Converts an object of type 'ComponentStatusListProps' to JSON representation.
+ * Converts an object of type 'KubeComponentStatusListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ComponentStatusListProps(
-  obj: ComponentStatusListProps | undefined,
+export function toJson_KubeComponentStatusListProps(
+  obj: KubeComponentStatusListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeComponentStatusProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9264,7 +9276,7 @@ export function toJson_ComponentStatusListProps(
  *
  * @schema io.k8s.api.core.v1.ConfigMap
  */
-export interface ConfigMapProps {
+export interface KubeConfigMapProps {
   /**
    * BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet.
    *
@@ -9295,10 +9307,10 @@ export interface ConfigMapProps {
 }
 
 /**
- * Converts an object of type 'ConfigMapProps' to JSON representation.
+ * Converts an object of type 'KubeConfigMapProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ConfigMapProps(obj: ConfigMapProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeConfigMapProps(obj: KubeConfigMapProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9324,13 +9336,13 @@ export function toJson_ConfigMapProps(obj: ConfigMapProps | undefined): Record<s
  *
  * @schema io.k8s.api.core.v1.ConfigMapList
  */
-export interface ConfigMapListProps {
+export interface KubeConfigMapListProps {
   /**
    * Items is the list of ConfigMaps.
    *
    * @schema io.k8s.api.core.v1.ConfigMapList#items
    */
-  readonly items: ConfigMap[];
+  readonly items: KubeConfigMapProps[];
 
   /**
    * More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -9341,15 +9353,17 @@ export interface ConfigMapListProps {
 }
 
 /**
- * Converts an object of type 'ConfigMapListProps' to JSON representation.
+ * Converts an object of type 'KubeConfigMapListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ConfigMapListProps(obj: ConfigMapListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeConfigMapListProps(
+  obj: KubeConfigMapListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeConfigMapProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9373,7 +9387,7 @@ export function toJson_ConfigMapListProps(obj: ConfigMapListProps | undefined): 
  *
  * @schema io.k8s.api.core.v1.Endpoints
  */
-export interface EndpointsProps {
+export interface KubeEndpointsProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -9390,10 +9404,10 @@ export interface EndpointsProps {
 }
 
 /**
- * Converts an object of type 'EndpointsProps' to JSON representation.
+ * Converts an object of type 'KubeEndpointsProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EndpointsProps(obj: EndpointsProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeEndpointsProps(obj: KubeEndpointsProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9411,13 +9425,13 @@ export function toJson_EndpointsProps(obj: EndpointsProps | undefined): Record<s
  *
  * @schema io.k8s.api.core.v1.EndpointsList
  */
-export interface EndpointsListProps {
+export interface KubeEndpointsListProps {
   /**
    * List of endpoints.
    *
    * @schema io.k8s.api.core.v1.EndpointsList#items
    */
-  readonly items: Endpoints[];
+  readonly items: KubeEndpointsProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -9428,15 +9442,17 @@ export interface EndpointsListProps {
 }
 
 /**
- * Converts an object of type 'EndpointsListProps' to JSON representation.
+ * Converts an object of type 'KubeEndpointsListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EndpointsListProps(obj: EndpointsListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeEndpointsListProps(
+  obj: KubeEndpointsListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeEndpointsProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9449,7 +9465,7 @@ export function toJson_EndpointsListProps(obj: EndpointsListProps | undefined): 
  *
  * @schema io.k8s.api.events.v1.Event
  */
-export interface EventProps {
+export interface KubeEventProps {
   /**
    * action is what action was taken/failed regarding to the regarding object. It is machine-readable. This field cannot be empty for new Events and it can have at most 128 characters.
    *
@@ -9557,10 +9573,10 @@ export interface EventProps {
 }
 
 /**
- * Converts an object of type 'EventProps' to JSON representation.
+ * Converts an object of type 'KubeEventProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EventProps(obj: EventProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeEventProps(obj: KubeEventProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9591,13 +9607,13 @@ export function toJson_EventProps(obj: EventProps | undefined): Record<string, a
  *
  * @schema io.k8s.api.events.v1.EventList
  */
-export interface EventListProps {
+export interface KubeEventListProps {
   /**
    * items is a list of schema objects.
    *
    * @schema io.k8s.api.events.v1.EventList#items
    */
-  readonly items: Event[];
+  readonly items: KubeEventProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -9608,15 +9624,15 @@ export interface EventListProps {
 }
 
 /**
- * Converts an object of type 'EventListProps' to JSON representation.
+ * Converts an object of type 'KubeEventListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EventListProps(obj: EventListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeEventListProps(obj: KubeEventListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeEventProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9629,7 +9645,7 @@ export function toJson_EventListProps(obj: EventListProps | undefined): Record<s
  *
  * @schema io.k8s.api.core.v1.LimitRange
  */
-export interface LimitRangeProps {
+export interface KubeLimitRangeProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -9646,10 +9662,10 @@ export interface LimitRangeProps {
 }
 
 /**
- * Converts an object of type 'LimitRangeProps' to JSON representation.
+ * Converts an object of type 'KubeLimitRangeProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_LimitRangeProps(obj: LimitRangeProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeLimitRangeProps(obj: KubeLimitRangeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9667,13 +9683,13 @@ export function toJson_LimitRangeProps(obj: LimitRangeProps | undefined): Record
  *
  * @schema io.k8s.api.core.v1.LimitRangeList
  */
-export interface LimitRangeListProps {
+export interface KubeLimitRangeListProps {
   /**
    * Items is a list of LimitRange objects. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
    *
    * @schema io.k8s.api.core.v1.LimitRangeList#items
    */
-  readonly items: LimitRange[];
+  readonly items: KubeLimitRangeProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -9684,15 +9700,17 @@ export interface LimitRangeListProps {
 }
 
 /**
- * Converts an object of type 'LimitRangeListProps' to JSON representation.
+ * Converts an object of type 'KubeLimitRangeListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_LimitRangeListProps(obj: LimitRangeListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeLimitRangeListProps(
+  obj: KubeLimitRangeListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeLimitRangeProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9705,7 +9723,7 @@ export function toJson_LimitRangeListProps(obj: LimitRangeListProps | undefined)
  *
  * @schema io.k8s.api.core.v1.Namespace
  */
-export interface NamespaceProps {
+export interface KubeNamespaceProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -9722,10 +9740,10 @@ export interface NamespaceProps {
 }
 
 /**
- * Converts an object of type 'NamespaceProps' to JSON representation.
+ * Converts an object of type 'KubeNamespaceProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_NamespaceProps(obj: NamespaceProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeNamespaceProps(obj: KubeNamespaceProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9743,13 +9761,13 @@ export function toJson_NamespaceProps(obj: NamespaceProps | undefined): Record<s
  *
  * @schema io.k8s.api.core.v1.NamespaceList
  */
-export interface NamespaceListProps {
+export interface KubeNamespaceListProps {
   /**
    * Items is the list of Namespace objects in the list. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
    *
    * @schema io.k8s.api.core.v1.NamespaceList#items
    */
-  readonly items: Namespace[];
+  readonly items: KubeNamespaceProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -9760,15 +9778,17 @@ export interface NamespaceListProps {
 }
 
 /**
- * Converts an object of type 'NamespaceListProps' to JSON representation.
+ * Converts an object of type 'KubeNamespaceListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_NamespaceListProps(obj: NamespaceListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeNamespaceListProps(
+  obj: KubeNamespaceListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeNamespaceProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9781,7 +9801,7 @@ export function toJson_NamespaceListProps(obj: NamespaceListProps | undefined): 
  *
  * @schema io.k8s.api.core.v1.Node
  */
-export interface NodeProps {
+export interface KubeNodeProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -9798,10 +9818,10 @@ export interface NodeProps {
 }
 
 /**
- * Converts an object of type 'NodeProps' to JSON representation.
+ * Converts an object of type 'KubeNodeProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_NodeProps(obj: NodeProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeNodeProps(obj: KubeNodeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9819,13 +9839,13 @@ export function toJson_NodeProps(obj: NodeProps | undefined): Record<string, any
  *
  * @schema io.k8s.api.core.v1.NodeList
  */
-export interface NodeListProps {
+export interface KubeNodeListProps {
   /**
    * List of nodes
    *
    * @schema io.k8s.api.core.v1.NodeList#items
    */
-  readonly items: Node[];
+  readonly items: KubeNodeProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -9836,15 +9856,15 @@ export interface NodeListProps {
 }
 
 /**
- * Converts an object of type 'NodeListProps' to JSON representation.
+ * Converts an object of type 'KubeNodeListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_NodeListProps(obj: NodeListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeNodeListProps(obj: KubeNodeListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeNodeProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9857,7 +9877,7 @@ export function toJson_NodeListProps(obj: NodeListProps | undefined): Record<str
  *
  * @schema io.k8s.api.core.v1.PersistentVolume
  */
-export interface PersistentVolumeProps {
+export interface KubePersistentVolumeProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -9874,10 +9894,12 @@ export interface PersistentVolumeProps {
 }
 
 /**
- * Converts an object of type 'PersistentVolumeProps' to JSON representation.
+ * Converts an object of type 'KubePersistentVolumeProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PersistentVolumeProps(obj: PersistentVolumeProps | undefined): Record<string, any> | undefined {
+export function toJson_KubePersistentVolumeProps(
+  obj: KubePersistentVolumeProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -9895,7 +9917,7 @@ export function toJson_PersistentVolumeProps(obj: PersistentVolumeProps | undefi
  *
  * @schema io.k8s.api.core.v1.PersistentVolumeClaim
  */
-export interface PersistentVolumeClaimProps {
+export interface KubePersistentVolumeClaimProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -9912,11 +9934,11 @@ export interface PersistentVolumeClaimProps {
 }
 
 /**
- * Converts an object of type 'PersistentVolumeClaimProps' to JSON representation.
+ * Converts an object of type 'KubePersistentVolumeClaimProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PersistentVolumeClaimProps(
-  obj: PersistentVolumeClaimProps | undefined,
+export function toJson_KubePersistentVolumeClaimProps(
+  obj: KubePersistentVolumeClaimProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -9935,13 +9957,13 @@ export function toJson_PersistentVolumeClaimProps(
  *
  * @schema io.k8s.api.core.v1.PersistentVolumeClaimList
  */
-export interface PersistentVolumeClaimListProps {
+export interface KubePersistentVolumeClaimListProps {
   /**
    * A list of persistent volume claims. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
    *
    * @schema io.k8s.api.core.v1.PersistentVolumeClaimList#items
    */
-  readonly items: PersistentVolumeClaim[];
+  readonly items: KubePersistentVolumeClaimProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -9952,17 +9974,17 @@ export interface PersistentVolumeClaimListProps {
 }
 
 /**
- * Converts an object of type 'PersistentVolumeClaimListProps' to JSON representation.
+ * Converts an object of type 'KubePersistentVolumeClaimListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PersistentVolumeClaimListProps(
-  obj: PersistentVolumeClaimListProps | undefined,
+export function toJson_KubePersistentVolumeClaimListProps(
+  obj: KubePersistentVolumeClaimListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePersistentVolumeClaimProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -9975,13 +9997,13 @@ export function toJson_PersistentVolumeClaimListProps(
  *
  * @schema io.k8s.api.core.v1.PersistentVolumeList
  */
-export interface PersistentVolumeListProps {
+export interface KubePersistentVolumeListProps {
   /**
    * List of persistent volumes. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
    *
    * @schema io.k8s.api.core.v1.PersistentVolumeList#items
    */
-  readonly items: PersistentVolume[];
+  readonly items: KubePersistentVolumeProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -9992,17 +10014,17 @@ export interface PersistentVolumeListProps {
 }
 
 /**
- * Converts an object of type 'PersistentVolumeListProps' to JSON representation.
+ * Converts an object of type 'KubePersistentVolumeListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PersistentVolumeListProps(
-  obj: PersistentVolumeListProps | undefined,
+export function toJson_KubePersistentVolumeListProps(
+  obj: KubePersistentVolumeListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePersistentVolumeProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10015,7 +10037,7 @@ export function toJson_PersistentVolumeListProps(
  *
  * @schema io.k8s.api.core.v1.Pod
  */
-export interface PodProps {
+export interface KubePodProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -10032,10 +10054,10 @@ export interface PodProps {
 }
 
 /**
- * Converts an object of type 'PodProps' to JSON representation.
+ * Converts an object of type 'KubePodProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodProps(obj: PodProps | undefined): Record<string, any> | undefined {
+export function toJson_KubePodProps(obj: KubePodProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -10053,13 +10075,13 @@ export function toJson_PodProps(obj: PodProps | undefined): Record<string, any> 
  *
  * @schema io.k8s.api.core.v1.PodList
  */
-export interface PodListProps {
+export interface KubePodListProps {
   /**
    * List of pods. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md
    *
    * @schema io.k8s.api.core.v1.PodList#items
    */
-  readonly items: Pod[];
+  readonly items: KubePodProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -10070,15 +10092,15 @@ export interface PodListProps {
 }
 
 /**
- * Converts an object of type 'PodListProps' to JSON representation.
+ * Converts an object of type 'KubePodListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodListProps(obj: PodListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubePodListProps(obj: KubePodListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePodProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10091,7 +10113,7 @@ export function toJson_PodListProps(obj: PodListProps | undefined): Record<strin
  *
  * @schema io.k8s.api.core.v1.PodTemplate
  */
-export interface PodTemplateProps {
+export interface KubePodTemplateProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -10108,10 +10130,10 @@ export interface PodTemplateProps {
 }
 
 /**
- * Converts an object of type 'PodTemplateProps' to JSON representation.
+ * Converts an object of type 'KubePodTemplateProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodTemplateProps(obj: PodTemplateProps | undefined): Record<string, any> | undefined {
+export function toJson_KubePodTemplateProps(obj: KubePodTemplateProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -10129,13 +10151,13 @@ export function toJson_PodTemplateProps(obj: PodTemplateProps | undefined): Reco
  *
  * @schema io.k8s.api.core.v1.PodTemplateList
  */
-export interface PodTemplateListProps {
+export interface KubePodTemplateListProps {
   /**
    * List of pod templates
    *
    * @schema io.k8s.api.core.v1.PodTemplateList#items
    */
-  readonly items: PodTemplate[];
+  readonly items: KubePodTemplateProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -10146,15 +10168,17 @@ export interface PodTemplateListProps {
 }
 
 /**
- * Converts an object of type 'PodTemplateListProps' to JSON representation.
+ * Converts an object of type 'KubePodTemplateListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodTemplateListProps(obj: PodTemplateListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubePodTemplateListProps(
+  obj: KubePodTemplateListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePodTemplateProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10167,7 +10191,7 @@ export function toJson_PodTemplateListProps(obj: PodTemplateListProps | undefine
  *
  * @schema io.k8s.api.core.v1.ReplicationController
  */
-export interface ReplicationControllerProps {
+export interface KubeReplicationControllerProps {
   /**
    * If the Labels of a ReplicationController are empty, they are defaulted to be the same as the Pod(s) that the replication controller manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -10184,11 +10208,11 @@ export interface ReplicationControllerProps {
 }
 
 /**
- * Converts an object of type 'ReplicationControllerProps' to JSON representation.
+ * Converts an object of type 'KubeReplicationControllerProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ReplicationControllerProps(
-  obj: ReplicationControllerProps | undefined,
+export function toJson_KubeReplicationControllerProps(
+  obj: KubeReplicationControllerProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -10207,13 +10231,13 @@ export function toJson_ReplicationControllerProps(
  *
  * @schema io.k8s.api.core.v1.ReplicationControllerList
  */
-export interface ReplicationControllerListProps {
+export interface KubeReplicationControllerListProps {
   /**
    * List of replication controllers. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    *
    * @schema io.k8s.api.core.v1.ReplicationControllerList#items
    */
-  readonly items: ReplicationController[];
+  readonly items: KubeReplicationControllerProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -10224,17 +10248,17 @@ export interface ReplicationControllerListProps {
 }
 
 /**
- * Converts an object of type 'ReplicationControllerListProps' to JSON representation.
+ * Converts an object of type 'KubeReplicationControllerListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ReplicationControllerListProps(
-  obj: ReplicationControllerListProps | undefined,
+export function toJson_KubeReplicationControllerListProps(
+  obj: KubeReplicationControllerListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeReplicationControllerProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10247,7 +10271,7 @@ export function toJson_ReplicationControllerListProps(
  *
  * @schema io.k8s.api.core.v1.ResourceQuota
  */
-export interface ResourceQuotaProps {
+export interface KubeResourceQuotaProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -10264,10 +10288,12 @@ export interface ResourceQuotaProps {
 }
 
 /**
- * Converts an object of type 'ResourceQuotaProps' to JSON representation.
+ * Converts an object of type 'KubeResourceQuotaProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ResourceQuotaProps(obj: ResourceQuotaProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeResourceQuotaProps(
+  obj: KubeResourceQuotaProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -10285,13 +10311,13 @@ export function toJson_ResourceQuotaProps(obj: ResourceQuotaProps | undefined): 
  *
  * @schema io.k8s.api.core.v1.ResourceQuotaList
  */
-export interface ResourceQuotaListProps {
+export interface KubeResourceQuotaListProps {
   /**
    * Items is a list of ResourceQuota objects. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
    *
    * @schema io.k8s.api.core.v1.ResourceQuotaList#items
    */
-  readonly items: ResourceQuota[];
+  readonly items: KubeResourceQuotaProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -10302,17 +10328,17 @@ export interface ResourceQuotaListProps {
 }
 
 /**
- * Converts an object of type 'ResourceQuotaListProps' to JSON representation.
+ * Converts an object of type 'KubeResourceQuotaListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ResourceQuotaListProps(
-  obj: ResourceQuotaListProps | undefined,
+export function toJson_KubeResourceQuotaListProps(
+  obj: KubeResourceQuotaListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeResourceQuotaProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10325,7 +10351,7 @@ export function toJson_ResourceQuotaListProps(
  *
  * @schema io.k8s.api.core.v1.Secret
  */
-export interface SecretProps {
+export interface KubeSecretProps {
   /**
    * Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here. Described in https://tools.ietf.org/html/rfc4648#section-4
    *
@@ -10363,10 +10389,10 @@ export interface SecretProps {
 }
 
 /**
- * Converts an object of type 'SecretProps' to JSON representation.
+ * Converts an object of type 'KubeSecretProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_SecretProps(obj: SecretProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeSecretProps(obj: KubeSecretProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -10393,13 +10419,13 @@ export function toJson_SecretProps(obj: SecretProps | undefined): Record<string,
  *
  * @schema io.k8s.api.core.v1.SecretList
  */
-export interface SecretListProps {
+export interface KubeSecretListProps {
   /**
    * Items is a list of secret objects. More info: https://kubernetes.io/docs/concepts/configuration/secret
    *
    * @schema io.k8s.api.core.v1.SecretList#items
    */
-  readonly items: Secret[];
+  readonly items: KubeSecretProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -10410,15 +10436,15 @@ export interface SecretListProps {
 }
 
 /**
- * Converts an object of type 'SecretListProps' to JSON representation.
+ * Converts an object of type 'KubeSecretListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_SecretListProps(obj: SecretListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeSecretListProps(obj: KubeSecretListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeSecretProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10431,7 +10457,7 @@ export function toJson_SecretListProps(obj: SecretListProps | undefined): Record
  *
  * @schema io.k8s.api.core.v1.Service
  */
-export interface ServiceProps {
+export interface KubeServiceProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -10448,10 +10474,10 @@ export interface ServiceProps {
 }
 
 /**
- * Converts an object of type 'ServiceProps' to JSON representation.
+ * Converts an object of type 'KubeServiceProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ServiceProps(obj: ServiceProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeServiceProps(obj: KubeServiceProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -10469,7 +10495,7 @@ export function toJson_ServiceProps(obj: ServiceProps | undefined): Record<strin
  *
  * @schema io.k8s.api.core.v1.ServiceAccount
  */
-export interface ServiceAccountProps {
+export interface KubeServiceAccountProps {
   /**
    * AutomountServiceAccountToken indicates whether pods running as this service account should have an API token automatically mounted. Can be overridden at the pod level.
    *
@@ -10500,10 +10526,12 @@ export interface ServiceAccountProps {
 }
 
 /**
- * Converts an object of type 'ServiceAccountProps' to JSON representation.
+ * Converts an object of type 'KubeServiceAccountProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ServiceAccountProps(obj: ServiceAccountProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeServiceAccountProps(
+  obj: KubeServiceAccountProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -10523,13 +10551,13 @@ export function toJson_ServiceAccountProps(obj: ServiceAccountProps | undefined)
  *
  * @schema io.k8s.api.core.v1.ServiceAccountList
  */
-export interface ServiceAccountListProps {
+export interface KubeServiceAccountListProps {
   /**
    * List of ServiceAccounts. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
    *
    * @schema io.k8s.api.core.v1.ServiceAccountList#items
    */
-  readonly items: ServiceAccount[];
+  readonly items: KubeServiceAccountProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -10540,17 +10568,17 @@ export interface ServiceAccountListProps {
 }
 
 /**
- * Converts an object of type 'ServiceAccountListProps' to JSON representation.
+ * Converts an object of type 'KubeServiceAccountListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ServiceAccountListProps(
-  obj: ServiceAccountListProps | undefined,
+export function toJson_KubeServiceAccountListProps(
+  obj: KubeServiceAccountListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeServiceAccountProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10563,13 +10591,13 @@ export function toJson_ServiceAccountListProps(
  *
  * @schema io.k8s.api.core.v1.ServiceList
  */
-export interface ServiceListProps {
+export interface KubeServiceListProps {
   /**
    * List of services
    *
    * @schema io.k8s.api.core.v1.ServiceList#items
    */
-  readonly items: Service[];
+  readonly items: KubeServiceProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -10580,15 +10608,15 @@ export interface ServiceListProps {
 }
 
 /**
- * Converts an object of type 'ServiceListProps' to JSON representation.
+ * Converts an object of type 'KubeServiceListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ServiceListProps(obj: ServiceListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeServiceListProps(obj: KubeServiceListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeServiceProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10601,7 +10629,7 @@ export function toJson_ServiceListProps(obj: ServiceListProps | undefined): Reco
  *
  * @schema io.k8s.api.discovery.v1.EndpointSlice
  */
-export interface EndpointSliceProps {
+export interface KubeEndpointSliceProps {
   /**
    * addressType specifies the type of address carried by this EndpointSlice. All addresses in this slice must be the same type. This field is immutable after creation. The following address types are currently supported: * IPv4: Represents an IPv4 Address. * IPv6: Represents an IPv6 Address. * FQDN: Represents a Fully Qualified Domain Name.
    *
@@ -10632,10 +10660,12 @@ export interface EndpointSliceProps {
 }
 
 /**
- * Converts an object of type 'EndpointSliceProps' to JSON representation.
+ * Converts an object of type 'KubeEndpointSliceProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EndpointSliceProps(obj: EndpointSliceProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeEndpointSliceProps(
+  obj: KubeEndpointSliceProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -10655,13 +10685,13 @@ export function toJson_EndpointSliceProps(obj: EndpointSliceProps | undefined): 
  *
  * @schema io.k8s.api.discovery.v1.EndpointSliceList
  */
-export interface EndpointSliceListProps {
+export interface KubeEndpointSliceListProps {
   /**
    * List of endpoint slices
    *
    * @schema io.k8s.api.discovery.v1.EndpointSliceList#items
    */
-  readonly items: EndpointSlice[];
+  readonly items: KubeEndpointSliceProps[];
 
   /**
    * Standard list metadata.
@@ -10672,17 +10702,17 @@ export interface EndpointSliceListProps {
 }
 
 /**
- * Converts an object of type 'EndpointSliceListProps' to JSON representation.
+ * Converts an object of type 'KubeEndpointSliceListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EndpointSliceListProps(
-  obj: EndpointSliceListProps | undefined,
+export function toJson_KubeEndpointSliceListProps(
+  obj: KubeEndpointSliceListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeEndpointSliceProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10695,7 +10725,7 @@ export function toJson_EndpointSliceListProps(
  *
  * @schema io.k8s.api.discovery.v1beta1.EndpointSlice
  */
-export interface EndpointSliceV1Beta1Props {
+export interface KubeEndpointSliceV1Beta1Props {
   /**
    * addressType specifies the type of address carried by this EndpointSlice. All addresses in this slice must be the same type. This field is immutable after creation. The following address types are currently supported: * IPv4: Represents an IPv4 Address. * IPv6: Represents an IPv6 Address. * FQDN: Represents a Fully Qualified Domain Name.
    *
@@ -10726,11 +10756,11 @@ export interface EndpointSliceV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'EndpointSliceV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeEndpointSliceV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EndpointSliceV1Beta1Props(
-  obj: EndpointSliceV1Beta1Props | undefined,
+export function toJson_KubeEndpointSliceV1Beta1Props(
+  obj: KubeEndpointSliceV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -10751,13 +10781,13 @@ export function toJson_EndpointSliceV1Beta1Props(
  *
  * @schema io.k8s.api.discovery.v1beta1.EndpointSliceList
  */
-export interface EndpointSliceListV1Beta1Props {
+export interface KubeEndpointSliceListV1Beta1Props {
   /**
    * List of endpoint slices
    *
    * @schema io.k8s.api.discovery.v1beta1.EndpointSliceList#items
    */
-  readonly items: EndpointSliceV1Beta1[];
+  readonly items: KubeEndpointSliceV1Beta1Props[];
 
   /**
    * Standard list metadata.
@@ -10768,17 +10798,17 @@ export interface EndpointSliceListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'EndpointSliceListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeEndpointSliceListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EndpointSliceListV1Beta1Props(
-  obj: EndpointSliceListV1Beta1Props | undefined,
+export function toJson_KubeEndpointSliceListV1Beta1Props(
+  obj: KubeEndpointSliceListV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeEndpointSliceV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10791,7 +10821,7 @@ export function toJson_EndpointSliceListV1Beta1Props(
  *
  * @schema io.k8s.api.events.v1beta1.Event
  */
-export interface EventV1Beta1Props {
+export interface KubeEventV1Beta1Props {
   /**
    * action is what action was taken/failed regarding to the regarding object. It is machine-readable. This field can have at most 128 characters.
    *
@@ -10899,10 +10929,10 @@ export interface EventV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'EventV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeEventV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EventV1Beta1Props(obj: EventV1Beta1Props | undefined): Record<string, any> | undefined {
+export function toJson_KubeEventV1Beta1Props(obj: KubeEventV1Beta1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -10933,13 +10963,13 @@ export function toJson_EventV1Beta1Props(obj: EventV1Beta1Props | undefined): Re
  *
  * @schema io.k8s.api.events.v1beta1.EventList
  */
-export interface EventListV1Beta1Props {
+export interface KubeEventListV1Beta1Props {
   /**
    * items is a list of schema objects.
    *
    * @schema io.k8s.api.events.v1beta1.EventList#items
    */
-  readonly items: EventV1Beta1[];
+  readonly items: KubeEventV1Beta1Props[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -10950,15 +10980,17 @@ export interface EventListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'EventListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeEventListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EventListV1Beta1Props(obj: EventListV1Beta1Props | undefined): Record<string, any> | undefined {
+export function toJson_KubeEventListV1Beta1Props(
+  obj: KubeEventListV1Beta1Props | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeEventV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -10971,7 +11003,7 @@ export function toJson_EventListV1Beta1Props(obj: EventListV1Beta1Props | undefi
  *
  * @schema io.k8s.api.flowcontrol.v1beta1.FlowSchema
  */
-export interface FlowSchemaV1Beta1Props {
+export interface KubeFlowSchemaV1Beta1Props {
   /**
    * `metadata` is the standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -10988,11 +11020,11 @@ export interface FlowSchemaV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'FlowSchemaV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeFlowSchemaV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_FlowSchemaV1Beta1Props(
-  obj: FlowSchemaV1Beta1Props | undefined,
+export function toJson_KubeFlowSchemaV1Beta1Props(
+  obj: KubeFlowSchemaV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -11011,13 +11043,13 @@ export function toJson_FlowSchemaV1Beta1Props(
  *
  * @schema io.k8s.api.flowcontrol.v1beta1.FlowSchemaList
  */
-export interface FlowSchemaListV1Beta1Props {
+export interface KubeFlowSchemaListV1Beta1Props {
   /**
    * `items` is a list of FlowSchemas.
    *
    * @schema io.k8s.api.flowcontrol.v1beta1.FlowSchemaList#items
    */
-  readonly items: FlowSchemaV1Beta1[];
+  readonly items: KubeFlowSchemaV1Beta1Props[];
 
   /**
    * `metadata` is the standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11028,17 +11060,17 @@ export interface FlowSchemaListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'FlowSchemaListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeFlowSchemaListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_FlowSchemaListV1Beta1Props(
-  obj: FlowSchemaListV1Beta1Props | undefined,
+export function toJson_KubeFlowSchemaListV1Beta1Props(
+  obj: KubeFlowSchemaListV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeFlowSchemaV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11051,7 +11083,7 @@ export function toJson_FlowSchemaListV1Beta1Props(
  *
  * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfiguration
  */
-export interface PriorityLevelConfigurationV1Beta1Props {
+export interface KubePriorityLevelConfigurationV1Beta1Props {
   /**
    * `metadata` is the standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -11068,11 +11100,11 @@ export interface PriorityLevelConfigurationV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'PriorityLevelConfigurationV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubePriorityLevelConfigurationV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PriorityLevelConfigurationV1Beta1Props(
-  obj: PriorityLevelConfigurationV1Beta1Props | undefined,
+export function toJson_KubePriorityLevelConfigurationV1Beta1Props(
+  obj: KubePriorityLevelConfigurationV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -11091,13 +11123,13 @@ export function toJson_PriorityLevelConfigurationV1Beta1Props(
  *
  * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationList
  */
-export interface PriorityLevelConfigurationListV1Beta1Props {
+export interface KubePriorityLevelConfigurationListV1Beta1Props {
   /**
    * `items` is a list of request-priorities.
    *
    * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationList#items
    */
-  readonly items: PriorityLevelConfigurationV1Beta1[];
+  readonly items: KubePriorityLevelConfigurationV1Beta1Props[];
 
   /**
    * `metadata` is the standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11108,17 +11140,17 @@ export interface PriorityLevelConfigurationListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'PriorityLevelConfigurationListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubePriorityLevelConfigurationListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PriorityLevelConfigurationListV1Beta1Props(
-  obj: PriorityLevelConfigurationListV1Beta1Props | undefined,
+export function toJson_KubePriorityLevelConfigurationListV1Beta1Props(
+  obj: KubePriorityLevelConfigurationListV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePriorityLevelConfigurationV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11131,7 +11163,7 @@ export function toJson_PriorityLevelConfigurationListV1Beta1Props(
  *
  * @schema io.k8s.api.networking.v1.Ingress
  */
-export interface IngressProps {
+export interface KubeIngressProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -11148,10 +11180,10 @@ export interface IngressProps {
 }
 
 /**
- * Converts an object of type 'IngressProps' to JSON representation.
+ * Converts an object of type 'KubeIngressProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_IngressProps(obj: IngressProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeIngressProps(obj: KubeIngressProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -11169,7 +11201,7 @@ export function toJson_IngressProps(obj: IngressProps | undefined): Record<strin
  *
  * @schema io.k8s.api.networking.v1.IngressClass
  */
-export interface IngressClassProps {
+export interface KubeIngressClassProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -11186,10 +11218,10 @@ export interface IngressClassProps {
 }
 
 /**
- * Converts an object of type 'IngressClassProps' to JSON representation.
+ * Converts an object of type 'KubeIngressClassProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_IngressClassProps(obj: IngressClassProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeIngressClassProps(obj: KubeIngressClassProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -11207,13 +11239,13 @@ export function toJson_IngressClassProps(obj: IngressClassProps | undefined): Re
  *
  * @schema io.k8s.api.networking.v1.IngressClassList
  */
-export interface IngressClassListProps {
+export interface KubeIngressClassListProps {
   /**
    * Items is the list of IngressClasses.
    *
    * @schema io.k8s.api.networking.v1.IngressClassList#items
    */
-  readonly items: IngressClass[];
+  readonly items: KubeIngressClassProps[];
 
   /**
    * Standard list metadata.
@@ -11224,15 +11256,17 @@ export interface IngressClassListProps {
 }
 
 /**
- * Converts an object of type 'IngressClassListProps' to JSON representation.
+ * Converts an object of type 'KubeIngressClassListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_IngressClassListProps(obj: IngressClassListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeIngressClassListProps(
+  obj: KubeIngressClassListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeIngressClassProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11245,13 +11279,13 @@ export function toJson_IngressClassListProps(obj: IngressClassListProps | undefi
  *
  * @schema io.k8s.api.networking.v1.IngressList
  */
-export interface IngressListProps {
+export interface KubeIngressListProps {
   /**
    * Items is the list of Ingress.
    *
    * @schema io.k8s.api.networking.v1.IngressList#items
    */
-  readonly items: Ingress[];
+  readonly items: KubeIngressProps[];
 
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11262,15 +11296,15 @@ export interface IngressListProps {
 }
 
 /**
- * Converts an object of type 'IngressListProps' to JSON representation.
+ * Converts an object of type 'KubeIngressListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_IngressListProps(obj: IngressListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeIngressListProps(obj: KubeIngressListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeIngressProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11283,7 +11317,7 @@ export function toJson_IngressListProps(obj: IngressListProps | undefined): Reco
  *
  * @schema io.k8s.api.networking.v1.NetworkPolicy
  */
-export interface NetworkPolicyProps {
+export interface KubeNetworkPolicyProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -11300,10 +11334,12 @@ export interface NetworkPolicyProps {
 }
 
 /**
- * Converts an object of type 'NetworkPolicyProps' to JSON representation.
+ * Converts an object of type 'KubeNetworkPolicyProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_NetworkPolicyProps(obj: NetworkPolicyProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeNetworkPolicyProps(
+  obj: KubeNetworkPolicyProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -11321,13 +11357,13 @@ export function toJson_NetworkPolicyProps(obj: NetworkPolicyProps | undefined): 
  *
  * @schema io.k8s.api.networking.v1.NetworkPolicyList
  */
-export interface NetworkPolicyListProps {
+export interface KubeNetworkPolicyListProps {
   /**
    * Items is a list of schema objects.
    *
    * @schema io.k8s.api.networking.v1.NetworkPolicyList#items
    */
-  readonly items: NetworkPolicy[];
+  readonly items: KubeNetworkPolicyProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11338,17 +11374,17 @@ export interface NetworkPolicyListProps {
 }
 
 /**
- * Converts an object of type 'NetworkPolicyListProps' to JSON representation.
+ * Converts an object of type 'KubeNetworkPolicyListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_NetworkPolicyListProps(
-  obj: NetworkPolicyListProps | undefined,
+export function toJson_KubeNetworkPolicyListProps(
+  obj: KubeNetworkPolicyListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeNetworkPolicyProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11361,7 +11397,7 @@ export function toJson_NetworkPolicyListProps(
  *
  * @schema io.k8s.api.node.v1.RuntimeClass
  */
-export interface RuntimeClassProps {
+export interface KubeRuntimeClassProps {
   /**
    * Handler specifies the underlying runtime and configuration that the CRI implementation will use to handle pods of this class. The possible values are specific to the node & CRI configuration.  It is assumed that all handlers are available on every node, and handlers of the same name are equivalent on every node. For example, a handler called "runc" might specify that the runc OCI runtime (using native Linux containers) will be used to run the containers in a pod. The Handler must be lowercase, conform to the DNS Label (RFC 1123) requirements, and is immutable.
    *
@@ -11394,10 +11430,10 @@ export interface RuntimeClassProps {
 }
 
 /**
- * Converts an object of type 'RuntimeClassProps' to JSON representation.
+ * Converts an object of type 'KubeRuntimeClassProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RuntimeClassProps(obj: RuntimeClassProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeRuntimeClassProps(obj: KubeRuntimeClassProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -11417,13 +11453,13 @@ export function toJson_RuntimeClassProps(obj: RuntimeClassProps | undefined): Re
  *
  * @schema io.k8s.api.node.v1.RuntimeClassList
  */
-export interface RuntimeClassListProps {
+export interface KubeRuntimeClassListProps {
   /**
    * Items is a list of schema objects.
    *
    * @schema io.k8s.api.node.v1.RuntimeClassList#items
    */
-  readonly items: RuntimeClass[];
+  readonly items: KubeRuntimeClassProps[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11434,15 +11470,17 @@ export interface RuntimeClassListProps {
 }
 
 /**
- * Converts an object of type 'RuntimeClassListProps' to JSON representation.
+ * Converts an object of type 'KubeRuntimeClassListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RuntimeClassListProps(obj: RuntimeClassListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeRuntimeClassListProps(
+  obj: KubeRuntimeClassListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeRuntimeClassProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11455,7 +11493,7 @@ export function toJson_RuntimeClassListProps(obj: RuntimeClassListProps | undefi
  *
  * @schema io.k8s.api.node.v1alpha1.RuntimeClass
  */
-export interface RuntimeClassV1Alpha1Props {
+export interface KubeRuntimeClassV1Alpha1Props {
   /**
    * More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -11472,11 +11510,11 @@ export interface RuntimeClassV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'RuntimeClassV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeRuntimeClassV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RuntimeClassV1Alpha1Props(
-  obj: RuntimeClassV1Alpha1Props | undefined,
+export function toJson_KubeRuntimeClassV1Alpha1Props(
+  obj: KubeRuntimeClassV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -11495,13 +11533,13 @@ export function toJson_RuntimeClassV1Alpha1Props(
  *
  * @schema io.k8s.api.node.v1alpha1.RuntimeClassList
  */
-export interface RuntimeClassListV1Alpha1Props {
+export interface KubeRuntimeClassListV1Alpha1Props {
   /**
    * Items is a list of schema objects.
    *
    * @schema io.k8s.api.node.v1alpha1.RuntimeClassList#items
    */
-  readonly items: RuntimeClassV1Alpha1[];
+  readonly items: KubeRuntimeClassV1Alpha1Props[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11512,17 +11550,17 @@ export interface RuntimeClassListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'RuntimeClassListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeRuntimeClassListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RuntimeClassListV1Alpha1Props(
-  obj: RuntimeClassListV1Alpha1Props | undefined,
+export function toJson_KubeRuntimeClassListV1Alpha1Props(
+  obj: KubeRuntimeClassListV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeRuntimeClassV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11535,7 +11573,7 @@ export function toJson_RuntimeClassListV1Alpha1Props(
  *
  * @schema io.k8s.api.node.v1beta1.RuntimeClass
  */
-export interface RuntimeClassV1Beta1Props {
+export interface KubeRuntimeClassV1Beta1Props {
   /**
    * Handler specifies the underlying runtime and configuration that the CRI implementation will use to handle pods of this class. The possible values are specific to the node & CRI configuration.  It is assumed that all handlers are available on every node, and handlers of the same name are equivalent on every node. For example, a handler called "runc" might specify that the runc OCI runtime (using native Linux containers) will be used to run the containers in a pod. The Handler must be lowercase, conform to the DNS Label (RFC 1123) requirements, and is immutable.
    *
@@ -11566,11 +11604,11 @@ export interface RuntimeClassV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'RuntimeClassV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeRuntimeClassV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RuntimeClassV1Beta1Props(
-  obj: RuntimeClassV1Beta1Props | undefined,
+export function toJson_KubeRuntimeClassV1Beta1Props(
+  obj: KubeRuntimeClassV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -11591,13 +11629,13 @@ export function toJson_RuntimeClassV1Beta1Props(
  *
  * @schema io.k8s.api.node.v1beta1.RuntimeClassList
  */
-export interface RuntimeClassListV1Beta1Props {
+export interface KubeRuntimeClassListV1Beta1Props {
   /**
    * Items is a list of schema objects.
    *
    * @schema io.k8s.api.node.v1beta1.RuntimeClassList#items
    */
-  readonly items: RuntimeClassV1Beta1[];
+  readonly items: KubeRuntimeClassV1Beta1Props[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11608,17 +11646,17 @@ export interface RuntimeClassListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'RuntimeClassListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeRuntimeClassListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RuntimeClassListV1Beta1Props(
-  obj: RuntimeClassListV1Beta1Props | undefined,
+export function toJson_KubeRuntimeClassListV1Beta1Props(
+  obj: KubeRuntimeClassListV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeRuntimeClassV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11631,7 +11669,7 @@ export function toJson_RuntimeClassListV1Beta1Props(
  *
  * @schema io.k8s.api.policy.v1.Eviction
  */
-export interface EvictionProps {
+export interface KubeEvictionProps {
   /**
    * DeleteOptions may be provided
    *
@@ -11648,10 +11686,10 @@ export interface EvictionProps {
 }
 
 /**
- * Converts an object of type 'EvictionProps' to JSON representation.
+ * Converts an object of type 'KubeEvictionProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_EvictionProps(obj: EvictionProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeEvictionProps(obj: KubeEvictionProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -11669,7 +11707,7 @@ export function toJson_EvictionProps(obj: EvictionProps | undefined): Record<str
  *
  * @schema io.k8s.api.policy.v1.PodDisruptionBudget
  */
-export interface PodDisruptionBudgetProps {
+export interface KubePodDisruptionBudgetProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -11686,11 +11724,11 @@ export interface PodDisruptionBudgetProps {
 }
 
 /**
- * Converts an object of type 'PodDisruptionBudgetProps' to JSON representation.
+ * Converts an object of type 'KubePodDisruptionBudgetProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodDisruptionBudgetProps(
-  obj: PodDisruptionBudgetProps | undefined,
+export function toJson_KubePodDisruptionBudgetProps(
+  obj: KubePodDisruptionBudgetProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -11709,13 +11747,13 @@ export function toJson_PodDisruptionBudgetProps(
  *
  * @schema io.k8s.api.policy.v1.PodDisruptionBudgetList
  */
-export interface PodDisruptionBudgetListProps {
+export interface KubePodDisruptionBudgetListProps {
   /**
    * Items is a list of PodDisruptionBudgets
    *
    * @schema io.k8s.api.policy.v1.PodDisruptionBudgetList#items
    */
-  readonly items: PodDisruptionBudget[];
+  readonly items: KubePodDisruptionBudgetProps[];
 
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11726,17 +11764,17 @@ export interface PodDisruptionBudgetListProps {
 }
 
 /**
- * Converts an object of type 'PodDisruptionBudgetListProps' to JSON representation.
+ * Converts an object of type 'KubePodDisruptionBudgetListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodDisruptionBudgetListProps(
-  obj: PodDisruptionBudgetListProps | undefined,
+export function toJson_KubePodDisruptionBudgetListProps(
+  obj: KubePodDisruptionBudgetListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePodDisruptionBudgetProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11749,7 +11787,7 @@ export function toJson_PodDisruptionBudgetListProps(
  *
  * @schema io.k8s.api.policy.v1beta1.PodDisruptionBudget
  */
-export interface PodDisruptionBudgetV1Beta1Props {
+export interface KubePodDisruptionBudgetV1Beta1Props {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -11766,11 +11804,11 @@ export interface PodDisruptionBudgetV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'PodDisruptionBudgetV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubePodDisruptionBudgetV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodDisruptionBudgetV1Beta1Props(
-  obj: PodDisruptionBudgetV1Beta1Props | undefined,
+export function toJson_KubePodDisruptionBudgetV1Beta1Props(
+  obj: KubePodDisruptionBudgetV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -11789,13 +11827,13 @@ export function toJson_PodDisruptionBudgetV1Beta1Props(
  *
  * @schema io.k8s.api.policy.v1beta1.PodDisruptionBudgetList
  */
-export interface PodDisruptionBudgetListV1Beta1Props {
+export interface KubePodDisruptionBudgetListV1Beta1Props {
   /**
    * items list individual PodDisruptionBudget objects
    *
    * @schema io.k8s.api.policy.v1beta1.PodDisruptionBudgetList#items
    */
-  readonly items: PodDisruptionBudgetV1Beta1[];
+  readonly items: KubePodDisruptionBudgetV1Beta1Props[];
 
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11806,17 +11844,17 @@ export interface PodDisruptionBudgetListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'PodDisruptionBudgetListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubePodDisruptionBudgetListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodDisruptionBudgetListV1Beta1Props(
-  obj: PodDisruptionBudgetListV1Beta1Props | undefined,
+export function toJson_KubePodDisruptionBudgetListV1Beta1Props(
+  obj: KubePodDisruptionBudgetListV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePodDisruptionBudgetV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11829,7 +11867,7 @@ export function toJson_PodDisruptionBudgetListV1Beta1Props(
  *
  * @schema io.k8s.api.policy.v1beta1.PodSecurityPolicy
  */
-export interface PodSecurityPolicyV1Beta1Props {
+export interface KubePodSecurityPolicyV1Beta1Props {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -11846,11 +11884,11 @@ export interface PodSecurityPolicyV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'PodSecurityPolicyV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubePodSecurityPolicyV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodSecurityPolicyV1Beta1Props(
-  obj: PodSecurityPolicyV1Beta1Props | undefined,
+export function toJson_KubePodSecurityPolicyV1Beta1Props(
+  obj: KubePodSecurityPolicyV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -11869,13 +11907,13 @@ export function toJson_PodSecurityPolicyV1Beta1Props(
  *
  * @schema io.k8s.api.policy.v1beta1.PodSecurityPolicyList
  */
-export interface PodSecurityPolicyListV1Beta1Props {
+export interface KubePodSecurityPolicyListV1Beta1Props {
   /**
    * items is a list of schema objects.
    *
    * @schema io.k8s.api.policy.v1beta1.PodSecurityPolicyList#items
    */
-  readonly items: PodSecurityPolicyV1Beta1[];
+  readonly items: KubePodSecurityPolicyV1Beta1Props[];
 
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -11886,17 +11924,17 @@ export interface PodSecurityPolicyListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'PodSecurityPolicyListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubePodSecurityPolicyListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PodSecurityPolicyListV1Beta1Props(
-  obj: PodSecurityPolicyListV1Beta1Props | undefined,
+export function toJson_KubePodSecurityPolicyListV1Beta1Props(
+  obj: KubePodSecurityPolicyListV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePodSecurityPolicyV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -11909,7 +11947,7 @@ export function toJson_PodSecurityPolicyListV1Beta1Props(
  *
  * @schema io.k8s.api.rbac.v1.ClusterRole
  */
-export interface ClusterRoleProps {
+export interface KubeClusterRoleProps {
   /**
    * AggregationRule is an optional field that describes how to build the Rules for this ClusterRole. If AggregationRule is set, then the Rules are controller managed and direct changes to Rules will be stomped by the controller.
    *
@@ -11933,10 +11971,10 @@ export interface ClusterRoleProps {
 }
 
 /**
- * Converts an object of type 'ClusterRoleProps' to JSON representation.
+ * Converts an object of type 'KubeClusterRoleProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ClusterRoleProps(obj: ClusterRoleProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeClusterRoleProps(obj: KubeClusterRoleProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -11955,7 +11993,7 @@ export function toJson_ClusterRoleProps(obj: ClusterRoleProps | undefined): Reco
  *
  * @schema io.k8s.api.rbac.v1.ClusterRoleBinding
  */
-export interface ClusterRoleBindingProps {
+export interface KubeClusterRoleBindingProps {
   /**
    * Standard object's metadata.
    *
@@ -11979,11 +12017,11 @@ export interface ClusterRoleBindingProps {
 }
 
 /**
- * Converts an object of type 'ClusterRoleBindingProps' to JSON representation.
+ * Converts an object of type 'KubeClusterRoleBindingProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ClusterRoleBindingProps(
-  obj: ClusterRoleBindingProps | undefined,
+export function toJson_KubeClusterRoleBindingProps(
+  obj: KubeClusterRoleBindingProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -12003,13 +12041,13 @@ export function toJson_ClusterRoleBindingProps(
  *
  * @schema io.k8s.api.rbac.v1.ClusterRoleBindingList
  */
-export interface ClusterRoleBindingListProps {
+export interface KubeClusterRoleBindingListProps {
   /**
    * Items is a list of ClusterRoleBindings
    *
    * @schema io.k8s.api.rbac.v1.ClusterRoleBindingList#items
    */
-  readonly items: ClusterRoleBinding[];
+  readonly items: KubeClusterRoleBindingProps[];
 
   /**
    * Standard object's metadata.
@@ -12020,17 +12058,17 @@ export interface ClusterRoleBindingListProps {
 }
 
 /**
- * Converts an object of type 'ClusterRoleBindingListProps' to JSON representation.
+ * Converts an object of type 'KubeClusterRoleBindingListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ClusterRoleBindingListProps(
-  obj: ClusterRoleBindingListProps | undefined,
+export function toJson_KubeClusterRoleBindingListProps(
+  obj: KubeClusterRoleBindingListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeClusterRoleBindingProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12043,13 +12081,13 @@ export function toJson_ClusterRoleBindingListProps(
  *
  * @schema io.k8s.api.rbac.v1.ClusterRoleList
  */
-export interface ClusterRoleListProps {
+export interface KubeClusterRoleListProps {
   /**
    * Items is a list of ClusterRoles
    *
    * @schema io.k8s.api.rbac.v1.ClusterRoleList#items
    */
-  readonly items: ClusterRole[];
+  readonly items: KubeClusterRoleProps[];
 
   /**
    * Standard object's metadata.
@@ -12060,15 +12098,17 @@ export interface ClusterRoleListProps {
 }
 
 /**
- * Converts an object of type 'ClusterRoleListProps' to JSON representation.
+ * Converts an object of type 'KubeClusterRoleListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ClusterRoleListProps(obj: ClusterRoleListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeClusterRoleListProps(
+  obj: KubeClusterRoleListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeClusterRoleProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12081,7 +12121,7 @@ export function toJson_ClusterRoleListProps(obj: ClusterRoleListProps | undefine
  *
  * @schema io.k8s.api.rbac.v1.Role
  */
-export interface RoleProps {
+export interface KubeRoleProps {
   /**
    * Standard object's metadata.
    *
@@ -12098,10 +12138,10 @@ export interface RoleProps {
 }
 
 /**
- * Converts an object of type 'RoleProps' to JSON representation.
+ * Converts an object of type 'KubeRoleProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RoleProps(obj: RoleProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeRoleProps(obj: KubeRoleProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -12119,7 +12159,7 @@ export function toJson_RoleProps(obj: RoleProps | undefined): Record<string, any
  *
  * @schema io.k8s.api.rbac.v1.RoleBinding
  */
-export interface RoleBindingProps {
+export interface KubeRoleBindingProps {
   /**
    * Standard object's metadata.
    *
@@ -12143,10 +12183,10 @@ export interface RoleBindingProps {
 }
 
 /**
- * Converts an object of type 'RoleBindingProps' to JSON representation.
+ * Converts an object of type 'KubeRoleBindingProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RoleBindingProps(obj: RoleBindingProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeRoleBindingProps(obj: KubeRoleBindingProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -12165,13 +12205,13 @@ export function toJson_RoleBindingProps(obj: RoleBindingProps | undefined): Reco
  *
  * @schema io.k8s.api.rbac.v1.RoleBindingList
  */
-export interface RoleBindingListProps {
+export interface KubeRoleBindingListProps {
   /**
    * Items is a list of RoleBindings
    *
    * @schema io.k8s.api.rbac.v1.RoleBindingList#items
    */
-  readonly items: RoleBinding[];
+  readonly items: KubeRoleBindingProps[];
 
   /**
    * Standard object's metadata.
@@ -12182,15 +12222,17 @@ export interface RoleBindingListProps {
 }
 
 /**
- * Converts an object of type 'RoleBindingListProps' to JSON representation.
+ * Converts an object of type 'KubeRoleBindingListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RoleBindingListProps(obj: RoleBindingListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeRoleBindingListProps(
+  obj: KubeRoleBindingListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeRoleBindingProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12203,13 +12245,13 @@ export function toJson_RoleBindingListProps(obj: RoleBindingListProps | undefine
  *
  * @schema io.k8s.api.rbac.v1.RoleList
  */
-export interface RoleListProps {
+export interface KubeRoleListProps {
   /**
    * Items is a list of Roles
    *
    * @schema io.k8s.api.rbac.v1.RoleList#items
    */
-  readonly items: Role[];
+  readonly items: KubeRoleProps[];
 
   /**
    * Standard object's metadata.
@@ -12220,15 +12262,15 @@ export interface RoleListProps {
 }
 
 /**
- * Converts an object of type 'RoleListProps' to JSON representation.
+ * Converts an object of type 'KubeRoleListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RoleListProps(obj: RoleListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeRoleListProps(obj: KubeRoleListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeRoleProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12241,7 +12283,7 @@ export function toJson_RoleListProps(obj: RoleListProps | undefined): Record<str
  *
  * @schema io.k8s.api.rbac.v1alpha1.ClusterRole
  */
-export interface ClusterRoleV1Alpha1Props {
+export interface KubeClusterRoleV1Alpha1Props {
   /**
    * AggregationRule is an optional field that describes how to build the Rules for this ClusterRole. If AggregationRule is set, then the Rules are controller managed and direct changes to Rules will be stomped by the controller.
    *
@@ -12265,11 +12307,11 @@ export interface ClusterRoleV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'ClusterRoleV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeClusterRoleV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ClusterRoleV1Alpha1Props(
-  obj: ClusterRoleV1Alpha1Props | undefined,
+export function toJson_KubeClusterRoleV1Alpha1Props(
+  obj: KubeClusterRoleV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -12289,7 +12331,7 @@ export function toJson_ClusterRoleV1Alpha1Props(
  *
  * @schema io.k8s.api.rbac.v1alpha1.ClusterRoleBinding
  */
-export interface ClusterRoleBindingV1Alpha1Props {
+export interface KubeClusterRoleBindingV1Alpha1Props {
   /**
    * Standard object's metadata.
    *
@@ -12313,11 +12355,11 @@ export interface ClusterRoleBindingV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'ClusterRoleBindingV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeClusterRoleBindingV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ClusterRoleBindingV1Alpha1Props(
-  obj: ClusterRoleBindingV1Alpha1Props | undefined,
+export function toJson_KubeClusterRoleBindingV1Alpha1Props(
+  obj: KubeClusterRoleBindingV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -12337,13 +12379,13 @@ export function toJson_ClusterRoleBindingV1Alpha1Props(
  *
  * @schema io.k8s.api.rbac.v1alpha1.ClusterRoleBindingList
  */
-export interface ClusterRoleBindingListV1Alpha1Props {
+export interface KubeClusterRoleBindingListV1Alpha1Props {
   /**
    * Items is a list of ClusterRoleBindings
    *
    * @schema io.k8s.api.rbac.v1alpha1.ClusterRoleBindingList#items
    */
-  readonly items: ClusterRoleBindingV1Alpha1[];
+  readonly items: KubeClusterRoleBindingV1Alpha1Props[];
 
   /**
    * Standard object's metadata.
@@ -12354,17 +12396,17 @@ export interface ClusterRoleBindingListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'ClusterRoleBindingListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeClusterRoleBindingListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ClusterRoleBindingListV1Alpha1Props(
-  obj: ClusterRoleBindingListV1Alpha1Props | undefined,
+export function toJson_KubeClusterRoleBindingListV1Alpha1Props(
+  obj: KubeClusterRoleBindingListV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeClusterRoleBindingV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12377,13 +12419,13 @@ export function toJson_ClusterRoleBindingListV1Alpha1Props(
  *
  * @schema io.k8s.api.rbac.v1alpha1.ClusterRoleList
  */
-export interface ClusterRoleListV1Alpha1Props {
+export interface KubeClusterRoleListV1Alpha1Props {
   /**
    * Items is a list of ClusterRoles
    *
    * @schema io.k8s.api.rbac.v1alpha1.ClusterRoleList#items
    */
-  readonly items: ClusterRoleV1Alpha1[];
+  readonly items: KubeClusterRoleV1Alpha1Props[];
 
   /**
    * Standard object's metadata.
@@ -12394,17 +12436,17 @@ export interface ClusterRoleListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'ClusterRoleListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeClusterRoleListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ClusterRoleListV1Alpha1Props(
-  obj: ClusterRoleListV1Alpha1Props | undefined,
+export function toJson_KubeClusterRoleListV1Alpha1Props(
+  obj: KubeClusterRoleListV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeClusterRoleV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12417,7 +12459,7 @@ export function toJson_ClusterRoleListV1Alpha1Props(
  *
  * @schema io.k8s.api.rbac.v1alpha1.Role
  */
-export interface RoleV1Alpha1Props {
+export interface KubeRoleV1Alpha1Props {
   /**
    * Standard object's metadata.
    *
@@ -12434,10 +12476,10 @@ export interface RoleV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'RoleV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeRoleV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RoleV1Alpha1Props(obj: RoleV1Alpha1Props | undefined): Record<string, any> | undefined {
+export function toJson_KubeRoleV1Alpha1Props(obj: KubeRoleV1Alpha1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -12455,7 +12497,7 @@ export function toJson_RoleV1Alpha1Props(obj: RoleV1Alpha1Props | undefined): Re
  *
  * @schema io.k8s.api.rbac.v1alpha1.RoleBinding
  */
-export interface RoleBindingV1Alpha1Props {
+export interface KubeRoleBindingV1Alpha1Props {
   /**
    * Standard object's metadata.
    *
@@ -12479,11 +12521,11 @@ export interface RoleBindingV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'RoleBindingV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeRoleBindingV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RoleBindingV1Alpha1Props(
-  obj: RoleBindingV1Alpha1Props | undefined,
+export function toJson_KubeRoleBindingV1Alpha1Props(
+  obj: KubeRoleBindingV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -12503,13 +12545,13 @@ export function toJson_RoleBindingV1Alpha1Props(
  *
  * @schema io.k8s.api.rbac.v1alpha1.RoleBindingList
  */
-export interface RoleBindingListV1Alpha1Props {
+export interface KubeRoleBindingListV1Alpha1Props {
   /**
    * Items is a list of RoleBindings
    *
    * @schema io.k8s.api.rbac.v1alpha1.RoleBindingList#items
    */
-  readonly items: RoleBindingV1Alpha1[];
+  readonly items: KubeRoleBindingV1Alpha1Props[];
 
   /**
    * Standard object's metadata.
@@ -12520,17 +12562,17 @@ export interface RoleBindingListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'RoleBindingListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeRoleBindingListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RoleBindingListV1Alpha1Props(
-  obj: RoleBindingListV1Alpha1Props | undefined,
+export function toJson_KubeRoleBindingListV1Alpha1Props(
+  obj: KubeRoleBindingListV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeRoleBindingV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12543,13 +12585,13 @@ export function toJson_RoleBindingListV1Alpha1Props(
  *
  * @schema io.k8s.api.rbac.v1alpha1.RoleList
  */
-export interface RoleListV1Alpha1Props {
+export interface KubeRoleListV1Alpha1Props {
   /**
    * Items is a list of Roles
    *
    * @schema io.k8s.api.rbac.v1alpha1.RoleList#items
    */
-  readonly items: RoleV1Alpha1[];
+  readonly items: KubeRoleV1Alpha1Props[];
 
   /**
    * Standard object's metadata.
@@ -12560,15 +12602,17 @@ export interface RoleListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'RoleListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeRoleListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_RoleListV1Alpha1Props(obj: RoleListV1Alpha1Props | undefined): Record<string, any> | undefined {
+export function toJson_KubeRoleListV1Alpha1Props(
+  obj: KubeRoleListV1Alpha1Props | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeRoleV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12581,7 +12625,7 @@ export function toJson_RoleListV1Alpha1Props(obj: RoleListV1Alpha1Props | undefi
  *
  * @schema io.k8s.api.scheduling.v1.PriorityClass
  */
-export interface PriorityClassProps {
+export interface KubePriorityClassProps {
   /**
    * description is an arbitrary string that usually provides guidelines on when this priority class should be used.
    *
@@ -12620,10 +12664,12 @@ export interface PriorityClassProps {
 }
 
 /**
- * Converts an object of type 'PriorityClassProps' to JSON representation.
+ * Converts an object of type 'KubePriorityClassProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PriorityClassProps(obj: PriorityClassProps | undefined): Record<string, any> | undefined {
+export function toJson_KubePriorityClassProps(
+  obj: KubePriorityClassProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -12644,13 +12690,13 @@ export function toJson_PriorityClassProps(obj: PriorityClassProps | undefined): 
  *
  * @schema io.k8s.api.scheduling.v1.PriorityClassList
  */
-export interface PriorityClassListProps {
+export interface KubePriorityClassListProps {
   /**
    * items is the list of PriorityClasses
    *
    * @schema io.k8s.api.scheduling.v1.PriorityClassList#items
    */
-  readonly items: PriorityClass[];
+  readonly items: KubePriorityClassProps[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -12661,17 +12707,17 @@ export interface PriorityClassListProps {
 }
 
 /**
- * Converts an object of type 'PriorityClassListProps' to JSON representation.
+ * Converts an object of type 'KubePriorityClassListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PriorityClassListProps(
-  obj: PriorityClassListProps | undefined,
+export function toJson_KubePriorityClassListProps(
+  obj: KubePriorityClassListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePriorityClassProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12684,7 +12730,7 @@ export function toJson_PriorityClassListProps(
  *
  * @schema io.k8s.api.scheduling.v1alpha1.PriorityClass
  */
-export interface PriorityClassV1Alpha1Props {
+export interface KubePriorityClassV1Alpha1Props {
   /**
    * description is an arbitrary string that usually provides guidelines on when this priority class should be used.
    *
@@ -12723,11 +12769,11 @@ export interface PriorityClassV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'PriorityClassV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubePriorityClassV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PriorityClassV1Alpha1Props(
-  obj: PriorityClassV1Alpha1Props | undefined,
+export function toJson_KubePriorityClassV1Alpha1Props(
+  obj: KubePriorityClassV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -12749,13 +12795,13 @@ export function toJson_PriorityClassV1Alpha1Props(
  *
  * @schema io.k8s.api.scheduling.v1alpha1.PriorityClassList
  */
-export interface PriorityClassListV1Alpha1Props {
+export interface KubePriorityClassListV1Alpha1Props {
   /**
    * items is the list of PriorityClasses
    *
    * @schema io.k8s.api.scheduling.v1alpha1.PriorityClassList#items
    */
-  readonly items: PriorityClassV1Alpha1[];
+  readonly items: KubePriorityClassV1Alpha1Props[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -12766,17 +12812,17 @@ export interface PriorityClassListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'PriorityClassListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubePriorityClassListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PriorityClassListV1Alpha1Props(
-  obj: PriorityClassListV1Alpha1Props | undefined,
+export function toJson_KubePriorityClassListV1Alpha1Props(
+  obj: KubePriorityClassListV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubePriorityClassV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12789,7 +12835,7 @@ export function toJson_PriorityClassListV1Alpha1Props(
  *
  * @schema io.k8s.api.storage.v1.CSIDriver
  */
-export interface CsiDriverProps {
+export interface KubeCsiDriverProps {
   /**
    * Standard object metadata. metadata.Name indicates the name of the CSI driver that this object refers to; it MUST be the same name returned by the CSI GetPluginName() call for that driver. The driver name must be 63 characters or less, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), dots (.), and alphanumerics between. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -12806,10 +12852,10 @@ export interface CsiDriverProps {
 }
 
 /**
- * Converts an object of type 'CsiDriverProps' to JSON representation.
+ * Converts an object of type 'KubeCsiDriverProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CsiDriverProps(obj: CsiDriverProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeCsiDriverProps(obj: KubeCsiDriverProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -12827,13 +12873,13 @@ export function toJson_CsiDriverProps(obj: CsiDriverProps | undefined): Record<s
  *
  * @schema io.k8s.api.storage.v1.CSIDriverList
  */
-export interface CsiDriverListProps {
+export interface KubeCsiDriverListProps {
   /**
    * items is the list of CSIDriver
    *
    * @schema io.k8s.api.storage.v1.CSIDriverList#items
    */
-  readonly items: CsiDriver[];
+  readonly items: KubeCsiDriverProps[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -12844,15 +12890,17 @@ export interface CsiDriverListProps {
 }
 
 /**
- * Converts an object of type 'CsiDriverListProps' to JSON representation.
+ * Converts an object of type 'KubeCsiDriverListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CsiDriverListProps(obj: CsiDriverListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeCsiDriverListProps(
+  obj: KubeCsiDriverListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeCsiDriverProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12865,7 +12913,7 @@ export function toJson_CsiDriverListProps(obj: CsiDriverListProps | undefined): 
  *
  * @schema io.k8s.api.storage.v1.CSINode
  */
-export interface CsiNodeProps {
+export interface KubeCsiNodeProps {
   /**
    * metadata.name must be the Kubernetes node name.
    *
@@ -12882,10 +12930,10 @@ export interface CsiNodeProps {
 }
 
 /**
- * Converts an object of type 'CsiNodeProps' to JSON representation.
+ * Converts an object of type 'KubeCsiNodeProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CsiNodeProps(obj: CsiNodeProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeCsiNodeProps(obj: KubeCsiNodeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -12903,13 +12951,13 @@ export function toJson_CsiNodeProps(obj: CsiNodeProps | undefined): Record<strin
  *
  * @schema io.k8s.api.storage.v1.CSINodeList
  */
-export interface CsiNodeListProps {
+export interface KubeCsiNodeListProps {
   /**
    * items is the list of CSINode
    *
    * @schema io.k8s.api.storage.v1.CSINodeList#items
    */
-  readonly items: CsiNode[];
+  readonly items: KubeCsiNodeProps[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -12920,15 +12968,15 @@ export interface CsiNodeListProps {
 }
 
 /**
- * Converts an object of type 'CsiNodeListProps' to JSON representation.
+ * Converts an object of type 'KubeCsiNodeListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CsiNodeListProps(obj: CsiNodeListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeCsiNodeListProps(obj: KubeCsiNodeListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeCsiNodeProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -12943,7 +12991,7 @@ export function toJson_CsiNodeListProps(obj: CsiNodeListProps | undefined): Reco
  *
  * @schema io.k8s.api.storage.v1.StorageClass
  */
-export interface StorageClassProps {
+export interface KubeStorageClassProps {
   /**
    * AllowVolumeExpansion shows whether the storage class allow volume expand
    *
@@ -13003,10 +13051,10 @@ export interface StorageClassProps {
 }
 
 /**
- * Converts an object of type 'StorageClassProps' to JSON representation.
+ * Converts an object of type 'KubeStorageClassProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_StorageClassProps(obj: StorageClassProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeStorageClassProps(obj: KubeStorageClassProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -13033,13 +13081,13 @@ export function toJson_StorageClassProps(obj: StorageClassProps | undefined): Re
  *
  * @schema io.k8s.api.storage.v1.StorageClassList
  */
-export interface StorageClassListProps {
+export interface KubeStorageClassListProps {
   /**
    * Items is the list of StorageClasses
    *
    * @schema io.k8s.api.storage.v1.StorageClassList#items
    */
-  readonly items: StorageClass[];
+  readonly items: KubeStorageClassProps[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -13050,15 +13098,17 @@ export interface StorageClassListProps {
 }
 
 /**
- * Converts an object of type 'StorageClassListProps' to JSON representation.
+ * Converts an object of type 'KubeStorageClassListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_StorageClassListProps(obj: StorageClassListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeStorageClassListProps(
+  obj: KubeStorageClassListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeStorageClassProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -13073,7 +13123,7 @@ export function toJson_StorageClassListProps(obj: StorageClassListProps | undefi
  *
  * @schema io.k8s.api.storage.v1.VolumeAttachment
  */
-export interface VolumeAttachmentProps {
+export interface KubeVolumeAttachmentProps {
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -13090,10 +13140,12 @@ export interface VolumeAttachmentProps {
 }
 
 /**
- * Converts an object of type 'VolumeAttachmentProps' to JSON representation.
+ * Converts an object of type 'KubeVolumeAttachmentProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_VolumeAttachmentProps(obj: VolumeAttachmentProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeVolumeAttachmentProps(
+  obj: KubeVolumeAttachmentProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -13111,13 +13163,13 @@ export function toJson_VolumeAttachmentProps(obj: VolumeAttachmentProps | undefi
  *
  * @schema io.k8s.api.storage.v1.VolumeAttachmentList
  */
-export interface VolumeAttachmentListProps {
+export interface KubeVolumeAttachmentListProps {
   /**
    * Items is the list of VolumeAttachments
    *
    * @schema io.k8s.api.storage.v1.VolumeAttachmentList#items
    */
-  readonly items: VolumeAttachment[];
+  readonly items: KubeVolumeAttachmentProps[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -13128,17 +13180,17 @@ export interface VolumeAttachmentListProps {
 }
 
 /**
- * Converts an object of type 'VolumeAttachmentListProps' to JSON representation.
+ * Converts an object of type 'KubeVolumeAttachmentListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_VolumeAttachmentListProps(
-  obj: VolumeAttachmentListProps | undefined,
+export function toJson_KubeVolumeAttachmentListProps(
+  obj: KubeVolumeAttachmentListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeVolumeAttachmentProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -13159,7 +13211,7 @@ export function toJson_VolumeAttachmentListProps(
  *
  * @schema io.k8s.api.storage.v1alpha1.CSIStorageCapacity
  */
-export interface CsiStorageCapacityV1Alpha1Props {
+export interface KubeCsiStorageCapacityV1Alpha1Props {
   /**
    * Capacity is the value reported by the CSI driver in its GetCapacityResponse for a GetCapacityRequest with topology and parameters that match the previous fields.
    *
@@ -13205,11 +13257,11 @@ export interface CsiStorageCapacityV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'CsiStorageCapacityV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeCsiStorageCapacityV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CsiStorageCapacityV1Alpha1Props(
-  obj: CsiStorageCapacityV1Alpha1Props | undefined,
+export function toJson_KubeCsiStorageCapacityV1Alpha1Props(
+  obj: KubeCsiStorageCapacityV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -13231,13 +13283,13 @@ export function toJson_CsiStorageCapacityV1Alpha1Props(
  *
  * @schema io.k8s.api.storage.v1alpha1.CSIStorageCapacityList
  */
-export interface CsiStorageCapacityListV1Alpha1Props {
+export interface KubeCsiStorageCapacityListV1Alpha1Props {
   /**
    * Items is the list of CSIStorageCapacity objects.
    *
    * @schema io.k8s.api.storage.v1alpha1.CSIStorageCapacityList#items
    */
-  readonly items: CsiStorageCapacityV1Alpha1[];
+  readonly items: KubeCsiStorageCapacityV1Alpha1Props[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -13248,17 +13300,17 @@ export interface CsiStorageCapacityListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'CsiStorageCapacityListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeCsiStorageCapacityListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CsiStorageCapacityListV1Alpha1Props(
-  obj: CsiStorageCapacityListV1Alpha1Props | undefined,
+export function toJson_KubeCsiStorageCapacityListV1Alpha1Props(
+  obj: KubeCsiStorageCapacityListV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeCsiStorageCapacityV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -13273,7 +13325,7 @@ export function toJson_CsiStorageCapacityListV1Alpha1Props(
  *
  * @schema io.k8s.api.storage.v1alpha1.VolumeAttachment
  */
-export interface VolumeAttachmentV1Alpha1Props {
+export interface KubeVolumeAttachmentV1Alpha1Props {
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -13290,11 +13342,11 @@ export interface VolumeAttachmentV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'VolumeAttachmentV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeVolumeAttachmentV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_VolumeAttachmentV1Alpha1Props(
-  obj: VolumeAttachmentV1Alpha1Props | undefined,
+export function toJson_KubeVolumeAttachmentV1Alpha1Props(
+  obj: KubeVolumeAttachmentV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -13313,13 +13365,13 @@ export function toJson_VolumeAttachmentV1Alpha1Props(
  *
  * @schema io.k8s.api.storage.v1alpha1.VolumeAttachmentList
  */
-export interface VolumeAttachmentListV1Alpha1Props {
+export interface KubeVolumeAttachmentListV1Alpha1Props {
   /**
    * Items is the list of VolumeAttachments
    *
    * @schema io.k8s.api.storage.v1alpha1.VolumeAttachmentList#items
    */
-  readonly items: VolumeAttachmentV1Alpha1[];
+  readonly items: KubeVolumeAttachmentV1Alpha1Props[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -13330,17 +13382,17 @@ export interface VolumeAttachmentListV1Alpha1Props {
 }
 
 /**
- * Converts an object of type 'VolumeAttachmentListV1Alpha1Props' to JSON representation.
+ * Converts an object of type 'KubeVolumeAttachmentListV1Alpha1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_VolumeAttachmentListV1Alpha1Props(
-  obj: VolumeAttachmentListV1Alpha1Props | undefined,
+export function toJson_KubeVolumeAttachmentListV1Alpha1Props(
+  obj: KubeVolumeAttachmentListV1Alpha1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeVolumeAttachmentV1Alpha1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -13361,7 +13413,7 @@ export function toJson_VolumeAttachmentListV1Alpha1Props(
  *
  * @schema io.k8s.api.storage.v1beta1.CSIStorageCapacity
  */
-export interface CsiStorageCapacityV1Beta1Props {
+export interface KubeCsiStorageCapacityV1Beta1Props {
   /**
    * Capacity is the value reported by the CSI driver in its GetCapacityResponse for a GetCapacityRequest with topology and parameters that match the previous fields.
    *
@@ -13407,11 +13459,11 @@ export interface CsiStorageCapacityV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'CsiStorageCapacityV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeCsiStorageCapacityV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CsiStorageCapacityV1Beta1Props(
-  obj: CsiStorageCapacityV1Beta1Props | undefined,
+export function toJson_KubeCsiStorageCapacityV1Beta1Props(
+  obj: KubeCsiStorageCapacityV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -13433,13 +13485,13 @@ export function toJson_CsiStorageCapacityV1Beta1Props(
  *
  * @schema io.k8s.api.storage.v1beta1.CSIStorageCapacityList
  */
-export interface CsiStorageCapacityListV1Beta1Props {
+export interface KubeCsiStorageCapacityListV1Beta1Props {
   /**
    * Items is the list of CSIStorageCapacity objects.
    *
    * @schema io.k8s.api.storage.v1beta1.CSIStorageCapacityList#items
    */
-  readonly items: CsiStorageCapacityV1Beta1[];
+  readonly items: KubeCsiStorageCapacityV1Beta1Props[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -13450,17 +13502,17 @@ export interface CsiStorageCapacityListV1Beta1Props {
 }
 
 /**
- * Converts an object of type 'CsiStorageCapacityListV1Beta1Props' to JSON representation.
+ * Converts an object of type 'KubeCsiStorageCapacityListV1Beta1Props' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CsiStorageCapacityListV1Beta1Props(
-  obj: CsiStorageCapacityListV1Beta1Props | undefined,
+export function toJson_KubeCsiStorageCapacityListV1Beta1Props(
+  obj: KubeCsiStorageCapacityListV1Beta1Props | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeCsiStorageCapacityV1Beta1Props(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -13473,7 +13525,7 @@ export function toJson_CsiStorageCapacityListV1Beta1Props(
  *
  * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinition
  */
-export interface CustomResourceDefinitionProps {
+export interface KubeCustomResourceDefinitionProps {
   /**
    * Standard object's metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -13490,11 +13542,11 @@ export interface CustomResourceDefinitionProps {
 }
 
 /**
- * Converts an object of type 'CustomResourceDefinitionProps' to JSON representation.
+ * Converts an object of type 'KubeCustomResourceDefinitionProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CustomResourceDefinitionProps(
-  obj: CustomResourceDefinitionProps | undefined,
+export function toJson_KubeCustomResourceDefinitionProps(
+  obj: KubeCustomResourceDefinitionProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
@@ -13513,13 +13565,13 @@ export function toJson_CustomResourceDefinitionProps(
  *
  * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionList
  */
-export interface CustomResourceDefinitionListProps {
+export interface KubeCustomResourceDefinitionListProps {
   /**
    * items list individual CustomResourceDefinition objects
    *
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionList#items
    */
-  readonly items: CustomResourceDefinition[];
+  readonly items: KubeCustomResourceDefinitionProps[];
 
   /**
    * Standard object's metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -13530,17 +13582,17 @@ export interface CustomResourceDefinitionListProps {
 }
 
 /**
- * Converts an object of type 'CustomResourceDefinitionListProps' to JSON representation.
+ * Converts an object of type 'KubeCustomResourceDefinitionListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CustomResourceDefinitionListProps(
-  obj: CustomResourceDefinitionListProps | undefined,
+export function toJson_KubeCustomResourceDefinitionListProps(
+  obj: KubeCustomResourceDefinitionListProps | undefined,
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeCustomResourceDefinitionProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -13553,7 +13605,7 @@ export function toJson_CustomResourceDefinitionListProps(
  *
  * @schema io.k8s.apimachinery.pkg.apis.meta.v1.Status
  */
-export interface StatusProps {
+export interface KubeStatusProps {
   /**
    * Suggested HTTP return code for this status, 0 if not set.
    *
@@ -13591,10 +13643,10 @@ export interface StatusProps {
 }
 
 /**
- * Converts an object of type 'StatusProps' to JSON representation.
+ * Converts an object of type 'KubeStatusProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_StatusProps(obj: StatusProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeStatusProps(obj: KubeStatusProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -13615,7 +13667,7 @@ export function toJson_StatusProps(obj: StatusProps | undefined): Record<string,
  *
  * @schema io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIService
  */
-export interface ApiServiceProps {
+export interface KubeApiServiceProps {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
    *
@@ -13632,10 +13684,10 @@ export interface ApiServiceProps {
 }
 
 /**
- * Converts an object of type 'ApiServiceProps' to JSON representation.
+ * Converts an object of type 'KubeApiServiceProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ApiServiceProps(obj: ApiServiceProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeApiServiceProps(obj: KubeApiServiceProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
@@ -13653,13 +13705,13 @@ export function toJson_ApiServiceProps(obj: ApiServiceProps | undefined): Record
  *
  * @schema io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceList
  */
-export interface ApiServiceListProps {
+export interface KubeApiServiceListProps {
   /**
    * Items is the list of APIService
    *
    * @schema io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceList#items
    */
-  readonly items: ApiService[];
+  readonly items: KubeApiServiceProps[];
 
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -13670,15 +13722,17 @@ export interface ApiServiceListProps {
 }
 
 /**
- * Converts an object of type 'ApiServiceListProps' to JSON representation.
+ * Converts an object of type 'KubeApiServiceListProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_ApiServiceListProps(obj: ApiServiceListProps | undefined): Record<string, any> | undefined {
+export function toJson_KubeApiServiceListProps(
+  obj: KubeApiServiceListProps | undefined,
+): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    items: obj.items?.map((y) => y),
+    items: obj.items?.map((y) => toJson_KubeApiServiceProps(y)),
     metadata: toJson_ListMeta(obj.metadata),
   };
   // filter undefined values
@@ -14493,7 +14547,7 @@ export interface StatefulSetSpec {
    *
    * @schema io.k8s.api.apps.v1.StatefulSetSpec#volumeClaimTemplates
    */
-  readonly volumeClaimTemplates?: PersistentVolumeClaim[];
+  readonly volumeClaimTemplates?: KubePersistentVolumeClaimProps[];
 }
 
 /**
@@ -14513,7 +14567,7 @@ export function toJson_StatefulSetSpec(obj: StatefulSetSpec | undefined): Record
     serviceName: obj.serviceName,
     template: toJson_PodTemplateSpec(obj.template),
     updateStrategy: toJson_StatefulSetUpdateStrategy(obj.updateStrategy),
-    volumeClaimTemplates: obj.volumeClaimTemplates?.map((y) => y),
+    volumeClaimTemplates: obj.volumeClaimTemplates?.map((y) => toJson_KubePersistentVolumeClaimProps(y)),
   };
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }), {});
@@ -18525,7 +18579,7 @@ export function toJson_CsiDriverSpec(obj: CsiDriverSpec | undefined): Record<str
     podInfoOnMount: obj.podInfoOnMount,
     requiresRepublish: obj.requiresRepublish,
     storageCapacity: obj.storageCapacity,
-    tokenRequests: obj.tokenRequests?.map((y) => y),
+    tokenRequests: obj.tokenRequests?.map((y) => toJson_TokenRequest(y)),
     volumeLifecycleModes: obj.volumeLifecycleModes?.map((y) => y),
   };
   // filter undefined values
@@ -24006,6 +24060,44 @@ export function toJson_SupplementalGroupsStrategyOptionsV1Beta1(
   const result = {
     ranges: obj.ranges?.map((y) => toJson_IdRangeV1Beta1(y)),
     rule: obj.rule,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * TokenRequest contains parameters of a service account token.
+ *
+ * @schema io.k8s.api.storage.v1.TokenRequest
+ */
+export interface TokenRequest {
+  /**
+   * Audience is the intended audience of the token in "TokenRequestSpec". It will default to the audiences of kube apiserver.
+   *
+   * @schema io.k8s.api.storage.v1.TokenRequest#audience
+   */
+  readonly audience: string;
+
+  /**
+   * ExpirationSeconds is the duration of validity of the token in "TokenRequestSpec". It has the same default value of "ExpirationSeconds" in "TokenRequestSpec".
+   *
+   * @schema io.k8s.api.storage.v1.TokenRequest#expirationSeconds
+   */
+  readonly expirationSeconds?: number;
+}
+
+/**
+ * Converts an object of type 'TokenRequest' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_TokenRequest(obj: TokenRequest | undefined): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    audience: obj.audience,
+    expirationSeconds: obj.expirationSeconds,
   };
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }), {});

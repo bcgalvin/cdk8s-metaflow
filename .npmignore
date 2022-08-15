@@ -28,5 +28,6 @@ tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
 test/integ/metaflow-service-default.integ.snapshot
+test/integ/metaflow-static-default.integ.snapshot
 test/integ/.tmp
 test/integ/metaflow-ui-default.integ.snapshot

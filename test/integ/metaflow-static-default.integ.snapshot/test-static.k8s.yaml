@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-static-metaflow-service-deployment-c8c2e18e
+  namespace: default
+spec:
+  minReadySeconds: 0
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      cdk8s.io/metadata.addr: test-static-metaflow-service-deployment-c8e5243f
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        cdk8s.io/metadata.addr: test-static-metaflow-service-deployment-c8e5243f
+    spec:
+      automountServiceAccountToken: true
+      containers:
+        - image: public.ecr.aws/outerbounds/metaflow_ui:v1.1.2
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 15
+          name: main
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 15
+          securityContext:
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+      dnsPolicy: ClusterFirst
+      securityContext:
+        fsGroupChangePolicy: Always
+        runAsNonRoot: false
+      serviceAccountName: base-metaflow-static-sa-c85626c4
+      setHostnameAsFQDN: false
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-stat-metaflow-service-deployment-service-c876820c
+  namespace: default
+spec:
+  externalIPs: []
+  ports:
+    - name: http
+      port: 3000
+      protocol: TCP
+  selector:
+    cdk8s.io/metadata.addr: test-static-metaflow-service-deployment-c8e5243f
+  type: ClusterIP
