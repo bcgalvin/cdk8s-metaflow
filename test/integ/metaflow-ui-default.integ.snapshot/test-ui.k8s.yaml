@@ -1,0 +1,159 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-ui-metaflow-service-deployment-c81d249f
+  namespace: default
+spec:
+  minReadySeconds: 0
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      cdk8s.io/metadata.addr: test-ui-metaflow-service-deployment-c85305a3
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        cdk8s.io/metadata.addr: test-ui-metaflow-service-deployment-c85305a3
+    spec:
+      automountServiceAccountToken: true
+      containers:
+        - command:
+            - /opt/latest/bin/python3
+            - -m
+            - services.ui_backend_service.ui_server
+          env:
+            - name: UI_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  key: UI_ENABLED
+                  name: container-env
+            - name: PATH_PREFIX
+              valueFrom:
+                configMapKeyRef:
+                  key: PATH_PREFIX
+                  name: container-env
+            - name: MF_DATASTORE_ROOT
+              valueFrom:
+                configMapKeyRef:
+                  key: MF_DATASTORE_ROOT
+                  name: container-env
+            - name: METAFLOW_DATASTORE_SYSROOT_S3
+              valueFrom:
+                configMapKeyRef:
+                  key: METAFLOW_DATASTORE_SYSROOT_S3
+                  name: container-env
+            - name: LOGLEVEL
+              valueFrom:
+                configMapKeyRef:
+                  key: LOGLEVEL
+                  name: container-env
+            - name: METAFLOW_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: METAFLOW_SERVICE_URL
+                  name: container-env
+            - name: METAFLOW_DEFAULT_DATASTORE
+              valueFrom:
+                configMapKeyRef:
+                  key: METAFLOW_DEFAULT_DATASTORE
+                  name: container-env
+            - name: METAFLOW_DEFAULT_METADATA
+              valueFrom:
+                configMapKeyRef:
+                  key: METAFLOW_DEFAULT_METADATA
+                  name: container-env
+            - name: MF_METADATA_DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MF_METADATA_DB_NAME
+                  name: container-env
+            - name: MF_METADATA_DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: MF_METADATA_DB_PORT
+                  name: container-env
+            - name: MF_METADATA_DB_PSWD
+              valueFrom:
+                configMapKeyRef:
+                  key: MF_METADATA_DB_PSWD
+                  name: container-env
+            - name: MF_METADATA_DB_USER
+              valueFrom:
+                configMapKeyRef:
+                  key: MF_METADATA_DB_USER
+                  name: container-env
+            - name: MF_METADATA_DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: MF_METADATA_DB_HOST
+                  name: container-env
+          image: netflixoss/metaflow_metadata_service:v2.3.0
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /api/ping
+              port: 8083
+            initialDelaySeconds: 30
+            periodSeconds: 15
+          name: metaflow-ui
+          ports:
+            - containerPort: 8083
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /api/ping
+              port: 8083
+            initialDelaySeconds: 30
+            periodSeconds: 15
+          securityContext:
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+      dnsPolicy: ClusterFirst
+      securityContext:
+        fsGroupChangePolicy: Always
+        runAsNonRoot: false
+      serviceAccountName: base-metaflow-ui-sa-c8d0e405
+      setHostnameAsFQDN: false
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-ui-metaflow-service-deployment-service-c81b0058
+  namespace: default
+spec:
+  externalIPs: []
+  ports:
+    - name: http
+      port: 8083
+      protocol: TCP
+  selector:
+    cdk8s.io/metadata.addr: test-ui-metaflow-service-deployment-c85305a3
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+data:
+  LOGLEVEL: DEBUG
+  METAFLOW_DATASTORE_SYSROOT_S3: s3://metaflow-kube-tooling/metaflow/
+  METAFLOW_DEFAULT_DATASTORE: s3
+  METAFLOW_DEFAULT_METADATA: service
+  METAFLOW_SERVICE_URL: http://localhost:8083/api/metadata
+  MF_DATASTORE_ROOT: s3://metaflow-kube-tooling/data/
+  MF_METADATA_DB_HOST: release-name-postgresql
+  MF_METADATA_DB_NAME: metaflow
+  MF_METADATA_DB_PORT: "5432"
+  MF_METADATA_DB_PSWD: metaflow
+  MF_METADATA_DB_USER: metaflow
+  PATH_PREFIX: /api
+  UI_ENABLED: "1"
+immutable: false
+metadata:
+  name: container-env
+  namespace: default

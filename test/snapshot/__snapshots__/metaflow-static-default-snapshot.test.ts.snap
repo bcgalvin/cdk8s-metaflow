@@ -1,17 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`metaflow service default snapshot 1`] = `
-MetaflowServiceChart {
+exports[`metaflow static default snapshot 1`] = `
+MetaflowUIStaticChart {
   "_labels": Object {},
   "deployment": Deployment {
     "_containers": Array [
       Container {
         "_args": undefined,
-        "_command": Array [
-          "/opt/latest/bin/python3",
-          "-m",
-          "services.metadata_service.server",
-        ],
+        "_command": undefined,
         "_lifecycle": undefined,
         "_liveness": Probe {
           "commandOptions": undefined,
@@ -23,7 +19,7 @@ MetaflowServiceChart {
                 "label": "seconds",
               },
             },
-            "path": "/ping",
+            "path": "/",
             "periodSeconds": Duration {
               "amount": 15,
               "unit": TimeUnit {
@@ -60,7 +56,7 @@ MetaflowServiceChart {
                 "label": "seconds",
               },
             },
-            "path": "/ping",
+            "path": "/",
             "periodSeconds": Duration {
               "amount": 15,
               "unit": TimeUnit {
@@ -90,64 +86,13 @@ MetaflowServiceChart {
         "_startup": undefined,
         "env": Env {
           "_sources": Array [],
-          "_variables": Object {
-            "MF_METADATA_DB_HOST": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_HOST",
-                  "name": "container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-            "MF_METADATA_DB_NAME": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_NAME",
-                  "name": "container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-            "MF_METADATA_DB_PORT": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_PORT",
-                  "name": "container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-            "MF_METADATA_DB_PSWD": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_PSWD",
-                  "name": "container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-            "MF_METADATA_DB_USER": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_USER",
-                  "name": "container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-          },
+          "_variables": Object {},
         },
-        "image": "public.ecr.aws/outerbounds/metaflow_metadata_service:v2.3.0",
+        "image": "public.ecr.aws/outerbounds/metaflow_ui:v1.1.2",
         "imagePullPolicy": "IfNotPresent",
         "mounts": Array [],
-        "name": "metaflow-service",
-        "port": 8080,
+        "name": "main",
+        "port": 3000,
         "resources": undefined,
         "securityContext": ContainerSecurityContext {
           "ensureNonRoot": false,
@@ -160,89 +105,7 @@ MetaflowServiceChart {
       },
     ],
     "_hostAliases": Array [],
-    "_initContainers": Array [
-      Container {
-        "_args": undefined,
-        "_command": Array [
-          "/opt/latest/bin/python3",
-          "/root/run_goose.py",
-          "--only-if-empty-db",
-        ],
-        "_lifecycle": undefined,
-        "_liveness": undefined,
-        "_readiness": undefined,
-        "_startup": undefined,
-        "env": Env {
-          "_sources": Array [],
-          "_variables": Object {
-            "MF_METADATA_DB_HOST": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_HOST",
-                  "name": "init-container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-            "MF_METADATA_DB_NAME": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_NAME",
-                  "name": "init-container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-            "MF_METADATA_DB_PORT": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_PORT",
-                  "name": "init-container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-            "MF_METADATA_DB_PSWD": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_PSWD",
-                  "name": "init-container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-            "MF_METADATA_DB_USER": EnvValue {
-              "value": undefined,
-              "valueFrom": Object {
-                "configMapKeyRef": Object {
-                  "key": "MF_METADATA_DB_USER",
-                  "name": "init-container-env",
-                  "optional": undefined,
-                },
-              },
-            },
-          },
-        },
-        "image": "undefined:undefined",
-        "imagePullPolicy": "IfNotPresent",
-        "mounts": Array [],
-        "name": "init-0",
-        "port": undefined,
-        "resources": undefined,
-        "securityContext": ContainerSecurityContext {
-          "ensureNonRoot": false,
-          "group": undefined,
-          "privileged": false,
-          "readOnlyRootFilesystem": false,
-          "user": undefined,
-        },
-        "workingDir": undefined,
-      },
-    ],
+    "_initContainers": Array [],
     "_matchExpressions": Array [],
     "_matchLabels": Object {
       "cdk8s.io/metadata.addr": "test-service-metaflow-service-deployment-c82eb9b6",
@@ -378,12 +241,7 @@ MetaflowServiceChart {
           "_ports": Array [
             Object {
               "name": "http",
-              "port": 8080,
-              "protocol": "TCP",
-            },
-            Object {
-              "name": "upgrades",
-              "port": 8082,
+              "port": 3000,
               "protocol": "TCP",
             },
           ],
@@ -508,7 +366,7 @@ MetaflowServiceChart {
             "instance": [Circular],
           },
           "resourceType": "services",
-          "type": "ClusterIP",
+          "type": "NodePort",
           Symbol(@aws-cdk/core.DependableTrait): Object {
             "dependencyRoots": Array [
               [Circular],
@@ -528,295 +386,7 @@ MetaflowServiceChart {
         "namespace": "default",
         "node": Node {
           "_children": Object {
-            "container-env": ConfigMap {
-              "_binaryData": Object {},
-              "_data": Object {
-                "MF_METADATA_DB_HOST": "release-name-postgresql",
-                "MF_METADATA_DB_NAME": "metaflow",
-                "MF_METADATA_DB_PORT": "5432",
-                "MF_METADATA_DB_PSWD": "metaflow",
-                "MF_METADATA_DB_USER": "metaflow",
-              },
-              "apiObject": KubeConfigMap {
-                "apiGroup": "core",
-                "apiVersion": "v1",
-                "chart": [Circular],
-                "kind": "ConfigMap",
-                "metadata": ApiObjectMetadataDefinition {
-                  "_additionalAttributes": Object {
-                    "labels": Object {},
-                    "name": "container-env",
-                    "namespace": "default",
-                  },
-                  "annotations": Object {},
-                  "finalizers": Array [],
-                  "labels": Object {},
-                  "name": "container-env",
-                  "namespace": "default",
-                  "ownerReferences": Array [],
-                },
-                "name": "container-env",
-                "node": Node {
-                  "_children": Object {},
-                  "_context": Object {},
-                  "_dependencies": Set {},
-                  "_locked": false,
-                  "_metadata": Array [],
-                  "_validations": Array [],
-                  "host": [Circular],
-                  "id": "Resource",
-                  "scope": [Circular],
-                },
-                "patches": Array [],
-                "props": Object {
-                  "apiVersion": "v1",
-                  "binaryData": Lazy {
-                    "producer": Object {
-                      "produce": [Function],
-                    },
-                  },
-                  "data": Lazy {
-                    "producer": Object {
-                      "produce": [Function],
-                    },
-                  },
-                  "immutable": false,
-                  "kind": "ConfigMap",
-                  "metadata": Object {
-                    "name": "container-env",
-                    "namespace": "default",
-                  },
-                },
-                Symbol(@aws-cdk/core.DependableTrait): Object {
-                  "dependencyRoots": Array [
-                    [Circular],
-                  ],
-                },
-              },
-              "immutable": false,
-              "node": Node {
-                "_children": Object {
-                  "Resource": KubeConfigMap {
-                    "apiGroup": "core",
-                    "apiVersion": "v1",
-                    "chart": [Circular],
-                    "kind": "ConfigMap",
-                    "metadata": ApiObjectMetadataDefinition {
-                      "_additionalAttributes": Object {
-                        "labels": Object {},
-                        "name": "container-env",
-                        "namespace": "default",
-                      },
-                      "annotations": Object {},
-                      "finalizers": Array [],
-                      "labels": Object {},
-                      "name": "container-env",
-                      "namespace": "default",
-                      "ownerReferences": Array [],
-                    },
-                    "name": "container-env",
-                    "node": Node {
-                      "_children": Object {},
-                      "_context": Object {},
-                      "_dependencies": Set {},
-                      "_locked": false,
-                      "_metadata": Array [],
-                      "_validations": Array [],
-                      "host": [Circular],
-                      "id": "Resource",
-                      "scope": [Circular],
-                    },
-                    "patches": Array [],
-                    "props": Object {
-                      "apiVersion": "v1",
-                      "binaryData": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "data": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "immutable": false,
-                      "kind": "ConfigMap",
-                      "metadata": Object {
-                        "name": "container-env",
-                        "namespace": "default",
-                      },
-                    },
-                    Symbol(@aws-cdk/core.DependableTrait): Object {
-                      "dependencyRoots": Array [
-                        [Circular],
-                      ],
-                    },
-                  },
-                },
-                "_context": Object {},
-                "_dependencies": Set {},
-                "_locked": false,
-                "_metadata": Array [],
-                "_validations": Array [],
-                "host": [Circular],
-                "id": "container-env",
-                "scope": [Circular],
-              },
-              "permissions": ResourcePermissions {
-                "instance": [Circular],
-              },
-              "resourceType": "configmaps",
-              Symbol(@aws-cdk/core.DependableTrait): Object {
-                "dependencyRoots": Array [
-                  [Circular],
-                ],
-              },
-            },
             "deployment": [Circular],
-            "init-container-env": ConfigMap {
-              "_binaryData": Object {},
-              "_data": Object {
-                "MF_METADATA_DB_HOST": "release-name-postgresql",
-                "MF_METADATA_DB_NAME": "metaflow",
-                "MF_METADATA_DB_PORT": "5432",
-                "MF_METADATA_DB_PSWD": "metaflow",
-                "MF_METADATA_DB_USER": "metaflow",
-              },
-              "apiObject": KubeConfigMap {
-                "apiGroup": "core",
-                "apiVersion": "v1",
-                "chart": [Circular],
-                "kind": "ConfigMap",
-                "metadata": ApiObjectMetadataDefinition {
-                  "_additionalAttributes": Object {
-                    "labels": Object {},
-                    "name": "init-container-env",
-                    "namespace": "default",
-                  },
-                  "annotations": Object {},
-                  "finalizers": Array [],
-                  "labels": Object {},
-                  "name": "init-container-env",
-                  "namespace": "default",
-                  "ownerReferences": Array [],
-                },
-                "name": "init-container-env",
-                "node": Node {
-                  "_children": Object {},
-                  "_context": Object {},
-                  "_dependencies": Set {},
-                  "_locked": false,
-                  "_metadata": Array [],
-                  "_validations": Array [],
-                  "host": [Circular],
-                  "id": "Resource",
-                  "scope": [Circular],
-                },
-                "patches": Array [],
-                "props": Object {
-                  "apiVersion": "v1",
-                  "binaryData": Lazy {
-                    "producer": Object {
-                      "produce": [Function],
-                    },
-                  },
-                  "data": Lazy {
-                    "producer": Object {
-                      "produce": [Function],
-                    },
-                  },
-                  "immutable": false,
-                  "kind": "ConfigMap",
-                  "metadata": Object {
-                    "name": "init-container-env",
-                    "namespace": "default",
-                  },
-                },
-                Symbol(@aws-cdk/core.DependableTrait): Object {
-                  "dependencyRoots": Array [
-                    [Circular],
-                  ],
-                },
-              },
-              "immutable": false,
-              "node": Node {
-                "_children": Object {
-                  "Resource": KubeConfigMap {
-                    "apiGroup": "core",
-                    "apiVersion": "v1",
-                    "chart": [Circular],
-                    "kind": "ConfigMap",
-                    "metadata": ApiObjectMetadataDefinition {
-                      "_additionalAttributes": Object {
-                        "labels": Object {},
-                        "name": "init-container-env",
-                        "namespace": "default",
-                      },
-                      "annotations": Object {},
-                      "finalizers": Array [],
-                      "labels": Object {},
-                      "name": "init-container-env",
-                      "namespace": "default",
-                      "ownerReferences": Array [],
-                    },
-                    "name": "init-container-env",
-                    "node": Node {
-                      "_children": Object {},
-                      "_context": Object {},
-                      "_dependencies": Set {},
-                      "_locked": false,
-                      "_metadata": Array [],
-                      "_validations": Array [],
-                      "host": [Circular],
-                      "id": "Resource",
-                      "scope": [Circular],
-                    },
-                    "patches": Array [],
-                    "props": Object {
-                      "apiVersion": "v1",
-                      "binaryData": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "data": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "immutable": false,
-                      "kind": "ConfigMap",
-                      "metadata": Object {
-                        "name": "init-container-env",
-                        "namespace": "default",
-                      },
-                    },
-                    Symbol(@aws-cdk/core.DependableTrait): Object {
-                      "dependencyRoots": Array [
-                        [Circular],
-                      ],
-                    },
-                  },
-                },
-                "_context": Object {},
-                "_dependencies": Set {},
-                "_locked": false,
-                "_metadata": Array [],
-                "_validations": Array [],
-                "host": [Circular],
-                "id": "init-container-env",
-                "scope": [Circular],
-              },
-              "permissions": ResourcePermissions {
-                "instance": [Circular],
-              },
-              "resourceType": "configmaps",
-              Symbol(@aws-cdk/core.DependableTrait): Object {
-                "dependencyRoots": Array [
-                  [Circular],
-                ],
-              },
-            },
           },
           "_context": Object {},
           "_dependencies": Set {},
@@ -886,7 +456,7 @@ MetaflowServiceChart {
           "namespace": undefined,
           "node": Node {
             "_children": Object {
-              "metaflow-service-sa": [Circular],
+              "metaflow-static-sa": [Circular],
             },
             "_context": Object {},
             "_dependencies": Set {},
@@ -910,7 +480,7 @@ MetaflowServiceChart {
                 "id": "",
                 "scope": undefined,
               },
-              "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+              "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
               "outputFileExtension": ".k8s.yaml",
               "yamlOutputType": 1,
               Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -930,19 +500,19 @@ MetaflowServiceChart {
         "metadata": ApiObjectMetadataDefinition {
           "_additionalAttributes": Object {
             "labels": Object {},
-            "name": "base-metaflow-service-sa-c8615416",
+            "name": "base-metaflow-static-sa-c85626c4",
             "namespace": undefined,
           },
           "annotations": Object {},
           "finalizers": Array [],
           "labels": Object {},
-          "name": "base-metaflow-service-sa-c8615416",
+          "name": "base-metaflow-static-sa-c85626c4",
           "namespace": undefined,
           "ownerReferences": Array [],
         },
-        "name": "base-metaflow-service-sa-c8615416",
+        "name": "base-metaflow-static-sa-c85626c4",
         "node": Node {
-          "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+          "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
           "_children": Object {},
           "_context": Object {},
           "_dependencies": Set {},
@@ -982,7 +552,7 @@ MetaflowServiceChart {
               "namespace": undefined,
               "node": Node {
                 "_children": Object {
-                  "metaflow-service-sa": [Circular],
+                  "metaflow-static-sa": [Circular],
                 },
                 "_context": Object {},
                 "_dependencies": Set {},
@@ -1006,7 +576,7 @@ MetaflowServiceChart {
                     "id": "",
                     "scope": undefined,
                   },
-                  "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                  "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                   "outputFileExtension": ".k8s.yaml",
                   "yamlOutputType": 1,
                   Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -1026,19 +596,19 @@ MetaflowServiceChart {
             "metadata": ApiObjectMetadataDefinition {
               "_additionalAttributes": Object {
                 "labels": Object {},
-                "name": "base-metaflow-service-sa-c8615416",
+                "name": "base-metaflow-static-sa-c85626c4",
                 "namespace": undefined,
               },
               "annotations": Object {},
               "finalizers": Array [],
               "labels": Object {},
-              "name": "base-metaflow-service-sa-c8615416",
+              "name": "base-metaflow-static-sa-c85626c4",
               "namespace": undefined,
               "ownerReferences": Array [],
             },
-            "name": "base-metaflow-service-sa-c8615416",
+            "name": "base-metaflow-static-sa-c85626c4",
             "node": Node {
-              "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+              "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
               "_children": Object {},
               "_context": Object {},
               "_dependencies": Set {},
@@ -1074,13 +644,13 @@ MetaflowServiceChart {
         "_metadata": Array [],
         "_validations": Array [],
         "host": [Circular],
-        "id": "metaflow-service-sa",
+        "id": "metaflow-static-sa",
         "scope": Chart {
           "_labels": Object {},
           "namespace": undefined,
           "node": Node {
             "_children": Object {
-              "metaflow-service-sa": [Circular],
+              "metaflow-static-sa": [Circular],
             },
             "_context": Object {},
             "_dependencies": Set {},
@@ -1104,7 +674,7 @@ MetaflowServiceChart {
                 "id": "",
                 "scope": undefined,
               },
-              "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+              "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
               "outputFileExtension": ".k8s.yaml",
               "yamlOutputType": 1,
               Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -1158,11 +728,7 @@ MetaflowServiceChart {
           "_containers": Array [
             Container {
               "_args": undefined,
-              "_command": Array [
-                "/opt/latest/bin/python3",
-                "-m",
-                "services.metadata_service.server",
-              ],
+              "_command": undefined,
               "_lifecycle": undefined,
               "_liveness": Probe {
                 "commandOptions": undefined,
@@ -1174,7 +740,7 @@ MetaflowServiceChart {
                       "label": "seconds",
                     },
                   },
-                  "path": "/ping",
+                  "path": "/",
                   "periodSeconds": Duration {
                     "amount": 15,
                     "unit": TimeUnit {
@@ -1211,7 +777,7 @@ MetaflowServiceChart {
                       "label": "seconds",
                     },
                   },
-                  "path": "/ping",
+                  "path": "/",
                   "periodSeconds": Duration {
                     "amount": 15,
                     "unit": TimeUnit {
@@ -1241,64 +807,13 @@ MetaflowServiceChart {
               "_startup": undefined,
               "env": Env {
                 "_sources": Array [],
-                "_variables": Object {
-                  "MF_METADATA_DB_HOST": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_HOST",
-                        "name": "container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                  "MF_METADATA_DB_NAME": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_NAME",
-                        "name": "container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                  "MF_METADATA_DB_PORT": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_PORT",
-                        "name": "container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                  "MF_METADATA_DB_PSWD": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_PSWD",
-                        "name": "container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                  "MF_METADATA_DB_USER": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_USER",
-                        "name": "container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                },
+                "_variables": Object {},
               },
-              "image": "public.ecr.aws/outerbounds/metaflow_metadata_service:v2.3.0",
+              "image": "public.ecr.aws/outerbounds/metaflow_ui:v1.1.2",
               "imagePullPolicy": "IfNotPresent",
               "mounts": Array [],
-              "name": "metaflow-service",
-              "port": 8080,
+              "name": "main",
+              "port": 3000,
               "resources": undefined,
               "securityContext": ContainerSecurityContext {
                 "ensureNonRoot": false,
@@ -1311,89 +826,7 @@ MetaflowServiceChart {
             },
           ],
           "_hostAliases": Array [],
-          "_initContainers": Array [
-            Container {
-              "_args": undefined,
-              "_command": Array [
-                "/opt/latest/bin/python3",
-                "/root/run_goose.py",
-                "--only-if-empty-db",
-              ],
-              "_lifecycle": undefined,
-              "_liveness": undefined,
-              "_readiness": undefined,
-              "_startup": undefined,
-              "env": Env {
-                "_sources": Array [],
-                "_variables": Object {
-                  "MF_METADATA_DB_HOST": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_HOST",
-                        "name": "init-container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                  "MF_METADATA_DB_NAME": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_NAME",
-                        "name": "init-container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                  "MF_METADATA_DB_PORT": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_PORT",
-                        "name": "init-container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                  "MF_METADATA_DB_PSWD": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_PSWD",
-                        "name": "init-container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                  "MF_METADATA_DB_USER": EnvValue {
-                    "value": undefined,
-                    "valueFrom": Object {
-                      "configMapKeyRef": Object {
-                        "key": "MF_METADATA_DB_USER",
-                        "name": "init-container-env",
-                        "optional": undefined,
-                      },
-                    },
-                  },
-                },
-              },
-              "image": "undefined:undefined",
-              "imagePullPolicy": "IfNotPresent",
-              "mounts": Array [],
-              "name": "init-0",
-              "port": undefined,
-              "resources": undefined,
-              "securityContext": ContainerSecurityContext {
-                "ensureNonRoot": false,
-                "group": undefined,
-                "privileged": false,
-                "readOnlyRootFilesystem": false,
-                "user": undefined,
-              },
-              "workingDir": undefined,
-            },
-          ],
+          "_initContainers": Array [],
           "_matchExpressions": Array [],
           "_matchLabels": Object {
             "cdk8s.io/metadata.addr": "test-service-metaflow-service-deployment-c82eb9b6",
@@ -1529,12 +962,7 @@ MetaflowServiceChart {
                 "_ports": Array [
                   Object {
                     "name": "http",
-                    "port": 8080,
-                    "protocol": "TCP",
-                  },
-                  Object {
-                    "name": "upgrades",
-                    "port": 8082,
+                    "port": 3000,
                     "protocol": "TCP",
                   },
                 ],
@@ -1659,7 +1087,7 @@ MetaflowServiceChart {
                   "instance": [Circular],
                 },
                 "resourceType": "services",
-                "type": "ClusterIP",
+                "type": "NodePort",
                 Symbol(@aws-cdk/core.DependableTrait): Object {
                   "dependencyRoots": Array [
                     [Circular],
@@ -1728,7 +1156,7 @@ MetaflowServiceChart {
                 "namespace": undefined,
                 "node": Node {
                   "_children": Object {
-                    "metaflow-service-sa": [Circular],
+                    "metaflow-static-sa": [Circular],
                   },
                   "_context": Object {},
                   "_dependencies": Set {},
@@ -1752,7 +1180,7 @@ MetaflowServiceChart {
                       "id": "",
                       "scope": undefined,
                     },
-                    "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                    "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                     "outputFileExtension": ".k8s.yaml",
                     "yamlOutputType": 1,
                     Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -1772,19 +1200,19 @@ MetaflowServiceChart {
               "metadata": ApiObjectMetadataDefinition {
                 "_additionalAttributes": Object {
                   "labels": Object {},
-                  "name": "base-metaflow-service-sa-c8615416",
+                  "name": "base-metaflow-static-sa-c85626c4",
                   "namespace": undefined,
                 },
                 "annotations": Object {},
                 "finalizers": Array [],
                 "labels": Object {},
-                "name": "base-metaflow-service-sa-c8615416",
+                "name": "base-metaflow-static-sa-c85626c4",
                 "namespace": undefined,
                 "ownerReferences": Array [],
               },
-              "name": "base-metaflow-service-sa-c8615416",
+              "name": "base-metaflow-static-sa-c85626c4",
               "node": Node {
-                "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+                "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
                 "_children": Object {},
                 "_context": Object {},
                 "_dependencies": Set {},
@@ -1824,7 +1252,7 @@ MetaflowServiceChart {
                     "namespace": undefined,
                     "node": Node {
                       "_children": Object {
-                        "metaflow-service-sa": [Circular],
+                        "metaflow-static-sa": [Circular],
                       },
                       "_context": Object {},
                       "_dependencies": Set {},
@@ -1848,7 +1276,7 @@ MetaflowServiceChart {
                           "id": "",
                           "scope": undefined,
                         },
-                        "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                        "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                         "outputFileExtension": ".k8s.yaml",
                         "yamlOutputType": 1,
                         Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -1868,19 +1296,19 @@ MetaflowServiceChart {
                   "metadata": ApiObjectMetadataDefinition {
                     "_additionalAttributes": Object {
                       "labels": Object {},
-                      "name": "base-metaflow-service-sa-c8615416",
+                      "name": "base-metaflow-static-sa-c85626c4",
                       "namespace": undefined,
                     },
                     "annotations": Object {},
                     "finalizers": Array [],
                     "labels": Object {},
-                    "name": "base-metaflow-service-sa-c8615416",
+                    "name": "base-metaflow-static-sa-c85626c4",
                     "namespace": undefined,
                     "ownerReferences": Array [],
                   },
-                  "name": "base-metaflow-service-sa-c8615416",
+                  "name": "base-metaflow-static-sa-c85626c4",
                   "node": Node {
-                    "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+                    "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
                     "_children": Object {},
                     "_context": Object {},
                     "_dependencies": Set {},
@@ -1916,13 +1344,13 @@ MetaflowServiceChart {
               "_metadata": Array [],
               "_validations": Array [],
               "host": [Circular],
-              "id": "metaflow-service-sa",
+              "id": "metaflow-static-sa",
               "scope": Chart {
                 "_labels": Object {},
                 "namespace": undefined,
                 "node": Node {
                   "_children": Object {
-                    "metaflow-service-sa": [Circular],
+                    "metaflow-static-sa": [Circular],
                   },
                   "_context": Object {},
                   "_dependencies": Set {},
@@ -1946,7 +1374,7 @@ MetaflowServiceChart {
                       "id": "",
                       "scope": undefined,
                     },
-                    "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                    "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                     "outputFileExtension": ".k8s.yaml",
                     "yamlOutputType": 1,
                     Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -1995,159 +1423,11 @@ MetaflowServiceChart {
         "namespace": "default",
         "node": Node {
           "_children": Object {
-            "container-env": ConfigMap {
-              "_binaryData": Object {},
-              "_data": Object {
-                "MF_METADATA_DB_HOST": "release-name-postgresql",
-                "MF_METADATA_DB_NAME": "metaflow",
-                "MF_METADATA_DB_PORT": "5432",
-                "MF_METADATA_DB_PSWD": "metaflow",
-                "MF_METADATA_DB_USER": "metaflow",
-              },
-              "apiObject": KubeConfigMap {
-                "apiGroup": "core",
-                "apiVersion": "v1",
-                "chart": [Circular],
-                "kind": "ConfigMap",
-                "metadata": ApiObjectMetadataDefinition {
-                  "_additionalAttributes": Object {
-                    "labels": Object {},
-                    "name": "container-env",
-                    "namespace": "default",
-                  },
-                  "annotations": Object {},
-                  "finalizers": Array [],
-                  "labels": Object {},
-                  "name": "container-env",
-                  "namespace": "default",
-                  "ownerReferences": Array [],
-                },
-                "name": "container-env",
-                "node": Node {
-                  "_children": Object {},
-                  "_context": Object {},
-                  "_dependencies": Set {},
-                  "_locked": false,
-                  "_metadata": Array [],
-                  "_validations": Array [],
-                  "host": [Circular],
-                  "id": "Resource",
-                  "scope": [Circular],
-                },
-                "patches": Array [],
-                "props": Object {
-                  "apiVersion": "v1",
-                  "binaryData": Lazy {
-                    "producer": Object {
-                      "produce": [Function],
-                    },
-                  },
-                  "data": Lazy {
-                    "producer": Object {
-                      "produce": [Function],
-                    },
-                  },
-                  "immutable": false,
-                  "kind": "ConfigMap",
-                  "metadata": Object {
-                    "name": "container-env",
-                    "namespace": "default",
-                  },
-                },
-                Symbol(@aws-cdk/core.DependableTrait): Object {
-                  "dependencyRoots": Array [
-                    [Circular],
-                  ],
-                },
-              },
-              "immutable": false,
-              "node": Node {
-                "_children": Object {
-                  "Resource": KubeConfigMap {
-                    "apiGroup": "core",
-                    "apiVersion": "v1",
-                    "chart": [Circular],
-                    "kind": "ConfigMap",
-                    "metadata": ApiObjectMetadataDefinition {
-                      "_additionalAttributes": Object {
-                        "labels": Object {},
-                        "name": "container-env",
-                        "namespace": "default",
-                      },
-                      "annotations": Object {},
-                      "finalizers": Array [],
-                      "labels": Object {},
-                      "name": "container-env",
-                      "namespace": "default",
-                      "ownerReferences": Array [],
-                    },
-                    "name": "container-env",
-                    "node": Node {
-                      "_children": Object {},
-                      "_context": Object {},
-                      "_dependencies": Set {},
-                      "_locked": false,
-                      "_metadata": Array [],
-                      "_validations": Array [],
-                      "host": [Circular],
-                      "id": "Resource",
-                      "scope": [Circular],
-                    },
-                    "patches": Array [],
-                    "props": Object {
-                      "apiVersion": "v1",
-                      "binaryData": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "data": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "immutable": false,
-                      "kind": "ConfigMap",
-                      "metadata": Object {
-                        "name": "container-env",
-                        "namespace": "default",
-                      },
-                    },
-                    Symbol(@aws-cdk/core.DependableTrait): Object {
-                      "dependencyRoots": Array [
-                        [Circular],
-                      ],
-                    },
-                  },
-                },
-                "_context": Object {},
-                "_dependencies": Set {},
-                "_locked": false,
-                "_metadata": Array [],
-                "_validations": Array [],
-                "host": [Circular],
-                "id": "container-env",
-                "scope": [Circular],
-              },
-              "permissions": ResourcePermissions {
-                "instance": [Circular],
-              },
-              "resourceType": "configmaps",
-              Symbol(@aws-cdk/core.DependableTrait): Object {
-                "dependencyRoots": Array [
-                  [Circular],
-                ],
-              },
-            },
             "deployment": Deployment {
               "_containers": Array [
                 Container {
                   "_args": undefined,
-                  "_command": Array [
-                    "/opt/latest/bin/python3",
-                    "-m",
-                    "services.metadata_service.server",
-                  ],
+                  "_command": undefined,
                   "_lifecycle": undefined,
                   "_liveness": Probe {
                     "commandOptions": undefined,
@@ -2159,7 +1439,7 @@ MetaflowServiceChart {
                           "label": "seconds",
                         },
                       },
-                      "path": "/ping",
+                      "path": "/",
                       "periodSeconds": Duration {
                         "amount": 15,
                         "unit": TimeUnit {
@@ -2196,7 +1476,7 @@ MetaflowServiceChart {
                           "label": "seconds",
                         },
                       },
-                      "path": "/ping",
+                      "path": "/",
                       "periodSeconds": Duration {
                         "amount": 15,
                         "unit": TimeUnit {
@@ -2226,64 +1506,13 @@ MetaflowServiceChart {
                   "_startup": undefined,
                   "env": Env {
                     "_sources": Array [],
-                    "_variables": Object {
-                      "MF_METADATA_DB_HOST": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_HOST",
-                            "name": "container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                      "MF_METADATA_DB_NAME": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_NAME",
-                            "name": "container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                      "MF_METADATA_DB_PORT": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_PORT",
-                            "name": "container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                      "MF_METADATA_DB_PSWD": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_PSWD",
-                            "name": "container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                      "MF_METADATA_DB_USER": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_USER",
-                            "name": "container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                    },
+                    "_variables": Object {},
                   },
-                  "image": "public.ecr.aws/outerbounds/metaflow_metadata_service:v2.3.0",
+                  "image": "public.ecr.aws/outerbounds/metaflow_ui:v1.1.2",
                   "imagePullPolicy": "IfNotPresent",
                   "mounts": Array [],
-                  "name": "metaflow-service",
-                  "port": 8080,
+                  "name": "main",
+                  "port": 3000,
                   "resources": undefined,
                   "securityContext": ContainerSecurityContext {
                     "ensureNonRoot": false,
@@ -2296,89 +1525,7 @@ MetaflowServiceChart {
                 },
               ],
               "_hostAliases": Array [],
-              "_initContainers": Array [
-                Container {
-                  "_args": undefined,
-                  "_command": Array [
-                    "/opt/latest/bin/python3",
-                    "/root/run_goose.py",
-                    "--only-if-empty-db",
-                  ],
-                  "_lifecycle": undefined,
-                  "_liveness": undefined,
-                  "_readiness": undefined,
-                  "_startup": undefined,
-                  "env": Env {
-                    "_sources": Array [],
-                    "_variables": Object {
-                      "MF_METADATA_DB_HOST": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_HOST",
-                            "name": "init-container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                      "MF_METADATA_DB_NAME": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_NAME",
-                            "name": "init-container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                      "MF_METADATA_DB_PORT": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_PORT",
-                            "name": "init-container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                      "MF_METADATA_DB_PSWD": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_PSWD",
-                            "name": "init-container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                      "MF_METADATA_DB_USER": EnvValue {
-                        "value": undefined,
-                        "valueFrom": Object {
-                          "configMapKeyRef": Object {
-                            "key": "MF_METADATA_DB_USER",
-                            "name": "init-container-env",
-                            "optional": undefined,
-                          },
-                        },
-                      },
-                    },
-                  },
-                  "image": "undefined:undefined",
-                  "imagePullPolicy": "IfNotPresent",
-                  "mounts": Array [],
-                  "name": "init-0",
-                  "port": undefined,
-                  "resources": undefined,
-                  "securityContext": ContainerSecurityContext {
-                    "ensureNonRoot": false,
-                    "group": undefined,
-                    "privileged": false,
-                    "readOnlyRootFilesystem": false,
-                    "user": undefined,
-                  },
-                  "workingDir": undefined,
-                },
-              ],
+              "_initContainers": Array [],
               "_matchExpressions": Array [],
               "_matchLabels": Object {
                 "cdk8s.io/metadata.addr": "test-service-metaflow-service-deployment-c82eb9b6",
@@ -2514,12 +1661,7 @@ MetaflowServiceChart {
                     "_ports": Array [
                       Object {
                         "name": "http",
-                        "port": 8080,
-                        "protocol": "TCP",
-                      },
-                      Object {
-                        "name": "upgrades",
-                        "port": 8082,
+                        "port": 3000,
                         "protocol": "TCP",
                       },
                     ],
@@ -2644,7 +1786,7 @@ MetaflowServiceChart {
                       "instance": [Circular],
                     },
                     "resourceType": "services",
-                    "type": "ClusterIP",
+                    "type": "NodePort",
                     Symbol(@aws-cdk/core.DependableTrait): Object {
                       "dependencyRoots": Array [
                         [Circular],
@@ -2713,7 +1855,7 @@ MetaflowServiceChart {
                     "namespace": undefined,
                     "node": Node {
                       "_children": Object {
-                        "metaflow-service-sa": [Circular],
+                        "metaflow-static-sa": [Circular],
                       },
                       "_context": Object {},
                       "_dependencies": Set {},
@@ -2737,7 +1879,7 @@ MetaflowServiceChart {
                           "id": "",
                           "scope": undefined,
                         },
-                        "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                        "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                         "outputFileExtension": ".k8s.yaml",
                         "yamlOutputType": 1,
                         Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -2757,19 +1899,19 @@ MetaflowServiceChart {
                   "metadata": ApiObjectMetadataDefinition {
                     "_additionalAttributes": Object {
                       "labels": Object {},
-                      "name": "base-metaflow-service-sa-c8615416",
+                      "name": "base-metaflow-static-sa-c85626c4",
                       "namespace": undefined,
                     },
                     "annotations": Object {},
                     "finalizers": Array [],
                     "labels": Object {},
-                    "name": "base-metaflow-service-sa-c8615416",
+                    "name": "base-metaflow-static-sa-c85626c4",
                     "namespace": undefined,
                     "ownerReferences": Array [],
                   },
-                  "name": "base-metaflow-service-sa-c8615416",
+                  "name": "base-metaflow-static-sa-c85626c4",
                   "node": Node {
-                    "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+                    "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
                     "_children": Object {},
                     "_context": Object {},
                     "_dependencies": Set {},
@@ -2809,7 +1951,7 @@ MetaflowServiceChart {
                         "namespace": undefined,
                         "node": Node {
                           "_children": Object {
-                            "metaflow-service-sa": [Circular],
+                            "metaflow-static-sa": [Circular],
                           },
                           "_context": Object {},
                           "_dependencies": Set {},
@@ -2833,7 +1975,7 @@ MetaflowServiceChart {
                               "id": "",
                               "scope": undefined,
                             },
-                            "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                            "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                             "outputFileExtension": ".k8s.yaml",
                             "yamlOutputType": 1,
                             Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -2853,19 +1995,19 @@ MetaflowServiceChart {
                       "metadata": ApiObjectMetadataDefinition {
                         "_additionalAttributes": Object {
                           "labels": Object {},
-                          "name": "base-metaflow-service-sa-c8615416",
+                          "name": "base-metaflow-static-sa-c85626c4",
                           "namespace": undefined,
                         },
                         "annotations": Object {},
                         "finalizers": Array [],
                         "labels": Object {},
-                        "name": "base-metaflow-service-sa-c8615416",
+                        "name": "base-metaflow-static-sa-c85626c4",
                         "namespace": undefined,
                         "ownerReferences": Array [],
                       },
-                      "name": "base-metaflow-service-sa-c8615416",
+                      "name": "base-metaflow-static-sa-c85626c4",
                       "node": Node {
-                        "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+                        "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
                         "_children": Object {},
                         "_context": Object {},
                         "_dependencies": Set {},
@@ -2901,13 +2043,13 @@ MetaflowServiceChart {
                   "_metadata": Array [],
                   "_validations": Array [],
                   "host": [Circular],
-                  "id": "metaflow-service-sa",
+                  "id": "metaflow-static-sa",
                   "scope": Chart {
                     "_labels": Object {},
                     "namespace": undefined,
                     "node": Node {
                       "_children": Object {
-                        "metaflow-service-sa": [Circular],
+                        "metaflow-static-sa": [Circular],
                       },
                       "_context": Object {},
                       "_dependencies": Set {},
@@ -2931,7 +2073,7 @@ MetaflowServiceChart {
                           "id": "",
                           "scope": undefined,
                         },
-                        "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                        "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                         "outputFileExtension": ".k8s.yaml",
                         "yamlOutputType": 1,
                         Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -2977,150 +2119,6 @@ MetaflowServiceChart {
                 ],
               },
             },
-            "init-container-env": ConfigMap {
-              "_binaryData": Object {},
-              "_data": Object {
-                "MF_METADATA_DB_HOST": "release-name-postgresql",
-                "MF_METADATA_DB_NAME": "metaflow",
-                "MF_METADATA_DB_PORT": "5432",
-                "MF_METADATA_DB_PSWD": "metaflow",
-                "MF_METADATA_DB_USER": "metaflow",
-              },
-              "apiObject": KubeConfigMap {
-                "apiGroup": "core",
-                "apiVersion": "v1",
-                "chart": [Circular],
-                "kind": "ConfigMap",
-                "metadata": ApiObjectMetadataDefinition {
-                  "_additionalAttributes": Object {
-                    "labels": Object {},
-                    "name": "init-container-env",
-                    "namespace": "default",
-                  },
-                  "annotations": Object {},
-                  "finalizers": Array [],
-                  "labels": Object {},
-                  "name": "init-container-env",
-                  "namespace": "default",
-                  "ownerReferences": Array [],
-                },
-                "name": "init-container-env",
-                "node": Node {
-                  "_children": Object {},
-                  "_context": Object {},
-                  "_dependencies": Set {},
-                  "_locked": false,
-                  "_metadata": Array [],
-                  "_validations": Array [],
-                  "host": [Circular],
-                  "id": "Resource",
-                  "scope": [Circular],
-                },
-                "patches": Array [],
-                "props": Object {
-                  "apiVersion": "v1",
-                  "binaryData": Lazy {
-                    "producer": Object {
-                      "produce": [Function],
-                    },
-                  },
-                  "data": Lazy {
-                    "producer": Object {
-                      "produce": [Function],
-                    },
-                  },
-                  "immutable": false,
-                  "kind": "ConfigMap",
-                  "metadata": Object {
-                    "name": "init-container-env",
-                    "namespace": "default",
-                  },
-                },
-                Symbol(@aws-cdk/core.DependableTrait): Object {
-                  "dependencyRoots": Array [
-                    [Circular],
-                  ],
-                },
-              },
-              "immutable": false,
-              "node": Node {
-                "_children": Object {
-                  "Resource": KubeConfigMap {
-                    "apiGroup": "core",
-                    "apiVersion": "v1",
-                    "chart": [Circular],
-                    "kind": "ConfigMap",
-                    "metadata": ApiObjectMetadataDefinition {
-                      "_additionalAttributes": Object {
-                        "labels": Object {},
-                        "name": "init-container-env",
-                        "namespace": "default",
-                      },
-                      "annotations": Object {},
-                      "finalizers": Array [],
-                      "labels": Object {},
-                      "name": "init-container-env",
-                      "namespace": "default",
-                      "ownerReferences": Array [],
-                    },
-                    "name": "init-container-env",
-                    "node": Node {
-                      "_children": Object {},
-                      "_context": Object {},
-                      "_dependencies": Set {},
-                      "_locked": false,
-                      "_metadata": Array [],
-                      "_validations": Array [],
-                      "host": [Circular],
-                      "id": "Resource",
-                      "scope": [Circular],
-                    },
-                    "patches": Array [],
-                    "props": Object {
-                      "apiVersion": "v1",
-                      "binaryData": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "data": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "immutable": false,
-                      "kind": "ConfigMap",
-                      "metadata": Object {
-                        "name": "init-container-env",
-                        "namespace": "default",
-                      },
-                    },
-                    Symbol(@aws-cdk/core.DependableTrait): Object {
-                      "dependencyRoots": Array [
-                        [Circular],
-                      ],
-                    },
-                  },
-                },
-                "_context": Object {},
-                "_dependencies": Set {},
-                "_locked": false,
-                "_metadata": Array [],
-                "_validations": Array [],
-                "host": [Circular],
-                "id": "init-container-env",
-                "scope": [Circular],
-              },
-              "permissions": ResourcePermissions {
-                "instance": [Circular],
-              },
-              "resourceType": "configmaps",
-              Symbol(@aws-cdk/core.DependableTrait): Object {
-                "dependencyRoots": Array [
-                  [Circular],
-                ],
-              },
-            },
           },
           "_context": Object {},
           "_dependencies": Set {},
@@ -3153,7 +2151,7 @@ MetaflowServiceChart {
             "namespace": undefined,
             "node": Node {
               "_children": Object {
-                "metaflow-service-sa": ServiceAccount {
+                "metaflow-static-sa": ServiceAccount {
                   "_secrets": Array [],
                   "apiObject": KubeServiceAccount {
                     "apiGroup": "core",
@@ -3163,19 +2161,19 @@ MetaflowServiceChart {
                     "metadata": ApiObjectMetadataDefinition {
                       "_additionalAttributes": Object {
                         "labels": Object {},
-                        "name": "base-metaflow-service-sa-c8615416",
+                        "name": "base-metaflow-static-sa-c85626c4",
                         "namespace": undefined,
                       },
                       "annotations": Object {},
                       "finalizers": Array [],
                       "labels": Object {},
-                      "name": "base-metaflow-service-sa-c8615416",
+                      "name": "base-metaflow-static-sa-c85626c4",
                       "namespace": undefined,
                       "ownerReferences": Array [],
                     },
-                    "name": "base-metaflow-service-sa-c8615416",
+                    "name": "base-metaflow-static-sa-c85626c4",
                     "node": Node {
-                      "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+                      "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
                       "_children": Object {},
                       "_context": Object {},
                       "_dependencies": Set {},
@@ -3215,19 +2213,19 @@ MetaflowServiceChart {
                         "metadata": ApiObjectMetadataDefinition {
                           "_additionalAttributes": Object {
                             "labels": Object {},
-                            "name": "base-metaflow-service-sa-c8615416",
+                            "name": "base-metaflow-static-sa-c85626c4",
                             "namespace": undefined,
                           },
                           "annotations": Object {},
                           "finalizers": Array [],
                           "labels": Object {},
-                          "name": "base-metaflow-service-sa-c8615416",
+                          "name": "base-metaflow-static-sa-c85626c4",
                           "namespace": undefined,
                           "ownerReferences": Array [],
                         },
-                        "name": "base-metaflow-service-sa-c8615416",
+                        "name": "base-metaflow-static-sa-c85626c4",
                         "node": Node {
-                          "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+                          "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
                           "_children": Object {},
                           "_context": Object {},
                           "_dependencies": Set {},
@@ -3263,7 +2261,7 @@ MetaflowServiceChart {
                     "_metadata": Array [],
                     "_validations": Array [],
                     "host": [Circular],
-                    "id": "metaflow-service-sa",
+                    "id": "metaflow-static-sa",
                     "scope": [Circular],
                   },
                   "permissions": ResourcePermissions {
@@ -3303,7 +2301,7 @@ MetaflowServiceChart {
         "id": "",
         "scope": undefined,
       },
-      "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+      "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
       "outputFileExtension": ".k8s.yaml",
       "yamlOutputType": 1,
       Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -3319,12 +2317,7 @@ MetaflowServiceChart {
     "_ports": Array [
       Object {
         "name": "http",
-        "port": 8080,
-        "protocol": "TCP",
-      },
-      Object {
-        "name": "upgrades",
-        "port": 8082,
+        "port": 3000,
         "protocol": "TCP",
       },
     ],
@@ -3447,11 +2440,7 @@ MetaflowServiceChart {
         "_containers": Array [
           Container {
             "_args": undefined,
-            "_command": Array [
-              "/opt/latest/bin/python3",
-              "-m",
-              "services.metadata_service.server",
-            ],
+            "_command": undefined,
             "_lifecycle": undefined,
             "_liveness": Probe {
               "commandOptions": undefined,
@@ -3463,7 +2452,7 @@ MetaflowServiceChart {
                     "label": "seconds",
                   },
                 },
-                "path": "/ping",
+                "path": "/",
                 "periodSeconds": Duration {
                   "amount": 15,
                   "unit": TimeUnit {
@@ -3500,7 +2489,7 @@ MetaflowServiceChart {
                     "label": "seconds",
                   },
                 },
-                "path": "/ping",
+                "path": "/",
                 "periodSeconds": Duration {
                   "amount": 15,
                   "unit": TimeUnit {
@@ -3530,64 +2519,13 @@ MetaflowServiceChart {
             "_startup": undefined,
             "env": Env {
               "_sources": Array [],
-              "_variables": Object {
-                "MF_METADATA_DB_HOST": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_HOST",
-                      "name": "container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-                "MF_METADATA_DB_NAME": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_NAME",
-                      "name": "container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-                "MF_METADATA_DB_PORT": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_PORT",
-                      "name": "container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-                "MF_METADATA_DB_PSWD": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_PSWD",
-                      "name": "container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-                "MF_METADATA_DB_USER": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_USER",
-                      "name": "container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-              },
+              "_variables": Object {},
             },
-            "image": "public.ecr.aws/outerbounds/metaflow_metadata_service:v2.3.0",
+            "image": "public.ecr.aws/outerbounds/metaflow_ui:v1.1.2",
             "imagePullPolicy": "IfNotPresent",
             "mounts": Array [],
-            "name": "metaflow-service",
-            "port": 8080,
+            "name": "main",
+            "port": 3000,
             "resources": undefined,
             "securityContext": ContainerSecurityContext {
               "ensureNonRoot": false,
@@ -3600,89 +2538,7 @@ MetaflowServiceChart {
           },
         ],
         "_hostAliases": Array [],
-        "_initContainers": Array [
-          Container {
-            "_args": undefined,
-            "_command": Array [
-              "/opt/latest/bin/python3",
-              "/root/run_goose.py",
-              "--only-if-empty-db",
-            ],
-            "_lifecycle": undefined,
-            "_liveness": undefined,
-            "_readiness": undefined,
-            "_startup": undefined,
-            "env": Env {
-              "_sources": Array [],
-              "_variables": Object {
-                "MF_METADATA_DB_HOST": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_HOST",
-                      "name": "init-container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-                "MF_METADATA_DB_NAME": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_NAME",
-                      "name": "init-container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-                "MF_METADATA_DB_PORT": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_PORT",
-                      "name": "init-container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-                "MF_METADATA_DB_PSWD": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_PSWD",
-                      "name": "init-container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-                "MF_METADATA_DB_USER": EnvValue {
-                  "value": undefined,
-                  "valueFrom": Object {
-                    "configMapKeyRef": Object {
-                      "key": "MF_METADATA_DB_USER",
-                      "name": "init-container-env",
-                      "optional": undefined,
-                    },
-                  },
-                },
-              },
-            },
-            "image": "undefined:undefined",
-            "imagePullPolicy": "IfNotPresent",
-            "mounts": Array [],
-            "name": "init-0",
-            "port": undefined,
-            "resources": undefined,
-            "securityContext": ContainerSecurityContext {
-              "ensureNonRoot": false,
-              "group": undefined,
-              "privileged": false,
-              "readOnlyRootFilesystem": false,
-              "user": undefined,
-            },
-            "workingDir": undefined,
-          },
-        ],
+        "_initContainers": Array [],
         "_matchExpressions": Array [],
         "_matchLabels": Object {
           "cdk8s.io/metadata.addr": "test-service-metaflow-service-deployment-c82eb9b6",
@@ -3826,295 +2682,7 @@ MetaflowServiceChart {
             "namespace": "default",
             "node": Node {
               "_children": Object {
-                "container-env": ConfigMap {
-                  "_binaryData": Object {},
-                  "_data": Object {
-                    "MF_METADATA_DB_HOST": "release-name-postgresql",
-                    "MF_METADATA_DB_NAME": "metaflow",
-                    "MF_METADATA_DB_PORT": "5432",
-                    "MF_METADATA_DB_PSWD": "metaflow",
-                    "MF_METADATA_DB_USER": "metaflow",
-                  },
-                  "apiObject": KubeConfigMap {
-                    "apiGroup": "core",
-                    "apiVersion": "v1",
-                    "chart": [Circular],
-                    "kind": "ConfigMap",
-                    "metadata": ApiObjectMetadataDefinition {
-                      "_additionalAttributes": Object {
-                        "labels": Object {},
-                        "name": "container-env",
-                        "namespace": "default",
-                      },
-                      "annotations": Object {},
-                      "finalizers": Array [],
-                      "labels": Object {},
-                      "name": "container-env",
-                      "namespace": "default",
-                      "ownerReferences": Array [],
-                    },
-                    "name": "container-env",
-                    "node": Node {
-                      "_children": Object {},
-                      "_context": Object {},
-                      "_dependencies": Set {},
-                      "_locked": false,
-                      "_metadata": Array [],
-                      "_validations": Array [],
-                      "host": [Circular],
-                      "id": "Resource",
-                      "scope": [Circular],
-                    },
-                    "patches": Array [],
-                    "props": Object {
-                      "apiVersion": "v1",
-                      "binaryData": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "data": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "immutable": false,
-                      "kind": "ConfigMap",
-                      "metadata": Object {
-                        "name": "container-env",
-                        "namespace": "default",
-                      },
-                    },
-                    Symbol(@aws-cdk/core.DependableTrait): Object {
-                      "dependencyRoots": Array [
-                        [Circular],
-                      ],
-                    },
-                  },
-                  "immutable": false,
-                  "node": Node {
-                    "_children": Object {
-                      "Resource": KubeConfigMap {
-                        "apiGroup": "core",
-                        "apiVersion": "v1",
-                        "chart": [Circular],
-                        "kind": "ConfigMap",
-                        "metadata": ApiObjectMetadataDefinition {
-                          "_additionalAttributes": Object {
-                            "labels": Object {},
-                            "name": "container-env",
-                            "namespace": "default",
-                          },
-                          "annotations": Object {},
-                          "finalizers": Array [],
-                          "labels": Object {},
-                          "name": "container-env",
-                          "namespace": "default",
-                          "ownerReferences": Array [],
-                        },
-                        "name": "container-env",
-                        "node": Node {
-                          "_children": Object {},
-                          "_context": Object {},
-                          "_dependencies": Set {},
-                          "_locked": false,
-                          "_metadata": Array [],
-                          "_validations": Array [],
-                          "host": [Circular],
-                          "id": "Resource",
-                          "scope": [Circular],
-                        },
-                        "patches": Array [],
-                        "props": Object {
-                          "apiVersion": "v1",
-                          "binaryData": Lazy {
-                            "producer": Object {
-                              "produce": [Function],
-                            },
-                          },
-                          "data": Lazy {
-                            "producer": Object {
-                              "produce": [Function],
-                            },
-                          },
-                          "immutable": false,
-                          "kind": "ConfigMap",
-                          "metadata": Object {
-                            "name": "container-env",
-                            "namespace": "default",
-                          },
-                        },
-                        Symbol(@aws-cdk/core.DependableTrait): Object {
-                          "dependencyRoots": Array [
-                            [Circular],
-                          ],
-                        },
-                      },
-                    },
-                    "_context": Object {},
-                    "_dependencies": Set {},
-                    "_locked": false,
-                    "_metadata": Array [],
-                    "_validations": Array [],
-                    "host": [Circular],
-                    "id": "container-env",
-                    "scope": [Circular],
-                  },
-                  "permissions": ResourcePermissions {
-                    "instance": [Circular],
-                  },
-                  "resourceType": "configmaps",
-                  Symbol(@aws-cdk/core.DependableTrait): Object {
-                    "dependencyRoots": Array [
-                      [Circular],
-                    ],
-                  },
-                },
                 "deployment": [Circular],
-                "init-container-env": ConfigMap {
-                  "_binaryData": Object {},
-                  "_data": Object {
-                    "MF_METADATA_DB_HOST": "release-name-postgresql",
-                    "MF_METADATA_DB_NAME": "metaflow",
-                    "MF_METADATA_DB_PORT": "5432",
-                    "MF_METADATA_DB_PSWD": "metaflow",
-                    "MF_METADATA_DB_USER": "metaflow",
-                  },
-                  "apiObject": KubeConfigMap {
-                    "apiGroup": "core",
-                    "apiVersion": "v1",
-                    "chart": [Circular],
-                    "kind": "ConfigMap",
-                    "metadata": ApiObjectMetadataDefinition {
-                      "_additionalAttributes": Object {
-                        "labels": Object {},
-                        "name": "init-container-env",
-                        "namespace": "default",
-                      },
-                      "annotations": Object {},
-                      "finalizers": Array [],
-                      "labels": Object {},
-                      "name": "init-container-env",
-                      "namespace": "default",
-                      "ownerReferences": Array [],
-                    },
-                    "name": "init-container-env",
-                    "node": Node {
-                      "_children": Object {},
-                      "_context": Object {},
-                      "_dependencies": Set {},
-                      "_locked": false,
-                      "_metadata": Array [],
-                      "_validations": Array [],
-                      "host": [Circular],
-                      "id": "Resource",
-                      "scope": [Circular],
-                    },
-                    "patches": Array [],
-                    "props": Object {
-                      "apiVersion": "v1",
-                      "binaryData": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "data": Lazy {
-                        "producer": Object {
-                          "produce": [Function],
-                        },
-                      },
-                      "immutable": false,
-                      "kind": "ConfigMap",
-                      "metadata": Object {
-                        "name": "init-container-env",
-                        "namespace": "default",
-                      },
-                    },
-                    Symbol(@aws-cdk/core.DependableTrait): Object {
-                      "dependencyRoots": Array [
-                        [Circular],
-                      ],
-                    },
-                  },
-                  "immutable": false,
-                  "node": Node {
-                    "_children": Object {
-                      "Resource": KubeConfigMap {
-                        "apiGroup": "core",
-                        "apiVersion": "v1",
-                        "chart": [Circular],
-                        "kind": "ConfigMap",
-                        "metadata": ApiObjectMetadataDefinition {
-                          "_additionalAttributes": Object {
-                            "labels": Object {},
-                            "name": "init-container-env",
-                            "namespace": "default",
-                          },
-                          "annotations": Object {},
-                          "finalizers": Array [],
-                          "labels": Object {},
-                          "name": "init-container-env",
-                          "namespace": "default",
-                          "ownerReferences": Array [],
-                        },
-                        "name": "init-container-env",
-                        "node": Node {
-                          "_children": Object {},
-                          "_context": Object {},
-                          "_dependencies": Set {},
-                          "_locked": false,
-                          "_metadata": Array [],
-                          "_validations": Array [],
-                          "host": [Circular],
-                          "id": "Resource",
-                          "scope": [Circular],
-                        },
-                        "patches": Array [],
-                        "props": Object {
-                          "apiVersion": "v1",
-                          "binaryData": Lazy {
-                            "producer": Object {
-                              "produce": [Function],
-                            },
-                          },
-                          "data": Lazy {
-                            "producer": Object {
-                              "produce": [Function],
-                            },
-                          },
-                          "immutable": false,
-                          "kind": "ConfigMap",
-                          "metadata": Object {
-                            "name": "init-container-env",
-                            "namespace": "default",
-                          },
-                        },
-                        Symbol(@aws-cdk/core.DependableTrait): Object {
-                          "dependencyRoots": Array [
-                            [Circular],
-                          ],
-                        },
-                      },
-                    },
-                    "_context": Object {},
-                    "_dependencies": Set {},
-                    "_locked": false,
-                    "_metadata": Array [],
-                    "_validations": Array [],
-                    "host": [Circular],
-                    "id": "init-container-env",
-                    "scope": [Circular],
-                  },
-                  "permissions": ResourcePermissions {
-                    "instance": [Circular],
-                  },
-                  "resourceType": "configmaps",
-                  Symbol(@aws-cdk/core.DependableTrait): Object {
-                    "dependencyRoots": Array [
-                      [Circular],
-                    ],
-                  },
-                },
               },
               "_context": Object {},
               "_dependencies": Set {},
@@ -4184,7 +2752,7 @@ MetaflowServiceChart {
               "namespace": undefined,
               "node": Node {
                 "_children": Object {
-                  "metaflow-service-sa": [Circular],
+                  "metaflow-static-sa": [Circular],
                 },
                 "_context": Object {},
                 "_dependencies": Set {},
@@ -4208,7 +2776,7 @@ MetaflowServiceChart {
                     "id": "",
                     "scope": undefined,
                   },
-                  "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                  "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                   "outputFileExtension": ".k8s.yaml",
                   "yamlOutputType": 1,
                   Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -4228,19 +2796,19 @@ MetaflowServiceChart {
             "metadata": ApiObjectMetadataDefinition {
               "_additionalAttributes": Object {
                 "labels": Object {},
-                "name": "base-metaflow-service-sa-c8615416",
+                "name": "base-metaflow-static-sa-c85626c4",
                 "namespace": undefined,
               },
               "annotations": Object {},
               "finalizers": Array [],
               "labels": Object {},
-              "name": "base-metaflow-service-sa-c8615416",
+              "name": "base-metaflow-static-sa-c85626c4",
               "namespace": undefined,
               "ownerReferences": Array [],
             },
-            "name": "base-metaflow-service-sa-c8615416",
+            "name": "base-metaflow-static-sa-c85626c4",
             "node": Node {
-              "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+              "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
               "_children": Object {},
               "_context": Object {},
               "_dependencies": Set {},
@@ -4280,7 +2848,7 @@ MetaflowServiceChart {
                   "namespace": undefined,
                   "node": Node {
                     "_children": Object {
-                      "metaflow-service-sa": [Circular],
+                      "metaflow-static-sa": [Circular],
                     },
                     "_context": Object {},
                     "_dependencies": Set {},
@@ -4304,7 +2872,7 @@ MetaflowServiceChart {
                         "id": "",
                         "scope": undefined,
                       },
-                      "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                      "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                       "outputFileExtension": ".k8s.yaml",
                       "yamlOutputType": 1,
                       Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -4324,19 +2892,19 @@ MetaflowServiceChart {
                 "metadata": ApiObjectMetadataDefinition {
                   "_additionalAttributes": Object {
                     "labels": Object {},
-                    "name": "base-metaflow-service-sa-c8615416",
+                    "name": "base-metaflow-static-sa-c85626c4",
                     "namespace": undefined,
                   },
                   "annotations": Object {},
                   "finalizers": Array [],
                   "labels": Object {},
-                  "name": "base-metaflow-service-sa-c8615416",
+                  "name": "base-metaflow-static-sa-c85626c4",
                   "namespace": undefined,
                   "ownerReferences": Array [],
                 },
-                "name": "base-metaflow-service-sa-c8615416",
+                "name": "base-metaflow-static-sa-c85626c4",
                 "node": Node {
-                  "_addr": "c8615416df8db041a354dc11ca3785f051faae788a",
+                  "_addr": "c85626c4ac7690b3d9465ee1378505eda1cd1c073e",
                   "_children": Object {},
                   "_context": Object {},
                   "_dependencies": Set {},
@@ -4372,13 +2940,13 @@ MetaflowServiceChart {
             "_metadata": Array [],
             "_validations": Array [],
             "host": [Circular],
-            "id": "metaflow-service-sa",
+            "id": "metaflow-static-sa",
             "scope": Chart {
               "_labels": Object {},
               "namespace": undefined,
               "node": Node {
                 "_children": Object {
-                  "metaflow-service-sa": [Circular],
+                  "metaflow-static-sa": [Circular],
                 },
                 "_context": Object {},
                 "_dependencies": Set {},
@@ -4402,7 +2970,7 @@ MetaflowServiceChart {
                     "id": "",
                     "scope": undefined,
                   },
-                  "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.vdlYsD",
+                  "outdir": "/var/folders/1m/2654_k8s6wgfhp0kkbpb11ph0000gp/T/cdk8s.outdir.dopEFh",
                   "outputFileExtension": ".k8s.yaml",
                   "yamlOutputType": 1,
                   Symbol(@aws-cdk/core.DependableTrait): Object {
@@ -4453,7 +3021,7 @@ MetaflowServiceChart {
       "instance": [Circular],
     },
     "resourceType": "services",
-    "type": "ClusterIP",
+    "type": "NodePort",
     Symbol(@aws-cdk/core.DependableTrait): Object {
       "dependencyRoots": Array [
         [Circular],

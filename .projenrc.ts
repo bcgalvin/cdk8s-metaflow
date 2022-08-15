@@ -2,10 +2,11 @@ import { cdk8s, TextFile } from 'projen';
 import { ArrowParens, TrailingComma } from 'projen/lib/javascript/prettier';
 
 const commonIgnore = ['.idea', '.Rproj', '.vscode', 'cdk.context.json', '.DS_Store'];
-const cdk8sVersion = '2.3.73';
-const constructsVersion = '10.1.64';
-const projenVersion = 'v0.60.12';
-const nodejsVersion = 'v16.7.0';
+const cdk8sVersion = '2.3.84';
+const cdk8sPlusVersion = '2.0.0-rc.83';
+const constructsVersion = '10.1.76';
+const projenVersion = 'v0.61.10';
+const nodejsVersion = 'v16.16.0';
 
 const project = new cdk8s.ConstructLibraryCdk8s({
   author: 'Bryan Galvin',
@@ -17,6 +18,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   defaultReleaseBranch: 'main',
   cdk8sVersion: cdk8sVersion,
   constructsVersion: constructsVersion,
+  deps: [`cdk8s-plus-22@^${cdk8sPlusVersion}`],
   devDeps: [
     '@types/jest',
     '@types/node',
@@ -78,10 +80,10 @@ const project = new cdk8s.ConstructLibraryCdk8s({
 new TextFile(project, '.nvmrc', {
   lines: [nodejsVersion],
 });
-
-project.testTask.prependExec(
-  'helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add metaflow https://bcgalvin.github.io/metaflow-charts && helm repo update metaflow',
-);
+project.addTask('d', {
+  exec: 'npx ts-node test/main.ts && kubectl apply -f dist/',
+});
+project.testTask.prependExec('helm repo add bitnami https://charts.bitnami.com/bitnami');
 const installHelm = project.addTask('install-helm', {
   exec: 'curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash',
   description: 'Install helm3',
