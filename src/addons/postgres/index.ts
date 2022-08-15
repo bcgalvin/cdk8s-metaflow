@@ -59,13 +59,15 @@ export class PostgresAddon implements IAddon {
   }
 
   public install(scope: Construct): Helm {
-    const chartValues = this.props.chartValues ?? {
+    const defaultValues: MetadataDatabaseOptions = {
       auth: {
         database: 'metaflow',
         password: 'metaflow',
         username: 'metaflow',
       },
     };
+
+    const chartValues = { ...defaultValues, ...this.props.chartValues };
 
     const chart = new Helm(scope, 'postgres', {
       chart: 'bitnami/postgresql',
