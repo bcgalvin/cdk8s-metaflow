@@ -67,6 +67,14 @@
         }
       ]
     },
+    "dashboard": {
+      "name": "dashboard",
+      "steps": [
+        {
+          "exec": "minikube dashboard --port=8800"
+        }
+      ]
+    },
     "default": {
       "name": "default",
       "description": "Synthesize project files",
@@ -105,16 +113,6 @@
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools projenrc .projenrc.ts"
         }
       ]
-    },
-    "install-helm": {
-      "name": "install-helm",
-      "description": "Install helm3",
-      "steps": [
-        {
-          "exec": "curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash"
-        }
-      ],
-      "condition": "! (helm version | grep \"v3.\")"
     },
     "integ:metaflow-service-default:assert": {
       "name": "integ:metaflow-service-default:assert",
@@ -275,6 +273,14 @@
         }
       ]
     },
+    "minikube": {
+      "name": "minikube",
+      "steps": [
+        {
+          "exec": "minikube start --kubernetes-version=v1.21.13 --addons=metrics-server,ingress"
+        }
+      ]
+    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package",
@@ -343,6 +349,14 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
+    "r": {
+      "name": "r",
+      "steps": [
+        {
+          "exec": "kubectl delete -f dist/ "
+        }
+      ]
+    },
     "release": {
       "name": "release",
       "description": "Prepare a release from \"main\" branch",
@@ -371,12 +385,6 @@
       "name": "test",
       "description": "Run tests",
       "steps": [
-        {
-          "spawn": "install-helm"
-        },
-        {
-          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add argo https://argoproj.github.io/argo-helm"
-        },
         {
           "exec": "jest --passWithNoTests --all --updateSnapshot"
         },
@@ -439,19 +447,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
           "exec": "yarn install --check-files"

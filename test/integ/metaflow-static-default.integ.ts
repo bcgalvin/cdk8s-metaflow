@@ -1,5 +1,5 @@
 import { App, Chart } from 'cdk8s';
-import { ServiceAccount, ServiceType } from 'cdk8s-plus-22';
+import { ServiceAccount, ServiceType } from 'cdk8s-plus-21';
 import { MetaflowUIStaticChart } from '../../src/';
 
 const app = new App();

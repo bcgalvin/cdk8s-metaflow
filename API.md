@@ -199,8 +199,8 @@ a construct node.
 | <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.labels">labels</a></code> | <code>{[ key: string ]: string}</code> | Labels applied to all resources in this chart. |
 | <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-22.Deployment</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.service">service</a></code> | <code>cdk8s-plus-22.Service</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-21.Deployment</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.service">service</a></code> | <code>cdk8s-plus-21.Service</code> | *No description.* |
 
 ---
 
@@ -248,7 +248,7 @@ The default namespace for all objects in this chart.
 public readonly deployment: Deployment;
 ```
 
-- *Type:* cdk8s-plus-22.Deployment
+- *Type:* cdk8s-plus-21.Deployment
 
 ---
 
@@ -258,7 +258,7 @@ public readonly deployment: Deployment;
 public readonly service: Service;
 ```
 
-- *Type:* cdk8s-plus-22.Service
+- *Type:* cdk8s-plus-21.Service
 
 ---
 
@@ -460,8 +460,8 @@ a construct node.
 | <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.labels">labels</a></code> | <code>{[ key: string ]: string}</code> | Labels applied to all resources in this chart. |
 | <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-22.Deployment</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.service">service</a></code> | <code>cdk8s-plus-22.Service</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-21.Deployment</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.service">service</a></code> | <code>cdk8s-plus-21.Service</code> | *No description.* |
 
 ---
 
@@ -509,7 +509,7 @@ The default namespace for all objects in this chart.
 public readonly deployment: Deployment;
 ```
 
-- *Type:* cdk8s-plus-22.Deployment
+- *Type:* cdk8s-plus-21.Deployment
 
 ---
 
@@ -519,7 +519,7 @@ public readonly deployment: Deployment;
 public readonly service: Service;
 ```
 
-- *Type:* cdk8s-plus-22.Service
+- *Type:* cdk8s-plus-21.Service
 
 ---
 
@@ -721,8 +721,8 @@ a construct node.
 | <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.labels">labels</a></code> | <code>{[ key: string ]: string}</code> | Labels applied to all resources in this chart. |
 | <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-22.Deployment</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.service">service</a></code> | <code>cdk8s-plus-22.Service</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-21.Deployment</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.service">service</a></code> | <code>cdk8s-plus-21.Service</code> | *No description.* |
 
 ---
 
@@ -770,7 +770,7 @@ The default namespace for all objects in this chart.
 public readonly deployment: Deployment;
 ```
 
-- *Type:* cdk8s-plus-22.Deployment
+- *Type:* cdk8s-plus-21.Deployment
 
 ---
 
@@ -780,7 +780,7 @@ public readonly deployment: Deployment;
 public readonly service: Service;
 ```
 
-- *Type:* cdk8s-plus-22.Service
+- *Type:* cdk8s-plus-21.Service
 
 ---
 
@@ -1144,8 +1144,8 @@ const metaflowChartProps: MetaflowChartProps = { ... }
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects defined in this chart (directly or indirectly). |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.image">image</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.imageTag">imageTag</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.serviceAccount">serviceAccount</a></code> | <code>cdk8s-plus-22.ServiceAccount</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.serviceType">serviceType</a></code> | <code>cdk8s-plus-22.ServiceType</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.serviceAccount">serviceAccount</a></code> | <code>cdk8s-plus-21.ServiceAccount</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.serviceType">serviceType</a></code> | <code>cdk8s-plus-21.ServiceType</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.initImage">initImage</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.initImageTag">initImageTag</a></code> | <code>string</code> | *No description.* |
@@ -1207,7 +1207,7 @@ public readonly imageTag: string;
 public readonly serviceAccount: ServiceAccount;
 ```
 
-- *Type:* cdk8s-plus-22.ServiceAccount
+- *Type:* cdk8s-plus-21.ServiceAccount
 
 ---
 
@@ -1217,7 +1217,7 @@ public readonly serviceAccount: ServiceAccount;
 public readonly serviceType: ServiceType;
 ```
 
-- *Type:* cdk8s-plus-22.ServiceType
+- *Type:* cdk8s-plus-21.ServiceType
 
 ---
 
@@ -1248,6 +1248,89 @@ public readonly initImageTag: string;
 ```
 
 - *Type:* string
+
+---
+
+### MetaflowDeploymentProps <a name="MetaflowDeploymentProps" id="cdk8s-metaflow.MetaflowDeploymentProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk8s-metaflow.MetaflowDeploymentProps.Initializer"></a>
+
+```typescript
+import { MetaflowDeploymentProps } from 'cdk8s-metaflow'
+
+const metaflowDeploymentProps: MetaflowDeploymentProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.container">container</a></code> | <code>cdk8s-plus-21.ContainerProps</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.namespaceName">namespaceName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.serviceAccount">serviceAccount</a></code> | <code>cdk8s-plus-21.ServiceAccount</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.initContainer">initContainer</a></code> | <code>cdk8s-plus-21.ContainerProps</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.replicas">replicas</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `container`<sup>Required</sup> <a name="container" id="cdk8s-metaflow.MetaflowDeploymentProps.property.container"></a>
+
+```typescript
+public readonly container: ContainerProps;
+```
+
+- *Type:* cdk8s-plus-21.ContainerProps
+
+---
+
+##### `namespaceName`<sup>Required</sup> <a name="namespaceName" id="cdk8s-metaflow.MetaflowDeploymentProps.property.namespaceName"></a>
+
+```typescript
+public readonly namespaceName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `serviceAccount`<sup>Required</sup> <a name="serviceAccount" id="cdk8s-metaflow.MetaflowDeploymentProps.property.serviceAccount"></a>
+
+```typescript
+public readonly serviceAccount: ServiceAccount;
+```
+
+- *Type:* cdk8s-plus-21.ServiceAccount
+
+---
+
+##### `envVars`<sup>Optional</sup> <a name="envVars" id="cdk8s-metaflow.MetaflowDeploymentProps.property.envVars"></a>
+
+```typescript
+public readonly envVars: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `initContainer`<sup>Optional</sup> <a name="initContainer" id="cdk8s-metaflow.MetaflowDeploymentProps.property.initContainer"></a>
+
+```typescript
+public readonly initContainer: ContainerProps;
+```
+
+- *Type:* cdk8s-plus-21.ContainerProps
+
+---
+
+##### `replicas`<sup>Optional</sup> <a name="replicas" id="cdk8s-metaflow.MetaflowDeploymentProps.property.replicas"></a>
+
+```typescript
+public readonly replicas: number;
+```
+
+- *Type:* number
 
 ---
 

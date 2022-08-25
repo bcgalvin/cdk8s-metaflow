@@ -2,11 +2,12 @@ import { cdk8s, TextFile } from 'projen';
 import { ArrowParens, TrailingComma } from 'projen/lib/javascript/prettier';
 
 const commonIgnore = ['.idea', '.Rproj', '.vscode', 'cdk.context.json', '.DS_Store'];
-const cdk8sVersion = '2.3.84';
-const cdk8sPlusVersion = '2.0.0-rc.83';
-const constructsVersion = '10.1.76';
-const projenVersion = 'v0.61.10';
+const cdk8sVersion = '2.4.7';
+const cdk8sPlusVersion = '2.0.0-beta.12';
+const constructsVersion = '10.1.83';
+const projenVersion = 'v0.61.28';
 const nodejsVersion = 'v16.16.0';
+const deps = [`cdk8s-plus-21@${cdk8sPlusVersion}`, 'ts-deepmerge'];
 
 const project = new cdk8s.ConstructLibraryCdk8s({
   author: 'Bryan Galvin',
@@ -18,13 +19,13 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   defaultReleaseBranch: 'main',
   cdk8sVersion: cdk8sVersion,
   constructsVersion: constructsVersion,
-  deps: [`cdk8s-plus-22@${cdk8sPlusVersion}`],
-  peerDeps: [`cdk8s-plus-22@^${cdk8sPlusVersion}`],
+  deps: deps,
+  bundledDeps: ['ts-deepmerge'],
   devDeps: [
     '@types/jest',
     '@types/node',
     `cdk8s@^${cdk8sVersion}`,
-    `cdk8s-plus-22@${cdk8sPlusVersion}`,
+    `cdk8s-plus-21@${cdk8sPlusVersion}`,
     'eslint-config-prettier',
     'eslint-plugin-prettier',
     'prettier',
@@ -71,15 +72,13 @@ new TextFile(project, '.nvmrc', {
 project.addTask('d', {
   exec: 'npx ts-node test/main.ts && kubectl apply -f dist/',
 });
-project.testTask.prependExec(
-  'helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add argo https://argoproj.github.io/argo-helm',
-);
-const installHelm = project.addTask('install-helm', {
-  exec: 'curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash',
-  description: 'Install helm3',
-
-  // will exit with non-zero if helm is not installed or has the wrong version
-  condition: '! (helm version | grep "v3.")',
+project.addTask('r', {
+  exec: 'kubectl delete -f dist/ ',
 });
-project.testTask.prependSpawn(installHelm);
+project.addTask('minikube', {
+  exec: 'minikube start --kubernetes-version=v1.21.13 --addons=metrics-server,ingress',
+});
+project.addTask('dashboard', {
+  exec: 'minikube dashboard --port=8800',
+});
 project.synth();
