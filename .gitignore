@@ -55,5 +55,4 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
-test/integ/.tmp
 !/.nvmrc

@@ -2,37 +2,37 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### MetaflowServiceChart <a name="MetaflowServiceChart" id="cdk8s-metaflow.MetaflowServiceChart"></a>
+### MetaflowService <a name="MetaflowService" id="cdk8s-metaflow.MetaflowService"></a>
 
-#### Initializers <a name="Initializers" id="cdk8s-metaflow.MetaflowServiceChart.Initializer"></a>
+#### Initializers <a name="Initializers" id="cdk8s-metaflow.MetaflowService.Initializer"></a>
 
 ```typescript
-import { MetaflowServiceChart } from 'cdk8s-metaflow'
+import { MetaflowService } from 'cdk8s-metaflow'
 
-new MetaflowServiceChart(scope: Construct, name: string, props: MetaflowChartProps)
+new MetaflowService(scope: Construct, name: string, props: MetaflowChartProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.Initializer.parameter.props">props</a></code> | <code><a href="#cdk8s-metaflow.MetaflowChartProps">MetaflowChartProps</a></code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowService.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowService.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowService.Initializer.parameter.props">props</a></code> | <code><a href="#cdk8s-metaflow.MetaflowChartProps">MetaflowChartProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="cdk8s-metaflow.MetaflowServiceChart.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk8s-metaflow.MetaflowService.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="cdk8s-metaflow.MetaflowServiceChart.Initializer.parameter.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="cdk8s-metaflow.MetaflowService.Initializer.parameter.name"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="cdk8s-metaflow.MetaflowServiceChart.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="cdk8s-metaflow.MetaflowService.Initializer.parameter.props"></a>
 
 - *Type:* <a href="#cdk8s-metaflow.MetaflowChartProps">MetaflowChartProps</a>
 
@@ -42,14 +42,14 @@ new MetaflowServiceChart(scope: Construct, name: string, props: MetaflowChartPro
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.addDependency">addDependency</a></code> | Create a dependency between this Chart and other constructs. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.generateObjectName">generateObjectName</a></code> | Generates a app-unique name for an object given it's construct node path. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.toJson">toJson</a></code> | Renders this chart to a set of Kubernetes JSON resources. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.addDependency">addDependency</a></code> | Create a dependency between this Chart and other constructs. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.generateObjectName">generateObjectName</a></code> | Generates a app-unique name for an object given it's construct node path. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.toJson">toJson</a></code> | Renders this chart to a set of Kubernetes JSON resources. |
 
 ---
 
-##### `toString` <a name="toString" id="cdk8s-metaflow.MetaflowServiceChart.toString"></a>
+##### `toString` <a name="toString" id="cdk8s-metaflow.MetaflowService.toString"></a>
 
 ```typescript
 public toString(): string
@@ -57,7 +57,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addDependency` <a name="addDependency" id="cdk8s-metaflow.MetaflowServiceChart.addDependency"></a>
+##### `addDependency` <a name="addDependency" id="cdk8s-metaflow.MetaflowService.addDependency"></a>
 
 ```typescript
 public addDependency(dependencies: IConstruct): void
@@ -67,7 +67,7 @@ Create a dependency between this Chart and other constructs.
 
 These can be other ApiObjects, Charts, or custom.
 
-###### `dependencies`<sup>Required</sup> <a name="dependencies" id="cdk8s-metaflow.MetaflowServiceChart.addDependency.parameter.dependencies"></a>
+###### `dependencies`<sup>Required</sup> <a name="dependencies" id="cdk8s-metaflow.MetaflowService.addDependency.parameter.dependencies"></a>
 
 - *Type:* constructs.IConstruct
 
@@ -75,7 +75,7 @@ the dependencies to add.
 
 ---
 
-##### `generateObjectName` <a name="generateObjectName" id="cdk8s-metaflow.MetaflowServiceChart.generateObjectName"></a>
+##### `generateObjectName` <a name="generateObjectName" id="cdk8s-metaflow.MetaflowService.generateObjectName"></a>
 
 ```typescript
 public generateObjectName(apiObject: ApiObject): string
@@ -98,7 +98,7 @@ since it’s the common denominator for all kubernetes resources
 You can override this method if you wish to customize object names at the
 chart level.
 
-###### `apiObject`<sup>Required</sup> <a name="apiObject" id="cdk8s-metaflow.MetaflowServiceChart.generateObjectName.parameter.apiObject"></a>
+###### `apiObject`<sup>Required</sup> <a name="apiObject" id="cdk8s-metaflow.MetaflowService.generateObjectName.parameter.apiObject"></a>
 
 - *Type:* cdk8s.ApiObject
 
@@ -106,7 +106,7 @@ The API object to generate a name for.
 
 ---
 
-##### `toJson` <a name="toJson" id="cdk8s-metaflow.MetaflowServiceChart.toJson"></a>
+##### `toJson` <a name="toJson" id="cdk8s-metaflow.MetaflowService.toJson"></a>
 
 ```typescript
 public toJson(): any[]
@@ -118,18 +118,18 @@ Renders this chart to a set of Kubernetes JSON resources.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.isChart">isChart</a></code> | Return whether the given object is a Chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.of">of</a></code> | Finds the chart in which a node is defined. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.isChart">isChart</a></code> | Return whether the given object is a Chart. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.of">of</a></code> | Finds the chart in which a node is defined. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="cdk8s-metaflow.MetaflowServiceChart.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="cdk8s-metaflow.MetaflowService.isConstruct"></a>
 
 ```typescript
-import { MetaflowServiceChart } from 'cdk8s-metaflow'
+import { MetaflowService } from 'cdk8s-metaflow'
 
-MetaflowServiceChart.isConstruct(x: any)
+MetaflowService.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
@@ -148,7 +148,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="cdk8s-metaflow.MetaflowServiceChart.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="cdk8s-metaflow.MetaflowService.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -156,35 +156,35 @@ Any object.
 
 ---
 
-##### `isChart` <a name="isChart" id="cdk8s-metaflow.MetaflowServiceChart.isChart"></a>
+##### `isChart` <a name="isChart" id="cdk8s-metaflow.MetaflowService.isChart"></a>
 
 ```typescript
-import { MetaflowServiceChart } from 'cdk8s-metaflow'
+import { MetaflowService } from 'cdk8s-metaflow'
 
-MetaflowServiceChart.isChart(x: any)
+MetaflowService.isChart(x: any)
 ```
 
 Return whether the given object is a Chart.
 
 We do attribute detection since we can't reliably use 'instanceof'.
 
-###### `x`<sup>Required</sup> <a name="x" id="cdk8s-metaflow.MetaflowServiceChart.isChart.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="cdk8s-metaflow.MetaflowService.isChart.parameter.x"></a>
 
 - *Type:* any
 
 ---
 
-##### `of` <a name="of" id="cdk8s-metaflow.MetaflowServiceChart.of"></a>
+##### `of` <a name="of" id="cdk8s-metaflow.MetaflowService.of"></a>
 
 ```typescript
-import { MetaflowServiceChart } from 'cdk8s-metaflow'
+import { MetaflowService } from 'cdk8s-metaflow'
 
-MetaflowServiceChart.of(c: IConstruct)
+MetaflowService.of(c: IConstruct)
 ```
 
 Finds the chart in which a node is defined.
 
-###### `c`<sup>Required</sup> <a name="c" id="cdk8s-metaflow.MetaflowServiceChart.of.parameter.c"></a>
+###### `c`<sup>Required</sup> <a name="c" id="cdk8s-metaflow.MetaflowService.of.parameter.c"></a>
 
 - *Type:* constructs.IConstruct
 
@@ -196,15 +196,14 @@ a construct node.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.labels">labels</a></code> | <code>{[ key: string ]: string}</code> | Labels applied to all resources in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-21.Deployment</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowServiceChart.property.service">service</a></code> | <code>cdk8s-plus-21.Service</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowService.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.property.labels">labels</a></code> | <code>{[ key: string ]: string}</code> | Labels applied to all resources in this chart. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects in this chart. |
+| <code><a href="#cdk8s-metaflow.MetaflowService.property.serviceAccount">serviceAccount</a></code> | <code>cdk8s-plus-21.IServiceAccount</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="cdk8s-metaflow.MetaflowServiceChart.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="cdk8s-metaflow.MetaflowService.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -216,7 +215,7 @@ The tree node.
 
 ---
 
-##### `labels`<sup>Required</sup> <a name="labels" id="cdk8s-metaflow.MetaflowServiceChart.property.labels"></a>
+##### `labels`<sup>Required</sup> <a name="labels" id="cdk8s-metaflow.MetaflowService.property.labels"></a>
 
 ```typescript
 public readonly labels: {[ key: string ]: string};
@@ -230,7 +229,7 @@ This is an immutable copy.
 
 ---
 
-##### `namespace`<sup>Optional</sup> <a name="namespace" id="cdk8s-metaflow.MetaflowServiceChart.property.namespace"></a>
+##### `namespace`<sup>Optional</sup> <a name="namespace" id="cdk8s-metaflow.MetaflowService.property.namespace"></a>
 
 ```typescript
 public readonly namespace: string;
@@ -242,545 +241,13 @@ The default namespace for all objects in this chart.
 
 ---
 
-##### `deployment`<sup>Required</sup> <a name="deployment" id="cdk8s-metaflow.MetaflowServiceChart.property.deployment"></a>
+##### `serviceAccount`<sup>Optional</sup> <a name="serviceAccount" id="cdk8s-metaflow.MetaflowService.property.serviceAccount"></a>
 
 ```typescript
-public readonly deployment: Deployment;
+public readonly serviceAccount: IServiceAccount;
 ```
 
-- *Type:* cdk8s-plus-21.Deployment
-
----
-
-##### `service`<sup>Required</sup> <a name="service" id="cdk8s-metaflow.MetaflowServiceChart.property.service"></a>
-
-```typescript
-public readonly service: Service;
-```
-
-- *Type:* cdk8s-plus-21.Service
-
----
-
-
-### MetaflowUIChart <a name="MetaflowUIChart" id="cdk8s-metaflow.MetaflowUIChart"></a>
-
-#### Initializers <a name="Initializers" id="cdk8s-metaflow.MetaflowUIChart.Initializer"></a>
-
-```typescript
-import { MetaflowUIChart } from 'cdk8s-metaflow'
-
-new MetaflowUIChart(scope: Construct, name: string, props: MetaflowChartProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.Initializer.parameter.props">props</a></code> | <code><a href="#cdk8s-metaflow.MetaflowChartProps">MetaflowChartProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="cdk8s-metaflow.MetaflowUIChart.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="cdk8s-metaflow.MetaflowUIChart.Initializer.parameter.name"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="cdk8s-metaflow.MetaflowUIChart.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#cdk8s-metaflow.MetaflowChartProps">MetaflowChartProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.addDependency">addDependency</a></code> | Create a dependency between this Chart and other constructs. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.generateObjectName">generateObjectName</a></code> | Generates a app-unique name for an object given it's construct node path. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.toJson">toJson</a></code> | Renders this chart to a set of Kubernetes JSON resources. |
-
----
-
-##### `toString` <a name="toString" id="cdk8s-metaflow.MetaflowUIChart.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `addDependency` <a name="addDependency" id="cdk8s-metaflow.MetaflowUIChart.addDependency"></a>
-
-```typescript
-public addDependency(dependencies: IConstruct): void
-```
-
-Create a dependency between this Chart and other constructs.
-
-These can be other ApiObjects, Charts, or custom.
-
-###### `dependencies`<sup>Required</sup> <a name="dependencies" id="cdk8s-metaflow.MetaflowUIChart.addDependency.parameter.dependencies"></a>
-
-- *Type:* constructs.IConstruct
-
-the dependencies to add.
-
----
-
-##### `generateObjectName` <a name="generateObjectName" id="cdk8s-metaflow.MetaflowUIChart.generateObjectName"></a>
-
-```typescript
-public generateObjectName(apiObject: ApiObject): string
-```
-
-Generates a app-unique name for an object given it's construct node path.
-
-Different resource types may have different constraints on names
-(`metadata.name`). The previous version of the name generator was
-compatible with DNS_SUBDOMAIN but not with DNS_LABEL.
-
-For example, `Deployment` names must comply with DNS_SUBDOMAIN while
-`Service` names must comply with DNS_LABEL.
-
-Since there is no formal specification for this, the default name
-generation scheme for kubernetes objects in cdk8s was changed to DNS_LABEL,
-since it’s the common denominator for all kubernetes resources
-(supposedly).
-
-You can override this method if you wish to customize object names at the
-chart level.
-
-###### `apiObject`<sup>Required</sup> <a name="apiObject" id="cdk8s-metaflow.MetaflowUIChart.generateObjectName.parameter.apiObject"></a>
-
-- *Type:* cdk8s.ApiObject
-
-The API object to generate a name for.
-
----
-
-##### `toJson` <a name="toJson" id="cdk8s-metaflow.MetaflowUIChart.toJson"></a>
-
-```typescript
-public toJson(): any[]
-```
-
-Renders this chart to a set of Kubernetes JSON resources.
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.isChart">isChart</a></code> | Return whether the given object is a Chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.of">of</a></code> | Finds the chart in which a node is defined. |
-
----
-
-##### `isConstruct` <a name="isConstruct" id="cdk8s-metaflow.MetaflowUIChart.isConstruct"></a>
-
-```typescript
-import { MetaflowUIChart } from 'cdk8s-metaflow'
-
-MetaflowUIChart.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-Use this method instead of `instanceof` to properly detect `Construct`
-instances, even when the construct library is symlinked.
-
-Explanation: in JavaScript, multiple copies of the `constructs` library on
-disk are seen as independent, completely different libraries. As a
-consequence, the class `Construct` in each copy of the `constructs` library
-is seen as a different class, and an instance of one class will not test as
-`instanceof` the other class. `npm install` will not create installations
-like this, but users may manually symlink construct libraries together or
-use a monorepo tool: in those cases, multiple copies of the `constructs`
-library can be accidentally installed, and `instanceof` will behave
-unpredictably. It is safest to avoid using `instanceof`, and using
-this type-testing method instead.
-
-###### `x`<sup>Required</sup> <a name="x" id="cdk8s-metaflow.MetaflowUIChart.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-##### `isChart` <a name="isChart" id="cdk8s-metaflow.MetaflowUIChart.isChart"></a>
-
-```typescript
-import { MetaflowUIChart } from 'cdk8s-metaflow'
-
-MetaflowUIChart.isChart(x: any)
-```
-
-Return whether the given object is a Chart.
-
-We do attribute detection since we can't reliably use 'instanceof'.
-
-###### `x`<sup>Required</sup> <a name="x" id="cdk8s-metaflow.MetaflowUIChart.isChart.parameter.x"></a>
-
-- *Type:* any
-
----
-
-##### `of` <a name="of" id="cdk8s-metaflow.MetaflowUIChart.of"></a>
-
-```typescript
-import { MetaflowUIChart } from 'cdk8s-metaflow'
-
-MetaflowUIChart.of(c: IConstruct)
-```
-
-Finds the chart in which a node is defined.
-
-###### `c`<sup>Required</sup> <a name="c" id="cdk8s-metaflow.MetaflowUIChart.of.parameter.c"></a>
-
-- *Type:* constructs.IConstruct
-
-a construct node.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.labels">labels</a></code> | <code>{[ key: string ]: string}</code> | Labels applied to all resources in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-21.Deployment</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowUIChart.property.service">service</a></code> | <code>cdk8s-plus-21.Service</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="cdk8s-metaflow.MetaflowUIChart.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `labels`<sup>Required</sup> <a name="labels" id="cdk8s-metaflow.MetaflowUIChart.property.labels"></a>
-
-```typescript
-public readonly labels: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-
-Labels applied to all resources in this chart.
-
-This is an immutable copy.
-
----
-
-##### `namespace`<sup>Optional</sup> <a name="namespace" id="cdk8s-metaflow.MetaflowUIChart.property.namespace"></a>
-
-```typescript
-public readonly namespace: string;
-```
-
-- *Type:* string
-
-The default namespace for all objects in this chart.
-
----
-
-##### `deployment`<sup>Required</sup> <a name="deployment" id="cdk8s-metaflow.MetaflowUIChart.property.deployment"></a>
-
-```typescript
-public readonly deployment: Deployment;
-```
-
-- *Type:* cdk8s-plus-21.Deployment
-
----
-
-##### `service`<sup>Required</sup> <a name="service" id="cdk8s-metaflow.MetaflowUIChart.property.service"></a>
-
-```typescript
-public readonly service: Service;
-```
-
-- *Type:* cdk8s-plus-21.Service
-
----
-
-
-### MetaflowUIStaticChart <a name="MetaflowUIStaticChart" id="cdk8s-metaflow.MetaflowUIStaticChart"></a>
-
-#### Initializers <a name="Initializers" id="cdk8s-metaflow.MetaflowUIStaticChart.Initializer"></a>
-
-```typescript
-import { MetaflowUIStaticChart } from 'cdk8s-metaflow'
-
-new MetaflowUIStaticChart(scope: Construct, name: string, props: MetaflowChartProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.Initializer.parameter.props">props</a></code> | <code><a href="#cdk8s-metaflow.MetaflowChartProps">MetaflowChartProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="cdk8s-metaflow.MetaflowUIStaticChart.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="cdk8s-metaflow.MetaflowUIStaticChart.Initializer.parameter.name"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="cdk8s-metaflow.MetaflowUIStaticChart.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#cdk8s-metaflow.MetaflowChartProps">MetaflowChartProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.addDependency">addDependency</a></code> | Create a dependency between this Chart and other constructs. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.generateObjectName">generateObjectName</a></code> | Generates a app-unique name for an object given it's construct node path. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.toJson">toJson</a></code> | Renders this chart to a set of Kubernetes JSON resources. |
-
----
-
-##### `toString` <a name="toString" id="cdk8s-metaflow.MetaflowUIStaticChart.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `addDependency` <a name="addDependency" id="cdk8s-metaflow.MetaflowUIStaticChart.addDependency"></a>
-
-```typescript
-public addDependency(dependencies: IConstruct): void
-```
-
-Create a dependency between this Chart and other constructs.
-
-These can be other ApiObjects, Charts, or custom.
-
-###### `dependencies`<sup>Required</sup> <a name="dependencies" id="cdk8s-metaflow.MetaflowUIStaticChart.addDependency.parameter.dependencies"></a>
-
-- *Type:* constructs.IConstruct
-
-the dependencies to add.
-
----
-
-##### `generateObjectName` <a name="generateObjectName" id="cdk8s-metaflow.MetaflowUIStaticChart.generateObjectName"></a>
-
-```typescript
-public generateObjectName(apiObject: ApiObject): string
-```
-
-Generates a app-unique name for an object given it's construct node path.
-
-Different resource types may have different constraints on names
-(`metadata.name`). The previous version of the name generator was
-compatible with DNS_SUBDOMAIN but not with DNS_LABEL.
-
-For example, `Deployment` names must comply with DNS_SUBDOMAIN while
-`Service` names must comply with DNS_LABEL.
-
-Since there is no formal specification for this, the default name
-generation scheme for kubernetes objects in cdk8s was changed to DNS_LABEL,
-since it’s the common denominator for all kubernetes resources
-(supposedly).
-
-You can override this method if you wish to customize object names at the
-chart level.
-
-###### `apiObject`<sup>Required</sup> <a name="apiObject" id="cdk8s-metaflow.MetaflowUIStaticChart.generateObjectName.parameter.apiObject"></a>
-
-- *Type:* cdk8s.ApiObject
-
-The API object to generate a name for.
-
----
-
-##### `toJson` <a name="toJson" id="cdk8s-metaflow.MetaflowUIStaticChart.toJson"></a>
-
-```typescript
-public toJson(): any[]
-```
-
-Renders this chart to a set of Kubernetes JSON resources.
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.isChart">isChart</a></code> | Return whether the given object is a Chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.of">of</a></code> | Finds the chart in which a node is defined. |
-
----
-
-##### `isConstruct` <a name="isConstruct" id="cdk8s-metaflow.MetaflowUIStaticChart.isConstruct"></a>
-
-```typescript
-import { MetaflowUIStaticChart } from 'cdk8s-metaflow'
-
-MetaflowUIStaticChart.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-Use this method instead of `instanceof` to properly detect `Construct`
-instances, even when the construct library is symlinked.
-
-Explanation: in JavaScript, multiple copies of the `constructs` library on
-disk are seen as independent, completely different libraries. As a
-consequence, the class `Construct` in each copy of the `constructs` library
-is seen as a different class, and an instance of one class will not test as
-`instanceof` the other class. `npm install` will not create installations
-like this, but users may manually symlink construct libraries together or
-use a monorepo tool: in those cases, multiple copies of the `constructs`
-library can be accidentally installed, and `instanceof` will behave
-unpredictably. It is safest to avoid using `instanceof`, and using
-this type-testing method instead.
-
-###### `x`<sup>Required</sup> <a name="x" id="cdk8s-metaflow.MetaflowUIStaticChart.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-##### `isChart` <a name="isChart" id="cdk8s-metaflow.MetaflowUIStaticChart.isChart"></a>
-
-```typescript
-import { MetaflowUIStaticChart } from 'cdk8s-metaflow'
-
-MetaflowUIStaticChart.isChart(x: any)
-```
-
-Return whether the given object is a Chart.
-
-We do attribute detection since we can't reliably use 'instanceof'.
-
-###### `x`<sup>Required</sup> <a name="x" id="cdk8s-metaflow.MetaflowUIStaticChart.isChart.parameter.x"></a>
-
-- *Type:* any
-
----
-
-##### `of` <a name="of" id="cdk8s-metaflow.MetaflowUIStaticChart.of"></a>
-
-```typescript
-import { MetaflowUIStaticChart } from 'cdk8s-metaflow'
-
-MetaflowUIStaticChart.of(c: IConstruct)
-```
-
-Finds the chart in which a node is defined.
-
-###### `c`<sup>Required</sup> <a name="c" id="cdk8s-metaflow.MetaflowUIStaticChart.of.parameter.c"></a>
-
-- *Type:* constructs.IConstruct
-
-a construct node.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.labels">labels</a></code> | <code>{[ key: string ]: string}</code> | Labels applied to all resources in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects in this chart. |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.deployment">deployment</a></code> | <code>cdk8s-plus-21.Deployment</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowUIStaticChart.property.service">service</a></code> | <code>cdk8s-plus-21.Service</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="cdk8s-metaflow.MetaflowUIStaticChart.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `labels`<sup>Required</sup> <a name="labels" id="cdk8s-metaflow.MetaflowUIStaticChart.property.labels"></a>
-
-```typescript
-public readonly labels: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-
-Labels applied to all resources in this chart.
-
-This is an immutable copy.
-
----
-
-##### `namespace`<sup>Optional</sup> <a name="namespace" id="cdk8s-metaflow.MetaflowUIStaticChart.property.namespace"></a>
-
-```typescript
-public readonly namespace: string;
-```
-
-- *Type:* string
-
-The default namespace for all objects in this chart.
-
----
-
-##### `deployment`<sup>Required</sup> <a name="deployment" id="cdk8s-metaflow.MetaflowUIStaticChart.property.deployment"></a>
-
-```typescript
-public readonly deployment: Deployment;
-```
-
-- *Type:* cdk8s-plus-21.Deployment
-
----
-
-##### `service`<sup>Required</sup> <a name="service" id="cdk8s-metaflow.MetaflowUIStaticChart.property.service"></a>
-
-```typescript
-public readonly service: Service;
-```
-
-- *Type:* cdk8s-plus-21.Service
+- *Type:* cdk8s-plus-21.IServiceAccount
 
 ---
 
@@ -1043,6 +510,95 @@ public readonly enabled: boolean;
 
 ---
 
+### HelmPostgresAddonProps <a name="HelmPostgresAddonProps" id="cdk8s-metaflow.HelmPostgresAddonProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk8s-metaflow.HelmPostgresAddonProps.Initializer"></a>
+
+```typescript
+import { HelmPostgresAddonProps } from 'cdk8s-metaflow'
+
+const helmPostgresAddonProps: HelmPostgresAddonProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk8s-metaflow.HelmPostgresAddonProps.property.chartVersion">chartVersion</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.HelmPostgresAddonProps.property.namespaceName">namespaceName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.HelmPostgresAddonProps.property.chartValues">chartValues</a></code> | <code><a href="#cdk8s-metaflow.MetadataDatabaseOptions">MetadataDatabaseOptions</a></code> | *No description.* |
+
+---
+
+##### `chartVersion`<sup>Required</sup> <a name="chartVersion" id="cdk8s-metaflow.HelmPostgresAddonProps.property.chartVersion"></a>
+
+```typescript
+public readonly chartVersion: string;
+```
+
+- *Type:* string
+
+---
+
+##### `namespaceName`<sup>Required</sup> <a name="namespaceName" id="cdk8s-metaflow.HelmPostgresAddonProps.property.namespaceName"></a>
+
+```typescript
+public readonly namespaceName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `chartValues`<sup>Optional</sup> <a name="chartValues" id="cdk8s-metaflow.HelmPostgresAddonProps.property.chartValues"></a>
+
+```typescript
+public readonly chartValues: MetadataDatabaseOptions;
+```
+
+- *Type:* <a href="#cdk8s-metaflow.MetadataDatabaseOptions">MetadataDatabaseOptions</a>
+
+---
+
+### LocalPostgresAddonProps <a name="LocalPostgresAddonProps" id="cdk8s-metaflow.LocalPostgresAddonProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk8s-metaflow.LocalPostgresAddonProps.Initializer"></a>
+
+```typescript
+import { LocalPostgresAddonProps } from 'cdk8s-metaflow'
+
+const localPostgresAddonProps: LocalPostgresAddonProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk8s-metaflow.LocalPostgresAddonProps.property.endpointIp">endpointIp</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.LocalPostgresAddonProps.property.namespaceName">namespaceName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `endpointIp`<sup>Required</sup> <a name="endpointIp" id="cdk8s-metaflow.LocalPostgresAddonProps.property.endpointIp"></a>
+
+```typescript
+public readonly endpointIp: string;
+```
+
+- *Type:* string
+
+---
+
+##### `namespaceName`<sup>Optional</sup> <a name="namespaceName" id="cdk8s-metaflow.LocalPostgresAddonProps.property.namespaceName"></a>
+
+```typescript
+public readonly namespaceName: string;
+```
+
+- *Type:* string
+
+---
+
 ### MetadataDatabaseOptions <a name="MetadataDatabaseOptions" id="cdk8s-metaflow.MetadataDatabaseOptions"></a>
 
 #### Initializer <a name="Initializer" id="cdk8s-metaflow.MetadataDatabaseOptions.Initializer"></a>
@@ -1144,11 +700,11 @@ const metaflowChartProps: MetaflowChartProps = { ... }
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.namespace">namespace</a></code> | <code>string</code> | The default namespace for all objects defined in this chart (directly or indirectly). |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.image">image</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.imageTag">imageTag</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.serviceAccount">serviceAccount</a></code> | <code>cdk8s-plus-21.ServiceAccount</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.serviceType">serviceType</a></code> | <code>cdk8s-plus-21.ServiceType</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.servicePort">servicePort</a></code> | <code>cdk8s-plus-21.ServicePort</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.initImage">initImage</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.initImageTag">initImageTag</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.MetaflowChartProps.property.serviceAccount">serviceAccount</a></code> | <code>cdk8s-plus-21.IServiceAccount</code> | *No description.* |
 
 ---
 
@@ -1201,23 +757,13 @@ public readonly imageTag: string;
 
 ---
 
-##### `serviceAccount`<sup>Required</sup> <a name="serviceAccount" id="cdk8s-metaflow.MetaflowChartProps.property.serviceAccount"></a>
+##### `servicePort`<sup>Required</sup> <a name="servicePort" id="cdk8s-metaflow.MetaflowChartProps.property.servicePort"></a>
 
 ```typescript
-public readonly serviceAccount: ServiceAccount;
+public readonly servicePort: ServicePort;
 ```
 
-- *Type:* cdk8s-plus-21.ServiceAccount
-
----
-
-##### `serviceType`<sup>Required</sup> <a name="serviceType" id="cdk8s-metaflow.MetaflowChartProps.property.serviceType"></a>
-
-```typescript
-public readonly serviceType: ServiceType;
-```
-
-- *Type:* cdk8s-plus-21.ServiceType
+- *Type:* cdk8s-plus-21.ServicePort
 
 ---
 
@@ -1251,162 +797,39 @@ public readonly initImageTag: string;
 
 ---
 
-### MetaflowDeploymentProps <a name="MetaflowDeploymentProps" id="cdk8s-metaflow.MetaflowDeploymentProps"></a>
-
-#### Initializer <a name="Initializer" id="cdk8s-metaflow.MetaflowDeploymentProps.Initializer"></a>
+##### `serviceAccount`<sup>Optional</sup> <a name="serviceAccount" id="cdk8s-metaflow.MetaflowChartProps.property.serviceAccount"></a>
 
 ```typescript
-import { MetaflowDeploymentProps } from 'cdk8s-metaflow'
-
-const metaflowDeploymentProps: MetaflowDeploymentProps = { ... }
+public readonly serviceAccount: IServiceAccount;
 ```
 
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.container">container</a></code> | <code>cdk8s-plus-21.ContainerProps</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.namespaceName">namespaceName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.serviceAccount">serviceAccount</a></code> | <code>cdk8s-plus-21.ServiceAccount</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.initContainer">initContainer</a></code> | <code>cdk8s-plus-21.ContainerProps</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.MetaflowDeploymentProps.property.replicas">replicas</a></code> | <code>number</code> | *No description.* |
-
----
-
-##### `container`<sup>Required</sup> <a name="container" id="cdk8s-metaflow.MetaflowDeploymentProps.property.container"></a>
-
-```typescript
-public readonly container: ContainerProps;
-```
-
-- *Type:* cdk8s-plus-21.ContainerProps
-
----
-
-##### `namespaceName`<sup>Required</sup> <a name="namespaceName" id="cdk8s-metaflow.MetaflowDeploymentProps.property.namespaceName"></a>
-
-```typescript
-public readonly namespaceName: string;
-```
-
-- *Type:* string
-
----
-
-##### `serviceAccount`<sup>Required</sup> <a name="serviceAccount" id="cdk8s-metaflow.MetaflowDeploymentProps.property.serviceAccount"></a>
-
-```typescript
-public readonly serviceAccount: ServiceAccount;
-```
-
-- *Type:* cdk8s-plus-21.ServiceAccount
-
----
-
-##### `envVars`<sup>Optional</sup> <a name="envVars" id="cdk8s-metaflow.MetaflowDeploymentProps.property.envVars"></a>
-
-```typescript
-public readonly envVars: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-
----
-
-##### `initContainer`<sup>Optional</sup> <a name="initContainer" id="cdk8s-metaflow.MetaflowDeploymentProps.property.initContainer"></a>
-
-```typescript
-public readonly initContainer: ContainerProps;
-```
-
-- *Type:* cdk8s-plus-21.ContainerProps
-
----
-
-##### `replicas`<sup>Optional</sup> <a name="replicas" id="cdk8s-metaflow.MetaflowDeploymentProps.property.replicas"></a>
-
-```typescript
-public readonly replicas: number;
-```
-
-- *Type:* number
-
----
-
-### PostgresAddonProps <a name="PostgresAddonProps" id="cdk8s-metaflow.PostgresAddonProps"></a>
-
-#### Initializer <a name="Initializer" id="cdk8s-metaflow.PostgresAddonProps.Initializer"></a>
-
-```typescript
-import { PostgresAddonProps } from 'cdk8s-metaflow'
-
-const postgresAddonProps: PostgresAddonProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.PostgresAddonProps.property.chartVersion">chartVersion</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.PostgresAddonProps.property.namespaceName">namespaceName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk8s-metaflow.PostgresAddonProps.property.chartValues">chartValues</a></code> | <code><a href="#cdk8s-metaflow.MetadataDatabaseOptions">MetadataDatabaseOptions</a></code> | *No description.* |
-
----
-
-##### `chartVersion`<sup>Required</sup> <a name="chartVersion" id="cdk8s-metaflow.PostgresAddonProps.property.chartVersion"></a>
-
-```typescript
-public readonly chartVersion: string;
-```
-
-- *Type:* string
-
----
-
-##### `namespaceName`<sup>Required</sup> <a name="namespaceName" id="cdk8s-metaflow.PostgresAddonProps.property.namespaceName"></a>
-
-```typescript
-public readonly namespaceName: string;
-```
-
-- *Type:* string
-
----
-
-##### `chartValues`<sup>Optional</sup> <a name="chartValues" id="cdk8s-metaflow.PostgresAddonProps.property.chartValues"></a>
-
-```typescript
-public readonly chartValues: MetadataDatabaseOptions;
-```
-
-- *Type:* <a href="#cdk8s-metaflow.MetadataDatabaseOptions">MetadataDatabaseOptions</a>
+- *Type:* cdk8s-plus-21.IServiceAccount
 
 ---
 
 ## Classes <a name="Classes" id="Classes"></a>
 
-### PostgresAddon <a name="PostgresAddon" id="cdk8s-metaflow.PostgresAddon"></a>
+### HelmPostgresAddon <a name="HelmPostgresAddon" id="cdk8s-metaflow.HelmPostgresAddon"></a>
 
 - *Implements:* <a href="#cdk8s-metaflow.IAddon">IAddon</a>
 
-#### Initializers <a name="Initializers" id="cdk8s-metaflow.PostgresAddon.Initializer"></a>
+#### Initializers <a name="Initializers" id="cdk8s-metaflow.HelmPostgresAddon.Initializer"></a>
 
 ```typescript
-import { PostgresAddon } from 'cdk8s-metaflow'
+import { HelmPostgresAddon } from 'cdk8s-metaflow'
 
-new PostgresAddon(props: PostgresAddonProps)
+new HelmPostgresAddon(props: HelmPostgresAddonProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.PostgresAddon.Initializer.parameter.props">props</a></code> | <code><a href="#cdk8s-metaflow.PostgresAddonProps">PostgresAddonProps</a></code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.HelmPostgresAddon.Initializer.parameter.props">props</a></code> | <code><a href="#cdk8s-metaflow.HelmPostgresAddonProps">HelmPostgresAddonProps</a></code> | *No description.* |
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="cdk8s-metaflow.PostgresAddon.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="cdk8s-metaflow.HelmPostgresAddon.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#cdk8s-metaflow.PostgresAddonProps">PostgresAddonProps</a>
+- *Type:* <a href="#cdk8s-metaflow.HelmPostgresAddonProps">HelmPostgresAddonProps</a>
 
 ---
 
@@ -1414,17 +837,17 @@ new PostgresAddon(props: PostgresAddonProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk8s-metaflow.PostgresAddon.install">install</a></code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.HelmPostgresAddon.install">install</a></code> | *No description.* |
 
 ---
 
-##### `install` <a name="install" id="cdk8s-metaflow.PostgresAddon.install"></a>
+##### `install` <a name="install" id="cdk8s-metaflow.HelmPostgresAddon.install"></a>
 
 ```typescript
-public install(scope: Construct): Helm
+public install(scope: Construct): Construct
 ```
 
-###### `scope`<sup>Required</sup> <a name="scope" id="cdk8s-metaflow.PostgresAddon.install.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="cdk8s-metaflow.HelmPostgresAddon.install.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
@@ -1435,11 +858,11 @@ public install(scope: Construct): Helm
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.PostgresAddon.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.HelmPostgresAddon.property.name">name</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="cdk8s-metaflow.PostgresAddon.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="cdk8s-metaflow.HelmPostgresAddon.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -1453,11 +876,92 @@ public readonly name: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk8s-metaflow.PostgresAddon.property.NAME">NAME</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk8s-metaflow.HelmPostgresAddon.property.NAME">NAME</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `NAME`<sup>Required</sup> <a name="NAME" id="cdk8s-metaflow.PostgresAddon.property.NAME"></a>
+##### `NAME`<sup>Required</sup> <a name="NAME" id="cdk8s-metaflow.HelmPostgresAddon.property.NAME"></a>
+
+```typescript
+public readonly NAME: string;
+```
+
+- *Type:* string
+
+---
+
+### LocalPostgresAddon <a name="LocalPostgresAddon" id="cdk8s-metaflow.LocalPostgresAddon"></a>
+
+- *Implements:* <a href="#cdk8s-metaflow.IAddon">IAddon</a>
+
+#### Initializers <a name="Initializers" id="cdk8s-metaflow.LocalPostgresAddon.Initializer"></a>
+
+```typescript
+import { LocalPostgresAddon } from 'cdk8s-metaflow'
+
+new LocalPostgresAddon(props: LocalPostgresAddonProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk8s-metaflow.LocalPostgresAddon.Initializer.parameter.props">props</a></code> | <code><a href="#cdk8s-metaflow.LocalPostgresAddonProps">LocalPostgresAddonProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk8s-metaflow.LocalPostgresAddon.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk8s-metaflow.LocalPostgresAddonProps">LocalPostgresAddonProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk8s-metaflow.LocalPostgresAddon.install">install</a></code> | *No description.* |
+
+---
+
+##### `install` <a name="install" id="cdk8s-metaflow.LocalPostgresAddon.install"></a>
+
+```typescript
+public install(scope: Construct): Construct
+```
+
+###### `scope`<sup>Required</sup> <a name="scope" id="cdk8s-metaflow.LocalPostgresAddon.install.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk8s-metaflow.LocalPostgresAddon.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk8s-metaflow.LocalPostgresAddon.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk8s-metaflow.LocalPostgresAddon.property.NAME">NAME</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `NAME`<sup>Required</sup> <a name="NAME" id="cdk8s-metaflow.LocalPostgresAddon.property.NAME"></a>
 
 ```typescript
 public readonly NAME: string;
@@ -1471,7 +975,7 @@ public readonly NAME: string;
 
 ### IAddon <a name="IAddon" id="cdk8s-metaflow.IAddon"></a>
 
-- *Implemented By:* <a href="#cdk8s-metaflow.PostgresAddon">PostgresAddon</a>, <a href="#cdk8s-metaflow.IAddon">IAddon</a>
+- *Implemented By:* <a href="#cdk8s-metaflow.HelmPostgresAddon">HelmPostgresAddon</a>, <a href="#cdk8s-metaflow.LocalPostgresAddon">LocalPostgresAddon</a>, <a href="#cdk8s-metaflow.IAddon">IAddon</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -1484,7 +988,7 @@ public readonly NAME: string;
 ##### `install` <a name="install" id="cdk8s-metaflow.IAddon.install"></a>
 
 ```typescript
-public install(scope: Construct): Helm
+public install(scope: Construct): Construct
 ```
 
 ###### `scope`<sup>Required</sup> <a name="scope" id="cdk8s-metaflow.IAddon.install.parameter.scope"></a>

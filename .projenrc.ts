@@ -70,7 +70,7 @@ new TextFile(project, '.nvmrc', {
   lines: [nodejsVersion],
 });
 project.addTask('d', {
-  exec: 'npx ts-node test/main.ts && kubectl apply -f dist/',
+  exec: 'rm -rf dist/ && npx ts-node test/main.ts && kubectl apply -f dist/',
 });
 project.addTask('r', {
   exec: 'kubectl delete -f dist/ ',

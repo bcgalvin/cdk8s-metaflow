@@ -21,10 +21,6 @@
       "type": "build"
     },
     {
-      "name": "cdk8s-cli",
-      "type": "build"
-    },
-    {
       "name": "cdk8s-plus-21",
       "version": "2.0.0-beta.12",
       "type": "build"
