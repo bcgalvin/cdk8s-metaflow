@@ -1,5 +1,0 @@
-apiVersion: v1
-kind: ServiceAccount
-automountServiceAccountToken: true
-metadata:
-  name: base-metaflow-static-sa-c85626c4

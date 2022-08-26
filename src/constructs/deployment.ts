@@ -1,62 +1,31 @@
-import * as kplus from 'cdk8s-plus-22';
+import { ConfigMap, Container, ContainerProps, Deployment, EnvValue, IServiceAccount } from 'cdk8s-plus-21';
 import { Construct } from 'constructs';
 
-export interface DeploymentOptions {
-  /**
-   * Namespace to deploy resources to
-   *
-   * @default - default
-   */
-  readonly namespaceName: string;
-
-  /**
-   * Name of the serviceAccount used for this deployment
-   *
-   * @default - default
-   */
-  readonly serviceAccount: kplus.ServiceAccount;
-
-  /**
-   * Number of the replicas
-   *
-   * @default 1
-   */
-  readonly replicas?: number;
-
-  /**
-   * Container props
-   */
-  readonly container: kplus.ContainerProps;
-
-  /**
-   * Init Container props
-   */
-  readonly initContainer?: kplus.ContainerProps;
-
-  /**
-   * Environment Variables
-   *
-   */
+export interface MetaflowDeploymentProps {
+  readonly namespace: string;
+  readonly serviceAccount?: IServiceAccount;
+  readonly container: ContainerProps;
+  readonly initContainer?: ContainerProps;
   readonly envVars?: Record<string, string>;
 }
 
-export class Deployment extends Construct {
-  deployment: kplus.Deployment;
-  namespace: string;
+export class MetaflowDeployment extends Construct {
+  readonly deployment: Deployment;
+  readonly namespace: string;
 
-  constructor(scope: Construct, id: string, props: DeploymentOptions) {
+  constructor(scope: Construct, id: string, props: MetaflowDeploymentProps) {
     super(scope, id);
 
-    this.namespace = props.namespaceName || 'default';
+    this.namespace = props.namespace || 'default';
+    const serviceAccount = props.serviceAccount || undefined;
 
-    this.deployment = new kplus.Deployment(this, 'deployment', {
+    this.deployment = new Deployment(this, 'metaflow-deployment', {
+      serviceAccount: serviceAccount,
       metadata: {
         namespace: this.namespace,
       },
-      replicas: props.replicas || 1,
       containers: [props.container],
       initContainers: props.initContainer ? [props.initContainer] : undefined,
-      serviceAccount: props.serviceAccount,
     });
 
     if (props.envVars) {
@@ -67,8 +36,8 @@ export class Deployment extends Construct {
     }
   }
 
-  addEnvironmentVariables(id: string, container: kplus.Container, envVar: Record<string, string>) {
-    const configMap = new kplus.ConfigMap(this, id, {
+  addEnvironmentVariables(id: string, container: Container, envVar: Record<string, string>) {
+    const configMap = new ConfigMap(this, id, {
       metadata: {
         name: id,
         namespace: this.namespace,
@@ -77,7 +46,7 @@ export class Deployment extends Construct {
     });
 
     for (const key in envVar) {
-      container.env.addVariable(key, kplus.EnvValue.fromConfigMap(configMap, key));
+      container.env.addVariable(key, EnvValue.fromConfigMap(configMap, key));
     }
   }
 }

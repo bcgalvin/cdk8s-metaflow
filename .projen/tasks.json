@@ -63,7 +63,15 @@
       "name": "d",
       "steps": [
         {
-          "exec": "npx ts-node test/main.ts && kubectl apply -f dist/"
+          "exec": "rm -rf dist/ && npx ts-node test/main.ts && kubectl apply -f dist/"
+        }
+      ]
+    },
+    "dashboard": {
+      "name": "dashboard",
+      "steps": [
+        {
+          "exec": "minikube dashboard --port=8800"
         }
       ]
     },
@@ -106,172 +114,11 @@
         }
       ]
     },
-    "install-helm": {
-      "name": "install-helm",
-      "description": "Install helm3",
+    "minikube": {
+      "name": "minikube",
       "steps": [
         {
-          "exec": "curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash"
-        }
-      ],
-      "condition": "! (helm version | grep \"v3.\")"
-    },
-    "integ:metaflow-service-default:assert": {
-      "name": "integ:metaflow-service-default:assert",
-      "description": "assert the snapshot of integration test 'metaflow-service-default'",
-      "steps": [
-        {
-          "exec": "[ -d \"test/integ/metaflow-service-default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'metaflow-service-default'. Run 'projen integ:metaflow-service-default:deploy' to capture.\" && exit 1)"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-service-default.integ.ts\" -o test/integ/.tmp/metaflow-service-default.integ/assert.cdk.out > /dev/null"
-        },
-        {
-          "exec": "diff test/integ/metaflow-service-default.integ.snapshot/ test/integ/.tmp/metaflow-service-default.integ/assert.cdk.out/"
-        }
-      ]
-    },
-    "integ:metaflow-service-default:deploy": {
-      "name": "integ:metaflow-service-default:deploy",
-      "description": "deploy integration test 'metaflow-service-default' and capture snapshot",
-      "steps": [
-        {
-          "exec": "rm -fr test/integ/.tmp/metaflow-service-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-service-default.integ.ts\" -o test/integ/.tmp/metaflow-service-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "kubectl apply -f test/integ/.tmp/metaflow-service-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "rm -fr test/integ/metaflow-service-default.integ.snapshot"
-        },
-        {
-          "exec": "mv test/integ/.tmp/metaflow-service-default.integ/deploy.cdk.out test/integ/metaflow-service-default.integ.snapshot"
-        }
-      ]
-    },
-    "integ:metaflow-service-default:snapshot": {
-      "name": "integ:metaflow-service-default:snapshot",
-      "description": "update snapshot for integration test \"metaflow-service-default\"",
-      "steps": [
-        {
-          "exec": "rm -fr test/integ/metaflow-service-default.integ.snapshot"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-service-default.integ.ts\" -o test/integ/metaflow-service-default.integ.snapshot"
-        }
-      ]
-    },
-    "integ:metaflow-static-default:assert": {
-      "name": "integ:metaflow-static-default:assert",
-      "description": "assert the snapshot of integration test 'metaflow-static-default'",
-      "steps": [
-        {
-          "exec": "[ -d \"test/integ/metaflow-static-default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'metaflow-static-default'. Run 'projen integ:metaflow-static-default:deploy' to capture.\" && exit 1)"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-static-default.integ.ts\" -o test/integ/.tmp/metaflow-static-default.integ/assert.cdk.out > /dev/null"
-        },
-        {
-          "exec": "diff test/integ/metaflow-static-default.integ.snapshot/ test/integ/.tmp/metaflow-static-default.integ/assert.cdk.out/"
-        }
-      ]
-    },
-    "integ:metaflow-static-default:deploy": {
-      "name": "integ:metaflow-static-default:deploy",
-      "description": "deploy integration test 'metaflow-static-default' and capture snapshot",
-      "steps": [
-        {
-          "exec": "rm -fr test/integ/.tmp/metaflow-static-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-static-default.integ.ts\" -o test/integ/.tmp/metaflow-static-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "kubectl apply -f test/integ/.tmp/metaflow-static-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "rm -fr test/integ/metaflow-static-default.integ.snapshot"
-        },
-        {
-          "exec": "mv test/integ/.tmp/metaflow-static-default.integ/deploy.cdk.out test/integ/metaflow-static-default.integ.snapshot"
-        }
-      ]
-    },
-    "integ:metaflow-static-default:snapshot": {
-      "name": "integ:metaflow-static-default:snapshot",
-      "description": "update snapshot for integration test \"metaflow-static-default\"",
-      "steps": [
-        {
-          "exec": "rm -fr test/integ/metaflow-static-default.integ.snapshot"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-static-default.integ.ts\" -o test/integ/metaflow-static-default.integ.snapshot"
-        }
-      ]
-    },
-    "integ:metaflow-ui-default:assert": {
-      "name": "integ:metaflow-ui-default:assert",
-      "description": "assert the snapshot of integration test 'metaflow-ui-default'",
-      "steps": [
-        {
-          "exec": "[ -d \"test/integ/metaflow-ui-default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'metaflow-ui-default'. Run 'projen integ:metaflow-ui-default:deploy' to capture.\" && exit 1)"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-ui-default.integ.ts\" -o test/integ/.tmp/metaflow-ui-default.integ/assert.cdk.out > /dev/null"
-        },
-        {
-          "exec": "diff test/integ/metaflow-ui-default.integ.snapshot/ test/integ/.tmp/metaflow-ui-default.integ/assert.cdk.out/"
-        }
-      ]
-    },
-    "integ:metaflow-ui-default:deploy": {
-      "name": "integ:metaflow-ui-default:deploy",
-      "description": "deploy integration test 'metaflow-ui-default' and capture snapshot",
-      "steps": [
-        {
-          "exec": "rm -fr test/integ/.tmp/metaflow-ui-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-ui-default.integ.ts\" -o test/integ/.tmp/metaflow-ui-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "kubectl apply -f test/integ/.tmp/metaflow-ui-default.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "rm -fr test/integ/metaflow-ui-default.integ.snapshot"
-        },
-        {
-          "exec": "mv test/integ/.tmp/metaflow-ui-default.integ/deploy.cdk.out test/integ/metaflow-ui-default.integ.snapshot"
-        }
-      ]
-    },
-    "integ:metaflow-ui-default:snapshot": {
-      "name": "integ:metaflow-ui-default:snapshot",
-      "description": "update snapshot for integration test \"metaflow-ui-default\"",
-      "steps": [
-        {
-          "exec": "rm -fr test/integ/metaflow-ui-default.integ.snapshot"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/integ/metaflow-ui-default.integ.ts\" -o test/integ/metaflow-ui-default.integ.snapshot"
-        }
-      ]
-    },
-    "integ:snapshot-all": {
-      "name": "integ:snapshot-all",
-      "description": "update snapshot for all integration tests",
-      "steps": [
-        {
-          "spawn": "integ:metaflow-service-default:snapshot"
-        },
-        {
-          "spawn": "integ:metaflow-static-default:snapshot"
-        },
-        {
-          "spawn": "integ:metaflow-ui-default:snapshot"
+          "exec": "minikube start --kubernetes-version=v1.21.13 --addons=metrics-server,ingress"
         }
       ]
     },
@@ -343,6 +190,14 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
+    "r": {
+      "name": "r",
+      "steps": [
+        {
+          "exec": "kubectl delete -f dist/ "
+        }
+      ]
+    },
     "release": {
       "name": "release",
       "description": "Prepare a release from \"main\" branch",
@@ -372,25 +227,10 @@
       "description": "Run tests",
       "steps": [
         {
-          "spawn": "install-helm"
-        },
-        {
-          "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
-        },
-        {
           "exec": "jest --passWithNoTests --all --updateSnapshot"
         },
         {
           "spawn": "eslint"
-        },
-        {
-          "spawn": "integ:metaflow-service-default:assert"
-        },
-        {
-          "spawn": "integ:metaflow-static-default:assert"
-        },
-        {
-          "spawn": "integ:metaflow-ui-default:assert"
         }
       ]
     },
@@ -439,19 +279,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='cdk8s-plus-22,cdk8s,constructs,projen'"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='cdk8s-plus-21,cdk8s,constructs,projen'"
         },
         {
           "exec": "yarn install --check-files"
